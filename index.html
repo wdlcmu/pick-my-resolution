@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pick My Resolution · Coming December 2026</title>
+<title>Pick My Resolution - One resolution worth keeping</title>
 <meta name="description" content="One resolution worth keeping. Then a gentle weekly nudge to keep it. Free forever. No ads. No accounts.">
 <link rel="canonical" href="https://pickmyresolution.com/">
-<meta property="og:title" content="Pick My Resolution · Coming December 2026">
+<meta property="og:title" content="Pick My Resolution - One resolution worth keeping">
 <meta property="og:description" content="One resolution worth keeping. Then a gentle weekly nudge to keep it. Free forever. No ads. No accounts.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://pickmyresolution.com/">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pick My Resolution · Coming December 2026">
+<meta name="twitter:title" content="Pick My Resolution - One resolution worth keeping">
 <meta name="twitter:description" content="One resolution worth keeping. Then a gentle weekly nudge to keep it. Free forever. No ads. No accounts.">
 <script type="application/ld+json">
 {
@@ -23,7 +23,7 @@
       "name": "When does it launch?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It launches in early December 2026, in time for the start of resolution season."
+        "text": "It is live now. You can pick your one resolution in about one minute."
       }
     },
     {
@@ -46,76 +46,126 @@
 }
 </script>
 <style>
-  :root { --accent: #1971c2; --ink: #1a1a1a; --muted: #6b7280; }
+  :root { --accent: #1971c2; --ink: #1a1a1a; --muted: #6b7280; --line: #dbe7f3; --card: #ffffff; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: var(--ink); background: #f8fbfe; line-height: 1.5;
-    display: flex; flex-direction: column; min-height: 100vh;
     -webkit-font-smoothing: antialiased;
   }
-  main {
-    flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;
-    text-align: center; padding: 3rem 1.5rem; max-width: 42rem; margin: 0 auto; width: 100%;
+  .wrap { max-width: 620px; margin: 0 auto; padding: 20px 18px 56px; }
+  .screen { display: none; }
+  .screen.on { display: block; }
+  .brand { font-weight: 800; font-size: 15px; color: var(--accent); margin-bottom: 10px; }
+  h1 { font-size: 32px; line-height: 1.2; letter-spacing: -0.01em; margin: 14px 0 8px; }
+  h2 { font-size: 23px; line-height: 1.25; margin: 6px 0 10px; }
+  p { margin: 0 0 12px; }
+  .sub { color: var(--muted); font-size: 16px; }
+  .countdown { font-size: 15px; color: var(--muted); margin-bottom: 6px; }
+  .cta {
+    display: block; width: 100%; min-height: 52px; padding: 14px 18px; margin: 14px 0;
+    font-size: 18px; font-weight: 700; color: #fff; background: var(--accent);
+    border: 2px solid var(--accent); border-radius: 12px; cursor: pointer; text-align: center;
   }
-  .kicker {
-    display: inline-block; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.08em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem;
-    border: 1px solid var(--accent); border-radius: 999px; padding: 0.35rem 1rem;
+  .cta:active { transform: translateY(1px); }
+  .ghost {
+    display: block; width: 100%; min-height: 48px; padding: 12px 18px; margin: 10px 0;
+    font-size: 16px; font-weight: 600; color: var(--ink); background: var(--card);
+    border: 2px solid var(--line); border-radius: 12px; cursor: pointer; text-align: center;
   }
-  h1 { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
-  .tagline { font-size: clamp(1.125rem, 4vw, 1.5rem); color: #374151; max-width: 32rem; margin-bottom: 2rem; }
-  .promise { font-size: 1rem; font-weight: 600; color: var(--ink); }
-  .promise span { color: var(--accent); }
-  .countdown { margin-top: 1rem; font-size: 0.9375rem; color: var(--muted); }
-  .section {
-    max-width: 42rem; margin: 0 auto; width: 100%;
-    padding: 2.5rem 1.5rem; border-top: 1px solid #e5e7eb;
+  .row2 { display: flex; gap: 10px; }
+  .row2 > * { flex: 1; }
+  .dots { display: flex; gap: 8px; margin: 4px 0 8px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--line); }
+  .dot.done { background: var(--accent); border-color: var(--accent); }
+  .step-tag { font-size: 13px; color: var(--muted); font-weight: 600; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+  .chip {
+    min-height: 48px; padding: 11px 16px; font-size: 16px; font-weight: 600; color: var(--ink);
+    background: var(--card); border: 2px solid var(--line); border-radius: 999px; cursor: pointer;
   }
-  .section h2 { font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 1.5rem; }
-  .steps { list-style: none; }
-  .steps li { margin-bottom: 1.25rem; }
-  .steps h3, .faq h3 { font-size: 1.0625rem; font-weight: 700; margin-bottom: 0.25rem; }
-  .steps p, .faq p { color: #374151; }
-  .faq div { margin-bottom: 1.25rem; }
-  .faq div:last-child { margin-bottom: 0; }
-  footer {
-    text-align: center; padding: 2rem 1.5rem; border-top: 1px solid #e5e7eb;
-    font-size: 0.9375rem; color: var(--muted);
+  .chip .tick { display: none; font-weight: 800; margin-right: 6px; }
+  .chip[aria-pressed="true"] { border-color: var(--accent); background: #e7f2fb; }
+  .chip[aria-pressed="true"] .tick { display: inline; }
+  .hint { min-height: 20px; font-size: 14px; color: var(--accent); font-weight: 600; margin: 8px 0 0; }
+  .card { background: var(--card); border: 2px solid var(--line); border-radius: 14px; padding: 16px; margin: 14px 0; }
+  .big { font-size: 24px; font-weight: 800; line-height: 1.3; margin: 4px 0 6px; }
+  .label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); }
+  .status { min-height: 20px; font-size: 14px; font-weight: 600; color: var(--accent); margin: 6px 0; }
+  pre {
+    white-space: pre-wrap; font: inherit; font-size: 14px; line-height: 1.5;
+    background: var(--card); border: 2px solid var(--line); border-radius: 12px;
+    padding: 12px 14px; text-align: left; margin: 8px 0;
   }
-  footer p { margin-bottom: 0.5rem; }
-  footer a { color: var(--accent); font-weight: 600; text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
+  .how { border-top: 1px solid #e5e7eb; margin-top: 26px; padding-top: 20px; }
+  .how h2 { font-size: 19px; }
+  .how ol { margin-left: 20px; color: #374151; }
+  .how li { margin-bottom: 6px; }
+  footer { margin-top: 36px; padding-top: 16px; border-top: 1px solid #e5e7eb; color: var(--muted); font-size: 14px; text-align: center; }
 </style>
 </head>
 <body>
-<main>
-  <span class="kicker">Coming December 2026</span>
-  <h1>Pick My Resolution</h1>
-  <p class="tagline">One resolution worth keeping. Then a gentle weekly nudge to keep it.</p>
-  <p class="promise"><span>Free forever.</span> No ads. No accounts.</p>
-  <p class="countdown" id="countdown" aria-live="polite"></p>
-</main>
-<section class="section">
-  <h2>How it will work</h2>
-  <ol class="steps">
-    <li>
-      <h3>1. Answer a few questions</h3>
-      <p>Your life area, your weekly time, what felt off this year.</p>
-    </li>
-    <li>
-      <h3>2. Get one resolution that fits</h3>
-      <p>One clear resolution, sized to your time.</p>
-    </li>
-    <li>
-      <h3>3. Get a gentle weekly nudge</h3>
-      <p>A prompt for your own AI each week — check in, plan one small step.</p>
-    </li>
-  </ol>
-</section>
-<footer>
-  <p>Built with Muse.</p>
-</footer>
+<div class="wrap">
+
+  <!-- ============ SCREEN 1: HOME ============ -->
+  <section class="screen on" id="s-home">
+    <p class="brand">Pick My Resolution</p>
+    <h1>Pick one resolution that fits.</h1>
+    <p class="sub">Four short questions. One clear plan for your year.</p>
+    <p class="countdown" id="countdown" aria-live="polite"></p>
+    <button class="cta" id="btn-start">Pick my resolution</button>
+    <p class="sub">Free forever. No ads. No accounts.</p>
+    <div class="how">
+      <h2>How it works</h2>
+      <ol>
+        <li>Pick what needs care.</li>
+        <li>Tell us your real time.</li>
+        <li>Get one plan that fits.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ SCREEN 2: QUIZ ============ -->
+  <section class="screen" id="s-quiz">
+    <div class="dots" id="q-dots" aria-hidden="true"></div>
+    <p class="step-tag" id="q-step"></p>
+    <h2 id="q-title"></h2>
+    <div class="chips" id="q-chips"></div>
+    <p class="hint" id="q-hint"></p>
+    <div class="row2">
+      <button class="ghost" id="q-back">Back</button>
+      <button class="cta" id="q-next" style="margin:10px 0">Continue</button>
+    </div>
+  </section>
+
+  <!-- ============ SCREEN 3: RESULT ============ -->
+  <section class="screen" id="s-result">
+    <p class="step-tag">Your plan is set</p>
+    <h2>Your one resolution</h2>
+    <div class="card">
+      <p class="big" id="r-resolution"></p>
+      <p class="label">First move, week one</p>
+      <p id="r-first"></p>
+      <p class="label">If it gets hard</p>
+      <p id="r-guard"></p>
+    </div>
+    <p class="label">Weekly check-in prompt</p>
+    <pre id="r-checkin"></pre>
+    <button class="cta" id="btn-copy-checkin">Copy my check-in prompt</button>
+    <p class="status" id="st-checkin"></p>
+    <p class="label">Share text</p>
+    <pre id="r-share"></pre>
+    <button class="ghost" id="btn-copy-share">Copy my share text</button>
+    <p class="status" id="st-share"></p>
+    <button class="ghost" id="btn-change">Change answers</button>
+    <button class="ghost" id="btn-again">Start over</button>
+  </section>
+
+  <footer>
+    <p>Built with Muse.</p>
+  </footer>
+</div>
+
 <script>
 (function () {
   var el = document.getElementById("countdown");
@@ -131,7 +181,262 @@
   }
 })();
 </script>
+<script>
+"use strict";
+// ENGINE START
+var AREAS = [
+  { k: "health", label: "Body and health" },
+  { k: "money", label: "Money" },
+  { k: "home", label: "Home" },
+  { k: "work", label: "Work" },
+  { k: "family", label: "Family and friends" },
+  { k: "calm", label: "Mind and calm" }
+];
+var OFFS = [
+  { k: "drained", label: "I felt drained a lot." },
+  { k: "piled", label: "Things piled up on me." },
+  { k: "stuck", label: "I felt stuck in place." },
+  { k: "drift", label: "I drifted from good habits." }
+];
+var TIMES = [
+  { k: "t30", label: "30 minutes a week", dose: "10 min, 3x a week", mins: 10, times: 3 },
+  { k: "t2h", label: "2 hours a week", dose: "30 min, 4x a week", mins: 30, times: 4 },
+  { k: "t5h", label: "5 hours a week", dose: "60 min, 5x a week", mins: 60, times: 5 }
+];
+var FAILS = [
+  { k: "big", label: "I tried to do too much." },
+  { k: "forgot", label: "I just forgot to do it." },
+  { k: "busy", label: "Life got busy and loud." },
+  { k: "bored", label: "I got bored and quit." }
+];
+var ACTIONS = {
+  health: {
+    drained: "Take a short walk",
+    piled: "Cook a real meal",
+    stuck: "Do a short workout",
+    drift: "Stretch your whole body"
+  },
+  money: {
+    drained: "Check your bank balance",
+    piled: "Sort bills in one spot",
+    stuck: "Move cash to savings",
+    drift: "Write down what you spend"
+  },
+  home: {
+    drained: "Tidy one small corner",
+    piled: "Clear one shelf fully",
+    stuck: "Fix one small thing",
+    drift: "Make one room cozy"
+  },
+  work: {
+    drained: "Plan your day on paper",
+    piled: "Clear your desk top",
+    stuck: "Learn one work skill",
+    drift: "Chat with a work friend"
+  },
+  family: {
+    drained: "Talk with family at home",
+    piled: "Share one meal together",
+    stuck: "Play one game together",
+    drift: "Call a friend you miss"
+  },
+  calm: {
+    drained: "Sit in a quiet place",
+    piled: "Write thoughts on paper",
+    stuck: "Read a calm book",
+    drift: "Breathe slow in fresh air"
+  }
+};
+var GUARDS = {
+  big: "Keep this one small. Small still counts.",
+  forgot: "Put your move on your calendar today.",
+  busy: "Miss a day? Do half the next day.",
+  bored: "Change the place or time each week."
+};
+function timeOf(k) {
+  for (var i = 0; i < TIMES.length; i++) if (TIMES[i].k === k) return TIMES[i];
+  return null;
+}
+function buildResult(a) {
+  var action = ACTIONS[a.area][a.off];
+  var t = timeOf(a.time);
+  var resolution = action + ": " + t.dose + ".";
+  var firstMove = action + " for 10 min.";
+  var guard = GUARDS[a.fail];
+  var checkin = [
+    "Weekly check-in for my resolution.",
+    "Resolution:",
+    resolution,
+    "First move:",
+    firstMove,
+    "Did I do my move this week?",
+    "What got in my way?",
+    "What is one small move for next week?",
+    "Please keep your reply short and kind."
+  ].join("\n");
+  var share = [
+    "My 2027 resolution:",
+    resolution,
+    "First move: " + firstMove,
+    "Pick yours at pickmyresolution.com"
+  ].join("\n");
+  return {
+    resolution: resolution,
+    firstMove: firstMove,
+    guard: guard,
+    checkin: checkin,
+    share: share
+  };
+}
+// ENGINE END
+
+function $(id) { return document.getElementById(id); }
+function show(id) {
+  var screens = document.querySelectorAll(".screen");
+  for (var i = 0; i < screens.length; i++) screens[i].classList.remove("on");
+  $(id).classList.add("on");
+  window.scrollTo(0, 0);
+}
+function copyText(text, statusEl, okMsg) {
+  function done(msg) { if (statusEl) statusEl.textContent = msg; }
+  function fallbackCopy() {
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.cssText = "position:fixed;top:0;left:0;opacity:0;";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      done(ok ? okMsg : "Copy did not work. Touch and hold the text to copy it.");
+    } catch (e) {
+      done("Copy did not work. Touch and hold the text to copy it.");
+    }
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function () { done(okMsg); }, fallbackCopy);
+  } else { fallbackCopy(); }
+}
+
+var STEPS = [
+  { key: "area", title: "What part of life needs care?", list: AREAS },
+  { key: "off", title: "What felt off this year?", list: OFFS },
+  { key: "time", title: "How much time can you give?", list: TIMES },
+  { key: "fail", title: "What made past plans fail?", list: FAILS }
+];
+var KEY = "pmr_result_v1";
+var quiz = { step: 0, area: null, off: null, time: null, fail: null };
+var current = null;
+
+function saveResult() {
+  try {
+    localStorage.setItem(KEY, JSON.stringify({
+      answers: { area: quiz.area, off: quiz.off, time: quiz.time, fail: quiz.fail },
+      result: current
+    }));
+  } catch (e) {}
+}
+function loadResult() {
+  try {
+    var raw = localStorage.getItem(KEY);
+    if (!raw) return null;
+    var data = JSON.parse(raw);
+    if (!data || !data.answers || !data.result) return null;
+    return data;
+  } catch (e) { return null; }
+}
+function clearResult() {
+  try { localStorage.removeItem(KEY); } catch (e) {}
+}
+
+function renderQuiz() {
+  var st = STEPS[quiz.step];
+  $("q-step").textContent = "Step " + (quiz.step + 1) + " of " + STEPS.length;
+  $("q-title").textContent = st.title;
+  var dots = "";
+  for (var i = 0; i < STEPS.length; i++) dots += '<span class="dot' + (i <= quiz.step ? " done" : "") + '"></span>';
+  $("q-dots").innerHTML = dots;
+  var sel = quiz[st.key];
+  $("q-chips").innerHTML = st.list.map(function (o) {
+    var on = sel === o.k;
+    return '<button class="chip" data-k="' + o.k + '" aria-pressed="' + on + '">' +
+      '<span class="tick">\u2713</span>' + o.label + "</button>";
+  }).join("");
+  $("q-hint").textContent = "";
+  $("q-back").style.visibility = quiz.step === 0 ? "hidden" : "visible";
+  $("q-next").textContent = quiz.step === STEPS.length - 1 ? "Get my resolution" : "Continue";
+  var chips = $("q-chips").querySelectorAll(".chip");
+  for (var c = 0; c < chips.length; c++) {
+    chips[c].onclick = (function (el) {
+      return function () {
+        var k = el.getAttribute("data-k");
+        quiz[st.key] = (quiz[st.key] === k) ? null : k;
+        renderQuiz();
+      };
+    })(chips[c]);
+  }
+}
+function renderResult() {
+  $("r-resolution").textContent = current.resolution;
+  $("r-first").textContent = current.firstMove;
+  $("r-guard").textContent = current.guard;
+  $("r-checkin").textContent = current.checkin;
+  $("r-share").textContent = current.share;
+  $("st-checkin").textContent = "";
+  $("st-share").textContent = "";
+}
+function finishQuiz() {
+  current = buildResult(quiz);
+  saveResult();
+  renderResult();
+  show("s-result");
+}
+
+$("btn-start").onclick = function () {
+  quiz = { step: 0, area: null, off: null, time: null, fail: null };
+  renderQuiz();
+  show("s-quiz");
+};
+$("q-back").onclick = function () {
+  if (quiz.step > 0) { quiz.step--; renderQuiz(); }
+};
+$("q-next").onclick = function () {
+  var st = STEPS[quiz.step];
+  if (!quiz[st.key]) { $("q-hint").textContent = "Pick one answer first."; return; }
+  if (quiz.step < STEPS.length - 1) { quiz.step++; renderQuiz(); }
+  else { finishQuiz(); }
+};
+$("btn-copy-checkin").onclick = function () {
+  copyText(current.checkin, $("st-checkin"), "Copied. Paste it in your AI or notes app.");
+};
+$("btn-copy-share").onclick = function () {
+  copyText(current.share, $("st-share"), "Copied. Paste it where you share things.");
+};
+$("btn-change").onclick = function () {
+  quiz.step = 0;
+  renderQuiz();
+  show("s-quiz");
+};
+$("btn-again").onclick = function () {
+  clearResult();
+  current = null;
+  quiz = { step: 0, area: null, off: null, time: null, fail: null };
+  renderQuiz();
+  show("s-quiz");
+};
+
+var saved = loadResult();
+if (saved) {
+  quiz.area = saved.answers.area;
+  quiz.off = saved.answers.off;
+  quiz.time = saved.answers.time;
+  quiz.fail = saved.answers.fail;
+  current = saved.result;
+  renderResult();
+  show("s-result");
+}
+</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "620ee36c9c5e4adc9a7ff104dce8a422"}'></script>
 </body>
-<!-- parity 2026-10-22 -->
 </html>
