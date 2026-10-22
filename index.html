@@ -3,8 +3,48 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pick My Resolution · Coming January 2027</title>
+<title>Pick My Resolution · Coming December 2026</title>
 <meta name="description" content="One resolution worth keeping. Then a gentle weekly nudge to keep it. Free forever. No ads. No accounts.">
+<link rel="canonical" href="https://pickmyresolution.com/">
+<meta property="og:title" content="Pick My Resolution · Coming December 2026">
+<meta property="og:description" content="One resolution worth keeping. Then a gentle weekly nudge to keep it. Free forever. No ads. No accounts.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pickmyresolution.com/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pick My Resolution · Coming December 2026">
+<meta name="twitter:description" content="One resolution worth keeping. Then a gentle weekly nudge to keep it. Free forever. No ads. No accounts.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When does it launch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It launches in early December 2026, in time for the start of resolution season."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why only one resolution?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One resolution is easier to keep than a long list. You get one that fits, so you can give it your full focus."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It is free forever, with no ads and no accounts."
+      }
+    }
+  ]
+}
+</script>
 <style>
   :root { --accent: #1971c2; --ink: #1a1a1a; --muted: #6b7280; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,6 +67,18 @@
   .tagline { font-size: clamp(1.125rem, 4vw, 1.5rem); color: #374151; max-width: 32rem; margin-bottom: 2rem; }
   .promise { font-size: 1rem; font-weight: 600; color: var(--ink); }
   .promise span { color: var(--accent); }
+  .countdown { margin-top: 1rem; font-size: 0.9375rem; color: var(--muted); }
+  .section {
+    max-width: 42rem; margin: 0 auto; width: 100%;
+    padding: 2.5rem 1.5rem; border-top: 1px solid #e5e7eb;
+  }
+  .section h2 { font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 1.5rem; }
+  .steps { list-style: none; }
+  .steps li { margin-bottom: 1.25rem; }
+  .steps h3, .faq h3 { font-size: 1.0625rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .steps p, .faq p { color: #374151; }
+  .faq div { margin-bottom: 1.25rem; }
+  .faq div:last-child { margin-bottom: 0; }
   footer {
     text-align: center; padding: 2rem 1.5rem; border-top: 1px solid #e5e7eb;
     font-size: 0.9375rem; color: var(--muted);
@@ -38,14 +90,63 @@
 </head>
 <body>
 <main>
-  <span class="kicker">Coming January 2027</span>
+  <span class="kicker">Coming December 2026</span>
   <h1>Pick My Resolution</h1>
   <p class="tagline">One resolution worth keeping. Then a gentle weekly nudge to keep it.</p>
   <p class="promise"><span>Free forever.</span> No ads. No accounts.</p>
+  <p class="countdown" id="countdown" aria-live="polite"></p>
 </main>
+<section class="section">
+  <h2>How it will work</h2>
+  <ol class="steps">
+    <li>
+      <h3>1. Answer a few questions</h3>
+      <p>Share your life area, your time each week, and what felt off this year.</p>
+    </li>
+    <li>
+      <h3>2. Get one resolution that fits</h3>
+      <p>You get one clear resolution, sized to the time you have.</p>
+    </li>
+    <li>
+      <h3>3. Get a gentle weekly nudge</h3>
+      <p>Copy a prompt into your own AI each week to check in and plan your next small step.</p>
+    </li>
+  </ol>
+</section>
+<section class="section faq">
+  <h2>Questions</h2>
+  <div>
+    <h3>When does it launch?</h3>
+    <p>It launches in early December 2026, in time for the start of resolution season.</p>
+  </div>
+  <div>
+    <h3>Why only one resolution?</h3>
+    <p>One resolution is easier to keep than a long list. You get one that fits, so you can give it your full focus.</p>
+  </div>
+  <div>
+    <h3>Is it free?</h3>
+    <p>Yes. It is free forever, with no ads and no accounts.</p>
+  </div>
+</section>
 <footer>
   <p>Made by Billy. One free tool a month.</p>
   <p><a href="https://clearlinefamily.com">Start with Clearline Family</a></p>
 </footer>
+<script>
+(function () {
+  var el = document.getElementById("countdown");
+  if (!el) return;
+  var now = new Date();
+  var seasonStart = new Date(2026, 11, 26);
+  var target = new Date(2027, 0, 1);
+  if (now >= seasonStart) {
+    el.textContent = "Resolution season is here. Time to pick your one resolution.";
+  } else {
+    var days = Math.ceil((target - now) / (1000 * 60 * 60 * 24));
+    el.textContent = days + (days === 1 ? " day" : " days") + " until January 1, 2027.";
+  }
+})();
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "620ee36c9c5e4adc9a7ff104dce8a422"}'></script>
 </body>
 </html>
