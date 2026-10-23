@@ -211,12 +211,13 @@ var OFFS = [
   { k: "drained", label: "I felt drained a lot." },
   { k: "piled", label: "Things piled up on me." },
   { k: "stuck", label: "I felt stuck in place." },
-  { k: "drift", label: "I drifted from good habits." }
+  { k: "drift", label: "I drifted from good habits." },
+  { k: "alone", label: "I felt alone a lot." }
 ];
 var TIMES = [
-  { k: "t30", label: "30 minutes a week", dose: "10 min, 3x a week", mins: 10, times: 3 },
-  { k: "t2h", label: "2 hours a week", dose: "30 min, 4x a week", mins: 30, times: 4 },
-  { k: "t5h", label: "5 hours a week", dose: "60 min, 5x a week", mins: 60, times: 5 }
+  { k: "t30", label: "30 minutes a week", budget: 30 },
+  { k: "t2h", label: "2 hours a week", budget: 120 },
+  { k: "t5h", label: "5 hours a week", budget: 300 }
 ];
 var FAILS = [
   { k: "big", label: "I tried to do too much." },
@@ -229,37 +230,43 @@ var ACTIONS = {
     drained: "Take a short walk",
     piled: "Cook a real meal",
     stuck: "Do a short workout",
-    drift: "Stretch your whole body"
+    drift: "Stretch your whole body",
+    alone: "Walk with a friend"
   },
   money: {
     drained: "Check your bank balance",
     piled: "Sort bills in one spot",
     stuck: "Move cash to savings",
-    drift: "Write down what you spend"
+    drift: "Write down what you spend",
+    alone: "Tell a friend your goal"
   },
   home: {
     drained: "Tidy one small corner",
     piled: "Clear one shelf fully",
     stuck: "Fix one small thing",
-    drift: "Make one room cozy"
+    drift: "Make one room cozy",
+    alone: "Have a friend visit"
   },
   work: {
     drained: "Plan your day on paper",
     piled: "Clear your desk top",
     stuck: "Learn one work skill",
-    drift: "Chat with a work friend"
+    drift: "Chat with a work friend",
+    alone: "Eat lunch with coworkers"
   },
   family: {
     drained: "Talk with family at home",
     piled: "Share one meal together",
     stuck: "Play one game together",
-    drift: "Call a friend you miss"
+    drift: "Call a friend you miss",
+    alone: "Visit someone you love"
   },
   calm: {
     drained: "Sit in a quiet place",
     piled: "Write thoughts on paper",
     stuck: "Read a calm book",
-    drift: "Breathe slow in fresh air"
+    drift: "Breathe slow in fresh air",
+    alone: "Sit outside with others"
   }
 };
 var GUARDS = {
@@ -268,15 +275,75 @@ var GUARDS = {
   busy: "Miss a day? Do half the next day.",
   bored: "Change the place or time each week."
 };
+// Engine-truth fix (2026-10-23, design: engine-truth-audit-2026-10-23.md
+// section 4, Proposals A + C2). The time answer is a budget ceiling, not
+// a quota to fill: each action has its own dose per time level, and no
+// dose ever totals more than that level's budget (30 / 120 / 300).
+// GPT-audit round-1 fix (2026-10-23): the ladder now also scales. Every
+// action's weekly total strictly grows with the time offered, and every
+// dose string differs per level, so more time always buys a bigger plan.
+// Scalable moves grow by longer or more sessions; unit moves (one shelf,
+// one fix, one room) grow by more units per week; moves that are small
+// by nature (a balance check, a cash move, breathing) stay small and the
+// tool says plainly how much of the offered time the plan uses instead
+// of padding them into fake hour-long sessions.
+var DOSES = {
+  "Take a short walk": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "30 min, 7x a week", mins: 30, times: 7 } },
+  "Cook a real meal": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "60 min, 5x a week", mins: 60, times: 5 } },
+  "Do a short workout": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "40 min, 5x a week", mins: 40, times: 5 } },
+  "Stretch your whole body": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "20 min, 5x a week", mins: 20, times: 5 }, t5h: { dose: "20 min, 7x a week", mins: 20, times: 7 } },
+  "Check your bank balance": { t30: { dose: "2 min, 3x a week", mins: 2, times: 3 }, t2h: { dose: "5 min, 3x a week", mins: 5, times: 3 }, t5h: { dose: "5 min, 5x a week", mins: 5, times: 5 } },
+  "Sort bills in one spot": { t30: { dose: "20 min, 1x a week", mins: 20, times: 1 }, t2h: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t5h: { dose: "30 min, 2x a week", mins: 30, times: 2 } },
+  "Move cash to savings": { t30: { dose: "2 min, 1x a week", mins: 2, times: 1 }, t2h: { dose: "2 min, 2x a week", mins: 2, times: 2 }, t5h: { dose: "2 min, 3x a week", mins: 2, times: 3 } },
+  "Write down what you spend": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "10 min, 5x a week", mins: 10, times: 5 }, t5h: { dose: "10 min, 7x a week", mins: 10, times: 7 } },
+  "Tidy one small corner": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "20 min, 4x a week", mins: 20, times: 4 }, t5h: { dose: "20 min, 7x a week", mins: 20, times: 7 } },
+  "Clear one shelf fully": { t30: { dose: "25 min, 1x a week", mins: 25, times: 1 }, t2h: { dose: "30 min, 2x a week", mins: 30, times: 2 }, t5h: { dose: "30 min, 5x a week", mins: 30, times: 5 } },
+  "Fix one small thing": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "45 min, 1x a week", mins: 45, times: 1 }, t5h: { dose: "45 min, 3x a week", mins: 45, times: 3 } },
+  "Make one room cozy": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "60 min, 1x a week", mins: 60, times: 1 }, t5h: { dose: "60 min, 3x a week", mins: 60, times: 3 } },
+  "Plan your day on paper": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "10 min, 5x a week", mins: 10, times: 5 }, t5h: { dose: "10 min, 7x a week", mins: 10, times: 7 } },
+  "Clear your desk top": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "15 min, 4x a week", mins: 15, times: 4 }, t5h: { dose: "20 min, 5x a week", mins: 20, times: 5 } },
+  "Learn one work skill": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "60 min, 5x a week", mins: 60, times: 5 } },
+  "Chat with a work friend": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "30 min, 5x a week", mins: 30, times: 5 } },
+  "Talk with family at home": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "60 min, 5x a week", mins: 60, times: 5 } },
+  "Share one meal together": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "60 min, 5x a week", mins: 60, times: 5 } },
+  "Play one game together": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "60 min, 5x a week", mins: 60, times: 5 } },
+  "Call a friend you miss": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "30 min, 5x a week", mins: 30, times: 5 } },
+  "Sit in a quiet place": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "20 min, 5x a week", mins: 20, times: 5 }, t5h: { dose: "20 min, 7x a week", mins: 20, times: 7 } },
+  "Write thoughts on paper": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "20 min, 5x a week", mins: 20, times: 5 }, t5h: { dose: "20 min, 7x a week", mins: 20, times: 7 } },
+  "Read a calm book": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "60 min, 5x a week", mins: 60, times: 5 } },
+  "Breathe slow in fresh air": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "10 min, 5x a week", mins: 10, times: 5 }, t5h: { dose: "10 min, 7x a week", mins: 10, times: 7 } },
+  "Walk with a friend": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "45 min, 5x a week", mins: 45, times: 5 } },
+  "Tell a friend your goal": { t30: { dose: "15 min, 2x a week", mins: 15, times: 2 }, t2h: { dose: "30 min, 2x a week", mins: 30, times: 2 }, t5h: { dose: "30 min, 4x a week", mins: 30, times: 4 } },
+  "Have a friend visit": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "60 min, 2x a week", mins: 60, times: 2 }, t5h: { dose: "60 min, 3x a week", mins: 60, times: 3 } },
+  "Eat lunch with coworkers": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "45 min, 5x a week", mins: 45, times: 5 } },
+  "Visit someone you love": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "60 min, 2x a week", mins: 60, times: 2 }, t5h: { dose: "60 min, 4x a week", mins: 60, times: 4 } },
+  "Sit outside with others": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "20 min, 5x a week", mins: 20, times: 5 }, t5h: { dose: "30 min, 5x a week", mins: 30, times: 5 } }
+};
+// First moves for the instant, finite, and event actions (Proposal C1
+// starters, used at every time level under C2). All other actions open
+// with their first session at the picked dose.
+var STARTERS = {
+  "Check your bank balance": "Check your bank balance now. It takes about 2 min.",
+  "Move cash to savings": "Move one small amount to savings today.",
+  "Cook a real meal": "Cook one real meal. Give it about 45 min.",
+  "Share one meal together": "Share one meal together. No timer. Just eat and talk.",
+  "Play one game together": "Play one quick game together.",
+  "Call a friend you miss": "Call a friend you miss. Talk as long as feels good.",
+  "Clear one shelf fully": "Clear one shelf fully. Take about 25 min.",
+  "Fix one small thing": "Fix one small thing. Start with 30 min.",
+  "Make one room cozy": "Make one room cozy. Start with 30 min.",
+  "Have a friend visit": "Have a friend visit. No timer. Just talk and relax.",
+  "Visit someone you love": "Visit someone you love. Take your time and stay a while."
+};
 function timeOf(k) {
   for (var i = 0; i < TIMES.length; i++) if (TIMES[i].k === k) return TIMES[i];
   return null;
 }
 function buildResult(a) {
   var action = ACTIONS[a.area][a.off];
-  var t = timeOf(a.time);
-  var resolution = action + ": " + t.dose + ".";
-  var firstMove = action + " for 10 min.";
+  var d = DOSES[action][a.time];
+  var resolution = action + ": " + d.dose + ".";
+  var firstMove = STARTERS[action] || (action + " for " + d.mins + " min.");
   var guard = GUARDS[a.fail];
   var checkin = [
     "Weekly check-in for my resolution.",
