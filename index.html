@@ -455,7 +455,7 @@ function buildResult(a) {
     "My 2027 resolution:",
     resolution,
     "First move: " + firstMove,
-    "Pick yours at https://pickmyresolution.com"
+    "Pick yours at https://pickmyresolution.com/?via=share"
   ].join("\n");
   return {
     resolution: resolution,
@@ -772,6 +772,90 @@ if (hasStartFlag()) {
   $("r-saved").hidden = false;
   show("s-result");
 }
+</script>
+<script>
+"use strict";
+/* ================= Fleet analytics — PostHog rollout (2026-10-25) =================
+   Pick My Resolution joins the fleet PostHog project (624507), rolling out the
+   pattern the Present Picker pilot proved on 2026-10-25. Every event
+   carries $host automatically; site_id is registered as the friendly
+   label. Posture: autocapture off, session recording off, no
+   identify(), anonymous only. Payloads are counts and enums only —
+   never answers, never personal data. */
+var _fleetQ = [];
+function fleetTrack(name, props){
+  try {
+    if (window.posthog && posthog.capture) posthog.capture(name, props || {});
+    else _fleetQ.push([name, props || {}]);
+  } catch (e) {}
+}
+function fleetSessionMarks(){
+  try {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get("via") === "share" && !sessionStorage.getItem("pmr_arr")){
+      sessionStorage.setItem("pmr_arr", "1");
+      fleetTrack("share_arrival", {tool: "resolution-picker", via: "share-link"});
+    }
+    if (!sessionStorage.getItem("pmr_ret")){
+      var raw = null;
+      try { raw = localStorage.getItem("pmr_result_v1"); } catch (e) {}
+      if (raw){
+        sessionStorage.setItem("pmr_ret", "1");
+        fleetTrack("return_visit", {tool: "resolution-picker"});
+      }
+    }
+  } catch (e) {}
+}
+(function(){
+  var s = document.createElement("script");
+  s.async = true;
+  s.src = "https://us.i.posthog.com/static/array.js";
+  s.onload = function(){
+    try {
+      if (window.posthog && posthog.init){
+        posthog.init("phc_t9dkHXAZR5VEjPFm3K5JDzGKFsNNxKcwSxxcEBEeLbS7", {api_host: "https://us.i.posthog.com", autocapture: false, capture_pageview: true, disable_session_recording: true});
+        posthog.register({site_id: "pick-my-resolution", site_name: "Pick My Resolution"});
+        _fleetQ.splice(0).forEach(function(e){ try { posthog.capture(e[0], e[1]); } catch (x) {} });
+        fleetSessionMarks();
+      }
+    } catch (e) {}
+  };
+  document.head.appendChild(s);
+})();
+(function(){
+  var fired = false;
+  var start = document.getElementById("btn-start");
+  if (start) start.addEventListener("click", function(){
+    if (!fired){ fired = true; fleetTrack("tool_start", {tool: "resolution-picker", entry: "home"}); }
+  });
+  try {
+    if (new URLSearchParams(window.location.search).get("start") === "1" && !fired){
+      fired = true; fleetTrack("tool_start", {tool: "resolution-picker", entry: "area-page"});
+    }
+  } catch (e) {}
+  var res = document.getElementById("s-result"), done = false;
+  if (res && window.MutationObserver){
+    var check = function(){
+      var on = res.className.indexOf("on") !== -1;
+      if (on && !done){
+        done = true;
+        fleetTrack("tool_complete", {tool: "resolution-picker", results_count: 1});
+      }
+      if (!on) done = false;
+    };
+    new MutationObserver(check).observe(res, {attributes: true, attributeFilter: ["class"]});
+  }
+  var cc = document.getElementById("btn-copy-checkin");
+  if (cc) cc.addEventListener("click", function(){ fleetTrack("artifact_created", {tool: "resolution-picker", artifact: "checkin-prompt"}); });
+  var yc = document.getElementById("btn-yearcard");
+  if (yc) yc.addEventListener("click", function(){ fleetTrack("artifact_created", {tool: "resolution-picker", artifact: "year-card"}); });
+  var yd = document.getElementById("yc-dl");
+  if (yd) yd.addEventListener("click", function(){ fleetTrack("artifact_created", {tool: "resolution-picker", artifact: "year-card-download"}); });
+  var cs = document.getElementById("btn-copy-share");
+  if (cs) cs.addEventListener("click", function(){ fleetTrack("share_intent", {tool: "resolution-picker", channel: "clipboard"}); });
+  var ys = document.getElementById("btn-yc-share");
+  if (ys) ys.addEventListener("click", function(){ fleetTrack("share_intent", {tool: "resolution-picker", channel: "native"}); });
+})();
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "620ee36c9c5e4adc9a7ff104dce8a422"}'></script>
 </body>
