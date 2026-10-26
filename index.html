@@ -736,8 +736,32 @@ $("btn-again").onclick = function () {
   show("s-quiz");
 };
 
+// Area-page auto-start flag (Item 84, QA F7): the area pages link
+// here as /?start=1, so one tap on an area CTA opens the quiz. The
+// flag is checked before the saved plan: with the flag, the quiz
+// starts fresh and the saved plan stays in storage, untouched.
+// Without the flag, a saved plan still opens on the result screen,
+// exactly as before. The parse is by hand, in the same plain style
+// as the rest of this script: no new API, and a missing or odd
+// location simply means no flag.
+function hasStartFlag() {
+  try {
+    var search = (window.location && window.location.search) || "";
+    if (!search) return false;
+    var parts = search.replace(/^\?/, "").split("&");
+    for (var i = 0; i < parts.length; i++) {
+      var kv = parts[i].split("=");
+      if (kv[0] === "start" && kv[1] === "1") return true;
+    }
+    return false;
+  } catch (e) { return false; }
+}
 var saved = loadResult();
-if (saved) {
+if (hasStartFlag()) {
+  quiz = { step: 0, area: null, off: null, time: null, fail: null };
+  renderQuiz();
+  show("s-quiz");
+} else if (saved) {
   quiz.area = saved.answers.area;
   quiz.off = saved.answers.off;
   quiz.time = saved.answers.time;
