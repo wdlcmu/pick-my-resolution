@@ -420,7 +420,7 @@ var DOSES = {
 var STARTERS = {
   "Check your bank balance": "Check your bank balance now. It takes about 2 min.",
   "Move cash to savings": "Move one small amount to savings today.",
-  "Cook a real meal": "Cook one real meal. Give it about 45 min.",
+  "Cook a real meal": "Cook one real meal. Give it about 30 min.",
   "Share one meal together": "Share one meal together. No timer. Just eat and talk.",
   "Play one game together": "Play one quick game together.",
   "Call a friend you miss": "Call a friend you miss. Talk as long as feels good.",
@@ -438,7 +438,7 @@ function buildResult(a) {
   var action = ACTIONS[a.area][a.off];
   var d = DOSES[action][a.time];
   var resolution = action + ": " + d.dose + ".";
-  var firstMove = STARTERS[action] || (action + " for " + d.mins + " min.");
+  var firstMove = action === "Cook a real meal" ? ("Cook one real meal. Give it about " + d.mins + " min.") : (STARTERS[action] || (action + " for " + d.mins + " min."));
   var guard = GUARDS[a.fail];
   var checkin = [
     "Weekly check-in for my resolution.",
