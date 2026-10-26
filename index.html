@@ -31,7 +31,7 @@
       "name": "Why only one resolution?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One resolution is easier to keep than a long list. You get one that fits, so you can give it your full focus."
+        "text": "One resolution is easier to keep than a long list. You get one that fits. Give it your full focus."
       }
     },
     {
@@ -46,11 +46,11 @@
 }
 </script>
 <style>
-  :root { --accent: #1971c2; --ink: #1a1a1a; --muted: #6b7280; --line: #dbe7f3; --card: #ffffff; }
+  :root { --accent: #0f766e; --ink: #1a1a1a; --muted: #6b7280; --line: #dce8e2; --card: #ffffff; --amber: #f59f00; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: var(--ink); background: #f8fbfe; line-height: 1.5;
+    color: var(--ink); background: #faf7f2; line-height: 1.5;
     -webkit-font-smoothing: antialiased;
   }
   .wrap { max-width: 620px; margin: 0 auto; padding: 20px 18px 56px; }
@@ -85,13 +85,16 @@
     background: var(--card); border: 2px solid var(--line); border-radius: 999px; cursor: pointer;
   }
   .chip .tick { display: none; font-weight: 800; margin-right: 6px; }
-  .chip[aria-pressed="true"] { border-color: var(--accent); background: #e7f2fb; }
+  .chip[aria-pressed="true"] { border-color: var(--accent); background: #e0f2ee; }
   .chip[aria-pressed="true"] .tick { display: inline; }
   .hint { min-height: 20px; font-size: 14px; color: var(--accent); font-weight: 600; margin: 8px 0 0; }
   .card { background: var(--card); border: 2px solid var(--line); border-radius: 14px; padding: 16px; margin: 14px 0; }
   .big { font-size: 24px; font-weight: 800; line-height: 1.3; margin: 4px 0 6px; }
   .label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); }
   .status { min-height: 20px; font-size: 14px; font-weight: 600; color: var(--accent); margin: 6px 0; }
+  .saved-label { font-size: 14px; font-weight: 600; color: var(--muted); margin: 0 0 10px; }
+  [hidden] { display: none !important; }
+  #yc-out img { display: block; width: 100%; max-width: 270px; height: auto; margin: 12px auto 4px; border-radius: 14px; box-shadow: 0 8px 22px rgba(10, 41, 37, 0.35); }
   pre {
     white-space: pre-wrap; font: inherit; font-size: 14px; line-height: 1.5;
     background: var(--card); border: 2px solid var(--line); border-radius: 12px;
@@ -106,20 +109,89 @@
   .faq h3 { font-size: 16px; margin: 14px 0 4px; }
   .faq p { color: #374151; margin: 0; }
   footer { margin-top: 36px; padding-top: 16px; border-top: 1px solid #e5e7eb; color: var(--muted); font-size: 14px; text-align: center; }
-  footer a { color: var(--accent); font-weight: 700; }
+  footer a { color: var(--accent); font-weight: 700; display: inline-block; padding: 12px 6px; min-height: 44px; }
+  /* Visual redesign 2026-10-24: photo-forward hero, dawn-pine + amber. */
+  .hero {
+    color: #fff;
+    background:
+      radial-gradient(620px 360px at 88% -80px, rgba(245, 159, 0, 0.38), rgba(245, 159, 0, 0) 70%),
+      linear-gradient(155deg, #0a2925 0%, #0e3a32 58%, #14532d 135%);
+  }
+  .hero-in { max-width: 1060px; margin: 0 auto; padding: 26px 18px 36px; }
+  .hero .brand { color: var(--amber); margin-bottom: 16px; }
+  .hero-grid { display: flex; gap: 28px; align-items: flex-start; }
+  .hero-copy { flex: 1 1 330px; min-width: 250px; padding-top: 10px; }
+  .hero h1 { color: #fff; font-size: 42px; margin: 0 0 10px; }
+  .hero .sub { color: #d7e8df; font-size: 17px; }
+  .hero .countdown { color: #bcd6c9; margin: 14px 0 4px; }
+  .hero .cta { background: var(--amber); border-color: var(--amber); color: #231303; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28); }
+  .hero .free { color: #d7e8df; font-size: 15px; margin: 0; }
+  .hero-photos { flex: 1 1 430px; display: flex; flex-direction: column; gap: 12px; min-width: 250px; }
+  .ph { border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 12px 26px rgba(0, 0, 0, 0.30); }
+  .ph img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .ph-main { aspect-ratio: 5 / 4; }
+  .ph-main img { object-position: center 28%; }
+  .ph-row { display: flex; gap: 12px; }
+  .ph-row .ph { flex: 1; aspect-ratio: 4 / 3; }
+  .ph figcaption {
+    position: absolute; left: 10px; bottom: 10px; background: rgba(8, 28, 23, 0.74);
+    color: #fff; font-size: 13px; font-weight: 700; padding: 5px 11px; border-radius: 999px;
+  }
+  .areas { margin-top: 32px; }
+  .areas h2 { font-size: 19px; margin: 0 0 12px; }
+  .area-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .area-card { display: block; border-radius: 14px; overflow: hidden; position: relative; box-shadow: 0 4px 14px rgba(20, 40, 30, 0.14); }
+  .area-card img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .area-card span {
+    position: absolute; left: 8px; bottom: 8px; background: rgba(8, 28, 23, 0.76);
+    color: #fff; font-size: 13px; font-weight: 700; padding: 5px 10px; border-radius: 999px;
+  }
+  @media (max-width: 760px) {
+    .hero-grid { flex-direction: column; }
+    .hero-copy { padding-top: 0; }
+    .hero h1 { font-size: 34px; }
+    .hero-photos { width: 100%; }
+  }
+  @media (max-width: 560px) {
+    .area-grid { grid-template-columns: repeat(2, 1fr); }
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
 
   <!-- ============ SCREEN 1: HOME ============ -->
   <section class="screen on" id="s-home">
-    <p class="brand">Pick My Resolution</p>
-    <h1>Pick one resolution that fits.</h1>
-    <p class="sub">Four short questions. One clear plan for your year.</p>
-    <p class="countdown" id="countdown" aria-live="polite"></p>
-    <button class="cta" id="btn-start">Pick my resolution</button>
-    <p class="sub">Free forever. No ads. No accounts.</p>
+    <div class="hero">
+      <div class="hero-in">
+        <p class="brand">Pick My Resolution</p>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <h1>Pick one resolution that fits.</h1>
+            <p class="sub">Four short questions. One clear plan for your year.</p>
+            <p class="countdown" id="countdown" aria-live="polite"></p>
+            <button class="cta" id="btn-start">Pick my resolution</button>
+            <p class="free">Free forever. No ads. No accounts.</p>
+          </div>
+          <div class="hero-photos">
+            <figure class="ph ph-main">
+              <img src="/img/hero-main.jpg" alt="Woman opening curtains to morning light" fetchpriority="high">
+              <figcaption>A fresh start</figcaption>
+            </figure>
+            <div class="ph-row">
+              <figure class="ph">
+                <img src="/img/hero-walk.jpg" alt="Two friends walking at sunrise" loading="lazy">
+                <figcaption>Morning walks</figcaption>
+              </figure>
+              <figure class="ph">
+                <img src="/img/hero-table.jpg" alt="Family laughing at a breakfast table" loading="lazy">
+                <figcaption>People first</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
     <div class="how">
       <h2>How it works</h2>
       <ol>
@@ -128,17 +200,30 @@
         <li>Get one plan that fits.</li>
       </ol>
     </div>
+    <div class="areas">
+      <h2>Start with one area</h2>
+      <div class="area-grid">
+        <a class="area-card" href="/body-and-health"><img src="/img/area-health-sm.jpg" alt="Man stretching by a bright window" loading="lazy"><span>Body and health</span></a>
+        <a class="area-card" href="/money"><img src="/img/area-money-sm.jpg" alt="Hands writing in a blank notebook" loading="lazy"><span>Money</span></a>
+        <a class="area-card" href="/home"><img src="/img/area-home-sm.jpg" alt="Cozy chair in warm morning light" loading="lazy"><span>Home</span></a>
+        <a class="area-card" href="/work"><img src="/img/area-work-sm.jpg" alt="Tidy desk by a bright window" loading="lazy"><span>Work</span></a>
+        <a class="area-card" href="/family-and-friends"><img src="/img/area-family-sm.jpg" alt="Friends laughing over a board game" loading="lazy"><span>Family and friends</span></a>
+        <a class="area-card" href="/mind-and-calm"><img src="/img/area-calm-sm.jpg" alt="Woman reading by a bright window" loading="lazy"><span>Mind and calm</span></a>
+      </div>
+    </div>
     <div class="faq">
       <h2>Common questions</h2>
       <h3>When does it launch?</h3>
       <p>It is live now. You can pick your one resolution in about one minute.</p>
       <h3>Why only one resolution?</h3>
-      <p>One resolution is easier to keep than a long list. You get one that fits, so you can give it your full focus.</p>
+      <p>One resolution is easier to keep than a long list. You get one that fits. Give it your full focus.</p>
       <h3>Is it free?</h3>
       <p>Yes. It is free forever, with no ads and no accounts.</p>
     </div>
+    </div>
   </section>
 
+  <div class="wrap">
   <!-- ============ SCREEN 2: QUIZ ============ -->
   <section class="screen" id="s-quiz">
     <div class="dots" id="q-dots" aria-hidden="true"></div>
@@ -156,6 +241,7 @@
   <section class="screen" id="s-result">
     <p class="step-tag">Your plan is set</p>
     <h2>Your one resolution</h2>
+    <p class="saved-label" id="r-saved" hidden></p>
     <div class="card">
       <p class="big" id="r-resolution"></p>
       <p class="label">First move, week one</p>
@@ -171,13 +257,20 @@
     <pre id="r-share"></pre>
     <button class="ghost" id="btn-copy-share">Copy my share text</button>
     <p class="status" id="st-share"></p>
+    <p class="label">Your year card</p>
+    <p class="sub" style="font-size:14px">One picture for your lock screen. 52 dots, one for each week.</p>
+    <button class="cta" id="btn-yearcard">Get my year card</button>
+    <div id="yc-out"></div>
+    <p class="status" id="st-yearcard"></p>
+    <button class="ghost" id="btn-yc-share" hidden>Share my year card</button>
+    <a class="ghost" id="yc-dl" href="#" download="year-card.png" hidden style="text-decoration:none">Download my year card</a>
     <button class="ghost" id="btn-change">Change answers</button>
     <button class="ghost" id="btn-again">Start over</button>
   </section>
 
   <footer>
     <p>Built with Muse.<br>
-    Browse by area: <a href="/body-and-health">Body and health</a> · <a href="/money">Money</a> · <a href="/home">Home</a> · <a href="/work">Work</a> · <a href="/family-and-friends">Family and friends</a> · <a href="/mind-and-calm">Mind and calm</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></p>
+    Browse by area: <a href="/body-and-health">Body and health</a> · <a href="/money">Money</a> · <a href="/home">Home</a> · <a href="/work">Work</a> · <a href="/family-and-friends">Family and friends</a> · <a href="/mind-and-calm">Mind and calm</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
   </footer>
 </div>
 
@@ -186,13 +279,14 @@
   var el = document.getElementById("countdown");
   if (!el) return;
   var now = new Date();
-  var seasonStart = new Date(2026, 11, 26);
-  var target = new Date(2027, 0, 1);
-  if (now >= seasonStart) {
+  var target = new Date(now.getFullYear(), 0, 1);
+  if (now >= target) target = new Date(now.getFullYear() + 1, 0, 1);
+  var seasonStart = new Date(target.getFullYear() - 1, 11, 26);
+  if (now >= seasonStart && now < target) {
     el.textContent = "Resolution season is here. Time to pick your one resolution.";
   } else {
     var days = Math.ceil((target - now) / (1000 * 60 * 60 * 24));
-    el.textContent = days + (days === 1 ? " day" : " days") + " until January 1, 2027.";
+    el.textContent = days + (days === 1 ? " day" : " days") + " until January 1, " + target.getFullYear() + ".";
   }
 })();
 </script>
@@ -360,7 +454,7 @@ function buildResult(a) {
     "My 2027 resolution:",
     resolution,
     "First move: " + firstMove,
-    "Pick yours at pickmyresolution.com"
+    "Pick yours at https://pickmyresolution.com"
   ].join("\n");
   return {
     resolution: resolution,
@@ -460,6 +554,8 @@ function renderQuiz() {
   }
 }
 function renderResult() {
+  $("r-saved").textContent = "";
+  $("r-saved").hidden = true;
   $("r-resolution").textContent = current.resolution;
   $("r-first").textContent = current.firstMove;
   $("r-guard").textContent = current.guard;
@@ -467,6 +563,12 @@ function renderResult() {
   $("r-share").textContent = current.share;
   $("st-checkin").textContent = "";
   $("st-share").textContent = "";
+  // A new result retires any year card drawn from the old one.
+  ycBlob = null;
+  $("st-yearcard").textContent = "";
+  $("yc-out").innerHTML = "";
+  $("btn-yc-share").hidden = true;
+  $("yc-dl").hidden = true;
 }
 function finishQuiz() {
   current = buildResult(quiz);
@@ -495,6 +597,131 @@ $("btn-copy-checkin").onclick = function () {
 $("btn-copy-share").onclick = function () {
   copyText(current.share, $("st-share"), "Copied. Paste it where you share things.");
 };
+
+// Year card (2026-10-24): a 1080x1350 lock-screen PNG drawn from the
+// result already on screen. It reads only `current`, the object
+// renderResult just showed, and never looks a dose up again, so the
+// card can not drift from the page. The 52 dots, one per week, are all
+// empty: the card is made before the year starts, so no week the user
+// has not lived yet is ever pre-filled.
+var ycBlob = null;
+function ycYear() {
+  var now = new Date();
+  // From July the site counts down to the next Jan 1, so a plan made
+  // then is for next year. Before July you are living this year's plan.
+  return now.getMonth() >= 6 ? now.getFullYear() + 1 : now.getFullYear();
+}
+function ycParts() {
+  var r = current.resolution; // "<action>: <dose>." exactly as rendered
+  var cut = r.indexOf(": ");
+  var name = cut > 0 ? r.slice(0, cut) : r;
+  var dose = cut > 0 ? r.slice(cut + 2).replace(/\.$/, "") : "";
+  var total = "";
+  var m = dose.match(/^(\d+) min, (\d+)x a week$/);
+  if (m) total = (parseInt(m[1], 10) * parseInt(m[2], 10)) + " min a week in all";
+  return { name: name, dose: dose, total: total, firstMove: current.firstMove, guard: current.guard, year: ycYear() };
+}
+function ycWrap(c, text, x, y, maxW, lh) {
+  var words = text.split(" ");
+  var line = "";
+  for (var i = 0; i < words.length; i++) {
+    var test = line ? line + " " + words[i] : words[i];
+    if (line && c.measureText(test).width > maxW) {
+      c.fillText(line, x, y);
+      y += lh;
+      line = words[i];
+    } else { line = test; }
+  }
+  if (line) { c.fillText(line, x, y); y += lh; }
+  return y;
+}
+function drawYearCard() {
+  if (!current) return;
+  var p = ycParts();
+  var cv = document.createElement("canvas");
+  cv.width = 1080; cv.height = 1350;
+  var c = cv.getContext("2d");
+  var F = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif";
+  var L = 72, W = 1080 - 144;
+  // Dawn background: the hero gradient plus its amber glow.
+  var g = c.createLinearGradient(0, 0, 420, 1350);
+  g.addColorStop(0, "#0a2925"); g.addColorStop(0.58, "#0e3a32"); g.addColorStop(1, "#14532d");
+  c.fillStyle = g; c.fillRect(0, 0, 1080, 1350);
+  var glow = c.createRadialGradient(950, -60, 40, 950, -60, 640);
+  glow.addColorStop(0, "rgba(245,159,0,0.38)"); glow.addColorStop(1, "rgba(245,159,0,0)");
+  c.fillStyle = glow; c.fillRect(0, 0, 1080, 1350);
+  // Brand + label
+  c.fillStyle = "#f59f00"; c.font = "700 30px " + F;
+  c.fillText("PICK MY RESOLUTION", L, 108);
+  c.fillStyle = "#ffd88a"; c.font = "700 28px " + F;
+  c.fillText("MY " + p.year + " RESOLUTION", L, 198);
+  // The resolution name, big. Drop a size if a long name needs it.
+  c.fillStyle = "#ffffff"; c.font = "800 66px " + F;
+  if (c.measureText(p.name).width > W) c.font = "800 56px " + F;
+  var y = ycWrap(c, p.name, L, 292, W, 80);
+  // The dose, exactly the string the engine put on screen, plus its total.
+  c.fillStyle = "#f59f00"; c.font = "700 46px " + F;
+  c.fillText(p.dose, L, y + 42);
+  y += 42;
+  if (p.total) {
+    c.fillStyle = "#bcd6c9"; c.font = "400 32px " + F;
+    c.fillText(p.total, L, y + 50);
+    y += 50;
+  }
+  // 52 dots, one per week, all empty.
+  c.fillStyle = "#ffd88a"; c.font = "700 26px " + F;
+  c.fillText("52 WEEKS", L, y + 92);
+  c.fillStyle = "#bcd6c9"; c.font = "400 30px " + F;
+  c.fillText("One dot for each week of " + p.year + ".", L, y + 134);
+  var gridTop = y + 164, d = 54, rowPitch = 80;
+  var colPitch = (W - d) / 12;
+  c.lineWidth = 3; c.strokeStyle = "rgba(255,255,255,0.55)";
+  c.fillStyle = "rgba(255,255,255,0.06)";
+  for (var i = 0; i < 52; i++) {
+    var cx = L + (i % 13) * colPitch + d / 2;
+    var cy = gridTop + Math.floor(i / 13) * rowPitch + d / 2;
+    c.beginPath(); c.arc(cx, cy, d / 2, 0, Math.PI * 2); c.fill(); c.stroke();
+  }
+  y = gridTop + 3 * rowPitch + d;
+  // First move: the line that makes the card useful in January.
+  c.fillStyle = "#ffd88a"; c.font = "700 26px " + F;
+  c.fillText("YOUR FIRST MOVE", L, y + 84);
+  c.fillStyle = "#ffffff"; c.font = "400 36px " + F;
+  y = ycWrap(c, p.firstMove, L, y + 136, W, 48);
+  // The guard line, if it still fits above the footer.
+  if (y + 102 <= 1258) {
+    c.fillStyle = "#ffd88a"; c.font = "700 26px " + F;
+    c.fillText("IF IT GETS HARD", L, y + 56);
+    c.fillStyle = "#d7e8df"; c.font = "400 30px " + F;
+    c.fillText(p.guard, L, y + 102);
+  }
+  // Footer
+  c.fillStyle = "#8fb3a4"; c.font = "400 26px " + F;
+  c.fillText("Built with Muse.", L, 1292);
+  var site = "pickmyresolution.com";
+  c.fillText(site, 1080 - L - c.measureText(site).width, 1292);
+  cv.toBlob(function (blob) {
+    ycBlob = blob;
+    var url = cv.toDataURL("image/png");
+    window.__lastYearCard = { dataURL: url, name: p.name, dose: p.dose, total: p.total, firstMove: p.firstMove, guard: p.guard, year: p.year, dots: 52 };
+    var wrap = $("yc-out"); wrap.innerHTML = "";
+    var im = document.createElement("img");
+    im.alt = "Your " + p.year + " year card";
+    im.src = url;
+    wrap.appendChild(im);
+    var dl = $("yc-dl"); dl.href = url; dl.hidden = false;
+    var can = false;
+    try { can = !!(blob && navigator.canShare && navigator.canShare({ files: [new File([blob], "year-card.png", { type: "image/png" })] })); } catch (e) { can = false; }
+    $("btn-yc-share").hidden = !can;
+    $("st-yearcard").textContent = can ? "Tap share to send it, or download the picture." : "Download the picture. Keep it where you will see it.";
+  }, "image/png");
+}
+$("btn-yearcard").onclick = function () { drawYearCard(); };
+$("btn-yc-share").onclick = async function () {
+  if (!ycBlob) return;
+  var f = new File([ycBlob], "year-card.png", { type: "image/png" });
+  try { await navigator.share({ files: [f], title: "My year card" }); } catch (e) { /* sheet closed, nothing to do */ }
+};
 $("btn-change").onclick = function () {
   quiz.step = 0;
   renderQuiz();
@@ -516,6 +743,8 @@ if (saved) {
   quiz.fail = saved.answers.fail;
   current = saved.result;
   renderResult();
+  $("r-saved").textContent = "Your saved plan on this device.";
+  $("r-saved").hidden = false;
   show("s-result");
 }
 </script>
