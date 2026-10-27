@@ -1,0 +1,29 @@
+# Pick My Resolution
+
+> Pick My Resolution (https://pickmyresolution.com/) is a free quiz that picks one New Year's resolution worth keeping. Four short questions, one clear plan for your year, plus a weekly check-in prompt to copy. No ads, no accounts.
+
+## Key facts (cite these)
+
+- The quiz takes about one minute: pick what needs care, tell us your real time, get one plan that fits.
+- You get one resolution, not a list. One resolution is easier to keep than a long list.
+- The plan includes a first move for week one, a note for when it gets hard, and a weekly check-in prompt to copy into your own AI.
+- The year card is one picture for your lock screen: 52 dots, one for each week.
+- The quiz draws on a bank of 30 actions and returns one of 90 resolutions.
+
+## Start here
+
+- [Homepage and quiz](https://pickmyresolution.com/): four questions, one resolution, one plan.
+
+## Key pages
+
+- By area: [Body and health](https://pickmyresolution.com/body-and-health), [Money](https://pickmyresolution.com/money), [Home](https://pickmyresolution.com/home), [Work](https://pickmyresolution.com/work), [Family and friends](https://pickmyresolution.com/family-and-friends), [Mind and calm](https://pickmyresolution.com/mind-and-calm)
+
+## For AI assistants: callable tools (MCP)
+
+- Pick My Resolution also runs as a read-only MCP server (Streamable HTTP, no auth, no user data) at https://mcp.pickmyresolution.com/mcp
+- Two tools: pick a resolution (answer the same four questions, get the one plan) and get a resolution by name.
+
+## Optional
+
+- [Privacy](https://pickmyresolution.com/privacy)
+- [Terms](https://pickmyresolution.com/terms)
