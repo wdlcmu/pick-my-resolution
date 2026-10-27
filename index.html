@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pick My Resolution - One resolution worth keeping</title>
-<meta name="description" content="One resolution worth keeping. Plus a weekly check-in prompt to copy. Free forever. No ads. No accounts.">
+<title>Pick My Resolution - One resolution you can keep</title>
+<meta name="description" content="Pick one resolution you can keep this year. Four questions. About one minute. Free. No ads. No accounts.">
 <link rel="canonical" href="https://pickmyresolution.com/">
-<meta property="og:title" content="Pick My Resolution - One resolution worth keeping">
-<meta property="og:description" content="One resolution worth keeping. Plus a weekly check-in prompt to copy. Free forever. No ads. No accounts.">
+<meta property="og:title" content="Pick My Resolution - One resolution you can keep">
+<meta property="og:description" content="Pick one resolution you can keep this year. Four questions. About one minute. Free. No ads. No accounts.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://pickmyresolution.com/">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pick My Resolution - One resolution worth keeping">
-<meta name="twitter:description" content="One resolution worth keeping. Plus a weekly check-in prompt to copy. Free forever. No ads. No accounts.">
+<meta name="twitter:title" content="Pick My Resolution - One resolution you can keep">
+<meta name="twitter:description" content="Pick one resolution you can keep this year. Four questions. About one minute. Free. No ads. No accounts.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -20,10 +20,10 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "When does it launch?",
+      "name": "How long does it take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It is live now. You can pick your one resolution in about one minute."
+        "text": "About one minute. The quiz has four short questions."
       }
     },
     {
@@ -31,7 +31,7 @@
       "name": "Why only one resolution?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One resolution is easier to keep than a long list. You get one that fits. Give it your full focus."
+        "text": "One is easier to keep than a long list. Small steps add up when you stick to one."
       }
     },
     {
@@ -166,8 +166,8 @@
         <p class="brand">Pick My Resolution</p>
         <div class="hero-grid">
           <div class="hero-copy">
-            <h1>Pick one resolution that fits.</h1>
-            <p class="sub">Four short questions. One clear plan for your year.</p>
+            <h1>Pick one resolution you can keep.</h1>
+            <p class="sub">Four questions. About one minute. Free.</p>
             <p class="countdown" id="countdown" aria-live="polite"></p>
             <button class="cta" id="btn-start">Pick my resolution</button>
             <p class="free">Free forever. No ads. No accounts.</p>
@@ -195,13 +195,13 @@
     <div class="how">
       <h2>How it works</h2>
       <ol>
-        <li>Pick what needs care.</li>
-        <li>Tell us your real time.</li>
-        <li>Get one plan that fits.</li>
+        <li>Pick one part of your life.</li>
+        <li>Pick how much time you have.</li>
+        <li>Get one small plan for the year.</li>
       </ol>
     </div>
     <div class="areas">
-      <h2>Start with one area</h2>
+      <h2>Pick a part of your life</h2>
       <div class="area-grid">
         <a class="area-card" href="/body-and-health"><img src="/img/area-health-sm.jpg" alt="Man stretching by a bright window" loading="lazy"><span>Body and health</span></a>
         <a class="area-card" href="/money"><img src="/img/area-money-sm.jpg" alt="Hands writing in a blank notebook" loading="lazy"><span>Money</span></a>
@@ -213,10 +213,10 @@
     </div>
     <div class="faq">
       <h2>Common questions</h2>
-      <h3>When does it launch?</h3>
-      <p>It is live now. You can pick your one resolution in about one minute.</p>
+      <h3>How long does it take?</h3>
+      <p>About one minute. The quiz has four short questions.</p>
       <h3>Why only one resolution?</h3>
-      <p>One resolution is easier to keep than a long list. You get one that fits. Give it your full focus.</p>
+      <p>One is easier to keep than a long list. Small steps add up when you stick to one.</p>
       <h3>Is it free?</h3>
       <p>Yes. It is free forever, with no ads and no accounts.</p>
     </div>
@@ -249,9 +249,9 @@
       <p class="label">If it gets hard</p>
       <p id="r-guard"></p>
     </div>
-    <p class="label">Weekly check-in prompt</p>
+    <p class="label">Your weekly check-in</p>
     <pre id="r-checkin"></pre>
-    <button class="cta" id="btn-copy-checkin">Copy my check-in prompt</button>
+    <button class="cta" id="btn-copy-checkin">Copy my weekly check-in</button>
     <p class="status" id="st-checkin"></p>
     <p class="label">Share text</p>
     <pre id="r-share"></pre>
@@ -497,9 +497,9 @@ function copyText(text, statusEl, okMsg) {
 }
 
 var STEPS = [
-  { key: "area", title: "What part of life needs care?", list: AREAS },
-  { key: "off", title: "What felt off this year?", list: OFFS },
-  { key: "time", title: "How much time can you give?", list: TIMES },
+  { key: "area", title: "Pick one part of your life.", list: AREAS },
+  { key: "off", title: "What was hard this year?", list: OFFS },
+  { key: "time", title: "How much time do you have each week?", list: TIMES },
   { key: "fail", title: "What made past plans fail?", list: FAILS }
 ];
 var KEY = "pmr_result_v1";
