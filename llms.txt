@@ -8,6 +8,7 @@
 - You get one resolution, not a list. One resolution is easier to keep than a long list.
 - The plan includes a first move for week one, a note for when it gets hard, and a weekly check-in prompt to copy into your own AI.
 - The year card is one picture for your lock screen: 52 dots, one for each week.
+- After your pick, you can write a note to future you. Save it as a letter card. It opens in 30 days, 90 days, or on Dec 31. The note stays in your browser.
 - The quiz draws on a bank of 30 actions and returns one of 90 resolutions.
 
 ## Start here
