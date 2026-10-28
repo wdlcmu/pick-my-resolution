@@ -679,12 +679,11 @@ Browse by area: Body and health
 Privacy - Pick My Resolution
 Pick My Resolution
 Privacy
-The short version: Your quiz plan stays in your browser.
+Your quiz plan stays in your browser.
 Cloudflare and PostHog count visits to this site.
 There is no account or email signup.
 What the quiz saves
-Finishing the quiz saves your four answers.
-It also saves the result you see.
+Finishing the quiz saves your four answers and result.
 The result includes its check-in and share text.
 The save uses this browser's local storage.
 Your answers and plan stay on this device.
@@ -705,22 +704,21 @@ The site does not send copied text anywhere.
 You choose where to paste copied text.
 Sharing starts only when you tap Share.
 Site counts
-This page also loads Cloudflare Web Analytics.
+This page loads Cloudflare Web Analytics.
 It sends page and performance counts to Cloudflare.
 Cloudflare says its beacon uses no cookies.
 Cloudflare says its beacon does not read local storage.
 The home page also runs PostHog.
 PostHog counts page views and quiz starts.
 It counts finishes, shares, and return visits.
-It counts check-in copies and year cards.
-It counts letter cards the same way.
+It counts check-in copies, year cards, and letter cards.
 Your note text is never sent to it.
 Your quiz answers are never sent to it.
 It does not record your screen.
 Contact
 Questions about privacy: hello@pickmyresolution.com.
 Changes
-Changes will appear on this page.
+Changes appear on this page.
 Built with Muse.
 Browse by area: Body and health
 · Money
