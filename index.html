@@ -94,7 +94,13 @@
   .status { min-height: 20px; font-size: 14px; font-weight: 600; color: var(--accent); margin: 6px 0; }
   .saved-label { font-size: 14px; font-weight: 600; color: var(--muted); margin: 0 0 10px; }
   [hidden] { display: none !important; }
-  #yc-out img { display: block; width: 100%; max-width: 270px; height: auto; margin: 12px auto 4px; border-radius: 14px; box-shadow: 0 8px 22px rgba(10, 41, 37, 0.35); }
+  #yc-out img, #lt-out img { display: block; width: 100%; max-width: 270px; height: auto; margin: 12px auto 4px; border-radius: 14px; box-shadow: 0 8px 22px rgba(10, 41, 37, 0.35); }
+  textarea {
+    width: 100%; font: inherit; font-size: 16px; line-height: 1.5; color: var(--ink);
+    background: var(--card); border: 2px solid var(--line); border-radius: 12px;
+    padding: 12px 14px; margin: 8px 0; resize: vertical;
+  }
+  textarea:focus { outline: none; border-color: var(--accent); }
   pre {
     white-space: pre-wrap; font: inherit; font-size: 14px; line-height: 1.5;
     background: var(--card); border: 2px solid var(--line); border-radius: 12px;
@@ -264,6 +270,18 @@
     <p class="status" id="st-yearcard"></p>
     <button class="ghost" id="btn-yc-share" hidden>Share my year card</button>
     <a class="ghost" id="yc-dl" href="#" download="year-card.png" hidden style="text-decoration:none">Download my year card</a>
+    <p class="label">A note to future you</p>
+    <p class="sub" style="font-size:14px">Write a short note today. Open it again on a day you pick.</p>
+    <p class="saved-label" id="lt-saved" hidden></p>
+    <textarea id="lt-note" rows="4" maxlength="400" aria-label="Your note to future you" placeholder="Dear future me,"></textarea>
+    <div class="chips" id="lt-chips"></div>
+    <p class="hint" id="lt-date"></p>
+    <p class="sub" style="font-size:14px">Your note stays in this browser. It never leaves your device.</p>
+    <button class="cta" id="btn-letter">Save my letter card</button>
+    <div id="lt-out"></div>
+    <p class="status" id="st-letter"></p>
+    <button class="ghost" id="btn-lt-share" hidden>Share my letter card</button>
+    <a class="ghost" id="lt-dl" href="#" download="letter-card.png" hidden style="text-decoration:none">Download my letter card</a>
     <button class="ghost" id="btn-change">Change answers</button>
     <button class="ghost" id="btn-again">Start over</button>
   </section>
@@ -505,12 +523,14 @@ var STEPS = [
 var KEY = "pmr_result_v1";
 var quiz = { step: 0, area: null, off: null, time: null, fail: null };
 var current = null;
+var letter = null;
 
 function saveResult() {
   try {
     localStorage.setItem(KEY, JSON.stringify({
       answers: { area: quiz.area, off: quiz.off, time: quiz.time, fail: quiz.fail },
-      result: current
+      result: current,
+      letter: letter
     }));
   } catch (e) {}
 }
@@ -570,9 +590,14 @@ function renderResult() {
   $("yc-out").innerHTML = "";
   $("btn-yc-share").hidden = true;
   $("yc-dl").hidden = true;
+  // A new result also retires any letter written for the old one.
+  resetLetter();
 }
 function finishQuiz() {
   current = buildResult(quiz);
+  // A fresh pick starts with no letter; the old pick's letter must not
+  // ride into the new saved record.
+  letter = null;
   saveResult();
   renderResult();
   show("s-result");
@@ -723,6 +748,179 @@ $("btn-yc-share").onclick = async function () {
   var f = new File([ycBlob], "year-card.png", { type: "image/png" });
   try { await navigator.share({ files: [f], title: "My year card" }); } catch (e) { /* sheet closed, nothing to do */ }
 };
+
+// Future-you letter (2026-10-27): an optional note written under the
+// result just made, drawn as a letter card in the year card's dawn
+// style. The card carries the resolution, the note, and the day to
+// open it. Nothing is sent anywhere: the note lives in the same local
+// storage record as the plan, and Start over removes it with the plan.
+// Email delivery is a separate staged build (ship queue spec).
+var ltBlob = null;
+var ltHorizon = "d90";
+var LT_WHEN = [
+  { k: "d30", label: "30 days" },
+  { k: "d90", label: "90 days" },
+  { k: "dec31", label: "Dec 31" }
+];
+function ltOpenDate() {
+  var now = new Date();
+  var d = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  if (ltHorizon === "d30") d.setDate(d.getDate() + 30);
+  else if (ltHorizon === "d90") d.setDate(d.getDate() + 90);
+  else d = new Date(ycYear(), 11, 31);
+  return d;
+}
+function renderLetterChips() {
+  $("lt-chips").innerHTML = LT_WHEN.map(function (o) {
+    var on = ltHorizon === o.k;
+    return '<button class="chip" data-k="' + o.k + '" aria-pressed="' + on + '">' +
+      '<span class="tick">\u2713</span>' + o.label + "</button>";
+  }).join("");
+  $("lt-date").textContent = "Opens on " + ltOpenDate().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" }) + ".";
+  var chips = $("lt-chips").querySelectorAll(".chip");
+  for (var c = 0; c < chips.length; c++) {
+    chips[c].onclick = (function (el) {
+      return function () {
+        ltHorizon = el.getAttribute("data-k");
+        if (letter) { letter.h = ltHorizon; saveResult(); }
+        retireLetterCard();
+        renderLetterChips();
+      };
+    })(chips[c]);
+  }
+}
+function retireLetterCard() {
+  ltBlob = null;
+  $("lt-out").innerHTML = "";
+  $("btn-lt-share").hidden = true;
+  $("lt-dl").hidden = true;
+  $("st-letter").textContent = "";
+}
+function resetLetter() {
+  letter = null;
+  ltHorizon = "d90";
+  if ($("lt-note")) $("lt-note").value = "";
+  if ($("lt-saved")) { $("lt-saved").textContent = ""; $("lt-saved").hidden = true; }
+  retireLetterCard();
+  renderLetterChips();
+}
+function wrapLines(c, text, maxW) {
+  var words = text.split(" ");
+  var lines = [];
+  var line = "";
+  for (var i = 0; i < words.length; i++) {
+    var test = line ? line + " " + words[i] : words[i];
+    if (line && c.measureText(test).width > maxW) { lines.push(line); line = words[i]; }
+    else { line = test; }
+  }
+  if (line) lines.push(line);
+  return lines;
+}
+function drawLetterCard() {
+  if (!current) return;
+  var note = $("lt-note").value.replace(/\s+/g, " ").trim();
+  if (!note) {
+    $("lt-date").textContent = "Write your note first.";
+    try { $("lt-note").focus(); } catch (e) {}
+    return;
+  }
+  letter = { note: note, h: ltHorizon };
+  saveResult();
+  $("lt-saved").textContent = "Your letter is saved in this browser.";
+  $("lt-saved").hidden = false;
+  var p = ycParts();
+  var openText = ltOpenDate().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }).toUpperCase();
+  var cv = document.createElement("canvas");
+  cv.width = 1080; cv.height = 1350;
+  var c = cv.getContext("2d");
+  var F = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif";
+  var L = 72, W = 1080 - 144;
+  // Same dawn background as the year card.
+  var g = c.createLinearGradient(0, 0, 420, 1350);
+  g.addColorStop(0, "#0a2925"); g.addColorStop(0.58, "#0e3a32"); g.addColorStop(1, "#14532d");
+  c.fillStyle = g; c.fillRect(0, 0, 1080, 1350);
+  var glow = c.createRadialGradient(950, -60, 40, 950, -60, 640);
+  glow.addColorStop(0, "rgba(245,159,0,0.38)"); glow.addColorStop(1, "rgba(245,159,0,0)");
+  c.fillStyle = glow; c.fillRect(0, 0, 1080, 1350);
+  c.fillStyle = "#f59f00"; c.font = "700 30px " + F;
+  c.fillText("PICK MY RESOLUTION", L, 108);
+  c.fillStyle = "#ffd88a"; c.font = "700 28px " + F;
+  c.fillText("A NOTE TO FUTURE YOU", L, 198);
+  c.fillStyle = "#ffffff"; c.font = "800 66px " + F;
+  if (c.measureText(p.name).width > W) c.font = "800 56px " + F;
+  var y = ycWrap(c, p.name, L, 292, W, 80);
+  c.fillStyle = "#f59f00"; c.font = "700 40px " + F;
+  c.fillText(p.dose, L, y + 40);
+  y += 40;
+  // The note: the biggest size whose wrapped lines fit the space.
+  var noteTop = y + 118;
+  var sizes = [36, 33, 30, 27];
+  var chosen = 27, lines = null;
+  for (var s = 0; s < sizes.length; s++) {
+    c.font = "400 " + sizes[s] + "px " + F;
+    var ls = wrapLines(c, note, W);
+    lines = ls;
+    if (ls.length * (sizes[s] + 14) <= 500) { chosen = sizes[s]; break; }
+  }
+  c.fillStyle = "#ffd88a"; c.font = "700 26px " + F;
+  c.fillText("YOUR NOTE", L, noteTop - 44);
+  c.fillStyle = "#ffffff"; c.font = "400 " + chosen + "px " + F;
+  var ly = noteTop;
+  for (var i = 0; i < lines.length; i++) { c.fillText(lines[i], L, ly); ly += chosen + 14; }
+  // The open date, anchored near the foot of the card.
+  c.fillStyle = "#ffd88a"; c.font = "700 26px " + F;
+  c.fillText("OPEN ON", L, 1128);
+  c.fillStyle = "#f59f00"; c.font = "800 46px " + F;
+  c.fillText(openText, L, 1188);
+  c.fillStyle = "#8fb3a4"; c.font = "400 26px " + F;
+  c.fillText("Built with Muse.", L, 1292);
+  var site = "pickmyresolution.com";
+  c.fillText(site, 1080 - L - c.measureText(site).width, 1292);
+  cv.toBlob(function (blob) {
+    ltBlob = blob;
+    var url = cv.toDataURL("image/png");
+    window.__lastLetterCard = { dataURL: url, note: note, horizon: ltHorizon, openDate: openText, name: p.name, dose: p.dose };
+    var wrap = $("lt-out"); wrap.innerHTML = "";
+    var im = document.createElement("img");
+    im.alt = "Your letter card";
+    im.src = url;
+    wrap.appendChild(im);
+    var dl = $("lt-dl"); dl.href = url; dl.hidden = false;
+    var can = false;
+    try { can = !!(blob && navigator.canShare && navigator.canShare({ files: [new File([blob], "letter-card.png", { type: "image/png" })] })); } catch (e) { can = false; }
+    $("btn-lt-share").hidden = !can;
+    $("st-letter").textContent = can ? "Tap share to send it, or download the picture." : "Download the picture. Keep it where you will see it.";
+  }, "image/png");
+}
+function restoreLetter(savedLetter) {
+  if (!savedLetter || !savedLetter.note) return;
+  var known = false;
+  for (var i = 0; i < LT_WHEN.length; i++) if (LT_WHEN[i].k === savedLetter.h) known = true;
+  letter = { note: savedLetter.note, h: known ? savedLetter.h : "d90" };
+  ltHorizon = letter.h;
+  $("lt-note").value = letter.note;
+  renderLetterChips();
+  $("lt-saved").textContent = "Your letter is saved in this browser.";
+  $("lt-saved").hidden = false;
+  drawLetterCard();
+}
+$("btn-letter").onclick = function () { drawLetterCard(); };
+$("btn-lt-share").onclick = async function () {
+  if (!ltBlob) return;
+  var f = new File([ltBlob], "letter-card.png", { type: "image/png" });
+  try { await navigator.share({ files: [f], title: "My letter card" }); } catch (e) { /* sheet closed, nothing to do */ }
+};
+$("lt-note").addEventListener("input", function () {
+  var note = $("lt-note").value.replace(/\s+/g, " ").trim();
+  if (letter && note !== letter.note) {
+    letter = null;
+    saveResult();
+    $("lt-saved").textContent = "";
+    $("lt-saved").hidden = true;
+  }
+  retireLetterCard();
+  if ($("lt-date").textContent === "Write your note first.") renderLetterChips();
+});
 $("btn-change").onclick = function () {
   quiz.step = 0;
   renderQuiz();
@@ -731,6 +929,7 @@ $("btn-change").onclick = function () {
 $("btn-again").onclick = function () {
   clearResult();
   current = null;
+  resetLetter();
   quiz = { step: 0, area: null, off: null, time: null, fail: null };
   renderQuiz();
   show("s-quiz");
@@ -770,6 +969,7 @@ if (hasStartFlag()) {
   renderResult();
   $("r-saved").textContent = "Your saved plan on this device.";
   $("r-saved").hidden = false;
+  restoreLetter(saved.letter);
   show("s-result");
 }
 </script>
@@ -851,6 +1051,12 @@ function fleetSessionMarks(){
   if (yc) yc.addEventListener("click", function(){ fleetTrack("artifact_created", {tool: "resolution-picker", artifact: "year-card"}); });
   var yd = document.getElementById("yc-dl");
   if (yd) yd.addEventListener("click", function(){ fleetTrack("artifact_created", {tool: "resolution-picker", artifact: "year-card-download"}); });
+  var lb = document.getElementById("btn-letter");
+  if (lb) lb.addEventListener("click", function(){ var t = document.getElementById("lt-note"); if (t && t.value.trim()) fleetTrack("artifact_created", {tool: "resolution-picker", artifact: "letter-card"}); });
+  var ld = document.getElementById("lt-dl");
+  if (ld) ld.addEventListener("click", function(){ fleetTrack("artifact_created", {tool: "resolution-picker", artifact: "letter-card-download"}); });
+  var lsh = document.getElementById("btn-lt-share");
+  if (lsh) lsh.addEventListener("click", function(){ fleetTrack("share_intent", {tool: "resolution-picker", channel: "native"}); });
   var cs = document.getElementById("btn-copy-share");
   if (cs) cs.addEventListener("click", function(){ fleetTrack("share_intent", {tool: "resolution-picker", channel: "clipboard"}); });
   var ys = document.getElementById("btn-yc-share");

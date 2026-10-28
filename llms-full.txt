@@ -49,6 +49,12 @@ One picture for your lock screen. 52 dots, one for each week.
 Get my year card
 Share my year card
 Download my year card
+A note to future you
+Write a short note today. Open it again on a day you pick.
+Your note stays in this browser. It never leaves your device.
+Save my letter card
+Share my letter card
+Download my letter card
 Change answers
 Start over
 Built with Muse.
@@ -684,9 +690,14 @@ The save uses this browser's local storage.
 Your answers and plan stay on this device.
 Anyone using this browser can open it.
 The quiz code uses local storage, not cookies.
+The result screen also offers a letter card.
+Writing a note saves that note too.
+It saves the open date you picked.
+Your note is never sent to us.
 Clearing your saved plan
 Open your saved plan and tap Start over.
 That button removes the saved answers and result.
+It removes your saved note too.
 Browser site-data controls can remove it too.
 Copying and sharing
 Copy buttons place text on your clipboard.
@@ -702,6 +713,8 @@ The home page also runs PostHog.
 PostHog counts page views and quiz starts.
 It counts finishes, shares, and return visits.
 It counts check-in copies and year cards.
+It counts letter cards the same way.
+Your note text is never sent to it.
 Your quiz answers are never sent to it.
 It does not record your screen.
 Contact
