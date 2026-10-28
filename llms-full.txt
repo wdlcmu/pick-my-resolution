@@ -1,0 +1,778 @@
+# Pick My Resolution: full page text
+
+> Complete text of pickmyresolution.com: every page, plus the full bank inside its free quiz.
+> The quiz picks one New Year's resolution you can keep. Four questions, about one minute.
+> Free forever. No ads, no accounts. Your answers stay in your browser.
+> Text captured from the live site, 2026-10-27.
+
+## Homepage and quiz (https://pickmyresolution.com/)
+
+Pick My Resolution - One resolution you can keep
+Pick My Resolution
+Pick one resolution you can keep.
+Four questions. About one minute. Free.
+Pick my resolution
+Free forever. No ads. No accounts.
+A fresh start
+Morning walks
+People first
+How it works
+Pick one part of your life.
+Pick how much time you have.
+Get one small plan for the year.
+Pick a part of your life
+Body and health
+Money
+Home
+Work
+Family and friends
+Mind and calm
+Common questions
+How long does it take?
+About one minute. The quiz has four short questions.
+Why only one resolution?
+One is easier to keep than a long list. Small steps add up when you stick to one.
+Is it free?
+Yes. It is free forever, with no ads and no accounts.
+Back
+Continue
+Your plan is set
+Your one resolution
+First move, week one
+If it gets hard
+Your weekly check-in
+Copy my weekly check-in
+Share text
+Copy my share text
+Your year card
+One picture for your lock screen. 52 dots, one for each week.
+Get my year card
+Share my year card
+Download my year card
+Change answers
+Start over
+Built with Muse.
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+· Privacy
+· Terms
+More family tools: Fill My Bracket, your March bracket
+
+### The four questions
+
+1. Pick one part of your life. Options: Body and health; Money; Home; Work; Family and friends; Mind and calm.
+2. What was hard this year? Options: I felt drained a lot. Things piled up on me. I felt stuck in place. I drifted from good habits. I felt alone a lot.
+3. How much time do you have each week? Options: 30 minutes a week; 2 hours a week; 5 hours a week.
+4. What made past plans fail? Options: I tried to do too much. I just forgot to do it. Life got busy and loud. I got bored and quit.
+
+### The bank: 30 actions, 90 resolutions
+
+Each action below appears at three time levels, so the bank returns one of 90 resolutions.
+Every result also carries a first move for week one, one note for when it gets hard (picked by question 4),
+a weekly check-in prompt to copy into your own AI, and a year card with 52 dots, one for each week.
+
+#### Body and health
+
+- Take a short walk (when you felt: I felt drained a lot.)
+  - 30 minutes a week: "Take a short walk: 10 min, 3x a week." First move: Take a short walk for 10 min.
+  - 2 hours a week: "Take a short walk: 30 min, 4x a week." First move: Take a short walk for 30 min.
+  - 5 hours a week: "Take a short walk: 30 min, 7x a week." First move: Take a short walk for 30 min.
+- Cook a real meal (when you felt: Things piled up on me.)
+  - 30 minutes a week: "Cook a real meal: 30 min, 1x a week." First move: Cook one real meal. Give it about 30 min.
+  - 2 hours a week: "Cook a real meal: 30 min, 4x a week." First move: Cook one real meal. Give it about 30 min.
+  - 5 hours a week: "Cook a real meal: 60 min, 5x a week." First move: Cook one real meal. Give it about 60 min.
+- Do a short workout (when you felt: I felt stuck in place.)
+  - 30 minutes a week: "Do a short workout: 10 min, 3x a week." First move: Do a short workout for 10 min.
+  - 2 hours a week: "Do a short workout: 30 min, 4x a week." First move: Do a short workout for 30 min.
+  - 5 hours a week: "Do a short workout: 40 min, 5x a week." First move: Do a short workout for 40 min.
+- Stretch your whole body (when you felt: I drifted from good habits.)
+  - 30 minutes a week: "Stretch your whole body: 10 min, 3x a week." First move: Stretch your whole body for 10 min.
+  - 2 hours a week: "Stretch your whole body: 20 min, 5x a week." First move: Stretch your whole body for 20 min.
+  - 5 hours a week: "Stretch your whole body: 20 min, 7x a week." First move: Stretch your whole body for 20 min.
+- Walk with a friend (when you felt: I felt alone a lot.)
+  - 30 minutes a week: "Walk with a friend: 30 min, 1x a week." First move: Walk with a friend for 30 min.
+  - 2 hours a week: "Walk with a friend: 30 min, 4x a week." First move: Walk with a friend for 30 min.
+  - 5 hours a week: "Walk with a friend: 45 min, 5x a week." First move: Walk with a friend for 45 min.
+
+#### Money
+
+- Check your bank balance (when you felt: I felt drained a lot.)
+  - 30 minutes a week: "Check your bank balance: 2 min, 3x a week." First move: Check your bank balance now. It takes about 2 min.
+  - 2 hours a week: "Check your bank balance: 5 min, 3x a week." First move: Check your bank balance now. It takes about 2 min.
+  - 5 hours a week: "Check your bank balance: 5 min, 5x a week." First move: Check your bank balance now. It takes about 2 min.
+- Sort bills in one spot (when you felt: Things piled up on me.)
+  - 30 minutes a week: "Sort bills in one spot: 20 min, 1x a week." First move: Sort bills in one spot for 20 min.
+  - 2 hours a week: "Sort bills in one spot: 30 min, 1x a week." First move: Sort bills in one spot for 30 min.
+  - 5 hours a week: "Sort bills in one spot: 30 min, 2x a week." First move: Sort bills in one spot for 30 min.
+- Move cash to savings (when you felt: I felt stuck in place.)
+  - 30 minutes a week: "Move cash to savings: 2 min, 1x a week." First move: Move one small amount to savings today.
+  - 2 hours a week: "Move cash to savings: 2 min, 2x a week." First move: Move one small amount to savings today.
+  - 5 hours a week: "Move cash to savings: 2 min, 3x a week." First move: Move one small amount to savings today.
+- Write down what you spend (when you felt: I drifted from good habits.)
+  - 30 minutes a week: "Write down what you spend: 10 min, 3x a week." First move: Write down what you spend for 10 min.
+  - 2 hours a week: "Write down what you spend: 10 min, 5x a week." First move: Write down what you spend for 10 min.
+  - 5 hours a week: "Write down what you spend: 10 min, 7x a week." First move: Write down what you spend for 10 min.
+- Tell a friend your goal (when you felt: I felt alone a lot.)
+  - 30 minutes a week: "Tell a friend your goal: 15 min, 2x a week." First move: Tell a friend your goal for 15 min.
+  - 2 hours a week: "Tell a friend your goal: 30 min, 2x a week." First move: Tell a friend your goal for 30 min.
+  - 5 hours a week: "Tell a friend your goal: 30 min, 4x a week." First move: Tell a friend your goal for 30 min.
+
+#### Home
+
+- Tidy one small corner (when you felt: I felt drained a lot.)
+  - 30 minutes a week: "Tidy one small corner: 10 min, 3x a week." First move: Tidy one small corner for 10 min.
+  - 2 hours a week: "Tidy one small corner: 20 min, 4x a week." First move: Tidy one small corner for 20 min.
+  - 5 hours a week: "Tidy one small corner: 20 min, 7x a week." First move: Tidy one small corner for 20 min.
+- Clear one shelf fully (when you felt: Things piled up on me.)
+  - 30 minutes a week: "Clear one shelf fully: 25 min, 1x a week." First move: Clear one shelf fully. Take about 25 min.
+  - 2 hours a week: "Clear one shelf fully: 30 min, 2x a week." First move: Clear one shelf fully. Take about 25 min.
+  - 5 hours a week: "Clear one shelf fully: 30 min, 5x a week." First move: Clear one shelf fully. Take about 25 min.
+- Fix one small thing (when you felt: I felt stuck in place.)
+  - 30 minutes a week: "Fix one small thing: 30 min, 1x a week." First move: Fix one small thing. Start with 30 min.
+  - 2 hours a week: "Fix one small thing: 45 min, 1x a week." First move: Fix one small thing. Start with 30 min.
+  - 5 hours a week: "Fix one small thing: 45 min, 3x a week." First move: Fix one small thing. Start with 30 min.
+- Make one room cozy (when you felt: I drifted from good habits.)
+  - 30 minutes a week: "Make one room cozy: 30 min, 1x a week." First move: Make one room cozy. Start with 30 min.
+  - 2 hours a week: "Make one room cozy: 60 min, 1x a week." First move: Make one room cozy. Start with 30 min.
+  - 5 hours a week: "Make one room cozy: 60 min, 3x a week." First move: Make one room cozy. Start with 30 min.
+- Have a friend visit (when you felt: I felt alone a lot.)
+  - 30 minutes a week: "Have a friend visit: 30 min, 1x a week." First move: Have a friend visit. No timer. Just talk and relax.
+  - 2 hours a week: "Have a friend visit: 60 min, 2x a week." First move: Have a friend visit. No timer. Just talk and relax.
+  - 5 hours a week: "Have a friend visit: 60 min, 3x a week." First move: Have a friend visit. No timer. Just talk and relax.
+
+#### Work
+
+- Plan your day on paper (when you felt: I felt drained a lot.)
+  - 30 minutes a week: "Plan your day on paper: 10 min, 3x a week." First move: Plan your day on paper for 10 min.
+  - 2 hours a week: "Plan your day on paper: 10 min, 5x a week." First move: Plan your day on paper for 10 min.
+  - 5 hours a week: "Plan your day on paper: 10 min, 7x a week." First move: Plan your day on paper for 10 min.
+- Clear your desk top (when you felt: Things piled up on me.)
+  - 30 minutes a week: "Clear your desk top: 10 min, 3x a week." First move: Clear your desk top for 10 min.
+  - 2 hours a week: "Clear your desk top: 15 min, 4x a week." First move: Clear your desk top for 15 min.
+  - 5 hours a week: "Clear your desk top: 20 min, 5x a week." First move: Clear your desk top for 20 min.
+- Learn one work skill (when you felt: I felt stuck in place.)
+  - 30 minutes a week: "Learn one work skill: 10 min, 3x a week." First move: Learn one work skill for 10 min.
+  - 2 hours a week: "Learn one work skill: 30 min, 4x a week." First move: Learn one work skill for 30 min.
+  - 5 hours a week: "Learn one work skill: 60 min, 5x a week." First move: Learn one work skill for 60 min.
+- Chat with a work friend (when you felt: I drifted from good habits.)
+  - 30 minutes a week: "Chat with a work friend: 10 min, 3x a week." First move: Chat with a work friend for 10 min.
+  - 2 hours a week: "Chat with a work friend: 30 min, 4x a week." First move: Chat with a work friend for 30 min.
+  - 5 hours a week: "Chat with a work friend: 30 min, 5x a week." First move: Chat with a work friend for 30 min.
+- Eat lunch with coworkers (when you felt: I felt alone a lot.)
+  - 30 minutes a week: "Eat lunch with coworkers: 30 min, 1x a week." First move: Eat lunch with coworkers for 30 min.
+  - 2 hours a week: "Eat lunch with coworkers: 30 min, 4x a week." First move: Eat lunch with coworkers for 30 min.
+  - 5 hours a week: "Eat lunch with coworkers: 45 min, 5x a week." First move: Eat lunch with coworkers for 45 min.
+
+#### Family and friends
+
+- Talk with family at home (when you felt: I felt drained a lot.)
+  - 30 minutes a week: "Talk with family at home: 10 min, 3x a week." First move: Talk with family at home for 10 min.
+  - 2 hours a week: "Talk with family at home: 30 min, 4x a week." First move: Talk with family at home for 30 min.
+  - 5 hours a week: "Talk with family at home: 60 min, 5x a week." First move: Talk with family at home for 60 min.
+- Share one meal together (when you felt: Things piled up on me.)
+  - 30 minutes a week: "Share one meal together: 30 min, 1x a week." First move: Share one meal together. No timer. Just eat and talk.
+  - 2 hours a week: "Share one meal together: 30 min, 4x a week." First move: Share one meal together. No timer. Just eat and talk.
+  - 5 hours a week: "Share one meal together: 60 min, 5x a week." First move: Share one meal together. No timer. Just eat and talk.
+- Play one game together (when you felt: I felt stuck in place.)
+  - 30 minutes a week: "Play one game together: 10 min, 3x a week." First move: Play one quick game together.
+  - 2 hours a week: "Play one game together: 30 min, 4x a week." First move: Play one quick game together.
+  - 5 hours a week: "Play one game together: 60 min, 5x a week." First move: Play one quick game together.
+- Call a friend you miss (when you felt: I drifted from good habits.)
+  - 30 minutes a week: "Call a friend you miss: 10 min, 3x a week." First move: Call a friend you miss. Talk as long as feels good.
+  - 2 hours a week: "Call a friend you miss: 30 min, 4x a week." First move: Call a friend you miss. Talk as long as feels good.
+  - 5 hours a week: "Call a friend you miss: 30 min, 5x a week." First move: Call a friend you miss. Talk as long as feels good.
+- Visit someone you love (when you felt: I felt alone a lot.)
+  - 30 minutes a week: "Visit someone you love: 30 min, 1x a week." First move: Visit someone you love. Take your time and stay a while.
+  - 2 hours a week: "Visit someone you love: 60 min, 2x a week." First move: Visit someone you love. Take your time and stay a while.
+  - 5 hours a week: "Visit someone you love: 60 min, 4x a week." First move: Visit someone you love. Take your time and stay a while.
+
+#### Mind and calm
+
+- Sit in a quiet place (when you felt: I felt drained a lot.)
+  - 30 minutes a week: "Sit in a quiet place: 10 min, 3x a week." First move: Sit in a quiet place for 10 min.
+  - 2 hours a week: "Sit in a quiet place: 20 min, 5x a week." First move: Sit in a quiet place for 20 min.
+  - 5 hours a week: "Sit in a quiet place: 20 min, 7x a week." First move: Sit in a quiet place for 20 min.
+- Write thoughts on paper (when you felt: Things piled up on me.)
+  - 30 minutes a week: "Write thoughts on paper: 10 min, 3x a week." First move: Write thoughts on paper for 10 min.
+  - 2 hours a week: "Write thoughts on paper: 20 min, 5x a week." First move: Write thoughts on paper for 20 min.
+  - 5 hours a week: "Write thoughts on paper: 20 min, 7x a week." First move: Write thoughts on paper for 20 min.
+- Read a calm book (when you felt: I felt stuck in place.)
+  - 30 minutes a week: "Read a calm book: 10 min, 3x a week." First move: Read a calm book for 10 min.
+  - 2 hours a week: "Read a calm book: 30 min, 4x a week." First move: Read a calm book for 30 min.
+  - 5 hours a week: "Read a calm book: 60 min, 5x a week." First move: Read a calm book for 60 min.
+- Breathe slow in fresh air (when you felt: I drifted from good habits.)
+  - 30 minutes a week: "Breathe slow in fresh air: 10 min, 3x a week." First move: Breathe slow in fresh air for 10 min.
+  - 2 hours a week: "Breathe slow in fresh air: 10 min, 5x a week." First move: Breathe slow in fresh air for 10 min.
+  - 5 hours a week: "Breathe slow in fresh air: 10 min, 7x a week." First move: Breathe slow in fresh air for 10 min.
+- Sit outside with others (when you felt: I felt alone a lot.)
+  - 30 minutes a week: "Sit outside with others: 10 min, 3x a week." First move: Sit outside with others for 10 min.
+  - 2 hours a week: "Sit outside with others: 20 min, 5x a week." First move: Sit outside with others for 20 min.
+  - 5 hours a week: "Sit outside with others: 30 min, 5x a week." First move: Sit outside with others for 30 min.
+
+### The four notes for when it gets hard
+
+- I tried to do too much. -> Keep this one small. Small still counts.
+- I just forgot to do it. -> Put your move on your calendar today.
+- Life got busy and loud. -> Miss a day? Do half the next day.
+- I got bored and quit. -> Change the place or time each week.
+
+### The weekly check-in prompt (template)
+
+The prompt copies with your own resolution and first move filled in. Shape, shown with the first bank entry:
+
+Weekly check-in for my resolution.
+Resolution:
+Take a short walk: 10 min, 3x a week.
+First move:
+Take a short walk for 10 min.
+Did I do my move this week?
+What got in my way?
+What is one small move for next week?
+Please keep your reply short and kind.
+
+## Area pages
+
+### Body and health (https://pickmyresolution.com/body-and-health)
+
+Body and health resolutions - Pick My Resolution
+Pick My Resolution
+Body and health
+Feel strong and well this year. Pick one small move to start. Each move fits the time you have.
+Pick my resolution
+Free forever. No ads. No accounts.
+Your five moves
+Take a short walk
+For when
+I felt drained a lot.
+First move, week one
+Take a short walk for 10 min.
+Pick your time
+30 minutes a week: Take a short walk: 10 min, 3x a week.
+2 hours a week: Take a short walk: 30 min, 4x a week.
+5 hours a week: Take a short walk: 30 min, 7x a week.
+Cook a real meal
+For when
+Things piled up on me.
+First move, week one
+Cook one real meal. Give it about 30 min.
+Pick your time
+30 minutes a week: Cook a real meal: 30 min, 1x a week.
+2 hours a week: Cook a real meal: 30 min, 4x a week.
+5 hours a week: Cook a real meal: 60 min, 5x a week.
+Do a short workout
+For when
+I felt stuck in place.
+First move, week one
+Do a short workout for 10 min.
+Pick your time
+30 minutes a week: Do a short workout: 10 min, 3x a week.
+2 hours a week: Do a short workout: 30 min, 4x a week.
+5 hours a week: Do a short workout: 40 min, 5x a week.
+Stretch your whole body
+For when
+I drifted from good habits.
+First move, week one
+Stretch your whole body for 10 min.
+Pick your time
+30 minutes a week: Stretch your whole body: 10 min, 3x a week.
+2 hours a week: Stretch your whole body: 20 min, 5x a week.
+5 hours a week: Stretch your whole body: 20 min, 7x a week.
+Walk with a friend
+For when
+I felt alone a lot.
+First move, week one
+Walk with a friend for 30 min.
+Pick your time
+30 minutes a week: Walk with a friend: 30 min, 1x a week.
+2 hours a week: Walk with a friend: 30 min, 4x a week.
+5 hours a week: Walk with a friend: 45 min, 5x a week.
+Pick my resolution
+Four short questions. One clear plan for your year.
+Common questions
+How do I pick my body and health resolution?
+Take the short quiz on the home page. It asks what felt off this year. It asks how much time you have. Then it picks one move for you.
+What health moves can I pick from?
+This page lists all five health moves. One is Take a short walk. Two is Cook a real meal. Three is Do a short workout. Four is Stretch your whole body. Five is Walk with a friend. The quiz picks the one that fits you.
+What if I have just 30 minutes a week?
+That is fine. Your plan fits inside that time. Small moves count when you keep them.
+Built with Muse.
+Browse by area: Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
+
+### Money (https://pickmyresolution.com/money)
+
+Money resolutions - Pick My Resolution
+Pick My Resolution
+Money
+Feel calm and clear about money. Pick one small move to start. Each move fits the time you have.
+Pick my resolution
+Free forever. No ads. No accounts.
+Your five moves
+Check your bank balance
+For when
+I felt drained a lot.
+First move, week one
+Check your bank balance now. It takes about 2 min.
+Pick your time
+30 minutes a week: Check your bank balance: 2 min, 3x a week.
+2 hours a week: Check your bank balance: 5 min, 3x a week.
+5 hours a week: Check your bank balance: 5 min, 5x a week.
+Sort bills in one spot
+For when
+Things piled up on me.
+First move, week one
+Sort bills in one spot for 20 min.
+Pick your time
+30 minutes a week: Sort bills in one spot: 20 min, 1x a week.
+2 hours a week: Sort bills in one spot: 30 min, 1x a week.
+5 hours a week: Sort bills in one spot: 30 min, 2x a week.
+Move cash to savings
+For when
+I felt stuck in place.
+First move, week one
+Move one small amount to savings today.
+Pick your time
+30 minutes a week: Move cash to savings: 2 min, 1x a week.
+2 hours a week: Move cash to savings: 2 min, 2x a week.
+5 hours a week: Move cash to savings: 2 min, 3x a week.
+Write down what you spend
+For when
+I drifted from good habits.
+First move, week one
+Write down what you spend for 10 min.
+Pick your time
+30 minutes a week: Write down what you spend: 10 min, 3x a week.
+2 hours a week: Write down what you spend: 10 min, 5x a week.
+5 hours a week: Write down what you spend: 10 min, 7x a week.
+Tell a friend your goal
+For when
+I felt alone a lot.
+First move, week one
+Tell a friend your goal for 15 min.
+Pick your time
+30 minutes a week: Tell a friend your goal: 15 min, 2x a week.
+2 hours a week: Tell a friend your goal: 30 min, 2x a week.
+5 hours a week: Tell a friend your goal: 30 min, 4x a week.
+Pick my resolution
+Four short questions. One clear plan for your year.
+Common questions
+How do I pick my money resolution?
+Take the short quiz on the home page. It asks what felt off this year. It asks how much time you have. Then it picks one move for you.
+What money moves can I pick from?
+This page lists all five money moves. One is Check your bank balance. Two is Sort bills in one spot. Three is Move cash to savings. Four is Write down what you spend. Five is Tell a friend your goal. The quiz picks the one that fits you.
+What if I have just 30 minutes a week?
+That is fine. Your plan fits inside that time. Small moves count when you keep them.
+Built with Muse.
+Browse by area: Body and health
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
+
+### Home (https://pickmyresolution.com/home)
+
+Home resolutions - Pick My Resolution
+Pick My Resolution
+Home
+Love the place where you live. Pick one small move to start. Each move fits the time you have.
+Pick my resolution
+Free forever. No ads. No accounts.
+Your five moves
+Tidy one small corner
+For when
+I felt drained a lot.
+First move, week one
+Tidy one small corner for 10 min.
+Pick your time
+30 minutes a week: Tidy one small corner: 10 min, 3x a week.
+2 hours a week: Tidy one small corner: 20 min, 4x a week.
+5 hours a week: Tidy one small corner: 20 min, 7x a week.
+Clear one shelf fully
+For when
+Things piled up on me.
+First move, week one
+Clear one shelf fully. Take about 25 min.
+Pick your time
+30 minutes a week: Clear one shelf fully: 25 min, 1x a week.
+2 hours a week: Clear one shelf fully: 30 min, 2x a week.
+5 hours a week: Clear one shelf fully: 30 min, 5x a week.
+Fix one small thing
+For when
+I felt stuck in place.
+First move, week one
+Fix one small thing. Start with 30 min.
+Pick your time
+30 minutes a week: Fix one small thing: 30 min, 1x a week.
+2 hours a week: Fix one small thing: 45 min, 1x a week.
+5 hours a week: Fix one small thing: 45 min, 3x a week.
+Make one room cozy
+For when
+I drifted from good habits.
+First move, week one
+Make one room cozy. Start with 30 min.
+Pick your time
+30 minutes a week: Make one room cozy: 30 min, 1x a week.
+2 hours a week: Make one room cozy: 60 min, 1x a week.
+5 hours a week: Make one room cozy: 60 min, 3x a week.
+Have a friend visit
+For when
+I felt alone a lot.
+First move, week one
+Have a friend visit. No timer. Just talk and relax.
+Pick your time
+30 minutes a week: Have a friend visit: 30 min, 1x a week.
+2 hours a week: Have a friend visit: 60 min, 2x a week.
+5 hours a week: Have a friend visit: 60 min, 3x a week.
+Pick my resolution
+Four short questions. One clear plan for your year.
+Common questions
+How do I pick my home resolution?
+Take the short quiz on the home page. It asks what felt off this year. It asks how much time you have. Then it picks one move for you.
+What home moves can I pick from?
+This page lists all five home moves. One is Tidy one small corner. Two is Clear one shelf fully. Three is Fix one small thing. Four is Make one room cozy. Five is Have a friend visit. The quiz picks the one that fits you.
+What if I have just 30 minutes a week?
+That is fine. Your plan fits inside that time. Small moves count when you keep them.
+Built with Muse.
+Browse by area: Body and health
+· Money
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
+
+### Work (https://pickmyresolution.com/work)
+
+Work resolutions - Pick My Resolution
+Pick My Resolution
+Work
+Feel clear and calm at work. Pick one small move to start. Each move fits the time you have.
+Pick my resolution
+Free forever. No ads. No accounts.
+Your five moves
+Plan your day on paper
+For when
+I felt drained a lot.
+First move, week one
+Plan your day on paper for 10 min.
+Pick your time
+30 minutes a week: Plan your day on paper: 10 min, 3x a week.
+2 hours a week: Plan your day on paper: 10 min, 5x a week.
+5 hours a week: Plan your day on paper: 10 min, 7x a week.
+Clear your desk top
+For when
+Things piled up on me.
+First move, week one
+Clear your desk top for 10 min.
+Pick your time
+30 minutes a week: Clear your desk top: 10 min, 3x a week.
+2 hours a week: Clear your desk top: 15 min, 4x a week.
+5 hours a week: Clear your desk top: 20 min, 5x a week.
+Learn one work skill
+For when
+I felt stuck in place.
+First move, week one
+Learn one work skill for 10 min.
+Pick your time
+30 minutes a week: Learn one work skill: 10 min, 3x a week.
+2 hours a week: Learn one work skill: 30 min, 4x a week.
+5 hours a week: Learn one work skill: 60 min, 5x a week.
+Chat with a work friend
+For when
+I drifted from good habits.
+First move, week one
+Chat with a work friend for 10 min.
+Pick your time
+30 minutes a week: Chat with a work friend: 10 min, 3x a week.
+2 hours a week: Chat with a work friend: 30 min, 4x a week.
+5 hours a week: Chat with a work friend: 30 min, 5x a week.
+Eat lunch with coworkers
+For when
+I felt alone a lot.
+First move, week one
+Eat lunch with coworkers for 30 min.
+Pick your time
+30 minutes a week: Eat lunch with coworkers: 30 min, 1x a week.
+2 hours a week: Eat lunch with coworkers: 30 min, 4x a week.
+5 hours a week: Eat lunch with coworkers: 45 min, 5x a week.
+Pick my resolution
+Four short questions. One clear plan for your year.
+Common questions
+How do I pick my work resolution?
+Take the short quiz on the home page. It asks what felt off this year. It asks how much time you have. Then it picks one move for you.
+What work moves can I pick from?
+This page lists all five work moves. One is Plan your day on paper. Two is Clear your desk top. Three is Learn one work skill. Four is Chat with a work friend. Five is Eat lunch with coworkers. The quiz picks the one that fits you.
+What if I have just 30 minutes a week?
+That is fine. Your plan fits inside that time. Small moves count when you keep them.
+Built with Muse.
+Browse by area: Body and health
+· Money
+· Home
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
+
+### Family and friends (https://pickmyresolution.com/family-and-friends)
+
+Family and friends resolutions - Pick My Resolution
+Pick My Resolution
+Family and friends
+Spend more time with loved ones. Pick one small move to start. Each move fits the time you have.
+Pick my resolution
+Free forever. No ads. No accounts.
+Your five moves
+Talk with family at home
+For when
+I felt drained a lot.
+First move, week one
+Talk with family at home for 10 min.
+Pick your time
+30 minutes a week: Talk with family at home: 10 min, 3x a week.
+2 hours a week: Talk with family at home: 30 min, 4x a week.
+5 hours a week: Talk with family at home: 60 min, 5x a week.
+Share one meal together
+For when
+Things piled up on me.
+First move, week one
+Share one meal together. No timer. Just eat and talk.
+Pick your time
+30 minutes a week: Share one meal together: 30 min, 1x a week.
+2 hours a week: Share one meal together: 30 min, 4x a week.
+5 hours a week: Share one meal together: 60 min, 5x a week.
+Play one game together
+For when
+I felt stuck in place.
+First move, week one
+Play one quick game together.
+Pick your time
+30 minutes a week: Play one game together: 10 min, 3x a week.
+2 hours a week: Play one game together: 30 min, 4x a week.
+5 hours a week: Play one game together: 60 min, 5x a week.
+Call a friend you miss
+For when
+I drifted from good habits.
+First move, week one
+Call a friend you miss. Talk as long as feels good.
+Pick your time
+30 minutes a week: Call a friend you miss: 10 min, 3x a week.
+2 hours a week: Call a friend you miss: 30 min, 4x a week.
+5 hours a week: Call a friend you miss: 30 min, 5x a week.
+Visit someone you love
+For when
+I felt alone a lot.
+First move, week one
+Visit someone you love. Take your time and stay a while.
+Pick your time
+30 minutes a week: Visit someone you love: 30 min, 1x a week.
+2 hours a week: Visit someone you love: 60 min, 2x a week.
+5 hours a week: Visit someone you love: 60 min, 4x a week.
+Pick my resolution
+Four short questions. One clear plan for your year.
+Common questions
+How do I pick my family and friends resolution?
+Take the short quiz on the home page. It asks what felt off this year. It asks how much time you have. Then it picks one move for you.
+What family moves can I pick from?
+This page lists all five family moves. One is Talk with family at home. Two is Share one meal together. Three is Play one game together. Four is Call a friend you miss. Five is Visit someone you love. The quiz picks the one that fits you.
+What if I have just 30 minutes a week?
+That is fine. Your plan fits inside that time. Small moves count when you keep them.
+Built with Muse.
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Mind and calm
+&middot; Privacy
+&middot; Terms
+
+### Mind and calm (https://pickmyresolution.com/mind-and-calm)
+
+Mind and calm resolutions - Pick My Resolution
+Pick My Resolution
+Mind and calm
+Feel calm and clear each day. Pick one small move to start. Each move fits the time you have.
+Pick my resolution
+Free forever. No ads. No accounts.
+Your five moves
+Sit in a quiet place
+For when
+I felt drained a lot.
+First move, week one
+Sit in a quiet place for 10 min.
+Pick your time
+30 minutes a week: Sit in a quiet place: 10 min, 3x a week.
+2 hours a week: Sit in a quiet place: 20 min, 5x a week.
+5 hours a week: Sit in a quiet place: 20 min, 7x a week.
+Write thoughts on paper
+For when
+Things piled up on me.
+First move, week one
+Write thoughts on paper for 10 min.
+Pick your time
+30 minutes a week: Write thoughts on paper: 10 min, 3x a week.
+2 hours a week: Write thoughts on paper: 20 min, 5x a week.
+5 hours a week: Write thoughts on paper: 20 min, 7x a week.
+Read a calm book
+For when
+I felt stuck in place.
+First move, week one
+Read a calm book for 10 min.
+Pick your time
+30 minutes a week: Read a calm book: 10 min, 3x a week.
+2 hours a week: Read a calm book: 30 min, 4x a week.
+5 hours a week: Read a calm book: 60 min, 5x a week.
+Breathe slow in fresh air
+For when
+I drifted from good habits.
+First move, week one
+Breathe slow in fresh air for 10 min.
+Pick your time
+30 minutes a week: Breathe slow in fresh air: 10 min, 3x a week.
+2 hours a week: Breathe slow in fresh air: 10 min, 5x a week.
+5 hours a week: Breathe slow in fresh air: 10 min, 7x a week.
+Sit outside with others
+For when
+I felt alone a lot.
+First move, week one
+Sit outside with others for 10 min.
+Pick your time
+30 minutes a week: Sit outside with others: 10 min, 3x a week.
+2 hours a week: Sit outside with others: 20 min, 5x a week.
+5 hours a week: Sit outside with others: 30 min, 5x a week.
+Pick my resolution
+Four short questions. One clear plan for your year.
+Common questions
+How do I pick my mind and calm resolution?
+Take the short quiz on the home page. It asks what felt off this year. It asks how much time you have. Then it picks one move for you.
+What calm moves can I pick from?
+This page lists all five calm moves. One is Sit in a quiet place. Two is Write thoughts on paper. Three is Read a calm book. Four is Breathe slow in fresh air. Five is Sit outside with others. The quiz picks the one that fits you.
+What if I have just 30 minutes a week?
+That is fine. Your plan fits inside that time. Small moves count when you keep them.
+Built with Muse.
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+&middot; Privacy
+&middot; Terms
+
+## Privacy (https://pickmyresolution.com/privacy)
+
+Privacy - Pick My Resolution
+Pick My Resolution
+Privacy
+The short version: Your quiz plan stays in your browser.
+Cloudflare and PostHog count visits to this site.
+There is no account or email signup.
+What the quiz saves
+Finishing the quiz saves your four answers.
+It also saves the result you see.
+The result includes its check-in and share text.
+The save uses this browser's local storage.
+Your answers and plan stay on this device.
+Anyone using this browser can open it.
+The quiz code uses local storage, not cookies.
+Clearing your saved plan
+Open your saved plan and tap Start over.
+That button removes the saved answers and result.
+Browser site-data controls can remove it too.
+Copying and sharing
+Copy buttons place text on your clipboard.
+The site does not send copied text anywhere.
+You choose where to paste copied text.
+Sharing starts only when you tap Share.
+Site counts
+This page also loads Cloudflare Web Analytics.
+It sends page and performance counts to Cloudflare.
+Cloudflare says its beacon uses no cookies.
+Cloudflare says its beacon does not read local storage.
+The home page also runs PostHog.
+PostHog counts page views and quiz starts.
+It counts finishes, shares, and return visits.
+It counts check-in copies and year cards.
+Your quiz answers are never sent to it.
+It does not record your screen.
+Contact
+Questions about privacy: hello@pickmyresolution.com.
+Changes
+Changes will appear on this page.
+Built with Muse.
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+· Terms
+
+## Terms (https://pickmyresolution.com/terms)
+
+Terms - Pick My Resolution
+Pick My Resolution
+Terms
+The short version: This site gives one free plan.
+What this site is
+These terms cover this website only.
+Pick My Resolution picks one resolution.
+You answer four short questions.
+The quiz picks one move for you.
+Your plan fits the time you pick.
+It is free forever.
+There are no ads on this site.
+There is no account or email signup.
+Your plan
+Your plan shows one resolution.
+It shows a first move for week one.
+It shows help if it gets hard.
+It includes a weekly check-in prompt.
+It includes share text you can copy.
+You can make a year card picture.
+Ideas, not advice
+Plans here are general habit ideas only.
+They are not medical advice.
+They are not mental-health advice.
+They are not financial advice.
+Use your own judgment with any plan.
+Your saved plan
+The quiz runs in your browser.
+Finishing the quiz saves your four answers.
+It also saves the result you see.
+Your answers and plan stay on this device.
+Cloudflare and PostHog count visits here.
+PostHog counts quiz starts, finishes, and shares.
+See the Privacy page for full details.
+No guarantees
+This site is provided as is.
+We give no warranty.
+We cannot guarantee any habit outcome.
+We are not liable for any loss.
+The site may have errors or downtime.
+Fair use
+Do not try to break this site.
+Do not copy the whole action bank.
+Do not claim our words as yours.
+We may change or stop this site.
+Contact
+Questions about terms: hello@pickmyresolution.com.
+Changes
+Changes will appear on this page.
+Built with Muse.
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+· Privacy

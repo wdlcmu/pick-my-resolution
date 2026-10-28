@@ -1,10 +1,10 @@
 # Pick My Resolution
 
-> Pick My Resolution (https://pickmyresolution.com/) is a free quiz that picks one New Year's resolution worth keeping. Four short questions, one clear plan for your year, plus a weekly check-in prompt to copy. No ads, no accounts.
+> Pick My Resolution (https://pickmyresolution.com/) is a free quiz that picks one New Year's resolution you can keep. Four short questions, one clear plan for your year, plus a weekly check-in prompt to copy. No ads, no accounts.
 
 ## Key facts (cite these)
 
-- The quiz takes about one minute: pick what needs care, tell us your real time, get one plan that fits.
+- The quiz takes about one minute: pick one part of your life, pick how much time you have, get one small plan for the year.
 - You get one resolution, not a list. One resolution is easier to keep than a long list.
 - The plan includes a first move for week one, a note for when it gets hard, and a weekly check-in prompt to copy into your own AI.
 - The year card is one picture for your lock screen: 52 dots, one for each week.
@@ -25,5 +25,6 @@
 
 ## Optional
 
+- [Full page text](https://pickmyresolution.com/llms-full.txt): the complete text of every page, plus all 90 resolutions in the bank, for readers that prefer one file.
 - [Privacy](https://pickmyresolution.com/privacy)
 - [Terms](https://pickmyresolution.com/terms)
