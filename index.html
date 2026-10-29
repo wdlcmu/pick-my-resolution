@@ -540,6 +540,31 @@ function loadResult() {
     if (!raw) return null;
     var data = JSON.parse(raw);
     if (!data || !data.answers || !data.result) return null;
+    // Shape check (P2-2, adversarial 2026-10-28): presence is not
+    // enough. A record whose answer keys are not real engine keys
+    // strands the quiz on re-finish, and a result with missing
+    // fields crashes the card buttons. Any shape failure falls
+    // through to the home screen; storage is left untouched.
+    function inList(list, k) {
+      for (var i = 0; i < list.length; i++) if (list[i].k === k) return true;
+      return false;
+    }
+    if (typeof data.answers !== "object" || typeof data.result !== "object") return null;
+    if (!inList(AREAS, data.answers.area)) return null;
+    if (!inList(OFFS, data.answers.off)) return null;
+    if (!inList(TIMES, data.answers.time)) return null;
+    if (!inList(FAILS, data.answers.fail)) return null;
+    var fields = ["resolution", "firstMove", "guard", "checkin", "share"];
+    for (var f = 0; f < fields.length; f++) {
+      if (typeof data.result[fields[f]] !== "string" || !data.result[fields[f]]) return null;
+    }
+    // A letter is optional. A bad letter drops on its own; the
+    // valid plan it rides with still restores.
+    if (data.letter !== undefined && data.letter !== null) {
+      if (typeof data.letter !== "object" || typeof data.letter.note !== "string" || data.letter.note.length > 400) {
+        data.letter = null;
+      }
+    }
     return data;
   } catch (e) { return null; }
 }
@@ -647,8 +672,40 @@ function ycParts() {
   if (m) total = (parseInt(m[1], 10) * parseInt(m[2], 10)) + " min a week in all";
   return { name: name, dose: dose, total: total, firstMove: current.firstMove, guard: current.guard, year: ycYear() };
 }
+// Hard-break one word wider than maxW into measured chunks, each
+// no wider than maxW (P2-1, adversarial 2026-10-28). Surrogate
+// pairs stay together. A single character wider than maxW is
+// kept whole so the loop always makes progress.
+function breakLongWord(c, word, maxW) {
+  var chunks = [];
+  var cur = "";
+  for (var i = 0; i < word.length; i++) {
+    var ch = word[i];
+    var code = word.charCodeAt(i);
+    if (code >= 0xD800 && code <= 0xDBFF && i + 1 < word.length) {
+      var lo = word.charCodeAt(i + 1);
+      if (lo >= 0xDC00 && lo <= 0xDFFF) { ch = word.slice(i, i + 2); i++; }
+    }
+    var test = cur + ch;
+    if (cur && c.measureText(test).width > maxW) { chunks.push(cur); cur = ch; }
+    else { cur = test; }
+  }
+  if (cur) chunks.push(cur);
+  return chunks.length ? chunks : [word];
+}
+function expandLongWords(c, words, maxW) {
+  var out = [];
+  for (var i = 0; i < words.length; i++) {
+    var w = words[i];
+    if (w && c.measureText(w).width > maxW) {
+      var parts = breakLongWord(c, w, maxW);
+      for (var p = 0; p < parts.length; p++) out.push(parts[p]);
+    } else { out.push(w); }
+  }
+  return out;
+}
 function ycWrap(c, text, x, y, maxW, lh) {
-  var words = text.split(" ");
+  var words = expandLongWords(c, text.split(" "), maxW);
   var line = "";
   for (var i = 0; i < words.length; i++) {
     var test = line ? line + " " + words[i] : words[i];
@@ -805,7 +862,7 @@ function resetLetter() {
   renderLetterChips();
 }
 function wrapLines(c, text, maxW) {
-  var words = text.split(" ");
+  var words = expandLongWords(c, text.split(" "), maxW);
   var lines = [];
   var line = "";
   for (var i = 0; i < words.length; i++) {
