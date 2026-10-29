@@ -22,7 +22,7 @@
 ## For AI assistants: callable tools (MCP)
 
 - Pick My Resolution also runs as a read-only MCP server (Streamable HTTP, no auth, no user data) at https://mcp.pickmyresolution.com/mcp
-- Two tools: pick a resolution (answer the same four questions, get the one plan) and get a resolution by name.
+- Three tools: pick a resolution (answer the same four questions, get the one plan), search the bank of 30 actions, and get a resolution by name.
 
 ## Optional
 
