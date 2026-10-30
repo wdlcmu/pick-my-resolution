@@ -570,6 +570,29 @@ var NOTE_LINES = {
   "Breathe slow in fresh air": "Fresh air waits right outside my door.",
   "Sit outside with others": "We sit outside right after lunch."
 };
+// Reflective note lines (Oct 30, 2026, reflective note + de-duplication
+// build; SPEC registered by the check-in re-test, 5/10): the shipped note
+// restated the plan, and the plan lines repeated up to four times across
+// one answer. The note is now a letter, not a restatement. WHY_REFLECT
+// says why the plan was picked, in the words of the feeling answer the
+// user picked, told back in past tense. GUARD_REFLECT restates the
+// picked guard as lived experience, not as an instruction. The note
+// still carries the plan's facts (the action, its dose, the starter's
+// own line above), woven into letter sentences, so no full plan line
+// repeats verbatim anywhere in one answer.
+var WHY_REFLECT = {
+  drained: "I felt drained a lot back then.",
+  piled: "Things had piled up on me then.",
+  stuck: "I felt stuck in place back then.",
+  drift: "I had drifted from good habits then.",
+  alone: "I felt alone a lot back then."
+};
+var GUARD_REFLECT = {
+  big: "The hard part was wanting to add more.",
+  forgot: "The hard part was plain forgetting, some days.",
+  busy: "Some weeks, half a move was enough.",
+  bored: "The hard part was the same move, again."
+};
 function timeOf(k) {
   for (var i = 0; i < TIMES.length; i++) if (TIMES[i].k === k) return TIMES[i];
   return null;
@@ -581,14 +604,13 @@ function buildResult(a) {
   var firstMove = (STARTERS[action] || (action + " for " + d.mins + " min.")).split("{m}").join(d.mins);
   var guard = GUARDS[a.fail];
   var qs = CHECKINS[action] || ["Did I do my move this week?", "What got in my way?"];
+  // De-duplication (Oct 30, 2026): the check-in no longer repeats the
+  // resolution, first move, or guard lines verbatim. It names the action
+  // once, in short form, and keeps its sessions line and questions, which
+  // are its own depth. The full lines live once, in the plan above it.
   var checkin = [
     "Weekly check-in for my resolution.",
-    "Resolution:",
-    resolution,
-    "First move:",
-    firstMove,
-    "If it gets hard:",
-    guard,
+    "My one resolution: " + action + ".",
     "Sessions this week: ___ of " + d.times + " (" + d.mins + " min each)",
     qs[0],
     qs[1],
@@ -596,15 +618,18 @@ function buildResult(a) {
     "What is one small move for next week?",
     "Please keep your reply short and kind."
   ].join("\n");
+  // Reflective note (Oct 30, 2026): a short letter from past me, woven
+  // only from this plan's own fields (the feeling picked, the action,
+  // its dose, the starter's line, the guard told as experience). No full
+  // plan line repeats here; the facts stay findable inside the letter.
   var futureNote = [
     "Dear future me,",
-    "Plan:",
-    resolution,
-    "First move:",
-    firstMove,
-    "If it gets hard:",
-    guard,
+    WHY_REFLECT[a.off] || "I picked one small plan, on purpose.",
+    "My pick was " + action + ".",
+    "The pace was " + d.dose + ".",
     NOTE_LINES[action] || "I picked one small plan, on purpose.",
+    "I hope you still notice that small start.",
+    GUARD_REFLECT[a.fail] || "The hard part came some days, too.",
     "Did the small move still fit my week?",
     "From past me."
   ].join("\n");

@@ -237,15 +237,10 @@ a weekly check-in prompt to copy into your own AI, and a year card with 52 dots,
 
 ### The weekly check-in prompt (template)
 
-The prompt copies with your own resolution and first move filled in. Shape, shown with the first bank entry:
+The prompt copies as one short block. It names your action in short form. Shape, shown with the first bank entry:
 
 Weekly check-in for my resolution.
-Resolution:
-Take a short walk: 10 min, 3x a week.
-First move:
-Put your shoes by the front door. Walk 10 min right after a meal.
-If it gets hard:
-Do just this move all month. Add more next month, not now.
+My one resolution: Take a short walk.
 Sessions this week: ___ of 3 (10 min each)
 How many walks did I finish this week?
 Which walk felt best this week?
