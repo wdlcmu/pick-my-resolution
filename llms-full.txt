@@ -59,7 +59,7 @@ Get my year card
 Share my year card
 Download my year card
 A note to future you
-Write a short note today. Open it again on a day you pick.
+A first note is ready below. Edit any line before you save.
 Your note stays in this browser. It never leaves your device.
 Save my letter card
 Share my letter card
@@ -244,7 +244,11 @@ Resolution:
 Take a short walk: 10 min, 3x a week.
 First move:
 Put your shoes by the front door. Walk 10 min right after a meal.
-Did I do my move this week?
+If it gets hard:
+Do just this move all month. Add more next month, not now.
+Sessions this week: ___ of 3 (10 min each)
+How many walks did I finish this week?
+Which walk felt best this week?
 What got in my way?
 What is one small move for next week?
 Please keep your reply short and kind.
