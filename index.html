@@ -408,10 +408,10 @@ var ACTIONS = {
   }
 };
 var GUARDS = {
-  big: "Keep this one small. Small still counts.",
-  forgot: "Put your move on your calendar today.",
-  busy: "Miss a day? Do half the next day.",
-  bored: "Change the place or time each week."
+  big: "Do just this move all month. Add more next month, not now.",
+  forgot: "Set a phone alarm for session days. Same time, same sound.",
+  busy: "Miss a day? Do half the next day. Half still keeps the streak.",
+  bored: "Same move, new place or playlist. Change one thing, not the move."
 };
 // Engine-truth fix (2026-10-23, design: engine-truth-audit-2026-10-23.md
 // section 4, Proposals A + C2). The time answer is a budget ceiling, not
@@ -457,21 +457,45 @@ var DOSES = {
   "Visit someone you love": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "60 min, 2x a week", mins: 60, times: 2 }, t5h: { dose: "60 min, 4x a week", mins: 60, times: 4 } },
   "Sit outside with others": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "20 min, 5x a week", mins: 20, times: 5 }, t5h: { dose: "30 min, 5x a week", mins: 30, times: 5 } }
 };
-// First moves for the instant, finite, and event actions (Proposal C1
-// starters, used at every time level under C2). All other actions open
-// with their first session at the picked dose.
+// First moves (Proposal C1 starters, extended Oct 30, 2026 by the
+// first-move specificity build): every action now has a starter, and each
+// starter carries one concrete setup step drawn from the action itself
+// (a named place, object, time, or amount) before the first session.
+// "{m}" in a starter is filled with the picked dose's session minutes in
+// buildResult, so a quoted minute count always matches the picked dose
+// (the F2 rule). The Oct 30 vs-AI fair re-test (3/10) named the old form
+// the loss: 75 of 90 unique first moves only restated the resolution.
 var STARTERS = {
-  "Check your bank balance": "Check your bank balance now. It takes about 2 min.",
-  "Move cash to savings": "Move one small amount to savings today.",
-  "Cook a real meal": "Cook one real meal. Give it about 30 min.",
-  "Share one meal together": "Share one meal together. No timer. Just eat and talk.",
-  "Play one game together": "Play one quick game together.",
-  "Call a friend you miss": "Call a friend you miss. Talk as long as feels good.",
-  "Clear one shelf fully": "Clear one shelf fully. Take about 25 min.",
-  "Fix one small thing": "Fix one small thing. Start with 30 min.",
-  "Make one room cozy": "Make one room cozy. Start with 30 min.",
-  "Have a friend visit": "Have a friend visit. No timer. Just talk and relax.",
-  "Visit someone you love": "Visit someone you love. Take your time and stay a while."
+  "Take a short walk": "Put your shoes by the front door. Walk {m} min right after a meal.",
+  "Cook a real meal": "Write one meal on a sticky note. Cook it tonight in about {m} min.",
+  "Do a short workout": "Lay out your clothes the night before. Do {m} min in your living room.",
+  "Stretch your whole body": "Roll out a mat or bath towel. Stretch slow for {m} min.",
+  "Walk with a friend": "Text one friend and pick a day. Walk and talk for {m} min.",
+  "Check your bank balance": "Open your bank app after breakfast. Check the balance for {m} min.",
+  "Sort bills in one spot": "Gather all bills into one box. Pay one due bill. Move $5 to savings.",
+  "Move cash to savings": "Set a $5 auto move for payday. It moves each week by itself.",
+  "Write down what you spend": "Keep one list on your phone. Write down each spend that day.",
+  "Tell a friend your goal": "Text one friend your money goal today. Ask them to check in Friday.",
+  "Tidy one small corner": "Pick the corner by the front door. Tidy only it for {m} min.",
+  "Clear one shelf fully": "Pick the fullest shelf you have. Clear it fully in about {m} min.",
+  "Fix one small thing": "Write down the fix that bugs you. Start it. Give it {m} min.",
+  "Make one room cozy": "Pick the room you sit in most. Add one lamp or soft blanket.",
+  "Have a friend visit": "Text one friend and pick a day. Come as you are. Just talk.",
+  "Plan your day on paper": "Put paper and pen by your coffee. Write your top three tasks first.",
+  "Clear your desk top": "Set a timer for {m} min. Clear the desk top into one box.",
+  "Learn one work skill": "Pick one small skill for your job. Learn it for {m} min today.",
+  "Chat with a work friend": "Ask one work friend for coffee. Chat for {m} min this week.",
+  "Eat lunch with coworkers": "Ask two coworkers to lunch today. Eat together. Leave phones in pockets.",
+  "Talk with family at home": "Pick a time right after dinner. Talk at the table for {m} min.",
+  "Share one meal together": "Pick one dinner this week together. Eat at the table. No phones there.",
+  "Play one game together": "Pick a short game from the shelf. Play one round tonight together.",
+  "Call a friend you miss": "Pick the friend you miss most. Call them today, right after dinner.",
+  "Visit someone you love": "Text them today and pick a day. Visit soon and stay a while.",
+  "Sit in a quiet place": "Pick one quiet spot in your home. Sit there {m} min, no phone.",
+  "Write thoughts on paper": "Put a notebook by your bed. Write for {m} min before sleep.",
+  "Read a calm book": "Put your book on your pillow now. Read {m} min in bed tonight.",
+  "Breathe slow in fresh air": "Step outside your front door today. Breathe slow for {m} min.",
+  "Sit outside with others": "Sit outside with others after lunch. Stay {m} min and just talk."
 };
 function timeOf(k) {
   for (var i = 0; i < TIMES.length; i++) if (TIMES[i].k === k) return TIMES[i];
@@ -481,7 +505,7 @@ function buildResult(a) {
   var action = ACTIONS[a.area][a.off];
   var d = DOSES[action][a.time];
   var resolution = action + ": " + d.dose + ".";
-  var firstMove = action === "Cook a real meal" ? ("Cook one real meal. Give it about " + d.mins + " min.") : (STARTERS[action] || (action + " for " + d.mins + " min."));
+  var firstMove = (STARTERS[action] || (action + " for " + d.mins + " min.")).split("{m}").join(d.mins);
   var guard = GUARDS[a.fail];
   var checkin = [
     "Weekly check-in for my resolution.",
