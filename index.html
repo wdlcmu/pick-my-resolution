@@ -144,6 +144,11 @@
     background: var(--card); border: 2px solid var(--line); border-radius: 12px;
     padding: 12px 14px; text-align: left; margin: 8px 0;
   }
+  .example { margin-top: 32px; }
+  .example h2 { font-size: 23px; margin-bottom: 14px; }
+  .example p { color: #374151; font-size: 17px; line-height: 1.6; margin: 0 0 12px; }
+  .ex-chip { cursor: default; }
+  .ex-note { border-left: 3px solid var(--amber); padding-left: 12px; font-style: italic; }
   .how { border-top: 1px solid #e5e7eb; margin-top: 32px; padding-top: 24px; }
   .how h2 { font-size: 23px; margin-bottom: 14px; }
   .how ol { margin-left: 22px; color: #374151; font-size: 17px; line-height: 1.6; }
@@ -211,25 +216,26 @@
         <p class="brand">Pick My Resolution</p>
         <div class="hero-grid">
           <div class="hero-copy">
-            <h1>Pick one resolution you can keep.</h1>
-            <p class="sub">Four questions. One optional line. About one minute. Free.</p>
+            <h1>This year, keep one. Just one.</h1>
+            <p class="sub">Last January, you wrote a list. By spring, none of it stuck.</p>
+            <p class="sub">Four questions. One pick, sized to your week. Swap it if it does not fit.</p>
             <p class="countdown" id="countdown" aria-live="polite"></p>
             <button class="cta" id="btn-start">Pick my resolution</button>
             <p class="free">Free forever. No ads. No accounts.</p>
           </div>
           <div class="hero-photos">
             <figure class="ph ph-main">
-              <img src="/img/hero-main.jpg" alt="Woman opening curtains to morning light" fetchpriority="high">
-              <figcaption>A fresh start</figcaption>
+              <img src="/img/hero-main.jpg" alt="Woman with her chin on her hand, looking down at a notebook on the table" fetchpriority="high">
+              <figcaption>The January list</figcaption>
             </figure>
             <div class="ph-row">
               <figure class="ph">
-                <img src="/img/hero-walk.jpg" alt="Two friends walking at sunrise" loading="lazy">
-                <figcaption>Morning walks</figcaption>
+                <img src="/img/hero-walk.jpg" alt="Two friends talking on a walk in the park" loading="lazy">
+                <figcaption>Two friends, one walk</figcaption>
               </figure>
               <figure class="ph">
-                <img src="/img/hero-table.jpg" alt="Family laughing at a breakfast table" loading="lazy">
-                <figcaption>People first</figcaption>
+                <img src="/img/hero-table.jpg" alt="Family laughing together around a kitchen table" loading="lazy">
+                <figcaption>Breakfast, together</figcaption>
               </figure>
             </div>
           </div>
@@ -237,6 +243,32 @@
       </div>
     </div>
     <div class="wrap">
+    <div class="example">
+      <h2>One real pick, start to finish</h2>
+      <p>Say your year felt like this:</p>
+      <div class="chips" aria-label="Sample answers">
+        <span class="chip ex-chip">Body and health</span>
+        <span class="chip ex-chip">I felt drained a lot.</span>
+        <span class="chip ex-chip">2 hours a week</span>
+        <span class="chip ex-chip">I just forgot to do it.</span>
+      </div>
+      <p style="margin-top:14px"><strong>Why this pick:</strong> Drained, in body and health, points to a walk. Two hours sizes the dose. Forgot before, so the plan adds an alarm.</p>
+      <div class="card">
+        <p class="big">Take a short walk: 30 min, 4x a week.</p>
+        <p class="label">First move, week one</p>
+        <p>Put your shoes by the front door. Walk 30 min right after a meal.</p>
+        <p class="label">Your week one plan</p>
+        <p>Sat 9am, at the park, with Alex</p>
+        <p class="label">If it gets hard</p>
+        <p>Set a phone alarm for session days. Same time, same sound.</p>
+        <p class="label">Your time</p>
+        <p>This plan uses all 120 minutes you offered.</p>
+      </div>
+      <p>It ends with a note to future you. This one opens:</p>
+      <p class="ex-note">&ldquo;Dear future me, I felt drained a lot back then. My pick was Take a short walk.&rdquo;</p>
+      <p>You finish yours in your own words. It stays on your device.</p>
+      <button class="cta" id="btn-start-2">Pick my resolution</button>
+    </div>
     <div class="how">
       <h2>How it works</h2>
       <ol>
@@ -910,6 +942,8 @@ $("btn-start").onclick = function () {
   renderQuiz();
   show("s-quiz");
 };
+var btnStart2 = $("btn-start-2");
+if (btnStart2) btnStart2.onclick = function () { $("btn-start").click(); };
 $("q-back").onclick = function () {
   if (quiz.step > 0) { quiz.step--; renderQuiz(); }
 };
