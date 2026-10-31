@@ -799,8 +799,16 @@ function renderQuiz() {
     chips[c].onclick = (function (el) {
       return function () {
         var k = el.getAttribute("data-k");
-        quiz[st.key] = (quiz[st.key] === k) ? null : k;
-        renderQuiz();
+        var was = quiz[st.key];
+        quiz[st.key] = (was === k) ? null : k;
+        // Friction sweep 2026-10-31: a fresh pick auto-advances (the
+        // ThawDay chip pattern shipped the same day), so no separate
+        // Continue tap is needed. Continue stays as a fallback, and
+        // tapping the picked chip again still deselects in place.
+        if (quiz[st.key] && quiz[st.key] !== was) {
+          if (quiz.step < STEPS.length - 1) { quiz.step++; renderQuiz(); }
+          else { finishQuiz(); }
+        } else { renderQuiz(); }
       };
     })(chips[c]);
   }
