@@ -279,6 +279,8 @@
       <p id="r-first"></p>
       <p class="label">If it gets hard</p>
       <p id="r-guard"></p>
+      <p class="label">Your time</p>
+      <p id="r-note"></p>
     </div>
     <p class="label">Your weekly check-in</p>
     <pre id="r-checkin"></pre>
@@ -603,6 +605,16 @@ function buildResult(a) {
   var resolution = action + ": " + d.dose + ".";
   var firstMove = (STARTERS[action] || (action + " for " + d.mins + " min.")).split("{m}").join(d.mins);
   var guard = GUARDS[a.fail];
+  // Honest time use (semantic-fit audit F3, Oct 29 2026; shipped Oct 30,
+  // 2026): the time pick is a ceiling, and small moves stay small. The MCP
+  // has always said how much of the offered time the plan uses; the site
+  // result card now says it too, in the site's own short shape (the MCP
+  // adds one middle sentence; the numbers are the same on every path).
+  var t = timeOf(a.time);
+  var total = d.mins * d.times;
+  var timeNote = total >= t.budget
+    ? "This plan uses all " + t.budget + " minutes you offered."
+    : "This plan uses " + total + " of your " + t.budget + " minutes a week. The rest of your time stays yours.";
   var qs = CHECKINS[action] || ["Did I do my move this week?", "What got in my way?"];
   // De-duplication (Oct 30, 2026): the check-in no longer repeats the
   // resolution, first move, or guard lines verbatim. It names the action
@@ -643,6 +655,7 @@ function buildResult(a) {
     resolution: resolution,
     firstMove: firstMove,
     guard: guard,
+    timeNote: timeNote,
     checkin: checkin,
     futureNote: futureNote,
     share: share
@@ -770,6 +783,7 @@ function renderResult() {
   $("r-resolution").textContent = current.resolution;
   $("r-first").textContent = current.firstMove;
   $("r-guard").textContent = current.guard;
+  $("r-note").textContent = current.timeNote || "";
   $("r-checkin").textContent = current.checkin;
   $("r-share").textContent = current.share;
   $("st-checkin").textContent = "";
@@ -1201,6 +1215,13 @@ if (hasStartFlag()) {
     var fresh = buildResult(saved.answers);
     current.checkin = fresh.checkin;
     current.futureNote = fresh.futureNote;
+  }
+  // Plans saved before the Oct 30, 2026 F3 time-note ship carry no
+  // timeNote. The same answers through the current engine give the same
+  // resolution, first move, and guard, so fill just the note in place.
+  if (typeof current.timeNote !== "string" || !current.timeNote) {
+    var freshNote = buildResult(saved.answers);
+    current.timeNote = freshNote.timeNote;
   }
   renderResult();
   $("r-saved").textContent = "Your saved plan on this device.";
