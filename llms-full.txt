@@ -3,11 +3,11 @@
 > Complete text of pickmyresolution.com: every page, plus the full bank inside its free quiz.
 > The quiz picks one New Year's resolution you can keep. Four questions, about one minute.
 > Free forever. No ads, no accounts. Your answers stay in your browser.
-> Text captured from the live site, 2026-10-27.
+> Text captured from the live site, 2026-10-31.
 
 ## Homepage and quiz (https://pickmyresolution.com/)
 
-Pick My Resolution - One resolution you can keep
+New Year's Resolution - Pick My Resolution: One you can keep
 Pick My Resolution
 Pick one resolution you can keep.
 Four questions. About one minute. Free.
@@ -30,7 +30,7 @@ Mind and calm
 Common questions
 How long does it take?
 About one minute. The quiz has four short questions.
-Why only one resolution?
+What New Year's resolution can I keep?
 One is easier to keep than a long list. Small steps add up when you stick to one.
 Is it free?
 Yes. It is free forever, with no ads and no accounts.
@@ -252,7 +252,7 @@ Please keep your reply short and kind.
 
 ### Body and health (https://pickmyresolution.com/body-and-health)
 
-Body and health resolutions - Pick My Resolution
+New Year's body and health resolutions - Pick My Resolution
 Pick My Resolution
 Body and health
 Feel strong and well this year. Pick one small move to start. Each move fits the time you have.
@@ -324,7 +324,7 @@ Browse by area: Money
 
 ### Money (https://pickmyresolution.com/money)
 
-Money resolutions - Pick My Resolution
+New Year's money resolutions - Pick My Resolution
 Pick My Resolution
 Money
 Feel calm and clear about money. Pick one small move to start. Each move fits the time you have.
@@ -396,7 +396,7 @@ Browse by area: Body and health
 
 ### Home (https://pickmyresolution.com/home)
 
-Home resolutions - Pick My Resolution
+New Year's home resolutions - Pick My Resolution
 Pick My Resolution
 Home
 Love the place where you live. Pick one small move to start. Each move fits the time you have.
@@ -468,7 +468,7 @@ Browse by area: Body and health
 
 ### Work (https://pickmyresolution.com/work)
 
-Work resolutions - Pick My Resolution
+New Year's work resolutions - Pick My Resolution
 Pick My Resolution
 Work
 Feel clear and calm at work. Pick one small move to start. Each move fits the time you have.
@@ -540,7 +540,7 @@ Browse by area: Body and health
 
 ### Family and friends (https://pickmyresolution.com/family-and-friends)
 
-Family and friends resolutions - Pick My Resolution
+New Year's family and friends resolutions - Pick My Resolution
 Pick My Resolution
 Family and friends
 Spend more time with loved ones. Pick one small move to start. Each move fits the time you have.
@@ -612,7 +612,7 @@ Browse by area: Body and health
 
 ### Mind and calm (https://pickmyresolution.com/mind-and-calm)
 
-Mind and calm resolutions - Pick My Resolution
+New Year's mind and calm resolutions - Pick My Resolution
 Pick My Resolution
 Mind and calm
 Feel calm and clear each day. Pick one small move to start. Each move fits the time you have.
