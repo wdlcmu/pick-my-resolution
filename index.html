@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>New Year's Resolution - Pick My Resolution: One you can keep</title>
-<meta name="description" content="Pick a New Year's resolution you can keep. Four questions. About one minute. Free. No ads. No accounts.">
+<meta name="description" content="Pick a New Year's resolution you can keep. Four questions. One optional line. About one minute. Free. No ads. No accounts.">
 <link rel="canonical" href="https://pickmyresolution.com/">
 <meta property="og:title" content="New Year's Resolution - Pick My Resolution: One you can keep">
-<meta property="og:description" content="Pick a New Year's resolution you can keep. Four questions. About one minute. Free. No ads. No accounts.">
+<meta property="og:description" content="Pick a New Year's resolution you can keep. Four questions. One optional line. About one minute. Free. No ads. No accounts.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://pickmyresolution.com/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="New Year's Resolution - Pick My Resolution: One you can keep">
-<meta name="twitter:description" content="Pick a New Year's resolution you can keep. Four questions. About one minute. Free. No ads. No accounts.">
+<meta name="twitter:description" content="Pick a New Year's resolution you can keep. Four questions. One optional line. About one minute. Free. No ads. No accounts.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -23,7 +23,7 @@
       "name": "How long does it take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "About one minute. The quiz has four short questions."
+        "text": "About one minute. Four short questions, plus one optional line for week one."
       }
     },
     {
@@ -74,7 +74,7 @@
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Pick a New Year's resolution you can keep. Four questions. About one minute. Free. No ads. No accounts."
+  "description": "Pick a New Year's resolution you can keep. Four questions. One optional line. About one minute. Free. No ads. No accounts."
 }
 </script>
 <style>
@@ -133,6 +133,12 @@
     padding: 12px 14px; margin: 8px 0; resize: vertical;
   }
   textarea:focus { outline: none; border-color: var(--accent); }
+  input[type="text"] {
+    width: 100%; font: inherit; font-size: 16px; line-height: 1.5; color: var(--ink);
+    background: var(--card); border: 2px solid var(--line); border-radius: 12px;
+    padding: 12px 14px; margin: 8px 0;
+  }
+  input[type="text"]:focus { outline: none; border-color: var(--accent); }
   pre {
     white-space: pre-wrap; font: inherit; font-size: 14px; line-height: 1.5;
     background: var(--card); border: 2px solid var(--line); border-radius: 12px;
@@ -206,7 +212,7 @@
         <div class="hero-grid">
           <div class="hero-copy">
             <h1>Pick one resolution you can keep.</h1>
-            <p class="sub">Four questions. About one minute. Free.</p>
+            <p class="sub">Four questions. One optional line. About one minute. Free.</p>
             <p class="countdown" id="countdown" aria-live="polite"></p>
             <button class="cta" id="btn-start">Pick my resolution</button>
             <p class="free">Free forever. No ads. No accounts.</p>
@@ -238,6 +244,7 @@
         <li><strong>You say what felt hard.</strong> And what made past plans fail.</li>
         <li><strong>You pick your time.</strong> Thirty minutes, two hours, or five.</li>
         <li><strong>You get one plan.</strong> One move, sized to your time.</li>
+        <li><strong>You name week one.</strong> Day, time, place, person. Or skip it.</li>
       </ol>
       <p><strong>One plan only.</strong> You get one, not a list of ten.</p>
       <p><strong>Your note stays here.</strong> It saves as a card on this device.</p>
@@ -256,7 +263,8 @@
     <div class="faq">
       <h2>Common questions</h2>
       <h3>How long does it take?</h3>
-      <p>About one minute. The quiz has four short questions.</p>
+      <p>About one minute. Four short questions.</p>
+      <p>One optional line names week one.</p>
       <h3>What New Year's resolution can I keep?</h3>
       <p>One is easier to keep than a list.</p>
       <p>Small steps add up over time.</p>
@@ -289,6 +297,13 @@
     <p class="step-tag" id="q-step"></p>
     <h2 id="q-title"></h2>
     <div class="chips" id="q-chips"></div>
+    <div id="q-spec" hidden>
+      <p class="sub" style="font-size:15px">Day, time, place, person. In your own words.</p>
+      <input type="text" id="q-spec-input" maxlength="90" autocomplete="off"
+        aria-label="Your week one plan: day, time, place, person"
+        placeholder="Sat 9am, at the park, with Alex">
+      <p class="sub" style="font-size:14px">Leave it blank to skip. You still get your full plan.</p>
+    </div>
     <p class="hint" id="q-hint"></p>
     <div class="row2">
       <button class="ghost" id="q-back">Back</button>
@@ -305,6 +320,10 @@
       <p class="big" id="r-resolution"></p>
       <p class="label">First move, week one</p>
       <p id="r-first"></p>
+      <div id="r-when-block" hidden>
+        <p class="label">Your week one plan</p>
+        <p id="r-when"></p>
+      </div>
       <p class="label">If it gets hard</p>
       <p id="r-guard"></p>
       <p class="label">Your time</p>
@@ -623,6 +642,17 @@ var GUARD_REFLECT = {
   busy: "Some weeks, half a move was enough.",
   bored: "The hard part was the same move, again."
 };
+// Specificity line (PMR-SPECIFIC-1, Oct 31, 2026; Wave H fix): the
+// user may name week one's first session in their own words (day,
+// time, place, person). It is optional, capped at 90 chars, stored
+// verbatim (trimmed, whitespace collapsed), and printed exactly as
+// given on the result card and the year card. It never changes which
+// resolution a path returns: buildResult reads it only as a display
+// field, so every engine path is identical with or without it.
+function cleanWhen(v) {
+  if (typeof v !== "string") return "";
+  return v.replace(/\s+/g, " ").trim().slice(0, 90);
+}
 function timeOf(k) {
   for (var i = 0; i < TIMES.length; i++) if (TIMES[i].k === k) return TIMES[i];
   return null;
@@ -686,7 +716,8 @@ function buildResult(a) {
     timeNote: timeNote,
     checkin: checkin,
     futureNote: futureNote,
-    share: share
+    share: share,
+    whenLine: cleanWhen(a.when)
   };
 }
 // ENGINE END
@@ -727,14 +758,15 @@ var STEPS = [
   { key: "fail", title: "What made past plans fail?", list: FAILS }
 ];
 var KEY = "pmr_result_v1";
-var quiz = { step: 0, area: null, off: null, time: null, fail: null };
+var quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "" };
+var TOTAL_STEPS = STEPS.length + 1; // 4 questions + 1 optional specificity step
 var current = null;
 var letter = null;
 
 function saveResult() {
   try {
     localStorage.setItem(KEY, JSON.stringify({
-      answers: { area: quiz.area, off: quiz.off, time: quiz.time, fail: quiz.fail },
+      answers: { area: quiz.area, off: quiz.off, time: quiz.time, fail: quiz.fail, when: quiz.when || "" },
       result: current,
       letter: letter
     }));
@@ -760,6 +792,11 @@ function loadResult() {
     if (!inList(OFFS, data.answers.off)) return null;
     if (!inList(TIMES, data.answers.time)) return null;
     if (!inList(FAILS, data.answers.fail)) return null;
+    // The specificity line is optional (PMR-SPECIFIC-1): a bad or
+    // missing one drops to empty; the valid plan still restores.
+    if (typeof data.answers.when !== "string") data.answers.when = "";
+    if (data.answers.when.length > 90) data.answers.when = data.answers.when.slice(0, 90);
+    if (typeof data.result.whenLine !== "string") data.result.whenLine = data.answers.when;
     var fields = ["resolution", "firstMove", "guard", "checkin", "share"];
     for (var f = 0; f < fields.length; f++) {
       if (typeof data.result[fields[f]] !== "string" || !data.result[fields[f]]) return null;
@@ -778,22 +815,37 @@ function clearResult() {
   try { localStorage.removeItem(KEY); } catch (e) {}
 }
 
+function captureSpec() {
+  var v = $("q-spec-input").value.replace(/\s+/g, " ").trim().slice(0, 90);
+  quiz.when = v;
+  return v;
+}
 function renderQuiz() {
-  var st = STEPS[quiz.step];
-  $("q-step").textContent = "Step " + (quiz.step + 1) + " of " + STEPS.length;
-  $("q-title").textContent = st.title;
+  var isSpec = quiz.step >= STEPS.length;
+  $("q-step").textContent = "Step " + (quiz.step + 1) + " of " + TOTAL_STEPS;
   var dots = "";
-  for (var i = 0; i < STEPS.length; i++) dots += '<span class="dot' + (i <= quiz.step ? " done" : "") + '"></span>';
+  for (var i = 0; i < TOTAL_STEPS; i++) dots += '<span class="dot' + (i <= quiz.step ? " done" : "") + '"></span>';
   $("q-dots").innerHTML = dots;
+  $("q-hint").textContent = "";
+  $("q-back").style.visibility = quiz.step === 0 ? "hidden" : "visible";
+  if (isSpec) {
+    $("q-title").textContent = "Make week one real.";
+    $("q-chips").innerHTML = "";
+    $("q-spec").hidden = false;
+    $("q-spec-input").value = quiz.when || "";
+    $("q-next").textContent = "Get my resolution";
+    return;
+  }
+  $("q-spec").hidden = true;
+  var st = STEPS[quiz.step];
+  $("q-title").textContent = st.title;
   var sel = quiz[st.key];
   $("q-chips").innerHTML = st.list.map(function (o) {
     var on = sel === o.k;
     return '<button class="chip" data-k="' + o.k + '" aria-pressed="' + on + '">' +
       '<span class="tick">\u2713</span>' + o.label + "</button>";
   }).join("");
-  $("q-hint").textContent = "";
-  $("q-back").style.visibility = quiz.step === 0 ? "hidden" : "visible";
-  $("q-next").textContent = quiz.step === STEPS.length - 1 ? "Get my resolution" : "Continue";
+  $("q-next").textContent = "Continue";
   var chips = $("q-chips").querySelectorAll(".chip");
   for (var c = 0; c < chips.length; c++) {
     chips[c].onclick = (function (el) {
@@ -805,9 +857,11 @@ function renderQuiz() {
         // ThawDay chip pattern shipped the same day), so no separate
         // Continue tap is needed. Continue stays as a fallback, and
         // tapping the picked chip again still deselects in place.
+        // On the last question the advance lands on the optional
+        // specificity step (PMR-SPECIFIC-1), never straight past it.
         if (quiz[st.key] && quiz[st.key] !== was) {
-          if (quiz.step < STEPS.length - 1) { quiz.step++; renderQuiz(); }
-          else { finishQuiz(); }
+          quiz.step++;
+          renderQuiz();
         } else { renderQuiz(); }
       };
     })(chips[c]);
@@ -818,6 +872,9 @@ function renderResult() {
   $("r-saved").hidden = true;
   $("r-resolution").textContent = current.resolution;
   $("r-first").textContent = current.firstMove;
+  var whenTxt = (typeof current.whenLine === "string") ? current.whenLine : "";
+  $("r-when").textContent = whenTxt;
+  $("r-when-block").hidden = !whenTxt;
   $("r-guard").textContent = current.guard;
   $("r-note").textContent = current.timeNote || "";
   $("r-checkin").textContent = current.checkin;
@@ -849,7 +906,7 @@ function finishQuiz() {
 }
 
 $("btn-start").onclick = function () {
-  quiz = { step: 0, area: null, off: null, time: null, fail: null };
+  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "" };
   renderQuiz();
   show("s-quiz");
 };
@@ -857,11 +914,15 @@ $("q-back").onclick = function () {
   if (quiz.step > 0) { quiz.step--; renderQuiz(); }
 };
 $("q-next").onclick = function () {
+  if (quiz.step >= STEPS.length) { captureSpec(); finishQuiz(); return; }
   var st = STEPS[quiz.step];
   if (!quiz[st.key]) { $("q-hint").textContent = "Pick one answer first."; return; }
-  if (quiz.step < STEPS.length - 1) { quiz.step++; renderQuiz(); }
-  else { finishQuiz(); }
+  quiz.step++; renderQuiz();
 };
+// Enter in the specificity field submits it, same as the button.
+$("q-spec-input").addEventListener("keydown", function (e) {
+  if (e.key === "Enter") { e.preventDefault(); captureSpec(); finishQuiz(); }
+});
 $("btn-copy-checkin").onclick = function () {
   copyText(current.checkin, $("st-checkin"), "Copied. Paste it in your AI or notes app.");
 };
@@ -890,7 +951,7 @@ function ycParts() {
   var total = "";
   var m = dose.match(/^(\d+) min, (\d+)x a week$/);
   if (m) total = (parseInt(m[1], 10) * parseInt(m[2], 10)) + " min a week in all";
-  return { name: name, dose: dose, total: total, firstMove: current.firstMove, guard: current.guard, year: ycYear() };
+  return { name: name, dose: dose, total: total, firstMove: current.firstMove, guard: current.guard, when: (typeof current.whenLine === "string" ? current.whenLine : ""), year: ycYear() };
 }
 // Hard-break one word wider than maxW into measured chunks, each
 // no wider than maxW (P2-1, adversarial 2026-10-28). Surrogate
@@ -976,7 +1037,10 @@ function drawYearCard() {
   c.fillText("52 WEEKS", L, y + 92);
   c.fillStyle = "#bcd6c9"; c.font = "400 30px " + F;
   c.fillText("One dot for each week of " + p.year + ".", L, y + 134);
-  var gridTop = y + 164, d = 54, rowPitch = 80;
+  // When the user's own week-one line rides the card (PMR-SPECIFIC-1),
+  // the dot grid tightens so the line fits above the footer.
+  var compact = !!p.when;
+  var gridTop = y + 164, d = compact ? 48 : 54, rowPitch = compact ? 64 : 80;
   var colPitch = (W - d) / 12;
   c.lineWidth = 3; c.strokeStyle = "rgba(255,255,255,0.55)";
   c.fillStyle = "rgba(255,255,255,0.06)";
@@ -988,11 +1052,20 @@ function drawYearCard() {
   y = gridTop + 3 * rowPitch + d;
   // First move: the line that makes the card useful in January.
   c.fillStyle = "#ffd88a"; c.font = "700 26px " + F;
-  c.fillText("YOUR FIRST MOVE", L, y + 84);
+  c.fillText("YOUR FIRST MOVE", L, y + (compact ? 72 : 84));
   c.fillStyle = "#ffffff"; c.font = "400 36px " + F;
-  y = ycWrap(c, p.firstMove, L, y + 136, W, 48);
-  // The guard line, if it still fits above the footer.
-  if (y + 102 <= 1258) {
+  y = ycWrap(c, p.firstMove, L, y + (compact ? 120 : 136), W, compact ? 44 : 48);
+  if (p.when) {
+    // The user's own specificity line, verbatim (PMR-SPECIFIC-1). It
+    // takes the guard line's slot on this card: it is the more
+    // personal of the two, and both cannot fit. The guard still
+    // lives on the result card on the site.
+    c.fillStyle = "#ffd88a"; c.font = "700 26px " + F;
+    c.fillText("WEEK ONE, FIRST TIME", L, y + 44);
+    c.fillStyle = "#ffffff"; c.font = "400 28px " + F;
+    ycWrap(c, p.when, L, y + 88, W, 38);
+  } else if (y + 102 <= 1258) {
+    // The guard line, if it still fits above the footer.
     c.fillStyle = "#ffd88a"; c.font = "700 26px " + F;
     c.fillText("IF IT GETS HARD", L, y + 56);
     c.fillStyle = "#d7e8df"; c.font = "400 30px " + F;
@@ -1006,7 +1079,7 @@ function drawYearCard() {
   cv.toBlob(function (blob) {
     ycBlob = blob;
     var url = cv.toDataURL("image/png");
-    window.__lastYearCard = { dataURL: url, name: p.name, dose: p.dose, total: p.total, firstMove: p.firstMove, guard: p.guard, year: p.year, dots: 52 };
+    window.__lastYearCard = { dataURL: url, name: p.name, dose: p.dose, total: p.total, firstMove: p.firstMove, guard: p.guard, when: p.when, year: p.year, dots: 52 };
     var wrap = $("yc-out"); wrap.innerHTML = "";
     var im = document.createElement("img");
     im.alt = "Your " + p.year + " year card";
@@ -1207,7 +1280,7 @@ $("btn-again").onclick = function () {
   clearResult();
   current = null;
   resetLetter();
-  quiz = { step: 0, area: null, off: null, time: null, fail: null };
+  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "" };
   renderQuiz();
   show("s-quiz");
 };
@@ -1234,7 +1307,7 @@ function hasStartFlag() {
 }
 var saved = loadResult();
 if (hasStartFlag()) {
-  quiz = { step: 0, area: null, off: null, time: null, fail: null };
+  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "" };
   renderQuiz();
   show("s-quiz");
 } else if (saved) {
@@ -1242,6 +1315,7 @@ if (hasStartFlag()) {
   quiz.off = saved.answers.off;
   quiz.time = saved.answers.time;
   quiz.fail = saved.answers.fail;
+  quiz.when = saved.answers.when || "";
   current = saved.result;
   // Plans saved before the Oct 30, 2026 check-in depth build carry the
   // old generic check-in and no future note. The same answers through
