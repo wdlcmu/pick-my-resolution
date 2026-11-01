@@ -221,7 +221,7 @@
             <h1>This year, keep one. Just one.</h1>
             <p class="sub">Last January, you wrote a list. By spring, none of it stuck.</p>
             <p class="sub">Four questions. One pick, sized to your week. Swap it if it does not fit.</p>
-            <p class="countdown" id="countdown" aria-live="polite"></p>
+            <p class="countdown" id="countdown" aria-live="polite">61 days until January 1, 2027.</p>
             <button class="cta" id="btn-start">Pick my resolution</button>
             <p class="free">Free forever. No ads. No accounts.</p>
             <p class="askdoor">Rather say it in your own words? <a href="/ask">Ask here</a>.</p>
@@ -407,14 +407,20 @@
   var el = document.getElementById("countdown");
   if (!el) return;
   var now = new Date();
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   var target = new Date(now.getFullYear(), 0, 1);
-  if (now >= target) target = new Date(now.getFullYear() + 1, 0, 1);
+  if (today > target) target = new Date(now.getFullYear() + 1, 0, 1);
+  var days = Math.round((Date.UTC(target.getFullYear(), target.getMonth(), target.getDate()) - Date.UTC(today.getFullYear(), today.getMonth(), today.getDate())) / (1000 * 60 * 60 * 24));
+  if (days === 0) {
+    el.textContent = "New Year's Day is today, January 1, " + target.getFullYear() + ". Time to pick your one resolution.";
+    return;
+  }
+  var base = days + (days === 1 ? " day" : " days") + " until January 1, " + target.getFullYear() + ".";
   var seasonStart = new Date(target.getFullYear() - 1, 11, 26);
-  if (now >= seasonStart && now < target) {
-    el.textContent = "Resolution season is here. Time to pick your one resolution.";
+  if (today >= seasonStart && today < target) {
+    el.textContent = base + " Resolution season is here. Time to pick your one resolution.";
   } else {
-    var days = Math.round((Date.UTC(target.getFullYear(), target.getMonth(), target.getDate()) - Date.UTC(now.getFullYear(), now.getMonth(), now.getDate())) / (1000 * 60 * 60 * 24));
-    el.textContent = days + (days === 1 ? " day" : " days") + " until January 1, " + target.getFullYear() + ".";
+    el.textContent = base;
   }
 })();
 </script>
