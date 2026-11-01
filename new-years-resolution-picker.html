@@ -1,0 +1,1893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New Year's Resolution Picker - Pick My Resolution</title>
+<meta name="description" content="A New Year's resolution picker that gives you one resolution you can keep. Four questions. One pick, sized to your week. A real pick is shown before you start. Free. No ads. No accounts.">
+<link rel="canonical" href="https://pickmyresolution.com/new-years-resolution-picker">
+<meta property="og:title" content="New Year's Resolution Picker - Pick My Resolution">
+<meta property="og:description" content="A New Year's resolution picker that gives you one resolution you can keep. Four questions. One pick, sized to your week. A real pick is shown before you start. Free. No ads. No accounts.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pickmyresolution.com/new-years-resolution-picker">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="New Year's Resolution Picker - Pick My Resolution">
+<meta name="twitter:description" content="A New Year's resolution picker that gives you one resolution you can keep. Four questions. One pick, sized to your week. A real pick is shown before you start. Free. No ads. No accounts.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a New Year's resolution picker?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A picker chooses for you. You answer four questions. It gives you one resolution, not a list. It comes with a first move for week one. And one guard for hard days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the picker choose?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your area and your feeling pick the move. Your time sizes it. What failed before adds one guard."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the picker free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Free for good. No ads. No accounts. Your answers stay in your browser."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  :root { --accent: #0f766e; --ink: #1a1a1a; --muted: #6b7280; --line: #dce8e2; --card: #ffffff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink); background: #faf7f2; line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 620px; margin: 0 auto; padding: 20px 18px 56px; }
+  .brand { font-weight: 800; font-size: 15px; color: var(--accent); margin-bottom: 10px; }
+  .brand a { color: var(--accent); text-decoration: none; display: inline-block; padding: 12px 0; min-height: 44px; }
+  h1 { font-size: 32px; line-height: 1.2; letter-spacing: -0.01em; margin: 14px 0 8px; }
+  h2 { font-size: 23px; line-height: 1.25; margin: 24px 0 10px; }
+  p { margin: 0 0 12px; }
+  .sub { color: var(--muted); font-size: 16px; }
+  .cta {
+    display: block; width: 100%; min-height: 52px; padding: 14px 18px; margin: 14px 0;
+    font-size: 18px; font-weight: 700; color: #fff; background: var(--accent);
+    border: 2px solid var(--accent); border-radius: 12px; cursor: pointer; text-align: center;
+    text-decoration: none;
+  }
+  .card { background: var(--card); border: 2px solid var(--line); border-radius: 14px; padding: 16px; margin: 14px 0; }
+  .card h3 { font-size: 20px; font-weight: 800; line-height: 1.3; margin: 4px 0 8px; }
+  .label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin: 12px 0 4px; }
+  .card ul { margin: 0 0 4px 20px; }
+  .card li { margin-bottom: 6px; }
+  .step { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin: 0 0 4px; }
+  .qnav { margin-top: 30px; }
+  .qnav a { color: var(--accent); font-weight: 700; display: inline-block; padding: 10px 6px; min-height: 44px; }
+  .asklink a { color: var(--accent); display: inline-block; padding: 12px 6px; min-height: 44px; }
+  .faq { margin-top: 30px; }
+  .faq details { background: var(--card); border: 2px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 10px 0; }
+  .faq summary { font-weight: 700; cursor: pointer; font-size: 16px; padding: 10px 0; }
+  .faq p { margin: 8px 0 2px; color: var(--muted); }
+  footer { margin-top: 36px; padding-top: 16px; border-top: 1px solid #e5e7eb; color: var(--muted); font-size: 14px; text-align: center; }
+  footer a { color: var(--accent); font-weight: 700; display: inline-block; padding: 12px 6px; min-height: 44px; }
+</style>
+<style>  .screen { display: none; }
+  .screen.on { display: block; }
+  .brand { font-weight: 800; font-size: 15px; color: var(--accent); margin-bottom: 10px; }
+  h1 { font-size: 32px; line-height: 1.2; letter-spacing: -0.01em; margin: 14px 0 8px; }
+  h2 { font-size: 23px; line-height: 1.25; margin: 6px 0 10px; }
+  p { margin: 0 0 12px; }
+  .sub { color: var(--muted); font-size: 16px; }
+  .countdown { font-size: 15px; color: var(--muted); margin-bottom: 6px; font-variant-numeric: tabular-nums; }
+  .cta {
+    display: block; width: 100%; min-height: 52px; padding: 14px 18px; margin: 14px 0;
+    font-size: 18px; font-weight: 700; color: #fff; background: var(--accent);
+    border: 2px solid var(--accent); border-radius: 12px; cursor: pointer; text-align: center;
+  }
+  .cta:active { transform: translateY(1px); }
+  .ghost {
+    display: block; width: 100%; min-height: 48px; padding: 12px 18px; margin: 10px 0;
+    font-size: 16px; font-weight: 600; color: var(--ink); background: var(--card);
+    border: 2px solid var(--line); border-radius: 12px; cursor: pointer; text-align: center;
+  }
+  .row2 { display: flex; gap: 10px; }
+  .row2 > * { flex: 1; }
+  .dots { display: flex; gap: 8px; margin: 4px 0 8px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--line); }
+  .dot.done { background: var(--accent); border-color: var(--accent); }
+  .step-tag { font-size: 13px; color: var(--muted); font-weight: 600; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+  .chip {
+    min-height: 48px; padding: 11px 16px; font-size: 16px; font-weight: 600; color: var(--ink);
+    background: var(--card); border: 2px solid var(--line); border-radius: 999px; cursor: pointer;
+  }
+  .chip .tick { display: none; font-weight: 800; margin-right: 6px; }
+  .chip[aria-pressed="true"] { border-color: var(--accent); background: #e0f2ee; }
+  .chip[aria-pressed="true"] .tick { display: inline; }
+  .hint { min-height: 20px; font-size: 14px; color: var(--accent); font-weight: 600; margin: 8px 0 0; }
+  .card { background: var(--card); border: 2px solid var(--line); border-radius: 14px; padding: 16px; margin: 14px 0; }
+  .big { font-size: 24px; font-weight: 800; line-height: 1.3; margin: 4px 0 6px; }
+  .label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); }
+  .status { min-height: 20px; font-size: 14px; font-weight: 600; color: var(--accent); margin: 6px 0; }
+  .saved-label { font-size: 14px; font-weight: 600; color: var(--muted); margin: 0 0 10px; }
+  [hidden] { display: none !important; }
+  #yc-out img, #lt-out img { display: block; width: 100%; max-width: 270px; height: auto; margin: 12px auto 4px; border-radius: 14px; box-shadow: 0 8px 22px rgba(10, 41, 37, 0.35); }
+  textarea {
+    width: 100%; font: inherit; font-size: 16px; line-height: 1.5; color: var(--ink);
+    background: var(--card); border: 2px solid var(--line); border-radius: 12px;
+    padding: 12px 14px; margin: 8px 0; resize: vertical;
+  }
+  textarea:focus { outline: none; border-color: var(--accent); }
+  input[type="text"] {
+    width: 100%; font: inherit; font-size: 16px; line-height: 1.5; color: var(--ink);
+    background: var(--card); border: 2px solid var(--line); border-radius: 12px;
+    padding: 12px 14px; margin: 8px 0;
+  }
+  input[type="text"]:focus { outline: none; border-color: var(--accent); }
+  pre {
+    white-space: pre-wrap; font: inherit; font-size: 14px; line-height: 1.5;
+    background: var(--card); border: 2px solid var(--line); border-radius: 12px;
+    padding: 12px 14px; text-align: left; margin: 8px 0;
+  }
+  .example { margin-top: 32px; }
+  .example h2 { font-size: 23px; margin-bottom: 14px; }
+  .example p { color: #374151; font-size: 17px; line-height: 1.6; margin: 0 0 12px; }
+  .ex-pill { padding: 11px 16px; font-size: 16px; font-weight: 600; color: var(--ink); background: var(--card); border: 2px solid var(--line); border-radius: 999px; }
+  .ex-note { border-left: 3px solid var(--amber); padding-left: 12px; font-style: italic; }
+  .how { border-top: 1px solid #e5e7eb; margin-top: 32px; padding-top: 24px; }
+  .how h2 { font-size: 23px; margin-bottom: 14px; }
+  .how ol { margin-left: 22px; color: #374151; font-size: 17px; line-height: 1.6; }
+  .how li { margin-bottom: 14px; }
+  .how p { font-size: 17px; line-height: 1.6; color: #374151; margin: 0 0 14px; }
+  .faq { border-top: 1px solid #e5e7eb; margin-top: 32px; padding-top: 24px; text-align: left; }
+  .faq h2 { font-size: 23px; margin-bottom: 6px; }
+  .faq h3 { font-size: 17px; margin: 20px 0 6px; }
+  .faq p { color: #374151; margin: 0 0 10px; font-size: 16px; line-height: 1.6; }
+  .maker { border-top: 1px solid #e5e7eb; margin-top: 32px; padding-top: 24px; text-align: left; }
+  .maker h2 { font-size: 23px; margin-bottom: 6px; }
+  .maker p { color: #374151; margin: 0 0 10px; font-size: 16px; line-height: 1.6; }
+  footer { margin-top: 36px; padding-top: 16px; border-top: 1px solid #e5e7eb; color: var(--muted); font-size: 14px; text-align: center; }
+  footer a { color: var(--accent); font-weight: 700; display: inline-block; padding: 12px 6px; min-height: 44px; }
+</style>
+</head>
+<body>
+  <!-- ============ SCREEN 1: PICKER HOME ============ -->
+  <section class="screen on" id="s-home">
+    <div class="wrap">
+    <p class="brand"><a href="/">Pick My Resolution</a></p>
+    <h1>New Year's Resolution Picker</h1>
+    <p class="sub">Four questions. One pick, sized to your week.</p>
+    <button class="cta" id="btn-start">Pick my resolution</button>
+    <p class="sub">Free forever. No ads. No accounts.</p>
+    <p>Other pickers hand you fifty ideas. This one hands you one plan.</p>
+    <div class="example">
+      <h2>One real pick, start to finish</h2>
+      <p>Say your year felt like this:</p>
+      <div class="chips" aria-label="Sample answers">
+        <span class="ex-pill">Body and health</span>
+        <span class="ex-pill">I felt drained a lot.</span>
+        <span class="ex-pill">2 hours a week</span>
+        <span class="ex-pill">I just forgot to do it.</span>
+      </div>
+      <p style="margin-top:14px"><strong>Why this pick:</strong> Drained, in body and health, points to a walk. Two hours sizes the dose. Forgot before, so the plan adds an alarm.</p>
+      <div class="card">
+        <p class="big">Take a short walk: 30 min, 4x a week.</p>
+        <p class="label">First move, week one</p>
+        <p>Put your shoes by the front door. Walk 30 min right after a meal.</p>
+        <p class="label">Your week one plan</p>
+        <p>Sat 9am, at the park, with Alex</p>
+        <p class="label">If it gets hard</p>
+        <p>Set a phone alarm for session days. Same time, same sound.</p>
+        <p class="label">Your time</p>
+        <p>This plan uses all 120 minutes you offered.</p>
+      </div>
+      <p>It ends with a note to future you. This one opens:</p>
+      <p class="ex-note">&ldquo;Dear future me, I felt drained a lot back then. My pick was Take a short walk.&rdquo;</p>
+      <p>You finish yours in your own words. It stays on your device.</p>
+      <button class="cta" id="btn-start-2">Pick my resolution</button>
+    </div>
+    <div class="how">
+      <h2>How it works</h2>
+      <ol>
+        <li><strong>You pick one area.</strong> Body, money, home, work, family, calm.</li>
+        <li><strong>You say what felt hard.</strong> And what made past plans fail.</li>
+        <li><strong>You pick your time.</strong> Thirty minutes, two hours, or five.</li>
+        <li><strong>You get one plan.</strong> One move, sized to your time.</li>
+        <li><strong>You name week one.</strong> Day, time, place, person. Or skip it.</li>
+      </ol>
+      <p><strong>One plan only.</strong> You get one, not a list of ten.</p>
+      <p><strong>Your note stays here.</strong> It saves as a card on this device.</p>
+    </div>
+    <h2>Or say it in your own words</h2>
+    <p>Tell the ask page your year in a line or two. The same engine picks from your words.</p>
+    <p class="asklink"><a href="/ask"><strong>Ask in your own words</strong></a></p>
+    <div class="faq">
+      <h2>Common questions</h2>
+      <h3>What is a New Year's resolution picker?</h3>
+      <p>A picker chooses for you.</p>
+      <p>You answer four questions.</p>
+      <p>It gives you one resolution, not a list.</p>
+      <p>It comes with a first move for week one.</p>
+      <p>And one guard for hard days.</p>
+      <h3>How does the picker choose?</h3>
+      <p>Your area and your feeling pick the move.</p>
+      <p>Your time sizes it.</p>
+      <p>What failed before adds one guard.</p>
+      <h3>Is the picker free?</h3>
+      <p>Yes. Free for good.</p>
+      <p>No ads. No accounts.</p>
+      <p>Your answers stay in your browser.</p>
+    </div>
+    <div class="maker">
+      <h2>Made by a dad, on the side</h2>
+      <p>I&apos;m Billy, a dad in Redmond, Washington. I build these tools on the side, with AI &mdash; one idea, one website, no company behind it. This one keeps it to one resolution, sized to a real week, because lists die by spring.</p>
+    </div>
+  <div class="qnav">
+    <h2>More questions people ask</h2>
+    <p><a href="/why-do-new-years-resolutions-fail">Why do resolutions fail?</a> · <a href="/how-to-keep-a-new-years-resolution">How to keep one</a> · <a href="/what-is-a-good-new-years-resolution">What is a good one?</a> · <a href="/new-years-resolution-ideas-that-fit-a-busy-week">Ideas for a busy week</a> · <a href="/small-new-years-resolutions">Small resolutions</a> · <a href="/one-resolution-ideas">One resolution ideas</a> · <a href="/one-small-new-years-resolution-for-parents">One small one for parents</a> · <a href="/new-years-resolution-examples">Resolution examples</a> · <a href="/what-to-do-when-you-break-your-new-years-resolution">When you break one</a> · <a href="/realistic-new-years-resolutions">Realistic resolutions</a> · <a href="/how-to-pick-a-new-years-resolution">How to pick one</a> · <a href="/new-years-resolution-template">The check-in template</a> · <a href="/what-is-quitters-day">What is Quitter's Day?</a> · <a href="/how-many-new-years-resolutions-should-you-have">How many should you have?</a> · <a href="/new-years-resolution-tracker">The resolution tracker</a> · <a href="/should-you-tell-people-your-new-years-resolution">Should you tell people?</a> · <a href="/new-years-resolution-to-save-money">Save money</a> · <a href="/new-years-resolution-to-exercise-more">Exercise more</a> &middot; <a href="/ask">Ask in your own words</a></p>
+  </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+  <!-- ============ SCREEN 2: QUIZ ============ -->
+  <section class="screen" id="s-quiz">
+    <div class="dots" id="q-dots" aria-hidden="true"></div>
+    <p class="step-tag" id="q-step"></p>
+    <h2 id="q-title"></h2>
+    <div class="chips" id="q-chips"></div>
+    <div id="q-spec" hidden>
+      <p class="sub" style="font-size:15px">Day, time, place, person. In your own words.</p>
+      <input type="text" id="q-spec-input" maxlength="90" autocomplete="off"
+        aria-label="Your week one plan: day, time, place, person"
+        placeholder="Sat 9am, at the park, with Alex">
+      <p class="sub" style="font-size:14px">Leave it blank to skip. You still get your full plan.</p>
+    </div>
+    <p class="hint" id="q-hint"></p>
+    <div class="row2">
+      <button class="ghost" id="q-back">Back</button>
+      <button class="cta" id="q-next" style="margin:10px 0">Continue</button>
+    </div>
+  </section>
+
+  <!-- ============ SCREEN 3: RESULT ============ -->
+  <section class="screen" id="s-result">
+    <p class="step-tag">Your plan is set</p>
+    <h2>Your one resolution</h2>
+    <p class="saved-label" id="r-saved" hidden></p>
+    <div class="card">
+      <p class="big" id="r-resolution"></p>
+      <p class="label">First move, week one</p>
+      <p id="r-first"></p>
+      <div id="r-when-block" hidden>
+        <p class="label">Your week one plan</p>
+        <p id="r-when"></p>
+      </div>
+      <p class="label">If it gets hard</p>
+      <p id="r-guard"></p>
+      <p class="label">Your time</p>
+      <p id="r-note"></p>
+    </div>
+    <p class="label">Your weekly check-in</p>
+    <pre id="r-checkin"></pre>
+    <button class="cta" id="btn-copy-checkin">Copy my weekly check-in</button>
+    <p class="status" id="st-checkin"></p>
+    <p class="label">Share text</p>
+    <pre id="r-share"></pre>
+    <button class="ghost" id="btn-copy-share">Copy my share text</button>
+    <p class="status" id="st-share"></p>
+    <p class="label">Your year card</p>
+    <p class="sub" style="font-size:14px">One picture for your lock screen. 52 dots, one for each week.</p>
+    <button class="cta" id="btn-yearcard">Get my year card</button>
+    <div id="yc-out"></div>
+    <p class="status" id="st-yearcard"></p>
+    <button class="ghost" id="btn-yc-share" hidden>Share my year card</button>
+    <a class="ghost" id="yc-dl" href="#" download="year-card.png" hidden style="text-decoration:none">Download my year card</a>
+    <p class="label">A note to future you</p>
+    <p class="sub" style="font-size:14px">A first note is ready below. Edit any line before you save.</p>
+    <p class="saved-label" id="lt-saved" hidden></p>
+    <textarea id="lt-note" rows="4" maxlength="400" aria-label="Your note to future you" placeholder="Dear future me,"></textarea>
+    <div class="chips" id="lt-chips"></div>
+    <p class="hint" id="lt-date"></p>
+    <p class="sub" style="font-size:14px">Your note stays in this browser. It never leaves your device.</p>
+    <button class="cta" id="btn-letter">Save my letter card</button>
+    <div id="lt-out"></div>
+    <p class="status" id="st-letter"></p>
+    <button class="ghost" id="btn-lt-share" hidden>Share my letter card</button>
+    <a class="ghost" id="lt-dl" href="#" download="letter-card.png" hidden style="text-decoration:none">Download my letter card</a>
+    <button class="ghost" id="btn-change">Change answers</button>
+    <button class="ghost" id="btn-again">Start over</button>
+  </section>
+
+  <footer>
+    <p>Built with Muse.<br>
+    Browse by area: <a href="/body-and-health">Body and health</a> · <a href="/money">Money</a> · <a href="/home">Home</a> · <a href="/work">Work</a> · <a href="/family-and-friends">Family and friends</a> · <a href="/mind-and-calm">Mind and calm</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a><br>
+    More family tools: <a href="https://fillmybracket.com">Fill My Bracket, your March bracket</a></p>
+  </footer>
+</div>
+<script>
+"use strict";
+// ENGINE START
+var AREAS = [
+  { k: "health", label: "Body and health" },
+  { k: "money", label: "Money" },
+  { k: "home", label: "Home" },
+  { k: "work", label: "Work" },
+  { k: "family", label: "Family and friends" },
+  { k: "calm", label: "Mind and calm" }
+];
+var OFFS = [
+  { k: "drained", label: "I felt drained a lot." },
+  { k: "piled", label: "Things piled up on me." },
+  { k: "stuck", label: "I felt stuck in place." },
+  { k: "drift", label: "I drifted from good habits." },
+  { k: "alone", label: "I felt alone a lot." }
+];
+var TIMES = [
+  { k: "t30", label: "30 minutes a week", budget: 30 },
+  { k: "t2h", label: "2 hours a week", budget: 120 },
+  { k: "t5h", label: "5 hours a week", budget: 300 }
+];
+var FAILS = [
+  { k: "big", label: "I tried to do too much." },
+  { k: "forgot", label: "I just forgot to do it." },
+  { k: "busy", label: "Life got busy and loud." },
+  { k: "bored", label: "I got bored and quit." }
+];
+var ACTIONS = {
+  health: {
+    drained: "Take a short walk",
+    piled: "Cook a real meal",
+    stuck: "Do a short workout",
+    drift: "Stretch your whole body",
+    alone: "Walk with a friend"
+  },
+  money: {
+    drained: "Check your bank balance",
+    piled: "Sort bills in one spot",
+    stuck: "Move cash to savings",
+    drift: "Write down what you spend",
+    alone: "Tell a friend your goal"
+  },
+  home: {
+    drained: "Tidy one small corner",
+    piled: "Clear one shelf fully",
+    stuck: "Fix one small thing",
+    drift: "Make one room cozy",
+    alone: "Have a friend visit"
+  },
+  work: {
+    drained: "Plan your day on paper",
+    piled: "Clear your desk top",
+    stuck: "Learn one work skill",
+    drift: "Chat with a work friend",
+    alone: "Eat lunch with coworkers"
+  },
+  family: {
+    drained: "Talk with family at home",
+    piled: "Share one meal together",
+    stuck: "Play one game together",
+    drift: "Call a friend you miss",
+    alone: "Visit someone you love"
+  },
+  calm: {
+    drained: "Sit in a quiet place",
+    piled: "Write thoughts on paper",
+    stuck: "Read a calm book",
+    drift: "Breathe slow in fresh air",
+    alone: "Sit outside with others"
+  }
+};
+var GUARDS = {
+  big: "Do just this move all month. Add more next month, not now.",
+  forgot: "Set a phone alarm for session days. Same time, same sound.",
+  busy: "Miss a day? Do half the next day. Half still keeps the streak.",
+  bored: "Same move, new place or playlist. Change one thing, not the move."
+};
+// Engine-truth fix (2026-10-23, design: engine-truth-audit-2026-10-23.md
+// section 4, Proposals A + C2). The time answer is a budget ceiling, not
+// a quota to fill: each action has its own dose per time level, and no
+// dose ever totals more than that level's budget (30 / 120 / 300).
+// GPT-audit round-1 fix (2026-10-23): the ladder now also scales. Every
+// action's weekly total strictly grows with the time offered, and every
+// dose string differs per level, so more time always buys a bigger plan.
+// Scalable moves grow by longer or more sessions; unit moves (one shelf,
+// one fix, one room) grow by more units per week; moves that are small
+// by nature (a balance check, a cash move, breathing) stay small and the
+// tool says plainly how much of the offered time the plan uses instead
+// of padding them into fake hour-long sessions.
+var DOSES = {
+  "Take a short walk": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "30 min, 7x a week", mins: 30, times: 7 } },
+  "Cook a real meal": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "60 min, 5x a week", mins: 60, times: 5 } },
+  "Do a short workout": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "40 min, 5x a week", mins: 40, times: 5 } },
+  "Stretch your whole body": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "20 min, 5x a week", mins: 20, times: 5 }, t5h: { dose: "20 min, 7x a week", mins: 20, times: 7 } },
+  "Check your bank balance": { t30: { dose: "2 min, 3x a week", mins: 2, times: 3 }, t2h: { dose: "5 min, 3x a week", mins: 5, times: 3 }, t5h: { dose: "5 min, 5x a week", mins: 5, times: 5 } },
+  "Sort bills in one spot": { t30: { dose: "20 min, 1x a week", mins: 20, times: 1 }, t2h: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t5h: { dose: "30 min, 2x a week", mins: 30, times: 2 } },
+  "Move cash to savings": { t30: { dose: "2 min, 1x a week", mins: 2, times: 1 }, t2h: { dose: "2 min, 2x a week", mins: 2, times: 2 }, t5h: { dose: "2 min, 3x a week", mins: 2, times: 3 } },
+  "Write down what you spend": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "10 min, 5x a week", mins: 10, times: 5 }, t5h: { dose: "10 min, 7x a week", mins: 10, times: 7 } },
+  "Tidy one small corner": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "20 min, 4x a week", mins: 20, times: 4 }, t5h: { dose: "20 min, 7x a week", mins: 20, times: 7 } },
+  "Clear one shelf fully": { t30: { dose: "25 min, 1x a week", mins: 25, times: 1 }, t2h: { dose: "30 min, 2x a week", mins: 30, times: 2 }, t5h: { dose: "30 min, 5x a week", mins: 30, times: 5 } },
+  "Fix one small thing": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "45 min, 1x a week", mins: 45, times: 1 }, t5h: { dose: "45 min, 3x a week", mins: 45, times: 3 } },
+  "Make one room cozy": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "60 min, 1x a week", mins: 60, times: 1 }, t5h: { dose: "60 min, 3x a week", mins: 60, times: 3 } },
+  "Plan your day on paper": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "10 min, 5x a week", mins: 10, times: 5 }, t5h: { dose: "10 min, 7x a week", mins: 10, times: 7 } },
+  "Clear your desk top": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "15 min, 4x a week", mins: 15, times: 4 }, t5h: { dose: "20 min, 5x a week", mins: 20, times: 5 } },
+  "Learn one work skill": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "60 min, 5x a week", mins: 60, times: 5 } },
+  "Chat with a work friend": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "30 min, 5x a week", mins: 30, times: 5 } },
+  "Talk with family at home": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "60 min, 5x a week", mins: 60, times: 5 } },
+  "Share one meal together": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "60 min, 5x a week", mins: 60, times: 5 } },
+  "Play one game together": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "60 min, 5x a week", mins: 60, times: 5 } },
+  "Call a friend you miss": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "30 min, 5x a week", mins: 30, times: 5 } },
+  "Sit in a quiet place": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "20 min, 5x a week", mins: 20, times: 5 }, t5h: { dose: "20 min, 7x a week", mins: 20, times: 7 } },
+  "Write thoughts on paper": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "20 min, 5x a week", mins: 20, times: 5 }, t5h: { dose: "20 min, 7x a week", mins: 20, times: 7 } },
+  "Read a calm book": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "60 min, 5x a week", mins: 60, times: 5 } },
+  "Breathe slow in fresh air": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "10 min, 5x a week", mins: 10, times: 5 }, t5h: { dose: "10 min, 7x a week", mins: 10, times: 7 } },
+  "Walk with a friend": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "45 min, 5x a week", mins: 45, times: 5 } },
+  "Tell a friend your goal": { t30: { dose: "15 min, 2x a week", mins: 15, times: 2 }, t2h: { dose: "30 min, 2x a week", mins: 30, times: 2 }, t5h: { dose: "30 min, 4x a week", mins: 30, times: 4 } },
+  "Have a friend visit": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "60 min, 2x a week", mins: 60, times: 2 }, t5h: { dose: "60 min, 3x a week", mins: 60, times: 3 } },
+  "Eat lunch with coworkers": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "45 min, 5x a week", mins: 45, times: 5 } },
+  "Visit someone you love": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "60 min, 2x a week", mins: 60, times: 2 }, t5h: { dose: "60 min, 4x a week", mins: 60, times: 4 } },
+  "Sit outside with others": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "20 min, 5x a week", mins: 20, times: 5 }, t5h: { dose: "30 min, 5x a week", mins: 30, times: 5 } }
+};
+// First moves (Proposal C1 starters, extended Oct 30, 2026 by the
+// first-move specificity build): every action now has a starter, and each
+// starter carries one concrete setup step drawn from the action itself
+// (a named place, object, time, or amount) before the first session.
+// "{m}" in a starter is filled with the picked dose's session minutes in
+// buildResult, so a quoted minute count always matches the picked dose
+// (the F2 rule). The Oct 30 vs-AI fair re-test (3/10) named the old form
+// the loss: 75 of 90 unique first moves only restated the resolution.
+var STARTERS = {
+  "Take a short walk": "Put your shoes by the front door. Walk {m} min right after a meal.",
+  "Cook a real meal": "Write one meal on a sticky note. Cook it tonight in about {m} min.",
+  "Do a short workout": "Lay out your clothes the night before. Do {m} min in your living room.",
+  "Stretch your whole body": "Roll out a mat or bath towel. Stretch slow for {m} min.",
+  "Walk with a friend": "Text one friend and pick a day. Walk and talk for {m} min.",
+  "Check your bank balance": "Open your bank app after breakfast. Check the balance for {m} min.",
+  "Sort bills in one spot": "Gather all bills into one box. Pay one due bill. Move $5 to savings.",
+  "Move cash to savings": "Set a $5 auto move for payday. It moves each week by itself.",
+  "Write down what you spend": "Keep one list on your phone. Write down each spend that day.",
+  "Tell a friend your goal": "Text one friend your money goal today. Ask them to check in Friday.",
+  "Tidy one small corner": "Pick the corner by the front door. Tidy only it for {m} min.",
+  "Clear one shelf fully": "Pick the fullest shelf you have. Clear it fully in about {m} min.",
+  "Fix one small thing": "Write down the fix that bugs you. Start it. Give it {m} min.",
+  "Make one room cozy": "Pick the room you sit in most. Add one lamp or soft blanket.",
+  "Have a friend visit": "Text one friend and pick a day. Come as you are. Just talk.",
+  "Plan your day on paper": "Put paper and pen by your coffee. Write your top three tasks first.",
+  "Clear your desk top": "Set a timer for {m} min. Clear the desk top into one box.",
+  "Learn one work skill": "Pick one small skill for your job. Learn it for {m} min today.",
+  "Chat with a work friend": "Ask one work friend for coffee. Chat for {m} min this week.",
+  "Eat lunch with coworkers": "Ask two coworkers to lunch today. Eat together. Leave phones in pockets.",
+  "Talk with family at home": "Pick a time right after dinner. Talk at the table for {m} min.",
+  "Share one meal together": "Pick one dinner this week together. Eat at the table. No phones there.",
+  "Play one game together": "Pick a short game from the shelf. Play one round tonight together.",
+  "Call a friend you miss": "Pick the friend you miss most. Call them today, right after dinner.",
+  "Visit someone you love": "Text them today and pick a day. Visit soon and stay a while.",
+  "Sit in a quiet place": "Pick one quiet spot in your home. Sit there {m} min, no phone.",
+  "Write thoughts on paper": "Put a notebook by your bed. Write for {m} min before sleep.",
+  "Read a calm book": "Put your book on your pillow now. Read {m} min in bed tonight.",
+  "Breathe slow in fresh air": "Step outside your front door today. Breathe slow for {m} min.",
+  "Sit outside with others": "Sit outside with others after lunch. Stay {m} min and just talk."
+};
+// Check-in questions + future-note lines (Oct 30, 2026, check-in depth
+// build; SPEC registered by the post-build vs-AI re-test, 3/10): the old
+// check-in asked the same three generic questions on all 360 paths, and
+// the future-you section gave instructions with a blank box. Now each
+// action carries two check-in questions about its own move, plus one
+// note line drawn from its own starter (its place, object, or time).
+// The note is the plan restated to future you: no outcomes, no streaks,
+// no promises. Every line is plain data, so the same answers always
+// give byte-identical check-ins and notes.
+var CHECKINS = {
+  "Take a short walk": ["How many walks did I finish this week?", "Which walk felt best this week?"],
+  "Cook a real meal": ["How many real meals did I cook?", "Which meal was fastest to make?"],
+  "Do a short workout": ["How many workouts did I finish this week?", "Which move felt hardest this week?"],
+  "Stretch your whole body": ["How many stretch sessions did I do?", "Which part still feels tight today?"],
+  "Walk with a friend": ["Did I walk with my friend this week?", "When is our next walk set?"],
+  "Check your bank balance": ["Did I check my balance each time?", "What one number do I remember?"],
+  "Sort bills in one spot": ["Did I pay one due bill?", "Did I move $5 to savings?"],
+  "Move cash to savings": ["Did my $5 auto move run?", "Did I leave the savings alone?"],
+  "Write down what you spend": ["Did I write each spend down?", "What spend surprised me most?"],
+  "Tell a friend your goal": ["Did my friend check in Friday?", "What did I tell my friend?"],
+  "Tidy one small corner": ["Which corner did I tidy this week?", "Is that corner still clear today?"],
+  "Clear one shelf fully": ["Which shelf did I clear fully?", "What went out of the house?"],
+  "Fix one small thing": ["Which small thing did I fix?", "What fix comes next on my list?"],
+  "Make one room cozy": ["Which room feels cozier now?", "What one thing made it cozy?"],
+  "Have a friend visit": ["Did my friend visit this week?", "When did we talk the longest?"],
+  "Plan your day on paper": ["Did I write my top three first?", "How many top tasks got done?"],
+  "Clear your desk top": ["Is my desk top clear right now?", "What keeps landing on my desk?"],
+  "Learn one work skill": ["What skill did I practice this week?", "What part still feels hard?"],
+  "Chat with a work friend": ["Who did I chat with this week?", "What did I learn about them?"],
+  "Eat lunch with coworkers": ["How many lunches did we share?", "Who should I ask next time?"],
+  "Talk with family at home": ["How many talks did we have?", "What did we talk about most?"],
+  "Share one meal together": ["How many meals did we share?", "Were phones away at the table?"],
+  "Play one game together": ["Which game did we play together?", "Who won our game this week?"],
+  "Call a friend you miss": ["Did I call my friend this week?", "What news did my friend share?"],
+  "Visit someone you love": ["Did I visit this week as planned?", "When is my next visit set?"],
+  "Sit in a quiet place": ["How many quiet sits did I do?", "Which spot felt calmest this week?"],
+  "Write thoughts on paper": ["How many nights did I write?", "What thought came up most?"],
+  "Read a calm book": ["How many nights did I read?", "What page am I on now?"],
+  "Breathe slow in fresh air": ["How many fresh air breaks happened?", "When did breathing feel slowest?"],
+  "Sit outside with others": ["How many outside sits did we share?", "Who sat with me this week?"]
+};
+var NOTE_LINES = {
+  "Take a short walk": "My shoes wait by the front door.",
+  "Cook a real meal": "My first meal lives on a sticky note.",
+  "Do a short workout": "My clothes wait out the night before.",
+  "Stretch your whole body": "My mat stays rolled out, ready.",
+  "Walk with a friend": "My walks come with a friend now.",
+  "Check your bank balance": "My check comes right after breakfast.",
+  "Sort bills in one spot": "My bills live in one box now.",
+  "Move cash to savings": "My $5 move runs by itself.",
+  "Write down what you spend": "My spend list lives on my phone.",
+  "Tell a friend your goal": "My friend knows my money goal.",
+  "Tidy one small corner": "My first corner is the front door one.",
+  "Clear one shelf fully": "I started with my fullest shelf.",
+  "Fix one small thing": "My fix list starts with one thing.",
+  "Make one room cozy": "My first room is where I sit most.",
+  "Have a friend visit": "Visits start with a text and a day.",
+  "Plan your day on paper": "My paper waits by my coffee.",
+  "Clear your desk top": "My timer and one box clear it.",
+  "Learn one work skill": "I picked one small skill, not five.",
+  "Chat with a work friend": "Coffee with a work friend counts here.",
+  "Eat lunch with coworkers": "Phones stay in pockets at our lunch.",
+  "Talk with family at home": "Our talk time sits right after dinner.",
+  "Share one meal together": "Our table stays phone free at dinner.",
+  "Play one game together": "One short game beats a long list.",
+  "Call a friend you miss": "My calls come right after dinner.",
+  "Visit someone you love": "My visits start with a text today.",
+  "Sit in a quiet place": "My quiet spot waits with no phone.",
+  "Write thoughts on paper": "My notebook waits right by my bed.",
+  "Read a calm book": "My book waits right on my pillow.",
+  "Breathe slow in fresh air": "Fresh air waits right outside my door.",
+  "Sit outside with others": "We sit outside right after lunch."
+};
+// Reflective note lines (Oct 30, 2026, reflective note + de-duplication
+// build; SPEC registered by the check-in re-test, 5/10): the shipped note
+// restated the plan, and the plan lines repeated up to four times across
+// one answer. The note is now a letter, not a restatement. WHY_REFLECT
+// says why the plan was picked, in the words of the feeling answer the
+// user picked, told back in past tense. GUARD_REFLECT restates the
+// picked guard as lived experience, not as an instruction. The note
+// still carries the plan's facts (the action, its dose, the starter's
+// own line above), woven into letter sentences, so no full plan line
+// repeats verbatim anywhere in one answer.
+var WHY_REFLECT = {
+  drained: "I felt drained a lot back then.",
+  piled: "Things had piled up on me then.",
+  stuck: "I felt stuck in place back then.",
+  drift: "I had drifted from good habits then.",
+  alone: "I felt alone a lot back then."
+};
+var GUARD_REFLECT = {
+  big: "The hard part was wanting to add more.",
+  forgot: "The hard part was plain forgetting, some days.",
+  busy: "Some weeks, half a move was enough.",
+  bored: "The hard part was the same move, again."
+};
+// Specificity line (PMR-SPECIFIC-1, Oct 31, 2026; Wave H fix): the
+// user may name week one's first session in their own words (day,
+// time, place, person). It is optional, capped at 90 chars, stored
+// verbatim (trimmed, whitespace collapsed), and printed exactly as
+// given on the result card and the year card. It never changes which
+// resolution a path returns: buildResult reads it only as a display
+// field, so every engine path is identical with or without it.
+function cleanWhen(v) {
+  if (typeof v !== "string") return "";
+  return v.replace(/\s+/g, " ").trim().slice(0, 90);
+}
+function timeOf(k) {
+  for (var i = 0; i < TIMES.length; i++) if (TIMES[i].k === k) return TIMES[i];
+  return null;
+}
+function buildResult(a) {
+  var action = ACTIONS[a.area][a.off];
+  var d = DOSES[action][a.time];
+  var resolution = action + ": " + d.dose + ".";
+  var firstMove = (STARTERS[action] || (action + " for " + d.mins + " min.")).split("{m}").join(d.mins);
+  var guard = GUARDS[a.fail];
+  // Honest time use (semantic-fit audit F3, Oct 29 2026; shipped Oct 30,
+  // 2026): the time pick is a ceiling, and small moves stay small. The MCP
+  // has always said how much of the offered time the plan uses; the site
+  // result card now says it too, in the site's own short shape (the MCP
+  // adds one middle sentence; the numbers are the same on every path).
+  var t = timeOf(a.time);
+  var total = d.mins * d.times;
+  var timeNote = total >= t.budget
+    ? "This plan uses all " + t.budget + " minutes you offered."
+    : "This plan uses " + total + " of your " + t.budget + " minutes a week. The rest of your time stays yours.";
+  var qs = CHECKINS[action] || ["Did I do my move this week?", "What got in my way?"];
+  // De-duplication (Oct 30, 2026): the check-in no longer repeats the
+  // resolution, first move, or guard lines verbatim. It names the action
+  // once, in short form, and keeps its sessions line and questions, which
+  // are its own depth. The full lines live once, in the plan above it.
+  var checkin = [
+    "Weekly check-in for my resolution.",
+    "My one resolution: " + action + ".",
+    "Sessions this week: ___ of " + d.times + " (" + d.mins + " min each)",
+    qs[0],
+    qs[1],
+    "What got in my way?",
+    "What is one small move for next week?",
+    "Please keep your reply short and kind."
+  ].join("\n");
+  // Reflective note (Oct 30, 2026): a short letter from past me, woven
+  // only from this plan's own fields (the feeling picked, the action,
+  // its dose, the starter's line, the guard told as experience). No full
+  // plan line repeats here; the facts stay findable inside the letter.
+  var futureNote = [
+    "Dear future me,",
+    WHY_REFLECT[a.off] || "I picked one small plan, on purpose.",
+    "My pick was " + action + ".",
+    "The pace was " + d.dose + ".",
+    NOTE_LINES[action] || "I picked one small plan, on purpose.",
+    "I hope you still notice that small start.",
+    GUARD_REFLECT[a.fail] || "The hard part came some days, too.",
+    "Did the small move still fit my week?",
+    "From past me."
+  ].join("\n");
+  var share = [
+    "My 2027 resolution:",
+    resolution,
+    "First move: " + firstMove,
+    "Pick yours at https://pickmyresolution.com/?via=share"
+  ].join("\n");
+  return {
+    resolution: resolution,
+    firstMove: firstMove,
+    guard: guard,
+    timeNote: timeNote,
+    checkin: checkin,
+    futureNote: futureNote,
+    share: share,
+    whenLine: cleanWhen(a.when)
+  };
+}
+// ENGINE END
+
+function $(id) { return document.getElementById(id); }
+function show(id) {
+  var screens = document.querySelectorAll(".screen");
+  for (var i = 0; i < screens.length; i++) screens[i].classList.remove("on");
+  $(id).classList.add("on");
+  window.scrollTo(0, 0);
+}
+function copyText(text, statusEl, okMsg) {
+  function done(msg) { if (statusEl) statusEl.textContent = msg; }
+  function fallbackCopy() {
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.cssText = "position:fixed;top:0;left:0;opacity:0;";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      done(ok ? okMsg : "Copy did not work. Touch and hold the text to copy it.");
+    } catch (e) {
+      done("Copy did not work. Touch and hold the text to copy it.");
+    }
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function () { done(okMsg); }, fallbackCopy);
+  } else { fallbackCopy(); }
+}
+
+var STEPS = [
+  { key: "area", title: "Pick one part of your life.", list: AREAS },
+  { key: "off", title: "What was hard this year?", list: OFFS },
+  { key: "time", title: "How much time do you have each week?", list: TIMES },
+  { key: "fail", title: "What made past plans fail?", list: FAILS }
+];
+var KEY = "pmr_result_v1";
+var quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "" };
+var TOTAL_STEPS = STEPS.length + 1; // 4 questions + 1 optional specificity step
+var current = null;
+var letter = null;
+
+function saveResult() {
+  try {
+    localStorage.setItem(KEY, JSON.stringify({
+      answers: { area: quiz.area, off: quiz.off, time: quiz.time, fail: quiz.fail, when: quiz.when || "" },
+      result: current,
+      letter: letter
+    }));
+  } catch (e) {}
+}
+function loadResult() {
+  try {
+    var raw = localStorage.getItem(KEY);
+    if (!raw) return null;
+    var data = JSON.parse(raw);
+    if (!data || !data.answers || !data.result) return null;
+    // Shape check (P2-2, adversarial 2026-10-28): presence is not
+    // enough. A record whose answer keys are not real engine keys
+    // strands the quiz on re-finish, and a result with missing
+    // fields crashes the card buttons. Any shape failure falls
+    // through to the home screen; storage is left untouched.
+    function inList(list, k) {
+      for (var i = 0; i < list.length; i++) if (list[i].k === k) return true;
+      return false;
+    }
+    if (typeof data.answers !== "object" || typeof data.result !== "object") return null;
+    if (!inList(AREAS, data.answers.area)) return null;
+    if (!inList(OFFS, data.answers.off)) return null;
+    if (!inList(TIMES, data.answers.time)) return null;
+    if (!inList(FAILS, data.answers.fail)) return null;
+    // The specificity line is optional (PMR-SPECIFIC-1): a bad or
+    // missing one drops to empty; the valid plan still restores.
+    if (typeof data.answers.when !== "string") data.answers.when = "";
+    if (data.answers.when.length > 90) data.answers.when = data.answers.when.slice(0, 90);
+    if (typeof data.result.whenLine !== "string") data.result.whenLine = data.answers.when;
+    var fields = ["resolution", "firstMove", "guard", "checkin", "share"];
+    for (var f = 0; f < fields.length; f++) {
+      if (typeof data.result[fields[f]] !== "string" || !data.result[fields[f]]) return null;
+    }
+    // A letter is optional. A bad letter drops on its own; the
+    // valid plan it rides with still restores.
+    if (data.letter !== undefined && data.letter !== null) {
+      if (typeof data.letter !== "object" || typeof data.letter.note !== "string" || data.letter.note.length > 400) {
+        data.letter = null;
+      }
+    }
+    return data;
+  } catch (e) { return null; }
+}
+function clearResult() {
+  try { localStorage.removeItem(KEY); } catch (e) {}
+}
+
+function captureSpec() {
+  var v = $("q-spec-input").value.replace(/\s+/g, " ").trim().slice(0, 90);
+  quiz.when = v;
+  return v;
+}
+function renderQuiz() {
+  var isSpec = quiz.step >= STEPS.length;
+  $("q-step").textContent = "Step " + (quiz.step + 1) + " of " + TOTAL_STEPS;
+  var dots = "";
+  for (var i = 0; i < TOTAL_STEPS; i++) dots += '<span class="dot' + (i <= quiz.step ? " done" : "") + '"></span>';
+  $("q-dots").innerHTML = dots;
+  $("q-hint").textContent = "";
+  $("q-back").style.visibility = quiz.step === 0 ? "hidden" : "visible";
+  if (isSpec) {
+    $("q-title").textContent = "Make week one real.";
+    $("q-chips").innerHTML = "";
+    $("q-spec").hidden = false;
+    $("q-spec-input").value = quiz.when || "";
+    $("q-next").textContent = "Get my resolution";
+    return;
+  }
+  $("q-spec").hidden = true;
+  var st = STEPS[quiz.step];
+  $("q-title").textContent = st.title;
+  var sel = quiz[st.key];
+  $("q-chips").innerHTML = st.list.map(function (o) {
+    var on = sel === o.k;
+    return '<button class="chip" data-k="' + o.k + '" aria-pressed="' + on + '">' +
+      '<span class="tick">\u2713</span>' + o.label + "</button>";
+  }).join("");
+  $("q-next").textContent = "Continue";
+  var chips = $("q-chips").querySelectorAll(".chip");
+  for (var c = 0; c < chips.length; c++) {
+    chips[c].onclick = (function (el) {
+      return function () {
+        var k = el.getAttribute("data-k");
+        var was = quiz[st.key];
+        quiz[st.key] = (was === k) ? null : k;
+        // Friction sweep 2026-10-31: a fresh pick auto-advances (the
+        // ThawDay chip pattern shipped the same day), so no separate
+        // Continue tap is needed. Continue stays as a fallback, and
+        // tapping the picked chip again still deselects in place.
+        // On the last question the advance lands on the optional
+        // specificity step (PMR-SPECIFIC-1), never straight past it.
+        if (quiz[st.key] && quiz[st.key] !== was) {
+          quiz.step++;
+          renderQuiz();
+        } else { renderQuiz(); }
+      };
+    })(chips[c]);
+  }
+}
+function renderResult() {
+  $("r-saved").textContent = "";
+  $("r-saved").hidden = true;
+  $("r-resolution").textContent = current.resolution;
+  $("r-first").textContent = current.firstMove;
+  var whenTxt = (typeof current.whenLine === "string") ? current.whenLine : "";
+  $("r-when").textContent = whenTxt;
+  $("r-when-block").hidden = !whenTxt;
+  $("r-guard").textContent = current.guard;
+  $("r-note").textContent = current.timeNote || "";
+  $("r-checkin").textContent = current.checkin;
+  $("r-share").textContent = current.share;
+  $("st-checkin").textContent = "";
+  $("st-share").textContent = "";
+  // A new result retires any year card drawn from the old one.
+  ycBlob = null;
+  $("st-yearcard").textContent = "";
+  $("yc-out").innerHTML = "";
+  $("btn-yc-share").hidden = true;
+  $("yc-dl").hidden = true;
+  // A new result also retires any letter written for the old one.
+  resetLetter();
+  // Check-in depth build (Oct 30, 2026): the letter box starts filled
+  // with the note this plan wrote for future you, ready to edit. It is
+  // a draft only: nothing saves until the letter card is made, and a
+  // saved letter (restored after this render) replaces the draft.
+  if (current.futureNote && $("lt-note")) $("lt-note").value = current.futureNote;
+}
+function finishQuiz() {
+  current = buildResult(quiz);
+  // A fresh pick starts with no letter; the old pick's letter must not
+  // ride into the new saved record.
+  letter = null;
+  saveResult();
+  // Measurement (Sprint Lane 1, Oct 31, 2026): a typed week-one plan is
+  // the first-action commitment. Count it as its own artifact so a pick
+  // with a plan is distinguishable from a pick alone. Counts only: the
+  // plan text itself never leaves the device, like every quiz answer.
+  try {
+    if (quiz.when && typeof fleetTrack === "function") {
+      fleetTrack("artifact_created", { tool: "resolution-picker", artifact: "week-one-plan" });
+    }
+  } catch (e) {}
+  renderResult();
+  show("s-result");
+}
+
+$("btn-start").onclick = function () {
+  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "" };
+  renderQuiz();
+  show("s-quiz");
+};
+var btnStart2 = $("btn-start-2");
+if (btnStart2) btnStart2.onclick = function () { $("btn-start").click(); };
+$("q-back").onclick = function () {
+  if (quiz.step > 0) { quiz.step--; renderQuiz(); }
+};
+$("q-next").onclick = function () {
+  if (quiz.step >= STEPS.length) { captureSpec(); finishQuiz(); return; }
+  var st = STEPS[quiz.step];
+  if (!quiz[st.key]) { $("q-hint").textContent = "Pick one answer first."; return; }
+  quiz.step++; renderQuiz();
+};
+// Enter in the specificity field submits it, same as the button.
+$("q-spec-input").addEventListener("keydown", function (e) {
+  if (e.key === "Enter") { e.preventDefault(); captureSpec(); finishQuiz(); }
+});
+$("btn-copy-checkin").onclick = function () {
+  copyText(current.checkin, $("st-checkin"), "Copied. Paste it in your AI or notes app.");
+};
+$("btn-copy-share").onclick = function () {
+  copyText(current.share, $("st-share"), "Copied. Paste it where you share things.");
+};
+
+// Year card (2026-10-24): a 1080x1350 lock-screen PNG drawn from the
+// result already on screen. It reads only `current`, the object
+// renderResult just showed, and never looks a dose up again, so the
+// card can not drift from the page. The 52 dots, one per week, are all
+// empty: the card is made before the year starts, so no week the user
+// has not lived yet is ever pre-filled.
+var ycBlob = null;
+function ycYear() {
+  var now = new Date();
+  // From July the site counts down to the next Jan 1, so a plan made
+  // then is for next year. Before July you are living this year's plan.
+  return now.getMonth() >= 6 ? now.getFullYear() + 1 : now.getFullYear();
+}
+function ycParts() {
+  var r = current.resolution; // "<action>: <dose>." exactly as rendered
+  var cut = r.indexOf(": ");
+  var name = cut > 0 ? r.slice(0, cut) : r;
+  var dose = cut > 0 ? r.slice(cut + 2).replace(/\.$/, "") : "";
+  var total = "";
+  var m = dose.match(/^(\d+) min, (\d+)x a week$/);
+  if (m) total = (parseInt(m[1], 10) * parseInt(m[2], 10)) + " min a week in all";
+  return { name: name, dose: dose, total: total, firstMove: current.firstMove, guard: current.guard, when: (typeof current.whenLine === "string" ? current.whenLine : ""), year: ycYear() };
+}
+// Hard-break one word wider than maxW into measured chunks, each
+// no wider than maxW (P2-1, adversarial 2026-10-28). Surrogate
+// pairs stay together. A single character wider than maxW is
+// kept whole so the loop always makes progress.
+function breakLongWord(c, word, maxW) {
+  var chunks = [];
+  var cur = "";
+  for (var i = 0; i < word.length; i++) {
+    var ch = word[i];
+    var code = word.charCodeAt(i);
+    if (code >= 0xD800 && code <= 0xDBFF && i + 1 < word.length) {
+      var lo = word.charCodeAt(i + 1);
+      if (lo >= 0xDC00 && lo <= 0xDFFF) { ch = word.slice(i, i + 2); i++; }
+    }
+    var test = cur + ch;
+    if (cur && c.measureText(test).width > maxW) { chunks.push(cur); cur = ch; }
+    else { cur = test; }
+  }
+  if (cur) chunks.push(cur);
+  return chunks.length ? chunks : [word];
+}
+function expandLongWords(c, words, maxW) {
+  var out = [];
+  for (var i = 0; i < words.length; i++) {
+    var w = words[i];
+    if (w && c.measureText(w).width > maxW) {
+      var parts = breakLongWord(c, w, maxW);
+      for (var p = 0; p < parts.length; p++) out.push(parts[p]);
+    } else { out.push(w); }
+  }
+  return out;
+}
+function ycWrap(c, text, x, y, maxW, lh) {
+  var words = expandLongWords(c, text.split(" "), maxW);
+  var line = "";
+  for (var i = 0; i < words.length; i++) {
+    var test = line ? line + " " + words[i] : words[i];
+    if (line && c.measureText(test).width > maxW) {
+      c.fillText(line, x, y);
+      y += lh;
+      line = words[i];
+    } else { line = test; }
+  }
+  if (line) { c.fillText(line, x, y); y += lh; }
+  return y;
+}
+function drawYearCard() {
+  if (!current) return;
+  var p = ycParts();
+  var cv = document.createElement("canvas");
+  cv.width = 1080; cv.height = 1350;
+  var c = cv.getContext("2d");
+  var F = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif";
+  var L = 72, W = 1080 - 144;
+  // Dawn background: the hero gradient plus its amber glow.
+  var g = c.createLinearGradient(0, 0, 420, 1350);
+  g.addColorStop(0, "#0a2925"); g.addColorStop(0.58, "#0e3a32"); g.addColorStop(1, "#14532d");
+  c.fillStyle = g; c.fillRect(0, 0, 1080, 1350);
+  var glow = c.createRadialGradient(950, -60, 40, 950, -60, 640);
+  glow.addColorStop(0, "rgba(245,159,0,0.38)"); glow.addColorStop(1, "rgba(245,159,0,0)");
+  c.fillStyle = glow; c.fillRect(0, 0, 1080, 1350);
+  // Brand + label
+  c.fillStyle = "#f59f00"; c.font = "700 30px " + F;
+  c.fillText("PICK MY RESOLUTION", L, 108);
+  c.fillStyle = "#ffd88a"; c.font = "700 28px " + F;
+  c.fillText("MY " + p.year + " RESOLUTION", L, 198);
+  // The resolution name, big. Drop a size if a long name needs it.
+  c.fillStyle = "#ffffff"; c.font = "800 66px " + F;
+  if (c.measureText(p.name).width > W) c.font = "800 56px " + F;
+  var y = ycWrap(c, p.name, L, 292, W, 80);
+  // The dose, exactly the string the engine put on screen, plus its total.
+  c.fillStyle = "#f59f00"; c.font = "700 46px " + F;
+  c.fillText(p.dose, L, y + 42);
+  y += 42;
+  if (p.total) {
+    c.fillStyle = "#bcd6c9"; c.font = "400 32px " + F;
+    c.fillText(p.total, L, y + 50);
+    y += 50;
+  }
+  // 52 dots, one per week, all empty.
+  c.fillStyle = "#ffd88a"; c.font = "700 26px " + F;
+  c.fillText("52 WEEKS", L, y + 92);
+  c.fillStyle = "#bcd6c9"; c.font = "400 30px " + F;
+  c.fillText("One dot for each week of " + p.year + ".", L, y + 134);
+  // When the user's own week-one line rides the card (PMR-SPECIFIC-1),
+  // the dot grid tightens so the line fits above the footer.
+  var compact = !!p.when;
+  var gridTop = y + 164, d = compact ? 48 : 54, rowPitch = compact ? 64 : 80;
+  var colPitch = (W - d) / 12;
+  c.lineWidth = 3; c.strokeStyle = "rgba(255,255,255,0.55)";
+  c.fillStyle = "rgba(255,255,255,0.06)";
+  for (var i = 0; i < 52; i++) {
+    var cx = L + (i % 13) * colPitch + d / 2;
+    var cy = gridTop + Math.floor(i / 13) * rowPitch + d / 2;
+    c.beginPath(); c.arc(cx, cy, d / 2, 0, Math.PI * 2); c.fill(); c.stroke();
+  }
+  y = gridTop + 3 * rowPitch + d;
+  // First move: the line that makes the card useful in January.
+  c.fillStyle = "#ffd88a"; c.font = "700 26px " + F;
+  c.fillText("YOUR FIRST MOVE", L, y + (compact ? 72 : 84));
+  c.fillStyle = "#ffffff"; c.font = "400 36px " + F;
+  y = ycWrap(c, p.firstMove, L, y + (compact ? 120 : 136), W, compact ? 44 : 48);
+  if (p.when) {
+    // The user's own specificity line, verbatim (PMR-SPECIFIC-1). It
+    // takes the guard line's slot on this card: it is the more
+    // personal of the two, and both cannot fit. The guard still
+    // lives on the result card on the site.
+    c.fillStyle = "#ffd88a"; c.font = "700 26px " + F;
+    c.fillText("WEEK ONE, FIRST TIME", L, y + 44);
+    c.fillStyle = "#ffffff"; c.font = "400 28px " + F;
+    ycWrap(c, p.when, L, y + 88, W, 38);
+  } else if (y + 102 <= 1258) {
+    // The guard line, if it still fits above the footer.
+    c.fillStyle = "#ffd88a"; c.font = "700 26px " + F;
+    c.fillText("IF IT GETS HARD", L, y + 56);
+    c.fillStyle = "#d7e8df"; c.font = "400 30px " + F;
+    c.fillText(p.guard, L, y + 102);
+  }
+  // Footer
+  c.fillStyle = "#8fb3a4"; c.font = "400 26px " + F;
+  c.fillText("Built with Muse.", L, 1292);
+  var site = "pickmyresolution.com";
+  c.fillText(site, 1080 - L - c.measureText(site).width, 1292);
+  cv.toBlob(function (blob) {
+    ycBlob = blob;
+    var url = cv.toDataURL("image/png");
+    window.__lastYearCard = { dataURL: url, name: p.name, dose: p.dose, total: p.total, firstMove: p.firstMove, guard: p.guard, when: p.when, year: p.year, dots: 52 };
+    var wrap = $("yc-out"); wrap.innerHTML = "";
+    var im = document.createElement("img");
+    im.alt = "Your " + p.year + " year card";
+    im.src = url;
+    wrap.appendChild(im);
+    var dl = $("yc-dl"); dl.href = url; dl.hidden = false;
+    var can = false;
+    try { can = !!(blob && navigator.canShare && navigator.canShare({ files: [new File([blob], "year-card.png", { type: "image/png" })] })); } catch (e) { can = false; }
+    $("btn-yc-share").hidden = !can;
+    $("st-yearcard").textContent = can ? "Tap share to send it, or download the picture." : "Download the picture. Keep it where you will see it.";
+  }, "image/png");
+}
+$("btn-yearcard").onclick = function () { drawYearCard(); };
+$("btn-yc-share").onclick = async function () {
+  if (!ycBlob) return;
+  var f = new File([ycBlob], "year-card.png", { type: "image/png" });
+  try { await navigator.share({ files: [f], title: "My year card" }); } catch (e) { /* sheet closed, nothing to do */ }
+};
+
+// Future-you letter (2026-10-27): an optional note written under the
+// result just made, drawn as a letter card in the year card's dawn
+// style. The card carries the resolution, the note, and the day to
+// open it. Nothing is sent anywhere: the note lives in the same local
+// storage record as the plan, and Start over removes it with the plan.
+// Email delivery is a separate staged build (ship queue spec).
+var ltBlob = null;
+var ltHorizon = "d90";
+var LT_WHEN = [
+  { k: "d30", label: "30 days" },
+  { k: "d90", label: "90 days" },
+  { k: "dec31", label: "Dec 31" }
+];
+function ltOpenDate() {
+  var now = new Date();
+  var d = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  if (ltHorizon === "d30") d.setDate(d.getDate() + 30);
+  else if (ltHorizon === "d90") d.setDate(d.getDate() + 90);
+  else d = new Date(ycYear(), 11, 31);
+  return d;
+}
+function renderLetterChips() {
+  $("lt-chips").innerHTML = LT_WHEN.map(function (o) {
+    var on = ltHorizon === o.k;
+    return '<button class="chip" data-k="' + o.k + '" aria-pressed="' + on + '">' +
+      '<span class="tick">\u2713</span>' + o.label + "</button>";
+  }).join("");
+  $("lt-date").textContent = "Opens on " + ltOpenDate().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" }) + ".";
+  var chips = $("lt-chips").querySelectorAll(".chip");
+  for (var c = 0; c < chips.length; c++) {
+    chips[c].onclick = (function (el) {
+      return function () {
+        ltHorizon = el.getAttribute("data-k");
+        if (letter) { letter.h = ltHorizon; saveResult(); }
+        retireLetterCard();
+        renderLetterChips();
+      };
+    })(chips[c]);
+  }
+}
+function retireLetterCard() {
+  ltBlob = null;
+  $("lt-out").innerHTML = "";
+  $("btn-lt-share").hidden = true;
+  $("lt-dl").hidden = true;
+  $("st-letter").textContent = "";
+}
+function resetLetter() {
+  letter = null;
+  ltHorizon = "d90";
+  if ($("lt-note")) $("lt-note").value = "";
+  if ($("lt-saved")) { $("lt-saved").textContent = ""; $("lt-saved").hidden = true; }
+  retireLetterCard();
+  renderLetterChips();
+}
+function wrapLines(c, text, maxW) {
+  var words = expandLongWords(c, text.split(" "), maxW);
+  var lines = [];
+  var line = "";
+  for (var i = 0; i < words.length; i++) {
+    var test = line ? line + " " + words[i] : words[i];
+    if (line && c.measureText(test).width > maxW) { lines.push(line); line = words[i]; }
+    else { line = test; }
+  }
+  if (line) lines.push(line);
+  return lines;
+}
+function drawLetterCard() {
+  if (!current) return;
+  var note = $("lt-note").value.replace(/\s+/g, " ").trim();
+  if (!note) {
+    $("lt-date").textContent = "Write your note first.";
+    try { $("lt-note").focus(); } catch (e) {}
+    return;
+  }
+  letter = { note: note, h: ltHorizon };
+  saveResult();
+  $("lt-saved").textContent = "Your letter is saved in this browser.";
+  $("lt-saved").hidden = false;
+  var p = ycParts();
+  var openText = ltOpenDate().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }).toUpperCase();
+  var cv = document.createElement("canvas");
+  cv.width = 1080; cv.height = 1350;
+  var c = cv.getContext("2d");
+  var F = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif";
+  var L = 72, W = 1080 - 144;
+  // Same dawn background as the year card.
+  var g = c.createLinearGradient(0, 0, 420, 1350);
+  g.addColorStop(0, "#0a2925"); g.addColorStop(0.58, "#0e3a32"); g.addColorStop(1, "#14532d");
+  c.fillStyle = g; c.fillRect(0, 0, 1080, 1350);
+  var glow = c.createRadialGradient(950, -60, 40, 950, -60, 640);
+  glow.addColorStop(0, "rgba(245,159,0,0.38)"); glow.addColorStop(1, "rgba(245,159,0,0)");
+  c.fillStyle = glow; c.fillRect(0, 0, 1080, 1350);
+  c.fillStyle = "#f59f00"; c.font = "700 30px " + F;
+  c.fillText("PICK MY RESOLUTION", L, 108);
+  c.fillStyle = "#ffd88a"; c.font = "700 28px " + F;
+  c.fillText("A NOTE TO FUTURE YOU", L, 198);
+  c.fillStyle = "#ffffff"; c.font = "800 66px " + F;
+  if (c.measureText(p.name).width > W) c.font = "800 56px " + F;
+  var y = ycWrap(c, p.name, L, 292, W, 80);
+  c.fillStyle = "#f59f00"; c.font = "700 40px " + F;
+  c.fillText(p.dose, L, y + 40);
+  y += 40;
+  // The note: the biggest size whose wrapped lines fit the space.
+  var noteTop = y + 118;
+  var sizes = [36, 33, 30, 27];
+  var chosen = 27, lines = null;
+  for (var s = 0; s < sizes.length; s++) {
+    c.font = "400 " + sizes[s] + "px " + F;
+    var ls = wrapLines(c, note, W);
+    lines = ls;
+    if (ls.length * (sizes[s] + 14) <= 500) { chosen = sizes[s]; break; }
+  }
+  c.fillStyle = "#ffd88a"; c.font = "700 26px " + F;
+  c.fillText("YOUR NOTE", L, noteTop - 44);
+  c.fillStyle = "#ffffff"; c.font = "400 " + chosen + "px " + F;
+  var ly = noteTop;
+  for (var i = 0; i < lines.length; i++) { c.fillText(lines[i], L, ly); ly += chosen + 14; }
+  // The open date, anchored near the foot of the card.
+  c.fillStyle = "#ffd88a"; c.font = "700 26px " + F;
+  c.fillText("OPEN ON", L, 1128);
+  c.fillStyle = "#f59f00"; c.font = "800 46px " + F;
+  c.fillText(openText, L, 1188);
+  c.fillStyle = "#8fb3a4"; c.font = "400 26px " + F;
+  c.fillText("Built with Muse.", L, 1292);
+  var site = "pickmyresolution.com";
+  c.fillText(site, 1080 - L - c.measureText(site).width, 1292);
+  cv.toBlob(function (blob) {
+    ltBlob = blob;
+    var url = cv.toDataURL("image/png");
+    window.__lastLetterCard = { dataURL: url, note: note, horizon: ltHorizon, openDate: openText, name: p.name, dose: p.dose };
+    var wrap = $("lt-out"); wrap.innerHTML = "";
+    var im = document.createElement("img");
+    im.alt = "Your letter card";
+    im.src = url;
+    wrap.appendChild(im);
+    var dl = $("lt-dl"); dl.href = url; dl.hidden = false;
+    var can = false;
+    try { can = !!(blob && navigator.canShare && navigator.canShare({ files: [new File([blob], "letter-card.png", { type: "image/png" })] })); } catch (e) { can = false; }
+    $("btn-lt-share").hidden = !can;
+    $("st-letter").textContent = can ? "Tap share to send it, or download the picture." : "Download the picture. Keep it where you will see it.";
+  }, "image/png");
+}
+function restoreLetter(savedLetter) {
+  if (!savedLetter || !savedLetter.note) return;
+  var known = false;
+  for (var i = 0; i < LT_WHEN.length; i++) if (LT_WHEN[i].k === savedLetter.h) known = true;
+  letter = { note: savedLetter.note, h: known ? savedLetter.h : "d90" };
+  ltHorizon = letter.h;
+  $("lt-note").value = letter.note;
+  renderLetterChips();
+  $("lt-saved").textContent = "Your letter is saved in this browser.";
+  $("lt-saved").hidden = false;
+  drawLetterCard();
+}
+$("btn-letter").onclick = function () { drawLetterCard(); };
+$("btn-lt-share").onclick = async function () {
+  if (!ltBlob) return;
+  var f = new File([ltBlob], "letter-card.png", { type: "image/png" });
+  try { await navigator.share({ files: [f], title: "My letter card" }); } catch (e) { /* sheet closed, nothing to do */ }
+};
+$("lt-note").addEventListener("input", function () {
+  var note = $("lt-note").value.replace(/\s+/g, " ").trim();
+  if (letter && note !== letter.note) {
+    letter = null;
+    saveResult();
+    $("lt-saved").textContent = "";
+    $("lt-saved").hidden = true;
+  }
+  retireLetterCard();
+  if ($("lt-date").textContent === "Write your note first.") renderLetterChips();
+});
+$("btn-change").onclick = function () {
+  quiz.step = 0;
+  renderQuiz();
+  show("s-quiz");
+};
+$("btn-again").onclick = function () {
+  clearResult();
+  current = null;
+  resetLetter();
+  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "" };
+  renderQuiz();
+  show("s-quiz");
+};
+
+// Area-page auto-start flag (Item 84, QA F7): the area pages link
+// here as /?start=1, so one tap on an area CTA opens the quiz. The
+// flag is checked before the saved plan: with the flag, the quiz
+// starts fresh and the saved plan stays in storage, untouched.
+// Without the flag, a saved plan still opens on the result screen,
+// exactly as before. The parse is by hand, in the same plain style
+// as the rest of this script: no new API, and a missing or odd
+// location simply means no flag.
+function hasStartFlag() {
+  try {
+    var search = (window.location && window.location.search) || "";
+    if (!search) return false;
+    var parts = search.replace(/^\?/, "").split("&");
+    for (var i = 0; i < parts.length; i++) {
+      var kv = parts[i].split("=");
+      if (kv[0] === "start" && kv[1] === "1") return true;
+    }
+    return false;
+  } catch (e) { return false; }
+}
+var saved = loadResult();
+if (hasStartFlag()) {
+  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "" };
+  renderQuiz();
+  show("s-quiz");
+} else if (saved) {
+  quiz.area = saved.answers.area;
+  quiz.off = saved.answers.off;
+  quiz.time = saved.answers.time;
+  quiz.fail = saved.answers.fail;
+  quiz.when = saved.answers.when || "";
+  current = saved.result;
+  // Plans saved before the Oct 30, 2026 check-in depth build carry the
+  // old generic check-in and no future note. The same answers through
+  // the current engine give the same resolution, first move, and guard
+  // (all unchanged), so refresh just the two deepened fields in place.
+  if (typeof current.futureNote !== "string" || !current.futureNote) {
+    var fresh = buildResult(saved.answers);
+    current.checkin = fresh.checkin;
+    current.futureNote = fresh.futureNote;
+  }
+  // Plans saved before the Oct 30, 2026 F3 time-note ship carry no
+  // timeNote. The same answers through the current engine give the same
+  // resolution, first move, and guard, so fill just the note in place.
+  if (typeof current.timeNote !== "string" || !current.timeNote) {
+    var freshNote = buildResult(saved.answers);
+    current.timeNote = freshNote.timeNote;
+  }
+  renderResult();
+  $("r-saved").textContent = "Your saved plan on this device.";
+  $("r-saved").hidden = false;
+  restoreLetter(saved.letter);
+  show("s-result");
+}
+</script>
+<script>
+"use strict";
+/* ================= Fleet analytics — PostHog rollout (2026-10-25) =================
+   Pick My Resolution joins the fleet PostHog project (624507), rolling out the
+   pattern the Present Picker pilot proved on 2026-10-25. Every event
+   carries $host automatically; site_id is registered as the friendly
+   label. Posture: autocapture off, session recording off, no
+   identify(), anonymous only. Payloads are counts and enums only —
+   never answers, never personal data. */
+var _fleetQ = [];
+function fleetTrack(name, props){
+  try {
+    if (window.posthog && posthog.capture) posthog.capture(name, props || {});
+    else _fleetQ.push([name, props || {}]);
+  } catch (e) {}
+}
+function fleetSessionMarks(){
+  try {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get("via") === "share" && !sessionStorage.getItem("pmr_arr")){
+      sessionStorage.setItem("pmr_arr", "1");
+      fleetTrack("share_arrival", {tool: "resolution-picker", via: "share-link"});
+    }
+    if (!sessionStorage.getItem("pmr_ret")){
+      var raw = null;
+      try { raw = localStorage.getItem("pmr_result_v1"); } catch (e) {}
+      if (raw){
+        sessionStorage.setItem("pmr_ret", "1");
+        fleetTrack("return_visit", {tool: "resolution-picker"});
+      }
+    }
+  } catch (e) {}
+}
+(function(){
+  var s = document.createElement("script");
+  s.async = true;
+  s.src = "https://us.i.posthog.com/static/array.js";
+  s.onload = function(){
+    try {
+      if (window.posthog && posthog.init){
+        posthog.init("phc_t9dkHXAZR5VEjPFm3K5JDzGKFsNNxKcwSxxcEBEeLbS7", {api_host: "https://us.i.posthog.com", autocapture: false, capture_pageview: true, disable_session_recording: true});
+        posthog.register({site_id: "pick-my-resolution", site_name: "Pick My Resolution"});
+        _fleetQ.splice(0).forEach(function(e){ try { posthog.capture(e[0], e[1]); } catch (x) {} });
+        fleetSessionMarks();
+      }
+    } catch (e) {}
+  };
+  document.head.appendChild(s);
+})();
+(function(){
+  var fired = false;
+  var start = document.getElementById("btn-start");
+  if (start) start.addEventListener("click", function(){
+    if (!fired){ fired = true; fleetTrack("tool_start", {tool: "resolution-picker", entry: "picker-page"}); }
+  });
+  try {
+    if (new URLSearchParams(window.location.search).get("start") === "1" && !fired){
+      fired = true; fleetTrack("tool_start", {tool: "resolution-picker", entry: "area-page"});
+    }
+  } catch (e) {}
+  var res = document.getElementById("s-result"), done = false;
+  if (res && window.MutationObserver){
+    var check = function(){
+      var on = res.className.indexOf("on") !== -1;
+      if (on && !done){
+        done = true;
+        fleetTrack("tool_complete", {tool: "resolution-picker", results_count: 1});
+      }
+      if (!on) done = false;
+    };
+    new MutationObserver(check).observe(res, {attributes: true, attributeFilter: ["class"]});
+  }
+  var cc = document.getElementById("btn-copy-checkin");
+  if (cc) cc.addEventListener("click", function(){ fleetTrack("artifact_created", {tool: "resolution-picker", artifact: "checkin-prompt"}); });
+  var yc = document.getElementById("btn-yearcard");
+  if (yc) yc.addEventListener("click", function(){ fleetTrack("artifact_created", {tool: "resolution-picker", artifact: "year-card"}); });
+  var yd = document.getElementById("yc-dl");
+  if (yd) yd.addEventListener("click", function(){ fleetTrack("artifact_created", {tool: "resolution-picker", artifact: "year-card-download"}); });
+  var lb = document.getElementById("btn-letter");
+  if (lb) lb.addEventListener("click", function(){ var t = document.getElementById("lt-note"); if (t && t.value.trim()) fleetTrack("artifact_created", {tool: "resolution-picker", artifact: "letter-card"}); });
+  var ld = document.getElementById("lt-dl");
+  if (ld) ld.addEventListener("click", function(){ fleetTrack("artifact_created", {tool: "resolution-picker", artifact: "letter-card-download"}); });
+  var lsh = document.getElementById("btn-lt-share");
+  if (lsh) lsh.addEventListener("click", function(){ fleetTrack("share_intent", {tool: "resolution-picker", channel: "native"}); });
+  var cs = document.getElementById("btn-copy-share");
+  if (cs) cs.addEventListener("click", function(){ fleetTrack("share_intent", {tool: "resolution-picker", channel: "clipboard"}); });
+  var ys = document.getElementById("btn-yc-share");
+  if (ys) ys.addEventListener("click", function(){ fleetTrack("share_intent", {tool: "resolution-picker", channel: "native"}); });
+})();
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "620ee36c9c5e4adc9a7ff104dce8a422"}'></script>
+<!-- ASK PANEL START -->
+<style>
+.askp-pill{position:fixed;right:16px;bottom:16px;z-index:60;min-height:48px;padding:12px 18px;font-size:16px;font-weight:700;color:#fff;background:#0f766e;border:2px solid #0f766e;border-radius:999px;cursor:pointer;box-shadow:0 6px 20px rgba(26,26,26,.22);font-family:inherit}
+.askp-pill:active{transform:translateY(1px)}
+.askp-overlay{position:fixed;inset:0;z-index:70;background:rgba(26,26,26,.45);display:flex;align-items:flex-end;justify-content:center}
+.askp-overlay[hidden]{display:none}
+.askp-panel{background:#faf7f2;color:#1a1a1a;width:100%;max-width:640px;max-height:88vh;overflow-y:auto;border-radius:18px 18px 0 0;padding:18px 18px 22px;box-shadow:0 -8px 32px rgba(26,26,26,.25);animation:askp-in .25s ease both;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+@keyframes askp-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes askp-qin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (min-width:641px){.askp-overlay{align-items:center;padding:20px}.askp-panel{border-radius:18px;box-shadow:0 8px 32px rgba(26,26,26,.25)}}
+.askp-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.askp-head h2{font-size:24px;line-height:1.25;margin:2px 0 6px}
+.askp-close{min-width:44px;min-height:44px;font-size:24px;line-height:1;font-weight:700;color:#1a1a1a;background:#fff;border:2px solid #dce8e2;border-radius:12px;cursor:pointer;flex:none}
+.askp-promise{color:#6b7280;font-size:15px;margin:0 0 10px}
+.askp-panel p{margin:0 0 12px}
+.askp-panel label{display:block;margin:14px 0 4px;font-weight:600}
+.askp-panel textarea{font-size:16px;min-height:52px;padding:12px;width:100%;border:2px solid #dce8e2;border-radius:12px;background:#fff;color:#1a1a1a;font-family:inherit;box-sizing:border-box}
+.askp-ask{display:block;width:100%;min-height:52px;padding:14px 18px;margin:14px 0;font-size:18px;font-weight:700;color:#fff;background:#0f766e;border:2px solid #0f766e;border-radius:12px;cursor:pointer;text-align:center}
+.askp-ask:active{transform:translateY(1px)}
+.askp-chips{display:flex;flex-direction:column;gap:10px;margin:10px 0 4px}
+.askp-chip{min-height:48px;padding:10px 14px;font-size:15px;font-weight:600;text-align:left;border:2px solid #dce8e2;border-radius:12px;background:#fff;color:#1a1a1a;cursor:pointer;font-family:inherit}
+.askp-chip:active{transform:scale(.99)}
+.askp-panel .card{background:#fff;border:2px solid #dce8e2;border-radius:14px;padding:16px;margin:14px 0}
+.askp-panel .big{font-size:24px;font-weight:800;line-height:1.3;margin:4px 0 6px}
+.askp-panel .label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#0f766e;margin-top:14px}
+.askp-panel .label:first-child{margin-top:0}
+.askp-panel pre.note{white-space:pre-wrap;font-family:inherit;font-size:15px;line-height:1.55;background:#fffdf5;border:1px solid #dce8e2;border-radius:10px;padding:12px;margin:6px 0 4px}
+.askp-panel #askp-answer .card{animation:askp-qin .5s ease both}
+.askp-more a{color:#0f766e;font-weight:700;display:inline-block;padding:12px 6px;min-height:44px}
+@media (prefers-reduced-motion: reduce){.askp-panel{animation:none}.askp-panel #askp-answer .card{animation:none}.askp-pill:active{transform:none}.askp-ask:active{transform:none}.askp-chip:active{transform:none}}
+</style>
+<button type="button" class="askp-pill" id="askp-open" aria-haspopup="dialog" aria-controls="askp-panel" aria-expanded="false">Ask in your own words</button>
+<div class="askp-overlay" id="askp-overlay" hidden>
+  <div class="askp-panel" role="dialog" aria-modal="true" aria-labelledby="askp-title" id="askp-panel">
+    <div class="askp-head">
+      <h2 id="askp-title">Ask in your own words</h2>
+      <button type="button" class="askp-close" id="askp-close" aria-label="Close ask panel">&times;</button>
+    </div>
+    <p class="askp-promise">Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.</p>
+    <p>Or tap an example:</p>
+    <div class="askp-chips" role="group" aria-label="Example answers">
+      <button type="button" class="askp-chip" data-q="My body felt drained all year. I have 2 hours a week. I just forgot to do it last time.">My body felt drained. 2 hours a week. I just forgot.</button>
+      <button type="button" class="askp-chip" data-q="Money. Things piled up on me. Maybe 30 minutes a week. Life got busy and loud.">Money piled up on me. 30 minutes a week. Life got busy.</button>
+      <button type="button" class="askp-chip" data-q="I felt stuck at work and I got bored and quit. I could do 5 hours a week.">Stuck at work, bored, quit. 5 hours a week.</button>
+      <button type="button" class="askp-chip" data-q="I felt alone a lot. Family and friends matter most. 2 hours a week. I tried to do too much.">Alone a lot. Family first. I tried to do too much.</button>
+    </div>
+    <label for="askp-q">Your year, in your words</label>
+    <textarea id="askp-q" rows="3" placeholder="My body felt drained all year. I have 2 hours a week. I just forgot to do it last time."></textarea>
+    <button class="askp-ask" id="askp-ask" type="button">Pick my resolution</button>
+    <section id="askp-answer" aria-live="polite"></section>
+    <p class="askp-more" id="askp-more" hidden>Want the year card and the lock-screen picture? <a href="/new-years-resolution-quiz">Take the four questions</a> &middot; <a href="/ask">Open the full ask page</a></p>
+  </div>
+</div>
+<script>
+"use strict";
+// ENGINE START
+var AREAS = [
+  { k: "health", label: "Body and health" },
+  { k: "money", label: "Money" },
+  { k: "home", label: "Home" },
+  { k: "work", label: "Work" },
+  { k: "family", label: "Family and friends" },
+  { k: "calm", label: "Mind and calm" }
+];
+var OFFS = [
+  { k: "drained", label: "I felt drained a lot." },
+  { k: "piled", label: "Things piled up on me." },
+  { k: "stuck", label: "I felt stuck in place." },
+  { k: "drift", label: "I drifted from good habits." },
+  { k: "alone", label: "I felt alone a lot." }
+];
+var TIMES = [
+  { k: "t30", label: "30 minutes a week", budget: 30 },
+  { k: "t2h", label: "2 hours a week", budget: 120 },
+  { k: "t5h", label: "5 hours a week", budget: 300 }
+];
+var FAILS = [
+  { k: "big", label: "I tried to do too much." },
+  { k: "forgot", label: "I just forgot to do it." },
+  { k: "busy", label: "Life got busy and loud." },
+  { k: "bored", label: "I got bored and quit." }
+];
+var ACTIONS = {
+  health: {
+    drained: "Take a short walk",
+    piled: "Cook a real meal",
+    stuck: "Do a short workout",
+    drift: "Stretch your whole body",
+    alone: "Walk with a friend"
+  },
+  money: {
+    drained: "Check your bank balance",
+    piled: "Sort bills in one spot",
+    stuck: "Move cash to savings",
+    drift: "Write down what you spend",
+    alone: "Tell a friend your goal"
+  },
+  home: {
+    drained: "Tidy one small corner",
+    piled: "Clear one shelf fully",
+    stuck: "Fix one small thing",
+    drift: "Make one room cozy",
+    alone: "Have a friend visit"
+  },
+  work: {
+    drained: "Plan your day on paper",
+    piled: "Clear your desk top",
+    stuck: "Learn one work skill",
+    drift: "Chat with a work friend",
+    alone: "Eat lunch with coworkers"
+  },
+  family: {
+    drained: "Talk with family at home",
+    piled: "Share one meal together",
+    stuck: "Play one game together",
+    drift: "Call a friend you miss",
+    alone: "Visit someone you love"
+  },
+  calm: {
+    drained: "Sit in a quiet place",
+    piled: "Write thoughts on paper",
+    stuck: "Read a calm book",
+    drift: "Breathe slow in fresh air",
+    alone: "Sit outside with others"
+  }
+};
+var GUARDS = {
+  big: "Do just this move all month. Add more next month, not now.",
+  forgot: "Set a phone alarm for session days. Same time, same sound.",
+  busy: "Miss a day? Do half the next day. Half still keeps the streak.",
+  bored: "Same move, new place or playlist. Change one thing, not the move."
+};
+// Engine-truth fix (2026-10-23, design: engine-truth-audit-2026-10-23.md
+// section 4, Proposals A + C2). The time answer is a budget ceiling, not
+// a quota to fill: each action has its own dose per time level, and no
+// dose ever totals more than that level's budget (30 / 120 / 300).
+// GPT-audit round-1 fix (2026-10-23): the ladder now also scales. Every
+// action's weekly total strictly grows with the time offered, and every
+// dose string differs per level, so more time always buys a bigger plan.
+// Scalable moves grow by longer or more sessions; unit moves (one shelf,
+// one fix, one room) grow by more units per week; moves that are small
+// by nature (a balance check, a cash move, breathing) stay small and the
+// tool says plainly how much of the offered time the plan uses instead
+// of padding them into fake hour-long sessions.
+var DOSES = {
+  "Take a short walk": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "30 min, 7x a week", mins: 30, times: 7 } },
+  "Cook a real meal": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "60 min, 5x a week", mins: 60, times: 5 } },
+  "Do a short workout": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "40 min, 5x a week", mins: 40, times: 5 } },
+  "Stretch your whole body": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "20 min, 5x a week", mins: 20, times: 5 }, t5h: { dose: "20 min, 7x a week", mins: 20, times: 7 } },
+  "Check your bank balance": { t30: { dose: "2 min, 3x a week", mins: 2, times: 3 }, t2h: { dose: "5 min, 3x a week", mins: 5, times: 3 }, t5h: { dose: "5 min, 5x a week", mins: 5, times: 5 } },
+  "Sort bills in one spot": { t30: { dose: "20 min, 1x a week", mins: 20, times: 1 }, t2h: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t5h: { dose: "30 min, 2x a week", mins: 30, times: 2 } },
+  "Move cash to savings": { t30: { dose: "2 min, 1x a week", mins: 2, times: 1 }, t2h: { dose: "2 min, 2x a week", mins: 2, times: 2 }, t5h: { dose: "2 min, 3x a week", mins: 2, times: 3 } },
+  "Write down what you spend": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "10 min, 5x a week", mins: 10, times: 5 }, t5h: { dose: "10 min, 7x a week", mins: 10, times: 7 } },
+  "Tidy one small corner": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "20 min, 4x a week", mins: 20, times: 4 }, t5h: { dose: "20 min, 7x a week", mins: 20, times: 7 } },
+  "Clear one shelf fully": { t30: { dose: "25 min, 1x a week", mins: 25, times: 1 }, t2h: { dose: "30 min, 2x a week", mins: 30, times: 2 }, t5h: { dose: "30 min, 5x a week", mins: 30, times: 5 } },
+  "Fix one small thing": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "45 min, 1x a week", mins: 45, times: 1 }, t5h: { dose: "45 min, 3x a week", mins: 45, times: 3 } },
+  "Make one room cozy": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "60 min, 1x a week", mins: 60, times: 1 }, t5h: { dose: "60 min, 3x a week", mins: 60, times: 3 } },
+  "Plan your day on paper": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "10 min, 5x a week", mins: 10, times: 5 }, t5h: { dose: "10 min, 7x a week", mins: 10, times: 7 } },
+  "Clear your desk top": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "15 min, 4x a week", mins: 15, times: 4 }, t5h: { dose: "20 min, 5x a week", mins: 20, times: 5 } },
+  "Learn one work skill": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "60 min, 5x a week", mins: 60, times: 5 } },
+  "Chat with a work friend": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "30 min, 5x a week", mins: 30, times: 5 } },
+  "Talk with family at home": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "60 min, 5x a week", mins: 60, times: 5 } },
+  "Share one meal together": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "60 min, 5x a week", mins: 60, times: 5 } },
+  "Play one game together": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "60 min, 5x a week", mins: 60, times: 5 } },
+  "Call a friend you miss": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "30 min, 5x a week", mins: 30, times: 5 } },
+  "Sit in a quiet place": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "20 min, 5x a week", mins: 20, times: 5 }, t5h: { dose: "20 min, 7x a week", mins: 20, times: 7 } },
+  "Write thoughts on paper": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "20 min, 5x a week", mins: 20, times: 5 }, t5h: { dose: "20 min, 7x a week", mins: 20, times: 7 } },
+  "Read a calm book": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "60 min, 5x a week", mins: 60, times: 5 } },
+  "Breathe slow in fresh air": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "10 min, 5x a week", mins: 10, times: 5 }, t5h: { dose: "10 min, 7x a week", mins: 10, times: 7 } },
+  "Walk with a friend": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "45 min, 5x a week", mins: 45, times: 5 } },
+  "Tell a friend your goal": { t30: { dose: "15 min, 2x a week", mins: 15, times: 2 }, t2h: { dose: "30 min, 2x a week", mins: 30, times: 2 }, t5h: { dose: "30 min, 4x a week", mins: 30, times: 4 } },
+  "Have a friend visit": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "60 min, 2x a week", mins: 60, times: 2 }, t5h: { dose: "60 min, 3x a week", mins: 60, times: 3 } },
+  "Eat lunch with coworkers": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "30 min, 4x a week", mins: 30, times: 4 }, t5h: { dose: "45 min, 5x a week", mins: 45, times: 5 } },
+  "Visit someone you love": { t30: { dose: "30 min, 1x a week", mins: 30, times: 1 }, t2h: { dose: "60 min, 2x a week", mins: 60, times: 2 }, t5h: { dose: "60 min, 4x a week", mins: 60, times: 4 } },
+  "Sit outside with others": { t30: { dose: "10 min, 3x a week", mins: 10, times: 3 }, t2h: { dose: "20 min, 5x a week", mins: 20, times: 5 }, t5h: { dose: "30 min, 5x a week", mins: 30, times: 5 } }
+};
+// First moves (Proposal C1 starters, extended Oct 30, 2026 by the
+// first-move specificity build): every action now has a starter, and each
+// starter carries one concrete setup step drawn from the action itself
+// (a named place, object, time, or amount) before the first session.
+// "{m}" in a starter is filled with the picked dose's session minutes in
+// buildResult, so a quoted minute count always matches the picked dose
+// (the F2 rule). The Oct 30 vs-AI fair re-test (3/10) named the old form
+// the loss: 75 of 90 unique first moves only restated the resolution.
+var STARTERS = {
+  "Take a short walk": "Put your shoes by the front door. Walk {m} min right after a meal.",
+  "Cook a real meal": "Write one meal on a sticky note. Cook it tonight in about {m} min.",
+  "Do a short workout": "Lay out your clothes the night before. Do {m} min in your living room.",
+  "Stretch your whole body": "Roll out a mat or bath towel. Stretch slow for {m} min.",
+  "Walk with a friend": "Text one friend and pick a day. Walk and talk for {m} min.",
+  "Check your bank balance": "Open your bank app after breakfast. Check the balance for {m} min.",
+  "Sort bills in one spot": "Gather all bills into one box. Pay one due bill. Move $5 to savings.",
+  "Move cash to savings": "Set a $5 auto move for payday. It moves each week by itself.",
+  "Write down what you spend": "Keep one list on your phone. Write down each spend that day.",
+  "Tell a friend your goal": "Text one friend your money goal today. Ask them to check in Friday.",
+  "Tidy one small corner": "Pick the corner by the front door. Tidy only it for {m} min.",
+  "Clear one shelf fully": "Pick the fullest shelf you have. Clear it fully in about {m} min.",
+  "Fix one small thing": "Write down the fix that bugs you. Start it. Give it {m} min.",
+  "Make one room cozy": "Pick the room you sit in most. Add one lamp or soft blanket.",
+  "Have a friend visit": "Text one friend and pick a day. Come as you are. Just talk.",
+  "Plan your day on paper": "Put paper and pen by your coffee. Write your top three tasks first.",
+  "Clear your desk top": "Set a timer for {m} min. Clear the desk top into one box.",
+  "Learn one work skill": "Pick one small skill for your job. Learn it for {m} min today.",
+  "Chat with a work friend": "Ask one work friend for coffee. Chat for {m} min this week.",
+  "Eat lunch with coworkers": "Ask two coworkers to lunch today. Eat together. Leave phones in pockets.",
+  "Talk with family at home": "Pick a time right after dinner. Talk at the table for {m} min.",
+  "Share one meal together": "Pick one dinner this week together. Eat at the table. No phones there.",
+  "Play one game together": "Pick a short game from the shelf. Play one round tonight together.",
+  "Call a friend you miss": "Pick the friend you miss most. Call them today, right after dinner.",
+  "Visit someone you love": "Text them today and pick a day. Visit soon and stay a while.",
+  "Sit in a quiet place": "Pick one quiet spot in your home. Sit there {m} min, no phone.",
+  "Write thoughts on paper": "Put a notebook by your bed. Write for {m} min before sleep.",
+  "Read a calm book": "Put your book on your pillow now. Read {m} min in bed tonight.",
+  "Breathe slow in fresh air": "Step outside your front door today. Breathe slow for {m} min.",
+  "Sit outside with others": "Sit outside with others after lunch. Stay {m} min and just talk."
+};
+// Check-in questions + future-note lines (Oct 30, 2026, check-in depth
+// build; SPEC registered by the post-build vs-AI re-test, 3/10): the old
+// check-in asked the same three generic questions on all 360 paths, and
+// the future-you section gave instructions with a blank box. Now each
+// action carries two check-in questions about its own move, plus one
+// note line drawn from its own starter (its place, object, or time).
+// The note is the plan restated to future you: no outcomes, no streaks,
+// no promises. Every line is plain data, so the same answers always
+// give byte-identical check-ins and notes.
+var CHECKINS = {
+  "Take a short walk": ["How many walks did I finish this week?", "Which walk felt best this week?"],
+  "Cook a real meal": ["How many real meals did I cook?", "Which meal was fastest to make?"],
+  "Do a short workout": ["How many workouts did I finish this week?", "Which move felt hardest this week?"],
+  "Stretch your whole body": ["How many stretch sessions did I do?", "Which part still feels tight today?"],
+  "Walk with a friend": ["Did I walk with my friend this week?", "When is our next walk set?"],
+  "Check your bank balance": ["Did I check my balance each time?", "What one number do I remember?"],
+  "Sort bills in one spot": ["Did I pay one due bill?", "Did I move $5 to savings?"],
+  "Move cash to savings": ["Did my $5 auto move run?", "Did I leave the savings alone?"],
+  "Write down what you spend": ["Did I write each spend down?", "What spend surprised me most?"],
+  "Tell a friend your goal": ["Did my friend check in Friday?", "What did I tell my friend?"],
+  "Tidy one small corner": ["Which corner did I tidy this week?", "Is that corner still clear today?"],
+  "Clear one shelf fully": ["Which shelf did I clear fully?", "What went out of the house?"],
+  "Fix one small thing": ["Which small thing did I fix?", "What fix comes next on my list?"],
+  "Make one room cozy": ["Which room feels cozier now?", "What one thing made it cozy?"],
+  "Have a friend visit": ["Did my friend visit this week?", "When did we talk the longest?"],
+  "Plan your day on paper": ["Did I write my top three first?", "How many top tasks got done?"],
+  "Clear your desk top": ["Is my desk top clear right now?", "What keeps landing on my desk?"],
+  "Learn one work skill": ["What skill did I practice this week?", "What part still feels hard?"],
+  "Chat with a work friend": ["Who did I chat with this week?", "What did I learn about them?"],
+  "Eat lunch with coworkers": ["How many lunches did we share?", "Who should I ask next time?"],
+  "Talk with family at home": ["How many talks did we have?", "What did we talk about most?"],
+  "Share one meal together": ["How many meals did we share?", "Were phones away at the table?"],
+  "Play one game together": ["Which game did we play together?", "Who won our game this week?"],
+  "Call a friend you miss": ["Did I call my friend this week?", "What news did my friend share?"],
+  "Visit someone you love": ["Did I visit this week as planned?", "When is my next visit set?"],
+  "Sit in a quiet place": ["How many quiet sits did I do?", "Which spot felt calmest this week?"],
+  "Write thoughts on paper": ["How many nights did I write?", "What thought came up most?"],
+  "Read a calm book": ["How many nights did I read?", "What page am I on now?"],
+  "Breathe slow in fresh air": ["How many fresh air breaks happened?", "When did breathing feel slowest?"],
+  "Sit outside with others": ["How many outside sits did we share?", "Who sat with me this week?"]
+};
+var NOTE_LINES = {
+  "Take a short walk": "My shoes wait by the front door.",
+  "Cook a real meal": "My first meal lives on a sticky note.",
+  "Do a short workout": "My clothes wait out the night before.",
+  "Stretch your whole body": "My mat stays rolled out, ready.",
+  "Walk with a friend": "My walks come with a friend now.",
+  "Check your bank balance": "My check comes right after breakfast.",
+  "Sort bills in one spot": "My bills live in one box now.",
+  "Move cash to savings": "My $5 move runs by itself.",
+  "Write down what you spend": "My spend list lives on my phone.",
+  "Tell a friend your goal": "My friend knows my money goal.",
+  "Tidy one small corner": "My first corner is the front door one.",
+  "Clear one shelf fully": "I started with my fullest shelf.",
+  "Fix one small thing": "My fix list starts with one thing.",
+  "Make one room cozy": "My first room is where I sit most.",
+  "Have a friend visit": "Visits start with a text and a day.",
+  "Plan your day on paper": "My paper waits by my coffee.",
+  "Clear your desk top": "My timer and one box clear it.",
+  "Learn one work skill": "I picked one small skill, not five.",
+  "Chat with a work friend": "Coffee with a work friend counts here.",
+  "Eat lunch with coworkers": "Phones stay in pockets at our lunch.",
+  "Talk with family at home": "Our talk time sits right after dinner.",
+  "Share one meal together": "Our table stays phone free at dinner.",
+  "Play one game together": "One short game beats a long list.",
+  "Call a friend you miss": "My calls come right after dinner.",
+  "Visit someone you love": "My visits start with a text today.",
+  "Sit in a quiet place": "My quiet spot waits with no phone.",
+  "Write thoughts on paper": "My notebook waits right by my bed.",
+  "Read a calm book": "My book waits right on my pillow.",
+  "Breathe slow in fresh air": "Fresh air waits right outside my door.",
+  "Sit outside with others": "We sit outside right after lunch."
+};
+// Reflective note lines (Oct 30, 2026, reflective note + de-duplication
+// build; SPEC registered by the check-in re-test, 5/10): the shipped note
+// restated the plan, and the plan lines repeated up to four times across
+// one answer. The note is now a letter, not a restatement. WHY_REFLECT
+// says why the plan was picked, in the words of the feeling answer the
+// user picked, told back in past tense. GUARD_REFLECT restates the
+// picked guard as lived experience, not as an instruction. The note
+// still carries the plan's facts (the action, its dose, the starter's
+// own line above), woven into letter sentences, so no full plan line
+// repeats verbatim anywhere in one answer.
+var WHY_REFLECT = {
+  drained: "I felt drained a lot back then.",
+  piled: "Things had piled up on me then.",
+  stuck: "I felt stuck in place back then.",
+  drift: "I had drifted from good habits then.",
+  alone: "I felt alone a lot back then."
+};
+var GUARD_REFLECT = {
+  big: "The hard part was wanting to add more.",
+  forgot: "The hard part was plain forgetting, some days.",
+  busy: "Some weeks, half a move was enough.",
+  bored: "The hard part was the same move, again."
+};
+// Specificity line (PMR-SPECIFIC-1, Oct 31, 2026; Wave H fix): the
+// user may name week one's first session in their own words (day,
+// time, place, person). It is optional, capped at 90 chars, stored
+// verbatim (trimmed, whitespace collapsed), and printed exactly as
+// given on the result card and the year card. It never changes which
+// resolution a path returns: buildResult reads it only as a display
+// field, so every engine path is identical with or without it.
+function cleanWhen(v) {
+  if (typeof v !== "string") return "";
+  return v.replace(/\s+/g, " ").trim().slice(0, 90);
+}
+function timeOf(k) {
+  for (var i = 0; i < TIMES.length; i++) if (TIMES[i].k === k) return TIMES[i];
+  return null;
+}
+function buildResult(a) {
+  var action = ACTIONS[a.area][a.off];
+  var d = DOSES[action][a.time];
+  var resolution = action + ": " + d.dose + ".";
+  var firstMove = (STARTERS[action] || (action + " for " + d.mins + " min.")).split("{m}").join(d.mins);
+  var guard = GUARDS[a.fail];
+  // Honest time use (semantic-fit audit F3, Oct 29 2026; shipped Oct 30,
+  // 2026): the time pick is a ceiling, and small moves stay small. The MCP
+  // has always said how much of the offered time the plan uses; the site
+  // result card now says it too, in the site's own short shape (the MCP
+  // adds one middle sentence; the numbers are the same on every path).
+  var t = timeOf(a.time);
+  var total = d.mins * d.times;
+  var timeNote = total >= t.budget
+    ? "This plan uses all " + t.budget + " minutes you offered."
+    : "This plan uses " + total + " of your " + t.budget + " minutes a week. The rest of your time stays yours.";
+  var qs = CHECKINS[action] || ["Did I do my move this week?", "What got in my way?"];
+  // De-duplication (Oct 30, 2026): the check-in no longer repeats the
+  // resolution, first move, or guard lines verbatim. It names the action
+  // once, in short form, and keeps its sessions line and questions, which
+  // are its own depth. The full lines live once, in the plan above it.
+  var checkin = [
+    "Weekly check-in for my resolution.",
+    "My one resolution: " + action + ".",
+    "Sessions this week: ___ of " + d.times + " (" + d.mins + " min each)",
+    qs[0],
+    qs[1],
+    "What got in my way?",
+    "What is one small move for next week?",
+    "Please keep your reply short and kind."
+  ].join("\n");
+  // Reflective note (Oct 30, 2026): a short letter from past me, woven
+  // only from this plan's own fields (the feeling picked, the action,
+  // its dose, the starter's line, the guard told as experience). No full
+  // plan line repeats here; the facts stay findable inside the letter.
+  var futureNote = [
+    "Dear future me,",
+    WHY_REFLECT[a.off] || "I picked one small plan, on purpose.",
+    "My pick was " + action + ".",
+    "The pace was " + d.dose + ".",
+    NOTE_LINES[action] || "I picked one small plan, on purpose.",
+    "I hope you still notice that small start.",
+    GUARD_REFLECT[a.fail] || "The hard part came some days, too.",
+    "Did the small move still fit my week?",
+    "From past me."
+  ].join("\n");
+  var share = [
+    "My 2027 resolution:",
+    resolution,
+    "First move: " + firstMove,
+    "Pick yours at https://pickmyresolution.com/?via=share"
+  ].join("\n");
+  return {
+    resolution: resolution,
+    firstMove: firstMove,
+    guard: guard,
+    timeNote: timeNote,
+    checkin: checkin,
+    futureNote: futureNote,
+    share: share,
+    whenLine: cleanWhen(a.when)
+  };
+}
+// ENGINE END
+/* ASK PARSER START — deterministic words-to-answers. The engine above
+   makes the pick; this parser only reads the visitor's words into the
+   same four answers the quiz takes (area, feeling, time, what failed).
+   The feeling and the area are the pick itself, so they are never
+   guessed: if the words do not carry them, the page asks back, in the
+   open. Time is the one fill-in: no time words means the middle offer,
+   2 hours a week, and the answer says so. */
+function pickByWords(t, rules) {
+  var best = null, bestN = 0;
+  for (var i = 0; i < rules.length; i++) {
+    var n = 0, m = t.match(rules[i][1]);
+    if (m) n = m.length;
+    if (n > bestN) { bestN = n; best = rules[i][0]; }
+  }
+  return best;
+}
+function parseAskPmr(raw) {
+  var t = " " + String(raw).toLowerCase().replace(/[\u2019]/g, "'") + " ";
+  var p = { timeDefaulted: false };
+  p.area = pickByWords(t, [
+    ["health", /\b(body|health|exercise|workout|gym|walking|weight|eating|sleep)\b/g],
+    ["money", /\b(money|bills?|savings?|spend|spending|debt|bank|budget|paycheck)\b/g],
+    ["home", /\b(home|house|room|clutter|messy|tidy|shelf|closet|apartment)\b/g],
+    ["work", /\b(work|job|desk|office|career|coworkers?|boss)\b/g],
+    ["family", /\b(family|friends?|kids?|children|partner|wife|husband|mom|dad|parents|people)\b/g],
+    ["calm", /\b(calm|mind|stress|stressed|anxious|anxiety|quiet|breathe|peace)\b/g]
+  ]);
+  p.off = pickByWords(t, [
+    ["drained", /\b(drained|tired|exhausted|worn out)\b/g],
+    ["piled", /\b(piled|pile up|overwhelmed|behind on)\b/g],
+    ["stuck", /\b(stuck|no progress|going nowhere)\b/g],
+    ["drift", /\b(drift|drifted|fell off|slipped|off track)\b/g],
+    ["alone", /\b(alone|lonely|isolated)\b/g]
+  ]);
+  if (/no energy|low energy/.test(t) && !p.off) p.off = "drained";
+  if (/\b(5|five)\s*hours?\b/.test(t)) p.time = "t5h";
+  else if (/\b(2|two)\s*hours?\b/.test(t)) p.time = "t2h";
+  else if (/\b30\s*min/.test(t) || /half an hour/.test(t)) p.time = "t30";
+  else if (/\b(an|one|1)\s*hour\b/.test(t) || /\b60\s*min/.test(t)) p.time = "t2h";
+  else { p.time = "t2h"; p.timeDefaulted = true; }
+  p.fail = pickByWords(t, [
+    ["big", /\b(too much|too big|overdid|all at once)\b/g],
+    ["forgot", /\b(forgot|forget|forgetting)\b/g],
+    ["busy", /\b(busy|no time|life got|chaos|loud)\b/g],
+    ["bored", /\b(bored|boring|quit|gave up|lost interest)\b/g]
+  ]);
+  return p;
+}
+function labelOf(list, k) { for (var i = 0; i < list.length; i++) if (list[i].k === k) return list[i].label; return ""; }
+function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+function answerAskPmr(raw) {
+  var out = document.getElementById("askp-answer");
+  var p = parseAskPmr(raw);
+  var missing = [];
+  if (!p.area) missing.push("which part of life it is about (body and health, money, home, work, family and friends, or mind and calm)");
+  if (!p.off) missing.push("how the year felt (drained, piled up, stuck, drifted, or alone)");
+  if (!p.fail) missing.push("what made past plans fail (too much at once, forgetting, life getting busy, or getting bored)");
+  if (missing.length) {
+    out.innerHTML = '<div class="card"><p class="label">One more thing</p><p>I still need ' +
+      missing.join("; and ") + '. Say it in your words, or tap an example above to see the shape.</p></div>';
+    document.getElementById("askp-more").hidden = true;
+    return null;
+  }
+  var r = buildResult({ area: p.area, off: p.off, time: p.time, fail: p.fail, when: "" });
+  var heard = "What I heard: " + labelOf(AREAS, p.area) + ". " + labelOf(OFFS, p.off) + " " +
+    labelOf(TIMES, p.time) + (p.timeDefaulted ? " (the middle offer, since no time was named)" : "") + ". " + labelOf(FAILS, p.fail);
+  out.innerHTML =
+    '<div class="card">' +
+    '<p class="label">Your pick</p><p class="big">' + esc(r.resolution) + '</p>' +
+    '<p>' + esc(heard) + '</p>' +
+    '<p class="label">First move, week one</p><p>' + esc(r.firstMove) + '</p>' +
+    '<p class="label">If it gets hard</p><p>' + esc(r.guard) + '</p>' +
+    '<p class="label">Your time</p><p>' + esc(r.timeNote) + '</p>' +
+    '<p class="label">A note to future you</p><pre class="note">' + esc(r.futureNote) + '</pre>' +
+    '<p class="label">Your weekly check-in</p><pre class="note">' + esc(r.checkin) + '</pre>' +
+    '</div>';
+  document.getElementById("askp-more").hidden = false;
+  try { fleetTrack("ask_answered", { tool: "pick-my-resolution-ask" }); } catch (e) {}
+  return { parsed: p, result: r };
+}
+/* ASK PARSER END */
+</script>
+<script>
+"use strict";
+(function () {
+  var openBtn = document.getElementById("askp-open");
+  var overlay = document.getElementById("askp-overlay");
+  var inited = false, lastOverflow = "";
+  function init() {
+    if (inited) return; inited = true;
+    document.getElementById("askp-close").addEventListener("click", closePanel);
+    overlay.addEventListener("click", function (e) { if (e.target === overlay) closePanel(); });
+    document.getElementById("askp-ask").addEventListener("click", function () {
+      answerAskPmr(document.getElementById("askp-q").value);
+    });
+    document.querySelectorAll(".askp-chip").forEach(function (ch) {
+      ch.addEventListener("click", function () {
+        document.getElementById("askp-q").value = ch.getAttribute("data-q");
+        answerAskPmr(ch.getAttribute("data-q"));
+      });
+    });
+    document.addEventListener("keydown", function (e) {
+      if ((e.key === "Escape" || e.key === "Esc") && !overlay.hidden) closePanel();
+    });
+  }
+  function openPanel() {
+    init();
+    overlay.hidden = false;
+    openBtn.setAttribute("aria-expanded", "true");
+    lastOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.getElementById("askp-q").focus();
+  }
+  function closePanel() {
+    overlay.hidden = true;
+    openBtn.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = lastOverflow;
+    openBtn.focus();
+  }
+  openBtn.addEventListener("click", openPanel);
+})();
+</script>
+<!-- ASK PANEL END -->
+</body>
+</html>
