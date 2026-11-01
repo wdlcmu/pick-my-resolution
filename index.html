@@ -223,10 +223,20 @@
     color: #fff; font-size: 13px; font-weight: 700; padding: 5px 10px; border-radius: 999px;
   }
   @media (max-width: 760px) {
-    .hero-grid { flex-direction: column; }
+    .hero-grid { flex-direction: column; gap: 12px; }
     .hero-copy { padding-top: 0; }
-    .hero h1 { font-size: 34px; }
+    .hero h1 { font-size: 34px; margin-bottom: 6px; }
     .hero-photos { width: 100%; }
+    /* 2026-11-01 first-screen fix: tighten hero spacing on phones so the
+       pick photo lands whole in the first screen instead of split by the
+       fold (spacing only — no copy changes). Desktop untouched. */
+    .hero-in { padding: 12px 18px 36px; }
+    .hero .brand { margin-bottom: 8px; }
+    .hero .sub { margin-bottom: 8px; }
+    .hero .cdx { margin: 8px 0 0; }
+    button.cdx-main { padding: .6rem .9rem; }
+    .hero .cta { margin: 8px 0; }
+    .hero .askdoor { margin-top: 4px; }
   }
   @media (max-width: 560px) {
     .area-grid { grid-template-columns: repeat(2, 1fr); }
