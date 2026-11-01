@@ -177,6 +177,27 @@
   .hero h1 { color: #fff; font-size: 42px; margin: 0 0 10px; }
   .hero .sub { color: #d7e8df; font-size: 17px; }
   .hero .countdown { color: #bcd6c9; margin: 14px 0 4px; }
+  /* 2026-11-01 interactive countdown unit: digits, one tap target, What's-next panel */
+  .cdx { margin: 14px 0 4px; }
+  .cdx [hidden] { display: none !important; }
+  button.cdx-main { display: block; width: 100%; background: none; border: 0; font: inherit; color: inherit; text-align: left; padding: .8rem .9rem; border-radius: 14px; cursor: pointer; }
+  button.cdx-main:hover { background: rgba(15, 118, 110, .07); }
+  .cdx-main:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .cdx-digits { display: flex; gap: .9rem; justify-content: flex-start; align-items: flex-start; margin-bottom: .35rem; }
+  .cdx-cell { display: flex; flex-direction: column; align-items: center; min-width: 2.7ch; }
+  .cdx-cell.cd-d { min-width: 3.7ch; }
+  .cdx-cell b { font-size: clamp(1.85rem, 8.5vw, 2.5rem); line-height: 1; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--accent); }
+  .cdx-cell i { font-style: normal; font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: .32rem; }
+  .cdx .countdown { display: block; margin: 0; }
+  .cdx-note { display: block; margin-top: .35rem; font-size: 15px; color: #bcd6c9; }
+  .cdx-cta { display: block; margin-top: .5rem; font-weight: 700; color: var(--accent); }
+  .cdx-more { background: none; border: 0; font: inherit; font-size: .92rem; font-weight: 600; color: var(--muted); cursor: pointer; padding: .55rem .8rem; min-height: 44px; margin-left: -.8rem; }
+  .cdx-more:hover { color: var(--accent); }
+  .cdx-more:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
+  .cdx-panel { border: 1px solid var(--line); border-radius: 12px; padding: .75rem .95rem; margin-top: .4rem; background: var(--card); text-align: left; }
+  .cdx-break { font-weight: 700; margin: 0 0 .3rem; }
+  .cdx-break:empty { display: none; }
+  .cdx-mile { margin: 0; }
   .hero .cta { background: var(--amber); border-color: var(--amber); color: #231303; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28); }
   .hero .free { color: #d7e8df; font-size: 15px; margin: 0; }
   .hero .askdoor { color: #d7e8df; font-size: 15px; margin: 8px 0 0; }
@@ -224,7 +245,19 @@
             <h1>This year, keep one. Just one.</h1>
             <p class="sub">Last January, you wrote a list. By spring, none of it stuck.</p>
             <p class="sub">Four questions. One pick, sized to your week. Swap it if it does not fit.</p>
-            <p class="countdown" id="countdown" aria-live="polite">61 days until January 1, 2027.</p>
+            <div class="cdx">
+              <button type="button" class="cdx-main" id="cdx-main" aria-label="61 days until January 1, 2027.">
+                <span class="cdx-digits" id="cdx-digits" aria-hidden="true" hidden><span class="cdx-cell cd-d"><b id="cdx-d">61</b><i id="cdx-dl">days</i></span><span class="cdx-cell"><b id="cdx-h">00</b><i>hrs</i></span><span class="cdx-cell"><b id="cdx-m">00</b><i>min</i></span><span class="cdx-cell"><b id="cdx-s">00</b><i>sec</i></span></span>
+                <span class="countdown" id="countdown">61 days until January 1, 2027.</span>
+                <span class="cdx-note" id="cdx-note" hidden></span>
+                <span class="cdx-cta">Pick my resolution &rarr;</span>
+              </button>
+              <button class="cdx-more" id="cdx-more" type="button" aria-expanded="false" aria-controls="cdx-panel" hidden>What&rsquo;s next? <span aria-hidden="true">&#9662;</span></button>
+              <div class="cdx-panel" id="cdx-panel" hidden>
+                <p class="cdx-break" id="cdx-break"></p>
+                <p class="cdx-mile" id="cdx-mile">The moment: <strong>January 1, 2027</strong> &mdash; time to pick your one resolution.</p>
+              </div>
+            </div>
             <button class="cta" id="btn-start">Pick my resolution</button>
             <p class="free">Free forever. No ads. No accounts.</p>
             <p class="askdoor">Rather say it in your own words? <a href="/ask">Ask here</a>.</p>
@@ -448,27 +481,97 @@
     return base;
   }
   var RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (RM) { el.textContent = dayText(new Date()); return; }
-  el.removeAttribute("aria-live");
-  var lastLabel = "";
+  /* 2026-11-01 interactive upgrade: the clock is the hero unit now.
+     Digit blocks (days/hrs/min/sec, tabular numerals), the whole unit is
+     one tap target to the site's core action, and a "What's next?" toggle
+     opens a panel with the time left broken down plus the next do-by
+     milestone from this site's own pages. Reduced motion: the same
+     render once a minute instead of every second. The rollover math
+     above is unchanged from this morning's ship. */
+  var main = document.getElementById("cdx-main");
+  var digitsEl = document.getElementById("cdx-digits");
+  var dEl = document.getElementById("cdx-d"), hEl = document.getElementById("cdx-h"),
+      mEl = document.getElementById("cdx-m"), sEl = document.getElementById("cdx-s");
+  var dLab = document.getElementById("cdx-dl");
+  var moreBtn = document.getElementById("cdx-more");
+  var panel = document.getElementById("cdx-panel");
+  var breakEl = document.getElementById("cdx-break");
+  var noteEl = document.getElementById("cdx-note");
+  var mileEl = document.getElementById("cdx-mile");
+  var lastMileYear = 0;
+
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function cdParts(ms) {
+    var s = Math.max(0, Math.floor(ms / 1000));
+    var d = Math.floor(s / 86400); s -= d * 86400;
+    var h = Math.floor(s / 3600); s -= h * 3600;
+    var m = Math.floor(s / 60);
+    return { d: d, h: h, m: m, s: s - m * 60 };
+  }
+  var lastMs = null, panelOpen = false, lastBreakMin = -1, lastAriaMin = -1;
+  function updateBreak(now) {
+    if (!breakEl) return;
+    var min = Math.floor(now.getTime() / 60000);
+    if (min === lastBreakMin) return;
+    lastBreakMin = min;
+    if (lastMs === null) { breakEl.textContent = ""; return; }
+    var p = cdParts(lastMs), w = Math.floor(p.d / 7), rd = p.d - w * 7, seg = [];
+    if (w > 0) seg.push(cdUnit(w, "week"));
+    if (rd > 0) seg.push(cdUnit(rd, "day"));
+    seg.push(cdUnit(p.h, "hour"));
+    breakEl.textContent = "Time left: " + seg.join(", ") + ".";
+  }
+  if (moreBtn && panel) {
+    moreBtn.hidden = false;
+    moreBtn.addEventListener("click", function () {
+      panelOpen = !panelOpen;
+      panel.hidden = !panelOpen;
+      moreBtn.setAttribute("aria-expanded", panelOpen ? "true" : "false");
+      if (panelOpen) { lastBreakMin = -1; updateBreak(new Date()); }
+    });
+  }
+  if (main) main.addEventListener("click", function () { var b = document.getElementById("btn-start"); if (b) b.click(); });
+
+  function setAria(text, now) {
+    var min = Math.floor(now.getTime() / 60000);
+    if (min !== lastAriaMin) { lastAriaMin = min; if (main) main.setAttribute("aria-label", text); }
+  }
+  function showDigits(ms, tail) {
+    var p = cdParts(ms);
+    dEl.textContent = p.d; hEl.textContent = pad(p.h); mEl.textContent = pad(p.m); sEl.textContent = pad(p.s);
+    if (dLab) dLab.textContent = p.d === 1 ? "day" : "days";
+    digitsEl.hidden = false;
+    el.textContent = "until " + tail;
+  }
+  function showSentence(t) { digitsEl.hidden = true; el.textContent = t; }
+  if (el.getAttribute("aria-live")) el.removeAttribute("aria-live");
   function render() {
     var now = new Date();
-    var label = dayText(now);
-    if (label !== lastLabel) { lastLabel = label; el.setAttribute("aria-label", label); }
+    var tickMs = null, tail = "", sentence = "";
     var c = compute(now);
-    var text;
     if (c.today.getTime() === c.target.getTime()) {
-      text = "New Year's Day is today, January 1, " + c.target.getFullYear() + ". Time to pick your one resolution.";
+      sentence = "New Year's Day is today, January 1, " + c.target.getFullYear() + ". Time to pick your one resolution.";
+      if (noteEl) noteEl.hidden = true;
     } else {
       var end = new Date(c.target.getFullYear(), 0, 2);
-      text = cdTick(end - now, "January 1, " + c.target.getFullYear() + ".");
+      tickMs = end - now; tail = "January 1, " + c.target.getFullYear() + ".";
       var seasonStart = new Date(c.target.getFullYear() - 1, 11, 26);
-      if (c.today >= seasonStart && c.today < c.target) text += " Resolution season is here. Time to pick your one resolution.";
+      if (noteEl) {
+        var inSeason = c.today >= seasonStart && c.today < c.target;
+        noteEl.hidden = !inSeason;
+        if (inSeason) noteEl.textContent = "Resolution season is here. Time to pick your one resolution.";
+      }
+      if (mileEl && lastMileYear !== c.target.getFullYear()) {
+        lastMileYear = c.target.getFullYear();
+        mileEl.innerHTML = "The moment: <strong>January 1, " + lastMileYear + "</strong> &mdash; time to pick your one resolution.";
+      }
     }
-    el.textContent = text;
+    if (tickMs !== null) { lastMs = tickMs; showDigits(tickMs, tail); setAria(cdTick(tickMs, tail), now); }
+    else { lastMs = null; showSentence(sentence); setAria(sentence, now); }
+    if (panelOpen) updateBreak(now);
   }
   render();
-  setInterval(render, 1000);
+  setInterval(render, RM ? 60000 : 1000);
 })();
 </script>
 <script>
