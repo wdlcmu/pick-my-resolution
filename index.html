@@ -936,6 +936,15 @@ function finishQuiz() {
   // ride into the new saved record.
   letter = null;
   saveResult();
+  // Measurement (Sprint Lane 1, Oct 31, 2026): a typed week-one plan is
+  // the first-action commitment. Count it as its own artifact so a pick
+  // with a plan is distinguishable from a pick alone. Counts only: the
+  // plan text itself never leaves the device, like every quiz answer.
+  try {
+    if (quiz.when && typeof fleetTrack === "function") {
+      fleetTrack("artifact_created", { tool: "resolution-picker", artifact: "week-one-plan" });
+    }
+  } catch (e) {}
   renderResult();
   show("s-result");
 }
