@@ -562,7 +562,14 @@ function buildResult(a) {
    The feeling and the area are the pick itself, so they are never
    guessed: if the words do not carry them, the page asks back, in the
    open. Time is the one fill-in: no time words means the middle offer,
-   2 hours a week, and the answer says so. */
+   2 hours a week, and the answer says so.
+   Addendum 911 fix (Nov 1, 2026): a named time is heard faithfully.
+   The parser reads the amount and unit the visitor named (minutes or
+   hours, per day or per week), picks the largest ladder level that
+   fits inside that offer, and restates the offer itself in the heard
+   line and the time note. "Spend time" is not a money signal. A
+   negated fail ("not bored", "not too big") does not fire, and a bare
+   "quit" without a boredom word no longer maps to the bored guard. */
 function pickByWords(t, rules) {
   var best = null, bestN = 0;
   for (var i = 0; i < rules.length; i++) {
@@ -572,17 +579,55 @@ function pickByWords(t, rules) {
   }
   return best;
 }
+function parseTimeOffer(t) {
+  var wordNums = { an: 1, a: 1, one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12, fifteen: 15, twenty: 20, thirty: 30, forty: 40, sixty: 60 };
+  var cands = [], m;
+  var halfRe = /\bhalf an hour\b/g;
+  while ((m = halfRe.exec(t)) !== null) cands.push({ idx: m.index, end: m.index + m[0].length, mins: 30, disp: "half an hour" });
+  var amtRe = /\b(\d+(?:\.\d+)?|an|a|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|fifteen|twenty|thirty|forty|sixty)\s*(hours?|hrs?|minutes?|mins?)\b/g;
+  while ((m = amtRe.exec(t)) !== null) {
+    var tok = m[1], unit = m[2];
+    var val = Object.prototype.hasOwnProperty.call(wordNums, tok) ? wordNums[tok] : parseFloat(tok);
+    var isHour = unit.charAt(0) === "h";
+    var mins = isHour ? Math.round(val * 60) : Math.round(val);
+    var disp = isHour ? (tok === "an" ? "an hour" : val + (val === 1 ? " hour" : " hours")) : val + (val === 1 ? " minute" : " minutes");
+    cands.push({ idx: m.index, end: m.index + m[0].length, mins: mins, disp: disp });
+  }
+  if (!cands.length) return null;
+  cands.sort(function (x, y) { return x.idx - y.idx; });
+  var c = cands[0];
+  var after = t.slice(c.end, c.end + 24);
+  var perDay = /^\s*(a|per|each)\s+day\b/.test(after) || /^\s*daily\b/.test(after);
+  var per = perDay ? "day" : "week";
+  return { weekly: perDay ? c.mins * 7 : c.mins, label: c.disp + " a " + per, perDay: perDay };
+}
 function parseAskPmr(raw) {
   var t = " " + String(raw).toLowerCase().replace(/[\u2019]/g, "'") + " ";
-  var p = { timeDefaulted: false };
-  p.area = pickByWords(t, [
+  var p = { timeDefaulted: false, timeOffered: null, timeLabel: null, timePerDay: false };
+  var tArea = t, spendArea = null;
+  var sm = t.match(/\bspend(?:ing)?\s+(?:some\s+)?(?:more\s+)?time\b/);
+  if (sm) {
+    var rest = t.slice(sm.index);
+    var stop = rest.indexOf(".");
+    if (stop > 0) rest = rest.slice(0, stop);
+    var withAt = rest.indexOf(" with ");
+    var afterWith = withAt >= 0 ? rest.slice(withAt + 6) : "";
+    var famRe = /\b(family|friends?|kids?|children|partner|wife|husband|mom|dad|mother|father|parents|daughter|son|people)\b/;
+    if (afterWith && famRe.test(afterWith)) spendArea = "family";
+    else if (afterWith && /\b(home|house)\b/.test(afterWith)) spendArea = "home";
+    else if (famRe.test(rest)) spendArea = "family";
+    else if (/\b(home|house)\b/.test(rest)) spendArea = "home";
+    tArea = t.replace(/\bspend(?:ing)?\s+(?:some\s+)?(?:more\s+)?time\b/g, " spendtime ");
+  }
+  p.area = pickByWords(tArea, [
     ["health", /\b(body|health|exercise|workout|gym|walking|weight|eating|sleep)\b/g],
     ["money", /\b(money|bills?|savings?|spend|spending|debt|bank|budget|paycheck)\b/g],
     ["home", /\b(home|house|room|clutter|messy|tidy|shelf|closet|apartment)\b/g],
     ["work", /\b(work|job|desk|office|career|coworkers?|boss)\b/g],
-    ["family", /\b(family|friends?|kids?|children|partner|wife|husband|mom|dad|parents|people)\b/g],
+    ["family", /\b(family|friends?|kids?|children|partner|wife|husband|mom|dad|mother|father|parents|daughter|son|people)\b/g],
     ["calm", /\b(calm|mind|stress|stressed|anxious|anxiety|quiet|breathe|peace)\b/g]
   ]);
+  if (spendArea) p.area = spendArea;
   p.off = pickByWords(t, [
     ["drained", /\b(drained|tired|exhausted|worn out)\b/g],
     ["piled", /\b(piled|pile up|overwhelmed|behind on)\b/g],
@@ -591,16 +636,22 @@ function parseAskPmr(raw) {
     ["alone", /\b(alone|lonely|isolated)\b/g]
   ]);
   if (/no energy|low energy/.test(t) && !p.off) p.off = "drained";
-  if (/\b(5|five)\s*hours?\b/.test(t)) p.time = "t5h";
-  else if (/\b(2|two)\s*hours?\b/.test(t)) p.time = "t2h";
-  else if (/\b30\s*min/.test(t) || /half an hour/.test(t)) p.time = "t30";
-  else if (/\b(an|one|1)\s*hour\b/.test(t) || /\b60\s*min/.test(t)) p.time = "t2h";
-  else { p.time = "t2h"; p.timeDefaulted = true; }
-  p.fail = pickByWords(t, [
+  var offer = parseTimeOffer(t);
+  if (offer) {
+    p.timeOffered = offer.weekly;
+    p.timeLabel = offer.label;
+    p.timePerDay = offer.perDay;
+    p.time = offer.weekly >= 300 ? "t5h" : offer.weekly >= 120 ? "t2h" : "t30";
+  } else { p.time = "t2h"; p.timeDefaulted = true; }
+  var tFail = t
+    .replace(/\b(not|never|isn't|isnt|wasn't|wasnt|no)\s+(really\s+|too\s+|so\s+)?(bored|boring|boredom)\b/g, " ")
+    .replace(/\b(not|never|isn't|isnt)\s+too\s+(big|much)\b/g, " ")
+    .replace(/\bnot\s+(big|busy)\b/g, " ");
+  p.fail = pickByWords(tFail, [
     ["big", /\b(too much|too big|overdid|all at once)\b/g],
     ["forgot", /\b(forgot|forget|forgetting)\b/g],
     ["busy", /\b(busy|no time|life got|chaos|loud)\b/g],
-    ["bored", /\b(bored|boring|quit|gave up|lost interest)\b/g]
+    ["bored", /\b(bored|boring|boredom)\b/g]
   ]);
   return p;
 }
@@ -619,9 +670,32 @@ function answerAskPmr(raw) {
     document.getElementById("askp-more").hidden = true;
     return null;
   }
+  var action0 = ACTIONS[p.area][p.off];
+  if (p.timeLabel) {
+    var small = DOSES[action0].t30;
+    var smallTotal = small.mins * small.times;
+    if (p.timeOffered < smallTotal) {
+      out.innerHTML = '<div class="card"><p class="label">One more thing</p>' +
+        '<p>What I heard: ' + esc(labelOf(AREAS, p.area)) + '. ' + esc(labelOf(OFFS, p.off)) + ' You offered ' + esc(p.timeLabel) + '.</p>' +
+        '<p>The smallest plan here uses ' + smallTotal + ' minutes a week. That is more than you offered. Name at least ' + smallTotal + ' minutes a week. Or tap an example above to see the shape.</p></div>';
+      document.getElementById("askp-more").hidden = true;
+      return null;
+    }
+  }
   var r = buildResult({ area: p.area, off: p.off, time: p.time, fail: p.fail, when: "" });
+  if (p.timeLabel) {
+    var dd = DOSES[action0][p.time];
+    var tot = dd.mins * dd.times;
+    var parts = [];
+    if (tot >= p.timeOffered) parts.push("This plan uses all " + p.timeOffered + " minutes you offered.");
+    else parts.push("This plan uses " + tot + " of your " + p.timeOffered + " minutes a week.");
+    if (p.timePerDay) parts.push("You offered " + p.timeLabel + ".");
+    if (tot < p.timeOffered) parts.push("The rest of your time stays yours.");
+    r.timeNote = parts.join(" ");
+  }
+  var timeHeard = p.timeLabel ? p.timeLabel : labelOf(TIMES, p.time) + (p.timeDefaulted ? " (the middle offer, since no time was named)" : "");
   var heard = "What I heard: " + labelOf(AREAS, p.area) + ". " + labelOf(OFFS, p.off) + " " +
-    labelOf(TIMES, p.time) + (p.timeDefaulted ? " (the middle offer, since no time was named)" : "") + ". " + labelOf(FAILS, p.fail);
+    timeHeard + ". " + labelOf(FAILS, p.fail);
   out.innerHTML =
     '<div class="card">' +
     '<p class="label">Your pick</p><p class="big">' + esc(r.resolution) + '</p>' +
