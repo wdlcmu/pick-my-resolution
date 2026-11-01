@@ -93,7 +93,7 @@
   h2 { font-size: 23px; line-height: 1.25; margin: 6px 0 10px; }
   p { margin: 0 0 12px; }
   .sub { color: var(--muted); font-size: 16px; }
-  .countdown { font-size: 15px; color: var(--muted); margin-bottom: 6px; }
+  .countdown { font-size: 15px; color: var(--muted); margin-bottom: 6px; font-variant-numeric: tabular-nums; }
   .cta {
     display: block; width: 100%; min-height: 52px; padding: 14px 18px; margin: 14px 0;
     font-size: 18px; font-weight: 700; color: #fff; background: var(--accent);
@@ -158,6 +158,9 @@
   .faq h2 { font-size: 23px; margin-bottom: 6px; }
   .faq h3 { font-size: 17px; margin: 20px 0 6px; }
   .faq p { color: #374151; margin: 0 0 10px; font-size: 16px; line-height: 1.6; }
+  .maker { border-top: 1px solid #e5e7eb; margin-top: 32px; padding-top: 24px; text-align: left; }
+  .maker h2 { font-size: 23px; margin-bottom: 6px; }
+  .maker p { color: #374151; margin: 0 0 10px; font-size: 16px; line-height: 1.6; }
   footer { margin-top: 36px; padding-top: 16px; border-top: 1px solid #e5e7eb; color: var(--muted); font-size: 14px; text-align: center; }
   footer a { color: var(--accent); font-weight: 700; display: inline-block; padding: 12px 6px; min-height: 44px; }
   /* Visual redesign 2026-10-24: photo-forward hero, dawn-pine + amber. */
@@ -322,6 +325,10 @@
       <p>Your words never leave this device.</p>
       <p>There are no ads on this site.</p>
     </div>
+    <div class="maker">
+      <h2>Made by a dad, on the side</h2>
+      <p>I&apos;m Billy, a dad in Redmond, Washington. I build these tools on the side, with AI &mdash; one idea, one website, no company behind it. This one keeps it to one resolution, sized to a real week, because lists die by spring.</p>
+    </div>
     </div>
   </section>
 
@@ -406,22 +413,62 @@
 (function () {
   var el = document.getElementById("countdown");
   if (!el) return;
-  var now = new Date();
-  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  var target = new Date(now.getFullYear(), 0, 1);
-  if (today > target) target = new Date(now.getFullYear() + 1, 0, 1);
-  var days = Math.round((Date.UTC(target.getFullYear(), target.getMonth(), target.getDate()) - Date.UTC(today.getFullYear(), today.getMonth(), today.getDate())) / (1000 * 60 * 60 * 24));
-  if (days === 0) {
-    el.textContent = "New Year's Day is today, January 1, " + target.getFullYear() + ". Time to pick your one resolution.";
-    return;
+  /* 2026-11-01 countdown fleet pass: live clock to New Year's Day. Ticks
+     every second (days, hours, minutes, seconds) to the end of Jan 1;
+     the day itself says so and carries the pick-your-one line. In
+     resolution season (Dec 26-31) the season line rides along, as before.
+     Reduced motion: one static day count, no ticking. */
+
+  function cdUnit(n, w) { return n + " " + w + (n === 1 ? "" : "s"); }
+  function cdTick(ms, tail) {
+    var s = Math.floor(ms / 1000);
+    var d = Math.floor(s / 86400); s -= d * 86400;
+    var h = Math.floor(s / 3600); s -= h * 3600;
+    var m = Math.floor(s / 60); var sec = s - m * 60;
+    var seg = [];
+    if (d > 0) seg.push(cdUnit(d, "day"));
+    if (d > 0 || h > 0) seg.push(cdUnit(h, "hour"));
+    seg.push(cdUnit(m, "minute"));
+    seg.push(cdUnit(sec, "second"));
+    return seg.join(", ") + " until " + tail;
   }
-  var base = days + (days === 1 ? " day" : " days") + " until January 1, " + target.getFullYear() + ".";
-  var seasonStart = new Date(target.getFullYear() - 1, 11, 26);
-  if (today >= seasonStart && today < target) {
-    el.textContent = base + " Resolution season is here. Time to pick your one resolution.";
-  } else {
-    el.textContent = base;
+  function compute(now) {
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var target = new Date(now.getFullYear(), 0, 1);
+    if (today > target) target = new Date(now.getFullYear() + 1, 0, 1);
+    return { today: today, target: target };
   }
+  function dayText(now) {
+    var c = compute(now);
+    var days = Math.round((Date.UTC(c.target.getFullYear(), c.target.getMonth(), c.target.getDate()) - Date.UTC(c.today.getFullYear(), c.today.getMonth(), c.today.getDate())) / 86400000);
+    if (days === 0) return "New Year's Day is today, January 1, " + c.target.getFullYear() + ". Time to pick your one resolution.";
+    var base = days + (days === 1 ? " day" : " days") + " until January 1, " + c.target.getFullYear() + ".";
+    var seasonStart = new Date(c.target.getFullYear() - 1, 11, 26);
+    if (c.today >= seasonStart && c.today < c.target) return base + " Resolution season is here. Time to pick your one resolution.";
+    return base;
+  }
+  var RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (RM) { el.textContent = dayText(new Date()); return; }
+  el.removeAttribute("aria-live");
+  var lastLabel = "";
+  function render() {
+    var now = new Date();
+    var label = dayText(now);
+    if (label !== lastLabel) { lastLabel = label; el.setAttribute("aria-label", label); }
+    var c = compute(now);
+    var text;
+    if (c.today.getTime() === c.target.getTime()) {
+      text = "New Year's Day is today, January 1, " + c.target.getFullYear() + ". Time to pick your one resolution.";
+    } else {
+      var end = new Date(c.target.getFullYear(), 0, 2);
+      text = cdTick(end - now, "January 1, " + c.target.getFullYear() + ".");
+      var seasonStart = new Date(c.target.getFullYear() - 1, 11, 26);
+      if (c.today >= seasonStart && c.today < c.target) text += " Resolution season is here. Time to pick your one resolution.";
+    }
+    el.textContent = text;
+  }
+  render();
+  setInterval(render, 1000);
 })();
 </script>
 <script>
