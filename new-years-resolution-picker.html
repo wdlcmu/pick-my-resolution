@@ -160,6 +160,15 @@
   footer { margin-top: 36px; padding-top: 16px; border-top: 1px solid #e5e7eb; color: var(--muted); font-size: 14px; text-align: center; }
   footer a { color: var(--accent); font-weight: 700; display: inline-block; padding: 12px 6px; min-height: 44px; }
 </style>
+<style>
+  .pk-card { margin-top: 18px; padding: 0; overflow: hidden; }
+  .pk-photo { display: block; width: 100%; height: 240px; object-fit: cover; }
+  .pk-in { padding: 14px 16px 16px; }
+  .pk-in .chips { margin-top: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .pk-in .ex-pill { font-size: 15px; padding: 9px 10px; text-align: center; }
+  .pk-why { margin-top: 10px; }
+  .pk-plan { margin-top: 40px; }
+</style>
 </head>
 <body>
   <!-- ============ SCREEN 1: PICKER HOME ============ -->
@@ -167,22 +176,23 @@
     <div class="wrap">
     <p class="brand"><a href="/">Pick My Resolution</a></p>
     <h1>New Year's Resolution Picker</h1>
-    <p class="sub">Four questions. One pick, sized to your week.</p>
-    <button class="cta" id="btn-start">Pick my resolution</button>
-    <p class="sub">Free forever. No ads. No accounts.</p>
-    <p>Other pickers hand you fifty ideas. This one hands you one plan.</p>
-    <div class="example">
-      <h2>One real pick, start to finish</h2>
-      <p>Say your year felt like this:</p>
-      <div class="chips" aria-label="Sample answers">
-        <span class="ex-pill">Body and health</span>
-        <span class="ex-pill">I felt drained a lot.</span>
-        <span class="ex-pill">2 hours a week</span>
-        <span class="ex-pill">I just forgot to do it.</span>
-      </div>
-      <p style="margin-top:14px"><strong>Why this pick:</strong> Drained, in body and health, points to a walk. Two hours sizes the dose. Forgot before, so the plan adds an alarm.</p>
-      <div class="card">
+    <div class="card pk-card">
+      <img class="pk-photo" src="/img/hero-walk.webp" width="800" height="600" alt="Two friends talking on a walk in the park" fetchpriority="high">
+      <div class="pk-in">
+        <div class="chips" aria-label="Sample answers">
+          <span class="ex-pill">Body and health</span>
+          <span class="ex-pill">I felt drained a lot.</span>
+          <span class="ex-pill">2 hours a week</span>
+          <span class="ex-pill">I just forgot to do it.</span>
+        </div>
         <p class="big">Take a short walk: 30 min, 4x a week.</p>
+        <p class="pk-why">Why: a drained year, two hours, one alarm against forgetting.</p>
+      </div>
+    </div>
+    <button class="cta" id="btn-start">Pick my resolution</button>
+    <div class="pk-plan">
+      <h2>One real pick, start to finish</h2>
+      <div class="card">
         <p class="label">First move, week one</p>
         <p>Put your shoes by the front door. Walk 30 min right after a meal.</p>
         <p class="label">Your week one plan</p>
@@ -195,8 +205,11 @@
       <p>It ends with a note to future you. This one opens:</p>
       <p class="ex-note">&ldquo;Dear future me, I felt drained a lot back then. My pick was Take a short walk.&rdquo;</p>
       <p>You finish yours in your own words. It stays on your device.</p>
-      <button class="cta" id="btn-start-2">Pick my resolution</button>
     </div>
+    <p>Other pickers hand you fifty ideas. This one hands you one plan.</p>
+    <button class="cta" id="btn-start-2">Pick my resolution</button>
+    <p class="sub">Free forever. No ads. No accounts.</p>
+    <p class="sub">Four questions. One pick, sized to your week.</p>
     <div class="how">
       <h2>How it works</h2>
       <ol>

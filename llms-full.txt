@@ -1697,18 +1697,14 @@ Browse by area: Body and health
 New Year's Resolution Picker - Pick My Resolution
 Pick My Resolution
 New Year's Resolution Picker
-Four questions. One pick, sized to your week.
-Pick my resolution
-Free forever. No ads. No accounts.
-Other pickers hand you fifty ideas. This one hands you one plan.
-One real pick, start to finish
-Say your year felt like this:
 Body and health
 I felt drained a lot.
 2 hours a week
 I just forgot to do it.
-Why this pick: Drained, in body and health, points to a walk. Two hours sizes the dose. Forgot before, so the plan adds an alarm.
 Take a short walk: 30 min, 4x a week.
+Why: a drained year, two hours, one alarm against forgetting.
+Pick my resolution
+One real pick, start to finish
 First move, week one
 Put your shoes by the front door. Walk 30 min right after a meal.
 Your week one plan
@@ -1720,7 +1716,10 @@ This plan uses all 120 minutes you offered.
 It ends with a note to future you. This one opens:
 &ldquo;Dear future me, I felt drained a lot back then. My pick was Take a short walk.&rdquo;
 You finish yours in your own words. It stays on your device.
+Other pickers hand you fifty ideas. This one hands you one plan.
 Pick my resolution
+Free forever. No ads. No accounts.
+Four questions. One pick, sized to your week.
 How it works
 You pick one area. Body, money, home, work, family, calm.
 You say what felt hard. And what made past plans fail.
