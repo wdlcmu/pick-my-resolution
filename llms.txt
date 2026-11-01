@@ -14,6 +14,7 @@
 ## Start here
 
 - [Homepage and quiz](https://pickmyresolution.com/): four questions, one resolution, one plan.
+- [Ask in your own words](https://pickmyresolution.com/ask): say your year in a line or two; the same engine picks from your words. Your words run in your browser and never leave your device.
 
 ## Key pages
 

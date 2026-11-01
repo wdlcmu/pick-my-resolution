@@ -14,6 +14,8 @@ Last January, you wrote a list. By spring, none of it stuck.
 Four questions. One pick, sized to your week. Swap it if it does not fit.
 Pick my resolution
 Free forever. No ads. No accounts.
+Rather say it in your own words? Ask here
+.
 The January list
 Two friends, one walk
 Breakfast, together
@@ -34,7 +36,7 @@ Set a phone alarm for session days. Same time, same sound.
 Your time
 This plan uses all 120 minutes you offered.
 It ends with a note to future you. This one opens:
-"Dear future me, I felt drained a lot back then. My pick was Take a short walk."
+&ldquo;Dear future me, I felt drained a lot back then. My pick was Take a short walk.&rdquo;
 You finish yours in your own words. It stays on your device.
 Pick my resolution
 How it works
@@ -77,6 +79,8 @@ The full plan is yours without them.
 We never sell your data.
 Your words never leave this device.
 There are no ads on this site.
+Day, time, place, person. In your own words.
+Leave it blank to skip. You still get your full plan.
 Back
 Continue
 Your plan is set
@@ -344,11 +348,22 @@ Pick my resolution
 Four short questions. One clear plan for your year.
 Common questions
 How do I pick my body and health resolution?
-Take the short quiz on the home page. It asks what felt off this year. It asks how much time you have. Then it picks one move for you.
+Take the short quiz on the home page.
+It asks what felt off this year.
+It asks how much time you have.
+Then it picks one move for you.
 What health moves can I pick from?
-This page lists all five health moves. One is Take a short walk. Two is Cook a real meal. Three is Do a short workout. Four is Stretch your whole body. Five is Walk with a friend. The quiz picks the one that fits you.
+This page lists all five health moves.
+One is Take a short walk.
+Two is Cook a real meal.
+Three is Do a short workout.
+Four is Stretch your whole body.
+Five is Walk with a friend.
+The quiz picks the one that fits you.
 What if I have just 30 minutes a week?
-That is fine. Your plan fits inside that time. Small moves count when you keep them.
+That is fine.
+Your plan fits inside that time.
+Small moves count when you keep them.
 Built with Muse.
 Browse by area: Money
 · Home
@@ -416,11 +431,22 @@ Pick my resolution
 Four short questions. One clear plan for your year.
 Common questions
 How do I pick my money resolution?
-Take the short quiz on the home page. It asks what felt off this year. It asks how much time you have. Then it picks one move for you.
+Take the short quiz on the home page.
+It asks what felt off this year.
+It asks how much time you have.
+Then it picks one move for you.
 What money moves can I pick from?
-This page lists all five money moves. One is Check your bank balance. Two is Sort bills in one spot. Three is Move cash to savings. Four is Write down what you spend. Five is Tell a friend your goal. The quiz picks the one that fits you.
+This page lists all five money moves.
+One is Check your bank balance.
+Two is Sort bills in one spot.
+Three is Move cash to savings.
+Four is Write down what you spend.
+Five is Tell a friend your goal.
+The quiz picks the one that fits you.
 What if I have just 30 minutes a week?
-That is fine. Your plan fits inside that time. Small moves count when you keep them.
+That is fine.
+Your plan fits inside that time.
+Small moves count when you keep them.
 Built with Muse.
 Browse by area: Body and health
 · Home
@@ -488,11 +514,22 @@ Pick my resolution
 Four short questions. One clear plan for your year.
 Common questions
 How do I pick my home resolution?
-Take the short quiz on the home page. It asks what felt off this year. It asks how much time you have. Then it picks one move for you.
+Take the short quiz on the home page.
+It asks what felt off this year.
+It asks how much time you have.
+Then it picks one move for you.
 What home moves can I pick from?
-This page lists all five home moves. One is Tidy one small corner. Two is Clear one shelf fully. Three is Fix one small thing. Four is Make one room cozy. Five is Have a friend visit. The quiz picks the one that fits you.
+This page lists all five home moves.
+One is Tidy one small corner.
+Two is Clear one shelf fully.
+Three is Fix one small thing.
+Four is Make one room cozy.
+Five is Have a friend visit.
+The quiz picks the one that fits you.
 What if I have just 30 minutes a week?
-That is fine. Your plan fits inside that time. Small moves count when you keep them.
+That is fine.
+Your plan fits inside that time.
+Small moves count when you keep them.
 Built with Muse.
 Browse by area: Body and health
 · Money
@@ -560,11 +597,22 @@ Pick my resolution
 Four short questions. One clear plan for your year.
 Common questions
 How do I pick my work resolution?
-Take the short quiz on the home page. It asks what felt off this year. It asks how much time you have. Then it picks one move for you.
+Take the short quiz on the home page.
+It asks what felt off this year.
+It asks how much time you have.
+Then it picks one move for you.
 What work moves can I pick from?
-This page lists all five work moves. One is Plan your day on paper. Two is Clear your desk top. Three is Learn one work skill. Four is Chat with a work friend. Five is Eat lunch with coworkers. The quiz picks the one that fits you.
+This page lists all five work moves.
+One is Plan your day on paper.
+Two is Clear your desk top.
+Three is Learn one work skill.
+Four is Chat with a work friend.
+Five is Eat lunch with coworkers.
+The quiz picks the one that fits you.
 What if I have just 30 minutes a week?
-That is fine. Your plan fits inside that time. Small moves count when you keep them.
+That is fine.
+Your plan fits inside that time.
+Small moves count when you keep them.
 Built with Muse.
 Browse by area: Body and health
 · Money
@@ -632,11 +680,22 @@ Pick my resolution
 Four short questions. One clear plan for your year.
 Common questions
 How do I pick my family and friends resolution?
-Take the short quiz on the home page. It asks what felt off this year. It asks how much time you have. Then it picks one move for you.
+Take the short quiz on the home page.
+It asks what felt off this year.
+It asks how much time you have.
+Then it picks one move for you.
 What family moves can I pick from?
-This page lists all five family moves. One is Talk with family at home. Two is Share one meal together. Three is Play one game together. Four is Call a friend you miss. Five is Visit someone you love. The quiz picks the one that fits you.
+This page lists all five family moves.
+One is Talk with family at home.
+Two is Share one meal together.
+Three is Play one game together.
+Four is Call a friend you miss.
+Five is Visit someone you love.
+The quiz picks the one that fits you.
 What if I have just 30 minutes a week?
-That is fine. Your plan fits inside that time. Small moves count when you keep them.
+That is fine.
+Your plan fits inside that time.
+Small moves count when you keep them.
 Built with Muse.
 Browse by area: Body and health
 · Money
@@ -704,11 +763,22 @@ Pick my resolution
 Four short questions. One clear plan for your year.
 Common questions
 How do I pick my mind and calm resolution?
-Take the short quiz on the home page. It asks what felt off this year. It asks how much time you have. Then it picks one move for you.
+Take the short quiz on the home page.
+It asks what felt off this year.
+It asks how much time you have.
+Then it picks one move for you.
 What calm moves can I pick from?
-This page lists all five calm moves. One is Sit in a quiet place. Two is Write thoughts on paper. Three is Read a calm book. Four is Breathe slow in fresh air. Five is Sit outside with others. The quiz picks the one that fits you.
+This page lists all five calm moves.
+One is Sit in a quiet place.
+Two is Write thoughts on paper.
+Three is Read a calm book.
+Four is Breathe slow in fresh air.
+Five is Sit outside with others.
+The quiz picks the one that fits you.
 What if I have just 30 minutes a week?
-That is fine. Your plan fits inside that time. Small moves count when you keep them.
+That is fine.
+Your plan fits inside that time.
+Small moves count when you keep them.
 Built with Muse.
 Browse by area: Body and health
 · Money
@@ -831,3 +901,24 @@ Browse by area: Body and health
 · Family and friends
 · Mind and calm
 · Privacy
+
+## Ask (https://pickmyresolution.com/ask)
+
+Ask Pick My Resolution in your own words - one resolution you can keep
+Pick My Resolution
+Ask in your own words
+Skip the four questions. Say your year in a line or two.
+We run the same engine as the four questions
+, right on this page. Your words never leave this device. Nothing is sent or saved.
+Your year, in your words
+Pick my resolution
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Want the year card and the lock-screen picture? The four questions
+build those from this same pick.
+Built with Muse.
+Privacy
+· Terms
