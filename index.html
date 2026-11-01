@@ -2037,7 +2037,20 @@ function buildResult(a) {
    fits inside that offer, and restates the offer itself in the heard
    line and the time note. "Spend time" is not a money signal. A
    negated fail ("not bored", "not too big") does not fire, and a bare
-   "quit" without a boredom word no longer maps to the bored guard. */
+   "quit" without a boredom word no longer maps to the bored guard.
+   Addendum 915 fix (Nov 1, 2026): the same three classes, generalized.
+   Time: frequency and period are heard anywhere in the offer clause
+   ("45 minutes twice a week" is 90 a week; "20 minutes before work
+   each day" is 140 a week; "two hours a month" stays a month, sized
+   by its true weekly share, about 28 minutes; "a couple of hours" is
+   about 2 hours). Area: the family word set is complete (siblings,
+   grandparents, in-laws, partner words), a named place beats a
+   generic people word in a spend-time ask, and spending money on a
+   thing (eating out, apps, subscriptions) is Money even when the
+   thing itself carries another area's word. Fails: a negated pattern
+   never fires, in either word order and at clause distance, for every
+   fail word; when one fail is negated and another is affirmed in the
+   same breath, the affirmed one decides. */
 function pickByWords(t, rules) {
   var best = null, bestN = 0;
   for (var i = 0; i < rules.length; i++) {
@@ -2050,6 +2063,11 @@ function pickByWords(t, rules) {
 function parseTimeOffer(t) {
   var wordNums = { an: 1, a: 1, one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12, fifteen: 15, twenty: 20, thirty: 30, forty: 40, sixty: 60 };
   var cands = [], m;
+  var coupleRe = /\ba couple of (hours?|minutes?|mins?)\b/g;
+  while ((m = coupleRe.exec(t)) !== null) {
+    var cIsHour = m[1].charAt(0) === "h";
+    cands.push({ idx: m.index, end: m.index + m[0].length, mins: cIsHour ? 120 : 2, disp: "a couple of " + (cIsHour ? "hours" : "minutes") });
+  }
   var halfRe = /\bhalf an hour\b/g;
   while ((m = halfRe.exec(t)) !== null) cands.push({ idx: m.index, end: m.index + m[0].length, mins: 30, disp: "half an hour" });
   var amtRe = /\b(\d+(?:\.\d+)?|an|a|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|fifteen|twenty|thirty|forty|sixty)\s*(hours?|hrs?|minutes?|mins?)\b/g;
@@ -2064,15 +2082,49 @@ function parseTimeOffer(t) {
   if (!cands.length) return null;
   cands.sort(function (x, y) { return x.idx - y.idx; });
   var c = cands[0];
-  var after = t.slice(c.end, c.end + 24);
-  var perDay = /^\s*(a|per|each)\s+day\b/.test(after) || /^\s*daily\b/.test(after);
-  var per = perDay ? "day" : "week";
-  return { weekly: perDay ? c.mins * 7 : c.mins, label: c.disp + " a " + per, perDay: perDay };
+  var restAll = t.slice(c.end);
+  var dot = restAll.indexOf(".");
+  var seg = (dot >= 0 ? restAll.slice(0, dot) : restAll).slice(0, 90);
+  var monthly = null, freq = 1, perDay = false, suffix = " a week", restate = false, mm;
+  function numOf(s) { return Object.prototype.hasOwnProperty.call(wordNums, s) ? wordNums[s] : parseInt(s, 10); }
+  if ((mm = seg.match(/\b(\d+|one|two|three|four|five|six|seven|eight)\s+times\s+(?:a|per)\s+month\b/))) {
+    freq = numOf(mm[1]); monthly = c.mins * freq; suffix = " " + mm[1] + " times a month"; restate = true;
+  } else if (/\b(?:a|per|each)\s+month\b/.test(seg) || /\bmonthly\b/.test(seg)) {
+    monthly = c.mins; suffix = " a month"; restate = true;
+  } else if ((mm = seg.match(/\b(\d+|one|two|three|four|five|six|seven|eight)\s+times\s+(?:a|per)\s+day\b/))) {
+    freq = numOf(mm[1]); perDay = true; suffix = " " + mm[1] + " times a day"; restate = true;
+  } else if (/\btwice\s+(?:a\s+)?day\b/.test(seg)) {
+    freq = 2; perDay = true; suffix = " twice a day"; restate = true;
+  } else if (/\b(?:a|per|each)\s+day\b/.test(seg)) {
+    perDay = true; suffix = " a day";
+  } else if (/\bevery\s+day\b/.test(seg)) {
+    perDay = true; suffix = " every day"; restate = true;
+  } else if (/\bdaily\b/.test(seg)) {
+    perDay = true; suffix = " a day"; restate = true;
+  } else if ((mm = seg.match(/\b(?:each|every)\s+(morning|night|evening)\b/))) {
+    perDay = true; suffix = " " + mm[0]; restate = true;
+  } else if (/\btwice\s+(?:a\s+)?week\b/.test(seg)) {
+    freq = 2; suffix = " twice a week"; restate = true;
+  } else if ((mm = seg.match(/\b(\d+|one|two|three|four|five|six|seven|eight)\s+times\s+(?:a|per)\s+week\b/))) {
+    freq = numOf(mm[1]); suffix = " " + mm[1] + " times a week"; restate = true;
+  } else if ((mm = seg.match(/\b(on|each|every)\s+(sundays|mondays|tuesdays|wednesdays|thursdays|fridays|saturdays|sunday|monday|tuesday|wednesday|thursday|friday|saturday)\b/))) {
+    suffix = " " + mm[1] + " " + mm[2].charAt(0).toUpperCase() + mm[2].slice(1); restate = true;
+  } else if ((mm = seg.match(/\b(sundays|mondays|tuesdays|wednesdays|thursdays|fridays|saturdays)\b/))) {
+    suffix = " on " + mm[1].charAt(0).toUpperCase() + mm[1].slice(1); restate = true;
+  }
+  var weekly;
+  if (monthly !== null) weekly = Math.round(monthly * 12 / 52);
+  else if (perDay) weekly = c.mins * freq * 7;
+  else weekly = c.mins * freq;
+  return { weekly: weekly, label: c.disp + suffix, perDay: perDay, monthly: monthly, restate: restate || perDay };
 }
 function parseAskPmr(raw) {
   var t = " " + String(raw).toLowerCase().replace(/[\u2019]/g, "'") + " ";
-  var p = { timeDefaulted: false, timeOffered: null, timeLabel: null, timePerDay: false };
+  var p = { timeDefaulted: false, timeOffered: null, timeLabel: null, timePerDay: false, timeMonthly: null, timeRestate: false };
   var tArea = t, spendArea = null;
+  var FAM = "family|friends?|kids?|children|partner|wife|husband|spouse|boyfriend|girlfriend|fiance|fiancee|mom|dad|mother|father|parents?|daughter|son|brother|sister|siblings?|grandparents?|grandmother|grandfather|grandma|grandpa|aunt|uncle|cousins?|niece|nephew|in-laws?|people";
+  var famRe = new RegExp("\\b(" + FAM + ")\\b");
+  var kinRe = /\b(family|kids?|children|partner|wife|husband|spouse|boyfriend|girlfriend|fiance|fiancee|mom|dad|mother|father|parents?|daughter|son|brother|sister|siblings?|grandparents?|grandmother|grandfather|grandma|grandpa|aunt|uncle|cousins?|niece|nephew|in-laws?)\b/;
   var sm = t.match(/\bspend(?:ing)?\s+(?:some\s+)?(?:more\s+)?time\b/);
   if (sm) {
     var rest = t.slice(sm.index);
@@ -2080,11 +2132,14 @@ function parseAskPmr(raw) {
     if (stop > 0) rest = rest.slice(0, stop);
     var withAt = rest.indexOf(" with ");
     var afterWith = withAt >= 0 ? rest.slice(withAt + 6) : "";
-    var famRe = /\b(family|friends?|kids?|children|partner|wife|husband|mom|dad|mother|father|parents|daughter|son|people)\b/;
-    if (afterWith && famRe.test(afterWith)) spendArea = "family";
-    else if (afterWith && /\b(home|house)\b/.test(afterWith)) spendArea = "home";
+    var place = null;
+    if (/\bgym\b/.test(rest)) place = "health";
+    else if (/\b(work|students?|office|job|class|school)\b/.test(rest)) place = "work";
+    else if (/\b(home|house)\b/.test(rest)) place = "home";
+    if (afterWith && kinRe.test(afterWith)) spendArea = "family";
+    else if (place) spendArea = place;
+    else if (afterWith && famRe.test(afterWith)) spendArea = "family";
     else if (famRe.test(rest)) spendArea = "family";
-    else if (/\b(home|house)\b/.test(rest)) spendArea = "home";
     tArea = t.replace(/\bspend(?:ing)?\s+(?:some\s+)?(?:more\s+)?time\b/g, " spendtime ");
   }
   p.area = pickByWords(tArea, [
@@ -2092,10 +2147,14 @@ function parseAskPmr(raw) {
     ["money", /\b(money|bills?|savings?|spend|spending|debt|bank|budget|paycheck)\b/g],
     ["home", /\b(home|house|room|clutter|messy|tidy|shelf|closet|apartment)\b/g],
     ["work", /\b(work|job|desk|office|career|coworkers?|boss)\b/g],
-    ["family", /\b(family|friends?|kids?|children|partner|wife|husband|mom|dad|mother|father|parents|daughter|son|people)\b/g],
+    ["family", new RegExp("\\b(" + FAM + ")\\b", "g")],
     ["calm", /\b(calm|mind|stress|stressed|anxious|anxiety|quiet|breathe|peace)\b/g]
   ]);
   if (spendArea) p.area = spendArea;
+  if (!spendArea) {
+    var moneyObj = /\b(eating out|dining out|takeout|take-out|take out|eating|apps?|shopping|subscriptions?|clothes|clothing|coffee|delivery|restaurants?|groceries|grocery|games?|gaming|shoes|gadgets?)\b/.test(t);
+    if ((/\bspend(?:ing)?\b/.test(t) && moneyObj) || /\bspend\s+less\b/.test(t) || /\bspending\s+money\b/.test(t)) p.area = "money";
+  }
   p.off = pickByWords(t, [
     ["drained", /\b(drained|tired|exhausted|worn out)\b/g],
     ["piled", /\b(piled|pile up|overwhelmed|behind on)\b/g],
@@ -2109,16 +2168,20 @@ function parseAskPmr(raw) {
     p.timeOffered = offer.weekly;
     p.timeLabel = offer.label;
     p.timePerDay = offer.perDay;
+    p.timeMonthly = offer.monthly;
+    p.timeRestate = offer.restate;
     p.time = offer.weekly >= 300 ? "t5h" : offer.weekly >= 120 ? "t2h" : "t30";
   } else { p.time = "t2h"; p.timeDefaulted = true; }
+  var FAILWORDS = "boredom|boring|bored|forgetting|forgetfulness|forgot|forget|too\\s+big|too\\s+much|big|busy";
   var tFail = t
-    .replace(/\b(not|never|isn't|isnt|wasn't|wasnt|no)\s+(really\s+|too\s+|so\s+)?(bored|boring|boredom)\b/g, " ")
-    .replace(/\b(not|never|isn't|isnt)\s+too\s+(big|much)\b/g, " ")
-    .replace(/\bnot\s+(big|busy)\b/g, " ");
+    .replace(new RegExp("\\b(boredom|boring|bored|forgetting|forgetfulness)\\s+(isn't|isnt|is not|aren't|arent|wasn't|wasnt|never)\\b[^.,;]{0,24}", "g"), " ")
+    .replace(/\b(boredom|boring|bored|forgetting|forgetfulness)\s+(is|was)\s+(not|never)\b[^.,;]{0,24}/g, " ")
+    .replace(new RegExp("\\b(not|never|don't|dont|do not|doesn't|doesnt|didn't|didnt|isn't|isnt|wasn't|wasnt|aren't|arent|won't|wont|can't|cant)\\b[^.]{0,40}?\\b(" + FAILWORDS + ")\\b", "g"), " ")
+    .replace(/\b(no)\s+(boredom|boring|bored)\b/g, " ");
   p.fail = pickByWords(tFail, [
     ["big", /\b(too much|too big|overdid|all at once)\b/g],
     ["forgot", /\b(forgot|forget|forgetting)\b/g],
-    ["busy", /\b(busy|no time|life got|chaos|loud)\b/g],
+    ["busy", /\b(busy|no time|out of time|life got|chaos|loud)\b/g],
     ["bored", /\b(bored|boring|boredom)\b/g]
   ]);
   return p;
@@ -2143,9 +2206,12 @@ function answerAskPmr(raw) {
     var small = DOSES[action0].t30;
     var smallTotal = small.mins * small.times;
     if (p.timeOffered < smallTotal) {
+      var smallNote = p.timeMonthly
+        ? '<p>The smallest plan here uses ' + smallTotal + ' minutes a week. That is about ' + Math.round(smallTotal * 52 / 12) + ' minutes a month, more than you offered. Name a bit more time. Or tap an example above to see the shape.</p>'
+        : '<p>The smallest plan here uses ' + smallTotal + ' minutes a week. That is more than you offered. Name at least ' + smallTotal + ' minutes a week. Or tap an example above to see the shape.</p>';
       out.innerHTML = '<div class="card"><p class="label">One more thing</p>' +
         '<p>What I heard: ' + esc(labelOf(AREAS, p.area)) + '. ' + esc(labelOf(OFFS, p.off)) + ' You offered ' + esc(p.timeLabel) + '.</p>' +
-        '<p>The smallest plan here uses ' + smallTotal + ' minutes a week. That is more than you offered. Name at least ' + smallTotal + ' minutes a week. Or tap an example above to see the shape.</p></div>';
+        smallNote + '</div>';
       document.getElementById("askp-more").hidden = true;
       return null;
     }
@@ -2155,10 +2221,17 @@ function answerAskPmr(raw) {
     var dd = DOSES[action0][p.time];
     var tot = dd.mins * dd.times;
     var parts = [];
-    if (tot >= p.timeOffered) parts.push("This plan uses all " + p.timeOffered + " minutes you offered.");
-    else parts.push("This plan uses " + tot + " of your " + p.timeOffered + " minutes a week.");
-    if (p.timePerDay) parts.push("You offered " + p.timeLabel + ".");
-    if (tot < p.timeOffered) parts.push("The rest of your time stays yours.");
+    if (p.timeMonthly) {
+      var mUse = Math.round(tot * 52 / 12);
+      parts.push("This plan uses " + tot + " minutes a week, about " + mUse + " of your " + p.timeMonthly + " minutes a month.");
+      parts.push("You offered " + p.timeLabel + ".");
+      if (mUse < p.timeMonthly) parts.push("The rest of your time stays yours.");
+    } else {
+      if (tot >= p.timeOffered) parts.push("This plan uses all " + p.timeOffered + " minutes you offered.");
+      else parts.push("This plan uses " + tot + " of your " + p.timeOffered + " minutes a week.");
+      if (p.timeRestate) parts.push("You offered " + p.timeLabel + ".");
+      if (tot < p.timeOffered) parts.push("The rest of your time stays yours.");
+    }
     r.timeNote = parts.join(" ");
   }
   var timeHeard = p.timeLabel ? p.timeLabel : labelOf(TIMES, p.time) + (p.timeDefaulted ? " (the middle offer, since no time was named)" : "");
