@@ -882,13 +882,13 @@ function baselinePmr(raw) {
     && /[+\-*/x]/.test(stripped)) {
     var v = evalArithPmr(expr);
     if (v === "DIV0") {
-      return { label: "Quick answer", lines: ["That one divides by zero, so it has no answer.", "For your pick, I still need the part of life, how the year felt, and what made past plans fail. " + needLine] };
+      return { label: "Quick answer", lines: ["That one divides by zero, so it has no answer.", "For your pick, I still need the part of life, how the year felt, and what made past plans fail. Say it in your words, or tap an example above to see the shape."] };
     }
     var f = v === null ? null : fmtArithNum(v);
     if (f !== null) {
       var echo = expr.replace(/([+\-*/x])/g, " $1 ").replace(/\s+/g, " ").trim()
         .replace(/\*/g, "×").replace(/ x /g, " × ").replace(/\//g, "÷");
-      return { label: "Quick answer", lines: [echo + " = " + f + ".", "For your pick, I still need the part of life, how the year felt, and what made past plans fail. " + needLine] };
+      return { label: "Quick answer", lines: [echo + " = " + f + ".", "For your pick, I still need the part of life, how the year felt, and what made past plans fail. Say it in your words, or tap an example above to see the shape."] };
     }
   }
   return null;
