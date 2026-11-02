@@ -3,7 +3,7 @@
 > Complete text of pickmyresolution.com: every page, plus the full bank inside its free quiz.
 > The quiz picks one New Year's resolution you can keep. Four questions, about one minute.
 > Free forever. No ads, no accounts. Your answers stay in your browser.
-> Text captured from the live site, 2026-10-31.
+> Text captured from the live site, 2026-11-01.
 
 ## Homepage and quiz (https://pickmyresolution.com/)
 
@@ -11,11 +11,21 @@ New Year's Resolution - Pick My Resolution: One you can keep
 Pick My Resolution
 This year, keep one. Just one.
 Last January, you wrote a list. By spring, none of it stuck.
-Four questions. One pick, sized to your week. Swap it if it does not fit.
+61 days
+00 hrs
+00 min
+00 sec
+61 days until January 1, 2027.
+What&rsquo;s next? &#9662;
+The moment: January 1, 2027 &mdash; time to pick your one resolution.
 Pick my resolution
 Free forever. No ads. No accounts.
 Rather say it in your own words? Ask here
 .
+One real pick:
+I felt drained a lot.
+Take a short walk: 30 min, 4x a week.
+Week one &middot; Sat 9am, at the park, with Alex
 The January list
 Two friends, one walk
 Breakfast, together
@@ -65,20 +75,16 @@ Is it free?
 Yes. It is free for good.
 No ads. No accounts.
 What we don't do
-We don't email your letter yet.
-It saves as a card on this device.
-We send no reminders or check-in emails.
-There is no email signup at all.
-We keep no plan or note on servers.
-Both live in this browser only.
-We don't give you a list of ten.
-You leave with one.
+Your letter lives as a card on this device for now.
+Reminders and signup stay off: we send no reminder emails, and there is no email signup.
+Your plan and note live in this browser only &mdash; they stay off our servers.
+You leave with one plan, sized to your week.
 Our guarantees
-No account and no email needed.
-The full plan is yours without them.
-We never sell your data.
-Your words never leave this device.
-There are no ads on this site.
+The full plan is yours with no account or email.
+We never sell your data, and your words stay on this device.
+This site is ad-free.
+Made by a dad, on the side
+I&apos;m Billy, a dad in Redmond, Washington. I build these tools on the side, with AI &mdash; one idea, one website, no company behind it. This one keeps it to one resolution, sized to a real week, because lists die by spring.
 Day, time, place, person. In your own words.
 Leave it blank to skip. You still get your full plan.
 Back
@@ -116,6 +122,19 @@ Browse by area: Body and health
 · Privacy
 · Terms
 More family tools: Fill My Bracket, your March bracket
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### The four questions
 
@@ -128,7 +147,7 @@ More family tools: Fill My Bracket, your March bracket
 
 Each action below appears at three time levels, so the bank returns one of 90 resolutions.
 Every result also carries a first move for week one, one note for when it gets hard (picked by question 4),
-a weekly check-in prompt to copy into your own AI, and a lock-screen picture with 52 dots, one for each week.
+a weekly check-in prompt to copy into your own AI, and a year card with 52 dots, one for each week.
 
 #### Body and health
 
@@ -372,6 +391,19 @@ Browse by area: Money
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### Money (https://pickmyresolution.com/money)
 
@@ -455,6 +487,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### Home (https://pickmyresolution.com/home)
 
@@ -538,6 +583,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### Work (https://pickmyresolution.com/work)
 
@@ -621,6 +679,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### Family and friends (https://pickmyresolution.com/family-and-friends)
 
@@ -704,6 +775,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### Mind and calm (https://pickmyresolution.com/mind-and-calm)
 
@@ -787,6 +871,19 @@ Browse by area: Body and health
 · Family and friends
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ## Privacy (https://pickmyresolution.com/privacy)
 
@@ -938,7 +1035,7 @@ Boredom starts to read as failure.
 It is not failure. It is just boredom.
 The counter the quiz gives you
 Same move, new place or playlist. Change one thing, not the move.
-The smaller way
+What works: keep it small
 Keep one. Size it to the week you really have. Start with one small first move.
 That is the whole design of this site. Four short questions. One pick you can still be doing in March.
 Pick my resolution
@@ -991,6 +1088,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### How to keep a New Year's resolution (https://pickmyresolution.com/how-to-keep-a-new-years-resolution)
 
@@ -1017,7 +1127,7 @@ Take a short walk: 30 min, 4x a week.
 First move, week one
 Put your shoes by the front door. Walk 30 min right after a meal.
 Your time
-This plan uses all 120 minutes offered.
+This plan uses all 120 minutes you offered.
 Step 4
 Plan for the hard day now
 Hard days are part of the year. Pick your counter before you need it. The four counters live on our why resolutions fail
@@ -1076,6 +1186,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### What is a good New Year's resolution? (https://pickmyresolution.com/what-is-a-good-new-years-resolution)
 
@@ -1096,7 +1219,7 @@ Put your shoes by the front door. Walk 30 min right after a meal.
 For when it gets hard
 Set a phone alarm for session days. Same time, same sound.
 Your time
-This plan uses all 120 minutes offered.
+This plan uses all 120 minutes you offered.
 More real picks
 Different lives, same shape. One move, one first step, sized to real time.
 Picked for
@@ -1175,6 +1298,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### New Year's resolution ideas that fit a busy week (https://pickmyresolution.com/new-years-resolution-ideas-that-fit-a-busy-week)
 
@@ -1276,6 +1412,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### Small New Year's resolutions (https://pickmyresolution.com/small-new-years-resolutions)
 
@@ -1286,7 +1435,7 @@ Small is not a lesser goal. Small is the size that survives March.
 Pick my resolution
 Free forever. No ads. No accounts.
 Last January, the list was long and grand. By spring, none of it had stuck. These picks skip grand on purpose.
-The smallest pick in the bank
+The smallest of our picks
 This card is a real quiz result. The answers: money felt stuck. The time: 30 minutes a week.
 Picked for
 I felt stuck in place. · 30 minutes a week
@@ -1383,6 +1532,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### One resolution ideas (https://pickmyresolution.com/one-resolution-ideas)
 
@@ -1414,14 +1576,14 @@ Set a phone alarm for session days. Same time, same sound.
 Your time
 This plan uses 30 of your 120 minutes a week. The rest of your time stays yours.
 One pick per part of life
-Six doors. You walk through one. Each card is a real quiz result, word for word.
+Six parts of life. You pick one. Each card is a real quiz result, word for word.
 Body and health
 The pick
 Do a short workout: 30 min, 4x a week.
 First move, week one
 Lay out your clothes the night before. Do 30 min in your living room.
 Your time
-This plan uses all 120 minutes offered.
+This plan uses all 120 minutes you offered.
 Home
 The pick
 Make one room cozy: 60 min, 1x a week.
@@ -1442,7 +1604,7 @@ Call a friend you miss: 30 min, 4x a week.
 First move, week one
 Pick the friend you miss most. Call them today, right after dinner.
 Your time
-This plan uses all 120 minutes offered.
+This plan uses all 120 minutes you offered.
 Mind and calm
 The pick
 Sit in a quiet place: 20 min, 5x a week.
@@ -1497,6 +1659,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### One small New Year's resolution for parents (https://pickmyresolution.com/one-small-new-years-resolution-for-parents)
 
@@ -1609,6 +1784,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### New Year's resolution quiz (https://pickmyresolution.com/new-years-resolution-quiz)
 
@@ -1636,7 +1824,7 @@ Ask one work friend for coffee. Chat for 30 min this week.
 For when it gets hard
 Set a phone alarm for session days. Same time, same sound.
 Your time
-This plan uses all 120 minutes offered.
+This plan uses all 120 minutes you offered.
 What every result gives you
 One pick, sized to your time.
 A first move for week one.
@@ -1691,12 +1879,26 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### New Year's resolution picker (https://pickmyresolution.com/new-years-resolution-picker)
 
 New Year's Resolution Picker - Pick My Resolution
 Pick My Resolution
 New Year's Resolution Picker
+A sample pick, not yours yet
 Body and health
 I felt drained a lot.
 2 hours a week
@@ -1704,7 +1906,7 @@ I just forgot to do it.
 Take a short walk: 30 min, 4x a week.
 Why: a drained year, two hours, one alarm against forgetting.
 Pick my resolution
-One real pick, start to finish
+One sample pick, start to finish
 First move, week one
 Put your shoes by the front door. Walk 30 min right after a meal.
 Your week one plan
@@ -1747,7 +1949,7 @@ Yes. Free for good.
 No ads. No accounts.
 Your answers stay in your browser.
 Made by a dad, on the side
-I'm Billy, a dad in Redmond, Washington. I build these tools on the side, with AI — one idea, one website, no company behind it. This one keeps it to one resolution, sized to a real week, because lists die by spring.
+I&apos;m Billy, a dad in Redmond, Washington. I build these tools on the side, with AI &mdash; one idea, one website, no company behind it. This one keeps it to one resolution, sized to a real week, because lists die by spring.
 More questions people ask
 Why do resolutions fail?
 · How to keep one
@@ -1802,9 +2004,22 @@ Browse by area: Body and health
 · Work
 · Family and friends
 · Mind and calm
-&middot; Privacy
-&middot; Terms
+· Privacy
+· Terms
 More family tools: Fill My Bracket, your March bracket
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### New Year's resolution examples (https://pickmyresolution.com/new-years-resolution-examples)
 
@@ -1907,6 +2122,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### What to do when you break your New Year's resolution (https://pickmyresolution.com/what-to-do-when-you-break-your-new-years-resolution)
 
@@ -2015,6 +2243,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### Realistic New Year's resolutions (https://pickmyresolution.com/realistic-new-years-resolutions)
 
@@ -2034,7 +2275,7 @@ Cook a real meal: 30 min, 4x a week.
 First move, week one
 Write one meal on a sticky note. Cook it tonight in about 30 min.
 Your time
-This plan uses all 120 minutes offered.
+This plan uses all 120 minutes you offered.
 Money
 The pick
 Check your bank balance: 5 min, 3x a week.
@@ -2055,21 +2296,21 @@ Learn one work skill: 30 min, 4x a week.
 First move, week one
 Pick one small skill for your job. Learn it for 30 min today.
 Your time
-This plan uses all 120 minutes offered.
+This plan uses all 120 minutes you offered.
 Family and friends
 The pick
 Share one meal together: 30 min, 4x a week.
 First move, week one
 Pick one dinner this week together. Eat at the table. No phones there.
 Your time
-This plan uses all 120 minutes offered.
+This plan uses all 120 minutes you offered.
 Mind and calm
 The pick
 Read a calm book: 30 min, 4x a week.
 First move, week one
 Put your book on your pillow now. Read 30 min in bed tonight.
 Your time
-This plan uses all 120 minutes offered.
+This plan uses all 120 minutes you offered.
 What realistic means here
 One resolution only. Never a list.
 Two hours a week, at most.
@@ -2127,6 +2368,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### How to pick a New Year's resolution (https://pickmyresolution.com/how-to-pick-a-new-years-resolution)
 
@@ -2224,6 +2478,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### New Year's resolution template (https://pickmyresolution.com/new-years-resolution-template)
 
@@ -2331,6 +2598,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### What is Quitter's Day? (https://pickmyresolution.com/what-is-quitters-day)
 
@@ -2417,6 +2697,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### How many New Year's resolutions should you have? (https://pickmyresolution.com/how-many-new-years-resolutions-should-you-have)
 
@@ -2441,7 +2734,7 @@ Your time
 This plan uses 4 of your 120 minutes a week. The rest of your time stays yours.
 Four minutes used. The rest stays yours.
 That is what one looks like.
-The answer, in engine numbers
+The answer, in numbers
 Four questions make the pick.
 Three hundred sixty paths exist.
 Every path ends in exactly one.
@@ -2452,8 +2745,8 @@ Why one beats a list
 One pick gets your full attention.
 One dose fits your real week.
 One streak is easy to track.
-One miss cannot sink five plans.
-Six doors. You walk through one.
+One missed week does not end five plans.
+Six parts of life. You pick one.
 Body and health
 Money
 Home
@@ -2507,6 +2800,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### New Year's resolution tracker (https://pickmyresolution.com/new-years-resolution-tracker)
 
@@ -2542,7 +2848,7 @@ Please keep your reply short and kind.
 Copy the prompt into your own AI.
 Or keep it in a notebook.
 Answer it once a week, honestly.
-The lock-screen picture, piece by piece
+What is in the lock-screen picture
 The picture
 One picture for your lock screen.
 It measures 1080 by 1350 pixels.
@@ -2602,6 +2908,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### Should you tell people your New Year's resolution? (https://pickmyresolution.com/should-you-tell-people-your-new-years-resolution)
 
@@ -2613,7 +2932,7 @@ Pick my resolution
 Free forever. No ads. No accounts.
 Yes. Tell exactly one friend.
 Keep it off public feeds.
-Telling, as the pick itself
+When telling a friend is the pick
 Picked for
 I felt alone a lot. · 2 hours a week
 The pick
@@ -2688,6 +3007,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### New Year's resolution to save money (https://pickmyresolution.com/new-years-resolution-to-save-money)
 
@@ -2712,9 +3044,9 @@ Your time
 This plan uses 6 of your 300 minutes a week. The rest of your time stays yours.
 Six minutes of your week.
 The rest stays entirely yours.
-Why the move runs itself
+Why an automatic payment works
 Memory fails. Auto moves do not forget.
-Payday timing does the remembering.
+The payment leaves on payday, so you do not have to remember it.
 Five dollars proves the system works.
 Grow the amount, not the count.
 Other sites list twelve money tips.
@@ -2770,6 +3102,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ### New Year's resolution to exercise more (https://pickmyresolution.com/new-years-resolution-to-exercise-more)
 
@@ -2870,6 +3215,19 @@ Browse by area: Body and health
 · Mind and calm
 &middot; Privacy
 &middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
 ## Ask (https://pickmyresolution.com/ask)
 
@@ -2887,7 +3245,7 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Want your pick as a lock-screen picture? The four questions
-build those from this same pick.
+build it from this same pick.
 Built with Muse.
 Privacy
 · Terms
