@@ -637,12 +637,44 @@ function parseTimeOffer(t) {
     if ((m2 = s.match(/\b((?:monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri|saturday|sat|sunday|sun))\s*(-|to|through|thru)\s*((?:monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri|saturday|sat|sunday|sun))\b/))) {
       return { freq: (dayNames[m2[3]] - dayNames[m2[1]] + 7) % 7 + 1, suffix: " " + capDay(m2[1]) + (m2[2] === "-" ? " to " : " " + m2[2] + " ") + capDay(m2[3]) };
     }
+    if ((m2 = s.match(/\b((?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays)(?:\s*,\s*(?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays))+(?:\s*,\s*and\s+(?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays)|\s+and\s+(?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays)))(?:\s+(mornings?|afternoons?|evenings?|nights?))?\b/))) {
+      var pl = m2[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
+      return { freq: pl.length, suffix: " on " + pl.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(pl[pl.length - 1]) + (m2[2] ? " " + m2[2] : "") };
+    }
+    if ((m2 = s.match(/\b((?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays)(?:\s+and\s+(?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays)){2,})(?:\s+(mornings?|afternoons?|evenings?|nights?))?\b/))) {
+      var pal = m2[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
+      return { freq: pal.length, suffix: " on " + pal.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(pal[pal.length - 1]) + (m2[2] ? " " + m2[2] : "") };
+    }
+    if ((m2 = s.match(/\b((?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)){2,})(?:\s+(mornings?|afternoons?|evenings?|nights?))?\b/))) {
+      var al = m2[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
+      return { freq: al.length, suffix: " on " + al.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(al[al.length - 1]) + (m2[2] ? " " + m2[2] : "") };
+    }
+    if ((m2 = s.match(/\b((?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?)(?:\s*,\s*(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?))+(?:\s*,\s*and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?)|\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?)))\b/))) {
+      var pd = m2[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
+      return { freq: pd.length, suffix: " on " + pd.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(pd[pd.length - 1]) };
+    }
+    if ((m2 = s.match(/\b((?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?)(?:\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?)){2,})\b/))) {
+      var pda = m2[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
+      return { freq: pda.length, suffix: " on " + pda.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(pda[pda.length - 1]) };
+    }
     if ((m2 = s.match(/\b(sundays|mondays|tuesdays|wednesdays|thursdays|fridays|saturdays)\s+and\s+(sundays|mondays|tuesdays|wednesdays|thursdays|fridays|saturdays)\b/))) {
       return { freq: 2, suffix: " on " + capDay(m2[1]) + " and " + capDay(m2[2]) };
     }
     if ((m2 = s.match(/\b((?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s*,\s*(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri))+(?:\s*,\s*and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)|\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)))(?:\s+(mornings?|afternoons?|evenings?|nights?))?\b/))) {
       var dl = m2[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
       return { freq: dl.length, suffix: " on " + dl.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(dl[dl.length - 1]) + (m2[2] ? " " + m2[2] : "") };
+    }
+    if ((m2 = s.match(/\b((?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?)(?:\s*,\s*(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?))+)\b/))) {
+      var pdc = m2[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
+      return { freq: pdc.length, suffix: " on " + (pdc.length === 2 ? capDay(pdc[0]) + " and " + capDay(pdc[1]) : pdc.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(pdc[pdc.length - 1])) };
+    }
+    if ((m2 = s.match(/\b((?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays)(?:\s*,\s*(?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays))+)(?:\s+(mornings?|afternoons?|evenings?|nights?))?\b/))) {
+      var pcl = m2[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
+      return { freq: pcl.length, suffix: " on " + (pcl.length === 2 ? capDay(pcl[0]) + " and " + capDay(pcl[1]) : pcl.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(pcl[pcl.length - 1])) + (m2[2] ? " " + m2[2] : "") };
+    }
+    if ((m2 = s.match(/\b((?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s*,\s*(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri))+)(?:\s+(mornings?|afternoons?|evenings?|nights?))?\b/))) {
+      var cl = m2[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
+      return { freq: cl.length, suffix: " on " + (cl.length === 2 ? capDay(cl[0]) + " and " + capDay(cl[1]) : cl.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(cl[cl.length - 1])) + (m2[2] ? " " + m2[2] : "") };
     }
     if ((m2 = s.match(/\b(saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+and\s+(saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s+(mornings?|afternoons?|evenings?|nights?))?\b/))) {
       return { freq: 2, suffix: " on " + capDay(m2[1]) + " and " + capDay(m2[2]) + (m2[3] ? " " + m2[3] : "") };
@@ -674,7 +706,15 @@ function parseTimeOffer(t) {
       || /^(?:every|each)\s+weeknights?\b/.test(s2) || /^weeknights?\s+(?:mornings?|afternoons?|evenings?|nights?)\b/.test(s2) || /^weekends?\s+(?:mornings?|afternoons?|evenings?|nights?)\b/.test(s2) || /^(?:every|each)\s+weekends?\b/.test(s2)
       || /^\b((?:monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri|saturday|sat|sunday|sun))\s*(-|to|through|thru)\s*((?:monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri|saturday|sat|sunday|sun))\b/.test(s2)
       || /^(?:on\s+)?(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s+(?:mornings?|afternoons?|evenings?|nights?))?\b/.test(s2)
-      || /^(?:on\s+)?(?:(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s*,\s*(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri))+(?:\s*,\s*and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)|\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)))(?:\s+(?:mornings?|afternoons?|evenings?|nights?))?\b/.test(s2);
+      || /^(?:on\s+)?(?:(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s*,\s*(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri))+(?:\s*,\s*and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)|\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)))(?:\s+(?:mornings?|afternoons?|evenings?|nights?))?\b/.test(s2)
+      || /^(?:on\s+)?(?:(?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays)(?:\s*,\s*(?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays))+(?:\s*,\s*and\s+(?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays)|\s+and\s+(?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays)))(?:\s+(?:mornings?|afternoons?|evenings?|nights?))?\b/.test(s2)
+      || /^(?:on\s+)?(?:(?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays)(?:\s+and\s+(?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays)){2,})(?:\s+(?:mornings?|afternoons?|evenings?|nights?))?\b/.test(s2)
+      || /^(?:on\s+)?(?:(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)){2,})(?:\s+(?:mornings?|afternoons?|evenings?|nights?))?\b/.test(s2)
+      || /^(?:on\s+)?(?:(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?)(?:\s*,\s*(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?))+(?:\s*,\s*and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?)|\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?)))\b/.test(s2)
+      || /^(?:on\s+)?(?:(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?)(?:\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?)){2,})\b/.test(s2)
+      || /^(?:on\s+)?(?:(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?)(?:\s*,\s*(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?))+)\b/.test(s2)
+      || /^(?:on\s+)?(?:(?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays)(?:\s*,\s*(?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays))+)(?:\s+(?:mornings?|afternoons?|evenings?|nights?))?\b/.test(s2)
+      || /^(?:on\s+)?(?:(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s*,\s*(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri))+)(?:\s+(?:mornings?|afternoons?|evenings?|nights?))?\b/.test(s2);
   }
   if ((mm = seg.match(/\b(\d+|one|two|three|four|five|six|seven|eight)\s+times\s+(?:a|per)\s+month\b/))) {
     freq = numOf(mm[1]); monthly = c.mins * freq; suffix = " " + mm[1] + " times a month"; restate = true;
@@ -702,11 +742,35 @@ function parseTimeOffer(t) {
     freq = numOf(mm[1]); suffix = " " + mm[1] + " times a week"; restate = true;
   } else if ((mm = seg.match(/\b((?:monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri|saturday|sat|sunday|sun))\s*(-|to|through|thru)\s*((?:monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri|saturday|sat|sunday|sun))\b/))) {
     freq = (dayNames[mm[3]] - dayNames[mm[1]] + 7) % 7 + 1; suffix = " " + capDay(mm[1]) + (mm[2] === "-" ? " to " : " " + mm[2] + " ") + capDay(mm[3]); restate = true;
+  } else if ((mm = seg.match(/\b((?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays)(?:\s*,\s*(?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays))+(?:\s*,\s*and\s+(?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays)|\s+and\s+(?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays)))(?:\s+(mornings?|afternoons?|evenings?|nights?))?\b/))) {
+    var pli = mm[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
+    freq = pli.length; suffix = " on " + pli.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(pli[pli.length - 1]) + (mm[2] ? " " + mm[2] : ""); restate = true;
+  } else if ((mm = seg.match(/\b((?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays)(?:\s+and\s+(?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays)){2,})(?:\s+(mornings?|afternoons?|evenings?|nights?))?\b/))) {
+    var pali = mm[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
+    freq = pali.length; suffix = " on " + pali.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(pali[pali.length - 1]) + (mm[2] ? " " + mm[2] : ""); restate = true;
+  } else if ((mm = seg.match(/\b((?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)){2,})(?:\s+(mornings?|afternoons?|evenings?|nights?))?\b/))) {
+    var ali = mm[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
+    freq = ali.length; suffix = " on " + ali.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(ali[ali.length - 1]) + (mm[2] ? " " + mm[2] : ""); restate = true;
+  } else if ((mm = seg.match(/\b((?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?)(?:\s*,\s*(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?))+(?:\s*,\s*and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?)|\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?)))\b/))) {
+    var pdi = mm[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
+    freq = pdi.length; suffix = " on " + pdi.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(pdi[pdi.length - 1]); restate = true;
+  } else if ((mm = seg.match(/\b((?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?)(?:\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?)){2,})\b/))) {
+    var pdai = mm[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
+    freq = pdai.length; suffix = " on " + pdai.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(pdai[pdai.length - 1]); restate = true;
   } else if ((mm = seg.match(/\b(sundays|mondays|tuesdays|wednesdays|thursdays|fridays|saturdays)\s+and\s+(sundays|mondays|tuesdays|wednesdays|thursdays|fridays|saturdays)\b/))) {
     freq = 2; suffix = " on " + capDay(mm[1]) + " and " + capDay(mm[2]); restate = true;
   } else if ((mm = seg.match(/\b((?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s*,\s*(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri))+(?:\s*,\s*and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)|\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)))(?:\s+(mornings?|afternoons?|evenings?|nights?))?\b/))) {
     var dlc = mm[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
     freq = dlc.length; suffix = " on " + dlc.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(dlc[dlc.length - 1]) + (mm[2] ? " " + mm[2] : ""); restate = true;
+  } else if ((mm = seg.match(/\b((?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?)(?:\s*,\s*(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+(?:mornings?|afternoons?|evenings?|nights?))+)\b/))) {
+    var pdci = mm[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
+    freq = pdci.length; suffix = " on " + (pdci.length === 2 ? capDay(pdci[0]) + " and " + capDay(pdci[1]) : pdci.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(pdci[pdci.length - 1])); restate = true;
+  } else if ((mm = seg.match(/\b((?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays)(?:\s*,\s*(?:saturdays|sundays|mondays|tuesdays|wednesdays|thursdays|fridays))+)(?:\s+(mornings?|afternoons?|evenings?|nights?))?\b/))) {
+    var pcli = mm[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
+    freq = pcli.length; suffix = " on " + (pcli.length === 2 ? capDay(pcli[0]) + " and " + capDay(pcli[1]) : pcli.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(pcli[pcli.length - 1])) + (mm[2] ? " " + mm[2] : ""); restate = true;
+  } else if ((mm = seg.match(/\b((?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s*,\s*(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri))+)(?:\s+(mornings?|afternoons?|evenings?|nights?))?\b/))) {
+    var cli = mm[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
+    freq = cli.length; suffix = " on " + (cli.length === 2 ? capDay(cli[0]) + " and " + capDay(cli[1]) : cli.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(cli[cli.length - 1])) + (mm[2] ? " " + mm[2] : ""); restate = true;
   } else if ((mm = seg.match(/\b(saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+and\s+(saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s+(mornings?|afternoons?|evenings?|nights?))?\b/))) {
     freq = 2; suffix = " on " + capDay(mm[1]) + " and " + capDay(mm[2]) + (mm[3] ? " " + mm[3] : ""); restate = true;
   } else if ((mm = seg.match(/\b((?:on|every|each)\s+)?weekdays?\s+(mornings?|afternoons?|evenings?|nights?)\b/))) {
@@ -740,14 +804,15 @@ function parseTimeOffer(t) {
     if (!fw && sents.length >= 2) {
       for (var si = sents.length - 2; si >= 0 && si >= sents.length - 3 && !fw; si--) {
         var prevSent = sents[si];
-        if (/\bi\s+(?:(?:usually|often|always|typically|regularly|generally|normally|sometimes)\s+)?(?:am|have|can|could|will|feel|do)\b|\bi'm\b|\bis\s+my\s+(?:plan|schedule|goal|routine|habit|pattern|rhythm|regimen)\b|\bmy\s+(?:plan|schedule|goal|routine|habit|pattern|rhythm|regimen)\s+is\b/.test(prevSent)) fw = scanWeekFreq(prevSent);
+        if (/\bi\s+(?:(?:pretty|much|almost|nearly|really|quite|basically|practically|mostly|just|usually|often|always|typically|regularly|generally|normally|sometimes)\s+){0,4}(?:am|have|can|could|will|feel|do)\b|\bi'm\b|\bis\s+my\s+(?:plan|schedule|goal|routine|habit|pattern|rhythm|regimen)\b|\bmy\s+(?:plan|schedule|goal|routine|habit|pattern|rhythm|regimen)\s+is\b/.test(prevSent)) fw = scanWeekFreq(prevSent);
       }
     }
     if (!fw && dot >= 0) {
       var postSent = restAll.slice(dot + 1);
       var dot2 = postSent.indexOf(".");
       if (dot2 >= 0) postSent = postSent.slice(0, dot2);
-      if (/\b(?:do|doing)\s+(?:that|it|this)\b/.test(postSent) || /\bthat\s+(?:on\s+)?(?:\d+|one|two|three|four|five|six|seven|twice|every|each)\b/.test(postSent) || (freqAtStart(postSent) && (/\bi\b|\bi'm\b|\bmy\s+(?:schedule|week|time)\b|\ballows?\s+me\b|\bworks?\s+for\s+me\b/.test(postSent)))) fw = scanWeekFreq(postSent);
+      if (/\bis\s+my\s+(?:plan|schedule|goal|routine|habit|pattern|rhythm|regimen)\b|\bmy\s+(?:plan|schedule|goal|routine|habit|pattern|rhythm|regimen)\s+is\b/.test(postSent)) fw = scanWeekFreq(postSent);
+      if (!fw && (/\b(?:do|doing)\s+(?:that|it|this)\b/.test(postSent) || /\bthat\s+(?:on\s+)?(?:\d+|one|two|three|four|five|six|seven|twice|every|each)\b/.test(postSent) || (freqAtStart(postSent) && (/\bi\b|\bi'm\b|\bmy\s+(?:schedule|week|time)\b|\ballows?\s+me\b|\bworks?\s+for\s+me\b/.test(postSent))))) fw = scanWeekFreq(postSent);
     }
     if (fw) { freq = fw.freq; suffix = fw.suffix; restate = true; }
   }
