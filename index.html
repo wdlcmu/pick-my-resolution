@@ -213,6 +213,14 @@
     position: absolute; left: 10px; bottom: 10px; background: rgba(8, 28, 23, 0.74);
     color: #fff; font-size: 13px; font-weight: 700; padding: 5px 11px; border-radius: 999px;
   }
+  .hero-pick-card {
+    background: #fff; color: var(--ink); border-radius: 14px;
+    padding: 12px 14px; margin: 12px 0 0; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+  }
+  .hero-pick-card p { margin: 0; }
+  .hero-pick-card .hp-line { font-size: 16px; line-height: 1.35; }
+  .hero-pick-card .hp-label { color: var(--accent); font-weight: 800; }
+  .hero-pick-card .hp-plan { margin-top: 5px; color: #374151; font-size: 14px; }
   .areas { margin-top: 32px; }
   .areas h2 { font-size: 19px; margin: 0 0 12px; }
   .area-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
@@ -237,6 +245,10 @@
     button.cdx-main { padding: .6rem .9rem; }
     .hero .cta { margin: 8px 0; }
     .hero .askdoor { margin-top: 4px; }
+    /* The hero pick card joins screen one; the main photo gives back
+       the same height so it still lands whole above the fold. */
+    .hero .ph-main { aspect-ratio: auto; height: 180px; }
+    .hero .ph-main img { object-position: center 18%; }
   }
   @media (max-width: 560px) {
     .area-grid { grid-template-columns: repeat(2, 1fr); }
@@ -271,6 +283,10 @@
             <button class="cta" id="btn-start">Pick my resolution</button>
             <p class="free">Free forever. No ads. No accounts.</p>
             <p class="askdoor">Rather say it in your own words? <a href="/ask">Ask here</a>.</p>
+            <div class="hero-pick-card">
+              <p class="hp-line"><span class="hp-label">One real pick:</span> I felt drained a lot. &rarr; <strong>Take a short walk: 30 min, 4x a week.</strong></p>
+              <p class="hp-plan">Week one &middot; Sat 9am, at the park, with Alex</p>
+            </div>
           </div>
           <div class="hero-photos">
             <figure class="ph ph-main">
