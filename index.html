@@ -2621,7 +2621,7 @@ function answerAskPmr(raw) {
     document.querySelectorAll(".askp-chip").forEach(function (ch) {
       ch.addEventListener("click", function () {
         document.getElementById("askp-q").value = ch.getAttribute("data-q");
-        answerAskPmr(ch.getAttribute("data-q"));
+        document.getElementById("askp-ask").click();
       });
     });
     document.addEventListener("keydown", function (e) {
