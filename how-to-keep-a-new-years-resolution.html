@@ -622,6 +622,22 @@ function parseTimeOffer(t) {
   var seg = (dot >= 0 ? restAll.slice(0, dot) : restAll).slice(0, 90);
   var monthly = null, freq = 1, perDay = false, suffix = " a week", restate = false, mm;
   function numOf(s) { return Object.prototype.hasOwnProperty.call(wordNums, s) ? wordNums[s] : parseInt(s, 10); }
+  var daysWeekRe = /\b(?:\d+|one|two|three|four|five|six|seven)\s+days?\s+(?:(?:a|per|each)\s+week|in\s+a\s+week)\b/;
+  function scanWeekFreq(s) {
+    var m2;
+    if ((m2 = s.match(/\b(\d+|one|two|three|four|five|six|seven)\s+days?\s+(?:(?:a|per|each)\s+week|in\s+a\s+week)\b/))) {
+      var f2 = numOf(m2[1]); return { freq: f2, suffix: " " + m2[1] + (f2 === 1 ? " day a week" : " days a week") };
+    }
+    if (/\btwice\s+(?:a\s+)?week\b/.test(s)) return { freq: 2, suffix: " twice a week" };
+    if ((m2 = s.match(/\b(\d+|one|two|three|four|five|six|seven|eight)\s+times\s+(?:a|per)\s+week\b/))) {
+      return { freq: numOf(m2[1]), suffix: " " + m2[1] + " times a week" };
+    }
+    if (/\bevery\s+weekday\b/.test(s)) return { freq: 5, suffix: " every weekday" };
+    if (/\beach\s+weekday\b/.test(s)) return { freq: 5, suffix: " each weekday" };
+    if (/\b(?:on\s+)?weekday\s+mornings?\b/.test(s)) return { freq: 5, suffix: " on weekday mornings" };
+    if (/\b(?:on\s+)?weekdays\b/.test(s)) return { freq: 5, suffix: " on weekdays" };
+    return null;
+  }
   if ((mm = seg.match(/\b(\d+|one|two|three|four|five|six|seven|eight)\s+times\s+(?:a|per)\s+month\b/))) {
     freq = numOf(mm[1]); monthly = c.mins * freq; suffix = " " + mm[1] + " times a month"; restate = true;
   } else if (/\b(?:a|per|each)\s+month\b/.test(seg) || /\bmonthly\b/.test(seg)) {
@@ -630,24 +646,42 @@ function parseTimeOffer(t) {
     freq = numOf(mm[1]); perDay = true; suffix = " " + mm[1] + " times a day"; restate = true;
   } else if (/\btwice\s+(?:a\s+)?day\b/.test(seg)) {
     freq = 2; perDay = true; suffix = " twice a day"; restate = true;
-  } else if (/\b(?:a|per|each)\s+day\b/.test(seg)) {
+  } else if (/\b(?:a|per|each)\s+day\b/.test(seg) && !daysWeekRe.test(seg)) {
     perDay = true; suffix = " a day";
-  } else if (/\bevery\s+day\b/.test(seg)) {
+  } else if (/\bevery\s+day\b/.test(seg) && !daysWeekRe.test(seg)) {
     perDay = true; suffix = " every day"; restate = true;
-  } else if (/\bdaily\b/.test(seg)) {
+  } else if (/\bdaily\b/.test(seg) && !daysWeekRe.test(seg)) {
     perDay = true; suffix = " a day"; restate = true;
   } else if ((mm = seg.match(/\b(?:each|every)\s+(morning|night|evening)\b/))) {
     perDay = true; suffix = " " + mm[0]; restate = true;
-  } else if ((mm = seg.match(/\b(\d+|one|two|three|four|five|six|seven)\s+days?\s+(?:a|per)\s+week\b/))) {
+  } else if ((mm = seg.match(/\b(\d+|one|two|three|four|five|six|seven)\s+days?\s+(?:(?:a|per|each)\s+week|in\s+a\s+week)\b/))) {
     freq = numOf(mm[1]); suffix = " " + mm[1] + (freq === 1 ? " day a week" : " days a week"); restate = true;
   } else if (/\btwice\s+(?:a\s+)?week\b/.test(seg)) {
     freq = 2; suffix = " twice a week"; restate = true;
   } else if ((mm = seg.match(/\b(\d+|one|two|three|four|five|six|seven|eight)\s+times\s+(?:a|per)\s+week\b/))) {
     freq = numOf(mm[1]); suffix = " " + mm[1] + " times a week"; restate = true;
+  } else if (/\bevery\s+weekday\b/.test(seg)) {
+    freq = 5; suffix = " every weekday"; restate = true;
+  } else if (/\beach\s+weekday\b/.test(seg)) {
+    freq = 5; suffix = " each weekday"; restate = true;
+  } else if (/\b(?:on\s+)?weekday\s+mornings?\b/.test(seg)) {
+    freq = 5; suffix = " on weekday mornings"; restate = true;
+  } else if (/\b(?:on\s+)?weekdays\b/.test(seg)) {
+    freq = 5; suffix = " on weekdays"; restate = true;
   } else if ((mm = seg.match(/\b(on|each|every)\s+(sundays|mondays|tuesdays|wednesdays|thursdays|fridays|saturdays|sunday|monday|tuesday|wednesday|thursday|friday|saturday)\b/))) {
     suffix = " " + mm[1] + " " + mm[2].charAt(0).toUpperCase() + mm[2].slice(1); restate = true;
   } else if ((mm = seg.match(/\b(sundays|mondays|tuesdays|wednesdays|thursdays|fridays|saturdays)\b/))) {
     suffix = " on " + mm[1].charAt(0).toUpperCase() + mm[1].slice(1); restate = true;
+  }
+  if (monthly === null && !perDay && freq === 1 && !restate) {
+    var fw = scanWeekFreq(t.slice(0, c.idx).split(".").pop().slice(-90));
+    if (!fw && dot >= 0) {
+      var postSent = restAll.slice(dot + 1);
+      var dot2 = postSent.indexOf(".");
+      if (dot2 >= 0) postSent = postSent.slice(0, dot2);
+      if (/\b(?:do|doing)\s+(?:that|it|this)\b/.test(postSent) || /\bthat\s+(?:\d+|one|two|three|four|five|six|seven|twice|every|each)\b/.test(postSent)) fw = scanWeekFreq(postSent.slice(0, 90));
+    }
+    if (fw) { freq = fw.freq; suffix = fw.suffix; restate = true; }
   }
   var weekly;
   if (monthly !== null) weekly = Math.round(monthly * 12 / 52);
@@ -685,12 +719,12 @@ function parseAskPmr(raw) {
     ["home", /\b(home|house|room|clutter|messy|tidy|shelf|closet|apartment)\b/g],
     ["work", /\b(work|job|desk|office|career|coworkers?|boss)\b/g],
     ["family", new RegExp("\\b(" + FAM + ")\\b", "g")],
-    ["calm", /\b(calm|mind|stress|stressed|anxious|anxiety|quiet|breathe|peace|restless|overthinking|racing|in my head|slow down|can't stop thinking)\b/g]
+    ["calm", /\b(calm|mind|stress|stressed|anxious|anxiety|quiet|breathe|peace|restless|overthinking|racing|in my head|slow down|can't stop thinking|worried|on edge|switch off|tense|wound up|keeps spinning|unwind)\b/g]
   ]);
   if (spendArea) p.area = spendArea;
   if (!spendArea) {
     var moneyObj = /\b(eating out|dining out|takeout|take-out|take out|eating|apps?|shopping|subscriptions?|clothes|clothing|coffee|delivery|restaurants?|groceries|grocery|games?|gaming|shoes|gadgets?)\b/.test(t);
-    if ((/\bspend(?:ing)?\b/.test(t) && moneyObj) || /\bspend\s+less\b/.test(t) || /\bspending\s+money\b/.test(t)) p.area = "money";
+    if ((/\bspend(?:ing)?\b/.test(t) && moneyObj) || /\bspend\s+less\b/.test(t) || /\bspending\s+money\b/.test(t) || /\b(?:worried|worrying|stressed|anxious)\s+about\s+(?:the\s+|my\s+|our\s+)?(?:money|bills?|debt|rent|mortgage|finances?)\b/.test(t)) p.area = "money";
   }
   p.off = pickByWords(t, [
     ["drained", /\b(drained|tired|exhausted|worn out)\b/g],
