@@ -168,6 +168,7 @@
   .pk-in .ex-pill { font-size: 15px; padding: 9px 10px; text-align: center; }
   .pk-why { margin-top: 10px; }
   .pk-plan { margin-top: 40px; }
+  .pk-sample { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #92400e; background: #fef3c7; border: 1px solid #f59e0b; padding: 4px 10px; border-radius: 999px; margin: 0 0 10px; }
 </style>
 </head>
 <body>
@@ -179,6 +180,7 @@
     <div class="card pk-card">
       <img class="pk-photo" src="/img/hero-walk.webp" width="800" height="600" alt="Two friends talking on a walk in the park" fetchpriority="high">
       <div class="pk-in">
+        <p class="pk-sample">A sample pick, not yours yet</p>
         <div class="chips" aria-label="Sample answers">
           <span class="ex-pill">Body and health</span>
           <span class="ex-pill">I felt drained a lot.</span>
@@ -191,7 +193,7 @@
     </div>
     <button class="cta" id="btn-start">Pick my resolution</button>
     <div class="pk-plan">
-      <h2>One real pick, start to finish</h2>
+      <h2>One sample pick, start to finish</h2>
       <div class="card">
         <p class="label">First move, week one</p>
         <p>Put your shoes by the front door. Walk 30 min right after a meal.</p>
@@ -200,7 +202,7 @@
         <p class="label">If it gets hard</p>
         <p>Set a phone alarm for session days. Same time, same sound.</p>
         <p class="label">Your time</p>
-        <p>This plan uses all 120 minutes you offered.</p>
+        <p>This plan uses all 120 minutes offered.</p>
       </div>
       <p>It ends with a note to future you. This one opens:</p>
       <p class="ex-note">&ldquo;Dear future me, I felt drained a lot back then. My pick was Take a short walk.&rdquo;</p>
@@ -300,13 +302,13 @@
     <pre id="r-share"></pre>
     <button class="ghost" id="btn-copy-share">Copy my share text</button>
     <p class="status" id="st-share"></p>
-    <p class="label">Your year card</p>
-    <p class="sub" style="font-size:14px">One picture for your lock screen. 52 dots, one for each week.</p>
-    <button class="cta" id="btn-yearcard">Get my year card</button>
+    <p class="label">Your lock-screen picture</p>
+    <p class="sub" style="font-size:14px">Your pick and your first move, as one picture. 52 dots, one for each week.</p>
+    <button class="cta" id="btn-yearcard">Get my lock-screen picture</button>
     <div id="yc-out"></div>
     <p class="status" id="st-yearcard"></p>
-    <button class="ghost" id="btn-yc-share" hidden>Share my year card</button>
-    <a class="ghost" id="yc-dl" href="#" download="year-card.png" hidden style="text-decoration:none">Download my year card</a>
+    <button class="ghost" id="btn-yc-share" hidden>Share my lock-screen picture</button>
+    <a class="ghost" id="yc-dl" href="#" download="lock-screen-picture.png" hidden style="text-decoration:none">Download my lock-screen picture</a>
     <p class="label">A note to future you</p>
     <p class="sub" style="font-size:14px">A first note is ready below. Edit any line before you save.</p>
     <p class="saved-label" id="lt-saved" hidden></p>
@@ -1039,12 +1041,12 @@ function drawYearCard() {
     window.__lastYearCard = { dataURL: url, name: p.name, dose: p.dose, total: p.total, firstMove: p.firstMove, guard: p.guard, when: p.when, year: p.year, dots: 52 };
     var wrap = $("yc-out"); wrap.innerHTML = "";
     var im = document.createElement("img");
-    im.alt = "Your " + p.year + " year card";
+    im.alt = "Your " + p.year + " lock-screen picture";
     im.src = url;
     wrap.appendChild(im);
     var dl = $("yc-dl"); dl.href = url; dl.hidden = false;
     var can = false;
-    try { can = !!(blob && navigator.canShare && navigator.canShare({ files: [new File([blob], "year-card.png", { type: "image/png" })] })); } catch (e) { can = false; }
+    try { can = !!(blob && navigator.canShare && navigator.canShare({ files: [new File([blob], "lock-screen-picture.png", { type: "image/png" })] })); } catch (e) { can = false; }
     $("btn-yc-share").hidden = !can;
     $("st-yearcard").textContent = can ? "Tap share to send it, or download the picture." : "Download the picture. Keep it where you will see it.";
   }, "image/png");
@@ -1052,8 +1054,8 @@ function drawYearCard() {
 $("btn-yearcard").onclick = function () { drawYearCard(); };
 $("btn-yc-share").onclick = async function () {
   if (!ycBlob) return;
-  var f = new File([ycBlob], "year-card.png", { type: "image/png" });
-  try { await navigator.share({ files: [f], title: "My year card" }); } catch (e) { /* sheet closed, nothing to do */ }
+  var f = new File([ycBlob], "lock-screen-picture.png", { type: "image/png" });
+  try { await navigator.share({ files: [f], title: "My lock-screen picture" }); } catch (e) { /* sheet closed, nothing to do */ }
 };
 
 // Future-you letter (2026-10-27): an optional note written under the
@@ -1438,7 +1440,7 @@ function fleetSessionMarks(){
     <textarea id="askp-q" rows="3" placeholder="My body felt drained all year. I have 2 hours a week. I just forgot to do it last time."></textarea>
     <button class="askp-ask" id="askp-ask" type="button">Pick my resolution</button>
     <section id="askp-answer" aria-live="polite"></section>
-    <p class="askp-more" id="askp-more" hidden>Want the year card and the lock-screen picture? <a href="/new-years-resolution-quiz">Take the four questions</a> &middot; <a href="/ask">Open the full ask page</a></p>
+    <p class="askp-more" id="askp-more" hidden>Want your pick as a lock-screen picture? <a href="/new-years-resolution-quiz">Take the four questions</a> &middot; <a href="/ask">Open the full ask page</a></p>
   </div>
 </div>
 <script>

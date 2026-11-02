@@ -34,7 +34,7 @@ Sat 9am, at the park, with Alex
 If it gets hard
 Set a phone alarm for session days. Same time, same sound.
 Your time
-This plan uses all 120 minutes you offered.
+This plan uses all 120 minutes offered.
 It ends with a note to future you. This one opens:
 &ldquo;Dear future me, I felt drained a lot back then. My pick was Take a short walk.&rdquo;
 You finish yours in your own words. It stays on your device.
@@ -93,11 +93,11 @@ Your weekly check-in
 Copy my weekly check-in
 Share text
 Copy my share text
-Your year card
-One picture for your lock screen. 52 dots, one for each week.
-Get my year card
-Share my year card
-Download my year card
+Your lock-screen picture
+Your pick and your first move, as one picture. 52 dots, one for each week.
+Get my lock-screen picture
+Share my lock-screen picture
+Download my lock-screen picture
 A note to future you
 A first note is ready below. Edit any line before you save.
 Your note stays in this browser. It never leaves your device.
@@ -128,7 +128,7 @@ More family tools: Fill My Bracket, your March bracket
 
 Each action below appears at three time levels, so the bank returns one of 90 resolutions.
 Every result also carries a first move for week one, one note for when it gets hard (picked by question 4),
-a weekly check-in prompt to copy into your own AI, and a year card with 52 dots, one for each week.
+a weekly check-in prompt to copy into your own AI, and a lock-screen picture with 52 dots, one for each week.
 
 #### Body and health
 
@@ -825,7 +825,7 @@ Cloudflare says its beacon does not read local storage.
 The home page also runs PostHog.
 PostHog counts page views and quiz starts.
 It counts finishes, shares, and return visits.
-It counts check-in copies, year cards, and letter cards.
+It counts check-in copies, lock-screen pictures, and letter cards.
 Your note text is never sent to it.
 Your quiz answers are never sent to it.
 It does not record your screen.
@@ -863,7 +863,7 @@ It shows a first move for week one.
 It shows help if it gets hard.
 It includes a weekly check-in prompt.
 It includes share text you can copy.
-You can make a year card picture.
+You can make a lock-screen picture of your pick.
 Ideas, not advice
 Plans here are general habit ideas only.
 They are not medical advice.
@@ -1017,7 +1017,7 @@ Take a short walk: 30 min, 4x a week.
 First move, week one
 Put your shoes by the front door. Walk 30 min right after a meal.
 Your time
-This plan uses all 120 minutes you offered.
+This plan uses all 120 minutes offered.
 Step 4
 Plan for the hard day now
 Hard days are part of the year. Pick your counter before you need it. The four counters live on our why resolutions fail
@@ -1096,7 +1096,7 @@ Put your shoes by the front door. Walk 30 min right after a meal.
 For when it gets hard
 Set a phone alarm for session days. Same time, same sound.
 Your time
-This plan uses all 120 minutes you offered.
+This plan uses all 120 minutes offered.
 More real picks
 Different lives, same shape. One move, one first step, sized to real time.
 Picked for
@@ -1421,7 +1421,7 @@ Do a short workout: 30 min, 4x a week.
 First move, week one
 Lay out your clothes the night before. Do 30 min in your living room.
 Your time
-This plan uses all 120 minutes you offered.
+This plan uses all 120 minutes offered.
 Home
 The pick
 Make one room cozy: 60 min, 1x a week.
@@ -1442,7 +1442,7 @@ Call a friend you miss: 30 min, 4x a week.
 First move, week one
 Pick the friend you miss most. Call them today, right after dinner.
 Your time
-This plan uses all 120 minutes you offered.
+This plan uses all 120 minutes offered.
 Mind and calm
 The pick
 Sit in a quiet place: 20 min, 5x a week.
@@ -1636,13 +1636,13 @@ Ask one work friend for coffee. Chat for 30 min this week.
 For when it gets hard
 Set a phone alarm for session days. Same time, same sound.
 Your time
-This plan uses all 120 minutes you offered.
+This plan uses all 120 minutes offered.
 What every result gives you
 One pick, sized to your time.
 A first move for week one.
 One note for when it gets hard.
 A weekly check-in prompt to copy.
-A year card with 52 dots.
+A lock-screen picture with 52 dots.
 The quiz takes about one minute. Your answers stay in your browser.
 Pick my resolution
 Free forever. No ads. No accounts.
@@ -1712,7 +1712,7 @@ Sat 9am, at the park, with Alex
 If it gets hard
 Set a phone alarm for session days. Same time, same sound.
 Your time
-This plan uses all 120 minutes you offered.
+This plan uses all 120 minutes offered.
 It ends with a note to future you. This one opens:
 &ldquo;Dear future me, I felt drained a lot back then. My pick was Take a short walk.&rdquo;
 You finish yours in your own words. It stays on your device.
@@ -1782,11 +1782,11 @@ Your weekly check-in
 Copy my weekly check-in
 Share text
 Copy my share text
-Your year card
-One picture for your lock screen. 52 dots, one for each week.
-Get my year card
-Share my year card
-Download my year card
+Your lock-screen picture
+Your pick and your first move, as one picture. 52 dots, one for each week.
+Get my lock-screen picture
+Share my lock-screen picture
+Download my lock-screen picture
 A note to future you
 A first note is ready below. Edit any line before you save.
 Your note stays in this browser. It never leaves your device.
@@ -2034,7 +2034,7 @@ Cook a real meal: 30 min, 4x a week.
 First move, week one
 Write one meal on a sticky note. Cook it tonight in about 30 min.
 Your time
-This plan uses all 120 minutes you offered.
+This plan uses all 120 minutes offered.
 Money
 The pick
 Check your bank balance: 5 min, 3x a week.
@@ -2055,21 +2055,21 @@ Learn one work skill: 30 min, 4x a week.
 First move, week one
 Pick one small skill for your job. Learn it for 30 min today.
 Your time
-This plan uses all 120 minutes you offered.
+This plan uses all 120 minutes offered.
 Family and friends
 The pick
 Share one meal together: 30 min, 4x a week.
 First move, week one
 Pick one dinner this week together. Eat at the table. No phones there.
 Your time
-This plan uses all 120 minutes you offered.
+This plan uses all 120 minutes offered.
 Mind and calm
 The pick
 Read a calm book: 30 min, 4x a week.
 First move, week one
 Put your book on your pillow now. Read 30 min in bed tonight.
 Your time
-This plan uses all 120 minutes you offered.
+This plan uses all 120 minutes offered.
 What realistic means here
 One resolution only. Never a list.
 Two hours a week, at most.
@@ -2265,7 +2265,7 @@ What got in my way?
 One small move for next week:
 The blanks stay the same all year.
 Two more shapes from the quiz
-The year card
+The lock-screen picture
 Fifty-two dots, one per week.
 Fill one dot each kept week.
 Save it as your lock screen.
@@ -2542,7 +2542,7 @@ Please keep your reply short and kind.
 Copy the prompt into your own AI.
 Or keep it in a notebook.
 Answer it once a week, honestly.
-The year card, piece by piece
+The lock-screen picture, piece by piece
 The picture
 One picture for your lock screen.
 It measures 1080 by 1350 pixels.
@@ -2886,7 +2886,7 @@ My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
-Want the year card and the lock-screen picture? The four questions
+Want your pick as a lock-screen picture? The four questions
 build those from this same pick.
 Built with Muse.
 Privacy
