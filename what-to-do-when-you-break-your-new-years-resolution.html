@@ -667,6 +667,10 @@ function parseTimeOffer(t) {
     if ((m2 = s.match(/\b(sundays|mondays|tuesdays|wednesdays|thursdays|fridays|saturdays)\s+and\s+(sundays|mondays|tuesdays|wednesdays|thursdays|fridays|saturdays)\b/))) {
       return { freq: 2, suffix: " on " + capDay(m2[1]) + " and " + capDay(m2[2]) };
     }
+    if ((m2 = s.match(/\b((?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s*,\s*(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri))+(?:\s*,\s*and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)|\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)))(?:\s+(mornings?|afternoons?|evenings?|nights?))?\b/))) {
+      var dl = m2[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
+      return { freq: dl.length, suffix: " on " + dl.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(dl[dl.length - 1]) + (m2[2] ? " " + m2[2] : "") };
+    }
     if ((m2 = s.match(/\b(saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+and\s+(saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s+(mornings?|afternoons?|evenings?|nights?))?\b/))) {
       return { freq: 2, suffix: " on " + capDay(m2[1]) + " and " + capDay(m2[2]) + (m2[3] ? " " + m2[3] : "") };
     }
@@ -696,7 +700,8 @@ function parseTimeOffer(t) {
       || /^(?:every|each)\s+weekdays?\b/.test(s2) || /^weekdays?\s+(?:mornings?|afternoons?|evenings?|nights?)\b/.test(s2)
       || /^(?:every|each)\s+weeknights?\b/.test(s2) || /^weeknights?\s+(?:mornings?|afternoons?|evenings?|nights?)\b/.test(s2) || /^weekends?\s+(?:mornings?|afternoons?|evenings?|nights?)\b/.test(s2) || /^(?:every|each)\s+weekends?\b/.test(s2)
       || /^\b((?:monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri|saturday|sat|sunday|sun))\s*(-|to|through|thru)\s*((?:monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri|saturday|sat|sunday|sun))\b/.test(s2)
-      || /^(?:on\s+)?(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s+(?:mornings?|afternoons?|evenings?|nights?))?\b/.test(s2);
+      || /^(?:on\s+)?(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s+(?:mornings?|afternoons?|evenings?|nights?))?\b/.test(s2)
+      || /^(?:on\s+)?(?:(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s*,\s*(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri))+(?:\s*,\s*and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)|\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)))(?:\s+(?:mornings?|afternoons?|evenings?|nights?))?\b/.test(s2);
   }
   if ((mm = seg.match(/\b(\d+|one|two|three|four|five|six|seven|eight)\s+times\s+(?:a|per)\s+month\b/))) {
     freq = numOf(mm[1]); monthly = c.mins * freq; suffix = " " + mm[1] + " times a month"; restate = true;
@@ -726,6 +731,9 @@ function parseTimeOffer(t) {
     freq = (dayNames[mm[3]] - dayNames[mm[1]] + 7) % 7 + 1; suffix = " " + capDay(mm[1]) + (mm[2] === "-" ? " to " : " " + mm[2] + " ") + capDay(mm[3]); restate = true;
   } else if ((mm = seg.match(/\b(sundays|mondays|tuesdays|wednesdays|thursdays|fridays|saturdays)\s+and\s+(sundays|mondays|tuesdays|wednesdays|thursdays|fridays|saturdays)\b/))) {
     freq = 2; suffix = " on " + capDay(mm[1]) + " and " + capDay(mm[2]); restate = true;
+  } else if ((mm = seg.match(/\b((?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s*,\s*(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri))+(?:\s*,\s*and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)|\s+and\s+(?:saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)))(?:\s+(mornings?|afternoons?|evenings?|nights?))?\b/))) {
+    var dlc = mm[1].split(/\s*(?:,|\band\b)\s*/).filter(function (w) { return !!w; });
+    freq = dlc.length; suffix = " on " + dlc.map(capDay).slice(0, -1).join(", ") + ", and " + capDay(dlc[dlc.length - 1]) + (mm[2] ? " " + mm[2] : ""); restate = true;
   } else if ((mm = seg.match(/\b(saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)\s+and\s+(saturday|sat|sunday|sun|monday|mon|tuesday|tues|tue|wednesday|wed|thursday|thurs|thur|thu|friday|fri)(?:\s+(mornings?|afternoons?|evenings?|nights?))?\b/))) {
     freq = 2; suffix = " on " + capDay(mm[1]) + " and " + capDay(mm[2]) + (mm[3] ? " " + mm[3] : ""); restate = true;
   } else if ((mm = seg.match(/\b((?:on|every|each)\s+)?weekdays?\s+(mornings?|afternoons?|evenings?|nights?)\b/))) {
@@ -759,7 +767,7 @@ function parseTimeOffer(t) {
     if (!fw && sents.length >= 2) {
       for (var si = sents.length - 2; si >= 0 && si >= sents.length - 3 && !fw; si--) {
         var prevSent = sents[si];
-        if (/\bi\s+(?:am|have|can|could|will|feel|do)\b|\bi'm\b|\bis\s+my\s+(?:plan|schedule|goal)\b|\bmy\s+(?:plan|schedule|goal)\s+is\b/.test(prevSent)) fw = scanWeekFreq(prevSent);
+        if (/\bi\s+(?:(?:usually|often|always|typically|regularly|generally|normally|sometimes)\s+)?(?:am|have|can|could|will|feel|do)\b|\bi'm\b|\bis\s+my\s+(?:plan|schedule|goal|routine|habit|pattern|rhythm|regimen)\b|\bmy\s+(?:plan|schedule|goal|routine|habit|pattern|rhythm|regimen)\s+is\b/.test(prevSent)) fw = scanWeekFreq(prevSent);
       }
     }
     if (!fw && dot >= 0) {
