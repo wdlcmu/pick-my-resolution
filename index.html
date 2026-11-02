@@ -1990,13 +1990,11 @@ function fleetSessionMarks(){
       <h2 id="askp-title">Ask in your own words</h2>
       <button type="button" class="askp-close" id="askp-close" aria-label="Close ask panel">&times;</button>
     </div>
-    <p class="askp-promise">Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.</p>
+    <p class="askp-promise">Say your year in a line or two. This is an AI helper — it picks only from this site's own resolutions, the same picks the picker makes. Nothing you type is saved.</p>
     <p>Or tap an example:</p>
     <div class="askp-chips" role="group" aria-label="Example answers">
       <button type="button" class="askp-chip" data-q="My body felt drained all year. I have 2 hours a week. I just forgot to do it last time.">My body felt drained. 2 hours a week. I just forgot.</button>
       <button type="button" class="askp-chip" data-q="Money. Things piled up on me. Maybe 30 minutes a week. Life got busy and loud.">Money piled up on me. 30 minutes a week. Life got busy.</button>
-      <button type="button" class="askp-chip" data-q="I felt stuck at work and I got bored and quit. I could do 5 hours a week.">Stuck at work, bored, quit. 5 hours a week.</button>
-      <button type="button" class="askp-chip" data-q="I felt alone a lot. Family and friends matter most. 2 hours a week. I tried to do too much.">Alone a lot. Family first. I tried to do too much.</button>
     </div>
     <label for="askp-q">Your year, in your words</label>
     <textarea id="askp-q" rows="3" placeholder="My body felt drained all year. I have 2 hours a week. I just forgot to do it last time."></textarea>
@@ -2845,7 +2843,7 @@ function answerAskPmr(raw) {
     document.getElementById("askp-close").addEventListener("click", closePanel);
     overlay.addEventListener("click", function (e) { if (e.target === overlay) closePanel(); });
     document.getElementById("askp-ask").addEventListener("click", function () {
-      answerAskPmr(document.getElementById("askp-q").value);
+      askPanelSend(document.getElementById("askp-q").value);
     });
     document.querySelectorAll(".askp-chip").forEach(function (ch) {
       ch.addEventListener("click", function () {
@@ -2870,6 +2868,36 @@ function answerAskPmr(raw) {
     openBtn.setAttribute("aria-expanded", "false");
     document.body.style.overflow = lastOverflow;
     openBtn.focus();
+  }
+  var chatFacts = null;
+  function renderChatReply(text) {
+    var out = document.getElementById("askp-answer");
+    out.innerHTML = "";
+    var card = document.createElement("div");
+    card.className = "card";
+    String(text).split("\n").forEach(function (line) {
+      if (!line.trim()) return;
+      var p = document.createElement("p");
+      p.textContent = line;
+      card.appendChild(p);
+    });
+    out.appendChild(card);
+  }
+  function askPanelSend(raw) {
+    var msg = (raw || "").trim();
+    if (!msg) { answerAskPmr(raw); return; }
+    var btn = document.getElementById("askp-ask");
+    btn.disabled = true;
+    fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ message: msg, facts: chatFacts || undefined }) })
+      .then(function (r) { if (!r.ok) throw new Error("chat " + r.status); return r.json(); })
+      .then(function (j) {
+        btn.disabled = false;
+        if (!j || !j.reply) { answerAskPmr(raw); return; }
+        if (j.facts) chatFacts = j.facts;
+        renderChatReply(j.reply);
+        document.getElementById("askp-more").hidden = false;
+      })
+      .catch(function () { btn.disabled = false; answerAskPmr(raw); });
   }
   openBtn.addEventListener("click", openPanel);
 })();
