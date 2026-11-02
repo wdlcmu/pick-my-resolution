@@ -100,6 +100,18 @@
     border: 2px solid var(--accent); border-radius: 12px; cursor: pointer; text-align: center;
   }
   .cta:active { transform: translateY(1px); }
+  /* 2026-11-01 movement pass: a choice registering and a pick landing
+     get a small rise. Transform and opacity only, so nothing shifts. */
+  @keyframes pmr-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  @keyframes pmr-land { from { opacity: 0; transform: translateY(14px) scale(.985); } to { opacity: 1; transform: none; } }
+  #s-quiz.on { animation: pmr-rise .22s ease both; }
+  #s-result.on .card { animation: pmr-land .45s ease both; }
+  .chip { transition: background-color .15s ease, border-color .15s ease; }
+  @media (prefers-reduced-motion: reduce) {
+    #s-quiz.on { animation: none; }
+    #s-result.on .card { animation: none; }
+    .chip { transition: none; }
+  }
   .ghost {
     display: block; width: 100%; min-height: 48px; padding: 12px 18px; margin: 10px 0;
     font-size: 16px; font-weight: 600; color: var(--ink); background: var(--card);
@@ -180,9 +192,9 @@
   /* 2026-11-01 interactive countdown unit: digits, one tap target, What's-next panel */
   .cdx { margin: 14px 0 4px; }
   .cdx [hidden] { display: none !important; }
-  button.cdx-main { display: block; width: 100%; background: none; border: 0; font: inherit; color: inherit; text-align: left; padding: .8rem .9rem; border-radius: 14px; cursor: pointer; }
-  button.cdx-main:hover { background: rgba(15, 118, 110, .07); }
-  .cdx-main:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  /* 2026-11-01 readability pass: the clock is a display, not a button.
+     One clear action per screen: the gold button below starts the pick. */
+  .cdx-main { display: block; width: 100%; text-align: left; padding: .8rem .9rem; }
   .cdx-digits { display: flex; gap: .9rem; justify-content: flex-start; align-items: flex-start; margin-bottom: .35rem; }
   .cdx-cell { display: flex; flex-direction: column; align-items: center; min-width: 2.7ch; }
   .cdx-cell.cd-d { min-width: 3.7ch; }
@@ -190,7 +202,6 @@
   .cdx-cell i { font-style: normal; font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: .32rem; }
   .cdx .countdown { display: block; margin: 0; }
   .cdx-note { display: block; margin-top: .35rem; font-size: 15px; color: #bcd6c9; }
-  .cdx-cta { display: block; margin-top: .5rem; font-weight: 700; color: var(--accent); }
   .cdx-more { background: none; border: 0; font: inherit; font-size: .92rem; font-weight: 600; color: var(--muted); cursor: pointer; padding: .55rem .8rem; min-height: 44px; margin-left: -.8rem; }
   .cdx-more:hover { color: var(--accent); }
   .cdx-more:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
@@ -218,8 +229,9 @@
     padding: 12px 14px; margin: 12px 0 0; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
   }
   .hero-pick-card p { margin: 0; }
-  .hero-pick-card .hp-line { font-size: 16px; line-height: 1.35; }
+  .hero-pick-card .hp-line { font-size: 14px; line-height: 1.4; color: #374151; }
   .hero-pick-card .hp-label { color: var(--accent); font-weight: 800; }
+  .hero-pick-card .hp-pick { font-size: 24px; font-weight: 800; line-height: 1.25; color: var(--ink); margin-top: 4px; }
   .hero-pick-card .hp-plan { margin-top: 5px; color: #374151; font-size: 14px; }
   .areas { margin-top: 32px; }
   .areas h2 { font-size: 19px; margin: 0 0 12px; }
@@ -242,7 +254,7 @@
     .hero .brand { margin-bottom: 8px; }
     .hero .sub { margin-bottom: 8px; }
     .hero .cdx { margin: 8px 0 0; }
-    button.cdx-main { padding: .6rem .9rem; }
+    .cdx-main { padding: .6rem .9rem; }
     .hero .cta { margin: 8px 0; }
     .hero .askdoor { margin-top: 4px; }
     /* The hero pick card joins screen one; the main photo gives back
@@ -426,14 +438,12 @@ window.FLEET_CFG = {
           <div class="hero-copy">
             <h1>This year, keep one. Just one.</h1>
             <p class="sub">Last January, you wrote a list. By spring, none of it stuck.</p>
-            <p class="sub">Four questions. One pick, sized to your week. Swap it if it does not fit.</p>
             <div class="cdx">
-              <button type="button" class="cdx-main" id="cdx-main" aria-label="61 days until January 1, 2027.">
+              <div class="cdx-main" id="cdx-main" aria-label="61 days until January 1, 2027.">
                 <span class="cdx-digits" id="cdx-digits" aria-hidden="true" hidden><span class="cdx-cell cd-d"><b id="cdx-d">61</b><i id="cdx-dl">days</i></span><span class="cdx-cell"><b id="cdx-h">00</b><i>hrs</i></span><span class="cdx-cell"><b id="cdx-m">00</b><i>min</i></span><span class="cdx-cell"><b id="cdx-s">00</b><i>sec</i></span></span>
                 <span class="countdown" id="countdown">61 days until January 1, 2027.</span>
                 <span class="cdx-note" id="cdx-note" hidden></span>
-                <span class="cdx-cta">Pick my resolution &rarr;</span>
-              </button>
+              </div>
               <button class="cdx-more" id="cdx-more" type="button" aria-expanded="false" aria-controls="cdx-panel" hidden>What&rsquo;s next? <span aria-hidden="true">&#9662;</span></button>
               <div class="cdx-panel" id="cdx-panel" hidden>
                 <p class="cdx-break" id="cdx-break"></p>
@@ -444,7 +454,8 @@ window.FLEET_CFG = {
             <p class="free">Free forever. No ads. No accounts.</p>
             <p class="askdoor">Rather say it in your own words? <a href="/ask">Ask here</a>.</p>
             <div class="hero-pick-card">
-              <p class="hp-line"><span class="hp-label">One real pick:</span> I felt drained a lot. &rarr; <strong>Take a short walk: 30 min, 4x a week.</strong></p>
+              <p class="hp-line"><span class="hp-label">One real pick:</span> I felt drained a lot.</p>
+              <p class="hp-pick">Take a short walk: 30 min, 4x a week.</p>
               <p class="hp-plan">Week one &middot; Sat 9am, at the park, with Alex</p>
             </div>
           </div>
@@ -668,12 +679,14 @@ window.FLEET_CFG = {
   }
   var RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   /* 2026-11-01 interactive upgrade: the clock is the hero unit now.
-     Digit blocks (days/hrs/min/sec, tabular numerals), the whole unit is
-     one tap target to the site's core action, and a "What's next?" toggle
-     opens a panel with the time left broken down plus the next do-by
-     milestone from this site's own pages. Reduced motion: the same
-     render once a minute instead of every second. The rollover math
-     above is unchanged from this morning's ship. */
+     Digit blocks (days/hrs/min/sec, tabular numerals), and a
+     "What's next?" toggle opens a panel with the time left broken
+     down plus the next do-by milestone from this site's own pages.
+     Reduced motion: the same render once a minute instead of every
+     second. The rollover math above is unchanged from this morning's
+     ship. Readability pass, later Nov 1: the unit stopped being a tap
+     target (it duplicated the gold Pick button directly under it);
+     the ticking digits stay as the movement that informs. */
   var main = document.getElementById("cdx-main");
   var digitsEl = document.getElementById("cdx-digits");
   var dEl = document.getElementById("cdx-d"), hEl = document.getElementById("cdx-h"),
@@ -716,7 +729,8 @@ window.FLEET_CFG = {
       if (panelOpen) { lastBreakMin = -1; updateBreak(new Date()); }
     });
   }
-  if (main) main.addEventListener("click", function () { var b = document.getElementById("btn-start"); if (b) b.click(); });
+  /* 2026-11-01 readability pass: the clock is a display now, not a tap
+     target. The gold Pick button under it is the one clear action. */
 
   function setAria(text, now) {
     var min = Math.floor(now.getTime() / 60000);
@@ -2444,8 +2458,93 @@ function parseAskPmr(raw) {
 }
 function labelOf(list, k) { for (var i = 0; i < list.length; i++) if (list[i].k === k) return list[i].label; return ""; }
 function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+/* Conversation baseline (Nov 1, 2026, fleet dimension sweep D2):
+   greet back, say what this site is, and answer simple arithmetic
+   with a tiny real evaluator (never a guess). Checked at the top of
+   answerAskPmr, before the parser; anything else falls through to
+   the parser, untouched. The patterns fire only when the whole
+   input is a greeting, the orientation question, or a pure
+   arithmetic expression, so no resolution ask can be caught. */
+function fmtArithNum(v) {
+  if (!isFinite(v) || Math.abs(v) > 1e15) return null;
+  return String(Math.round(v * 100) / 100);
+}
+function evalArithPmr(expr) {
+  var pos = 0;
+  function factor() {
+    var c = expr.charAt(pos);
+    if (c === "(") { pos++; var v = exprTop(); if (v === null || v === "DIV0" || expr.charAt(pos) !== ")") return null; pos++; return v; }
+    if (c === "-") { pos++; var n = factor(); return n === null ? null : -n; }
+    if (c === "+") { pos++; return factor(); }
+    var m = expr.slice(pos).match(/^\d+(?:\.\d+)?/);
+    if (!m) return null;
+    pos += m[0].length;
+    return parseFloat(m[0]);
+  }
+  function term() {
+    var v = factor(); if (v === null) return null;
+    for (;;) {
+      var c = expr.charAt(pos);
+      if (c === "*" || c === "x") { pos++; var r = factor(); if (r === null) return null; v = v * r; }
+      else if (c === "/") { pos++; var d = factor(); if (d === null) return null; if (d === 0) return "DIV0"; v = v / d; }
+      else return v;
+    }
+  }
+  function exprTop() {
+    var v = term(); if (v === null || v === "DIV0") return v;
+    for (;;) {
+      var c = expr.charAt(pos);
+      if (c === "+") { pos++; var r = term(); if (r === null || r === "DIV0") return r; v = v + r; }
+      else if (c === "-") { pos++; var r2 = term(); if (r2 === null || r2 === "DIV0") return r2; v = v - r2; }
+      else return v;
+    }
+  }
+  if (!expr) return null;
+  var v = exprTop();
+  if (v === null || v === "DIV0") return v;
+  if (pos !== expr.length) return null;
+  return v;
+}
+function baselinePmr(raw) {
+  var t = String(raw || "").trim().toLowerCase().replace(/’/g, "'");
+  var tq = t.replace(/[\s.!?]+$/, "");
+  var needLine = "Say the part of life, how the year felt, and what made past plans fail, in your words. Or tap an example above to see the shape.";
+  if (/^(sup|hi|hello|hey|yo|hiya|howdy|hey there|hi there|hello there|what's up|whats up|good morning|good afternoon|good evening)$/.test(tq)) {
+    return { label: "Hello", lines: ["Hi. This is Pick My Resolution.", "Say the part of life, how the year felt, and what made past plans fail, in your words, and I will pick one resolution that fits your week. Or tap an example above to see the shape."] };
+  }
+  if (/^(what is|what's|whats) (this|this site|this page|this place)$/.test(tq)
+    || /^what does this (site|page) do$/.test(tq)
+    || /^who are you$/.test(tq) || /^what do you do$/.test(tq)) {
+    return { label: "About this site", lines: ["This is Pick My Resolution. It picks one resolution that fits your real week.", "Say the part of life, how the year felt, and what made past plans fail, and you get the pick, the first move, a guard for when it gets hard, and a note to future you."] };
+  }
+  var expr = tq.replace(/^(what's|what is|whats|calculate|compute|solve|how much is)\s+/, "");
+  expr = expr.replace(/\s+/g, "").replace(/×/g, "*").replace(/÷/g, "/");
+  var stripped = expr.replace(/^[(-]+/, "");
+  if (expr.length >= 3 && expr.length <= 40 && /^[\d+\-*/x().]+$/.test(expr)
+    && (expr.match(/\d+(?:\.\d+)?/g) || []).length >= 2
+    && /[+\-*/x]/.test(stripped)) {
+    var v = evalArithPmr(expr);
+    if (v === "DIV0") {
+      return { label: "Quick answer", lines: ["That one divides by zero, so it has no answer.", "For your pick, I still need the part of life, how the year felt, and what made past plans fail. " + needLine] };
+    }
+    var f = v === null ? null : fmtArithNum(v);
+    if (f !== null) {
+      var echo = expr.replace(/([+\-*/x])/g, " $1 ").replace(/\s+/g, " ").trim()
+        .replace(/\*/g, "×").replace(/ x /g, " × ").replace(/\//g, "÷");
+      return { label: "Quick answer", lines: [echo + " = " + f + ".", "For your pick, I still need the part of life, how the year felt, and what made past plans fail. " + needLine] };
+    }
+  }
+  return null;
+}
 function answerAskPmr(raw) {
   var out = document.getElementById("askp-answer");
+  var base = baselinePmr(raw);
+  if (base) {
+    out.innerHTML = '<div class="card"><p class="label">' + base.label + '</p>' +
+      base.lines.map(function (s) { return '<p>' + esc(s) + '</p>'; }).join("") + '</div>';
+    document.getElementById("askp-more").hidden = true;
+    return null;
+  }
   var p = parseAskPmr(raw);
   var missing = [];
   if (!p.area) missing.push("which part of life it is about (body and health, money, home, work, family and friends, or mind and calm)");

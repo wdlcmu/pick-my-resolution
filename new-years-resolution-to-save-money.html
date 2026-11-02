@@ -109,11 +109,11 @@
   <p>Six minutes of your week.</p>
   <p>The rest stays entirely yours.</p>
 
-  <h2>Why the move runs itself</h2>
+  <h2>Why an automatic payment works</h2>
     <div class="card">
       <ul>
         <li>Memory fails. Auto moves do not forget.</li>
-        <li>Payday timing does the remembering.</li>
+        <li>The payment leaves on payday, so you do not have to remember it.</li>
         <li>Five dollars proves the system works.</li>
         <li>Grow the amount, not the count.</li>
       </ul>
@@ -790,8 +790,93 @@ function parseAskPmr(raw) {
 }
 function labelOf(list, k) { for (var i = 0; i < list.length; i++) if (list[i].k === k) return list[i].label; return ""; }
 function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+/* Conversation baseline (Nov 1, 2026, fleet dimension sweep D2):
+   greet back, say what this site is, and answer simple arithmetic
+   with a tiny real evaluator (never a guess). Checked at the top of
+   answerAskPmr, before the parser; anything else falls through to
+   the parser, untouched. The patterns fire only when the whole
+   input is a greeting, the orientation question, or a pure
+   arithmetic expression, so no resolution ask can be caught. */
+function fmtArithNum(v) {
+  if (!isFinite(v) || Math.abs(v) > 1e15) return null;
+  return String(Math.round(v * 100) / 100);
+}
+function evalArithPmr(expr) {
+  var pos = 0;
+  function factor() {
+    var c = expr.charAt(pos);
+    if (c === "(") { pos++; var v = exprTop(); if (v === null || v === "DIV0" || expr.charAt(pos) !== ")") return null; pos++; return v; }
+    if (c === "-") { pos++; var n = factor(); return n === null ? null : -n; }
+    if (c === "+") { pos++; return factor(); }
+    var m = expr.slice(pos).match(/^\d+(?:\.\d+)?/);
+    if (!m) return null;
+    pos += m[0].length;
+    return parseFloat(m[0]);
+  }
+  function term() {
+    var v = factor(); if (v === null) return null;
+    for (;;) {
+      var c = expr.charAt(pos);
+      if (c === "*" || c === "x") { pos++; var r = factor(); if (r === null) return null; v = v * r; }
+      else if (c === "/") { pos++; var d = factor(); if (d === null) return null; if (d === 0) return "DIV0"; v = v / d; }
+      else return v;
+    }
+  }
+  function exprTop() {
+    var v = term(); if (v === null || v === "DIV0") return v;
+    for (;;) {
+      var c = expr.charAt(pos);
+      if (c === "+") { pos++; var r = term(); if (r === null || r === "DIV0") return r; v = v + r; }
+      else if (c === "-") { pos++; var r2 = term(); if (r2 === null || r2 === "DIV0") return r2; v = v - r2; }
+      else return v;
+    }
+  }
+  if (!expr) return null;
+  var v = exprTop();
+  if (v === null || v === "DIV0") return v;
+  if (pos !== expr.length) return null;
+  return v;
+}
+function baselinePmr(raw) {
+  var t = String(raw || "").trim().toLowerCase().replace(/’/g, "'");
+  var tq = t.replace(/[\s.!?]+$/, "");
+  var needLine = "Say the part of life, how the year felt, and what made past plans fail, in your words. Or tap an example above to see the shape.";
+  if (/^(sup|hi|hello|hey|yo|hiya|howdy|hey there|hi there|hello there|what's up|whats up|good morning|good afternoon|good evening)$/.test(tq)) {
+    return { label: "Hello", lines: ["Hi. This is Pick My Resolution.", "Say the part of life, how the year felt, and what made past plans fail, in your words, and I will pick one resolution that fits your week. Or tap an example above to see the shape."] };
+  }
+  if (/^(what is|what's|whats) (this|this site|this page|this place)$/.test(tq)
+    || /^what does this (site|page) do$/.test(tq)
+    || /^who are you$/.test(tq) || /^what do you do$/.test(tq)) {
+    return { label: "About this site", lines: ["This is Pick My Resolution. It picks one resolution that fits your real week.", "Say the part of life, how the year felt, and what made past plans fail, and you get the pick, the first move, a guard for when it gets hard, and a note to future you."] };
+  }
+  var expr = tq.replace(/^(what's|what is|whats|calculate|compute|solve|how much is)\s+/, "");
+  expr = expr.replace(/\s+/g, "").replace(/×/g, "*").replace(/÷/g, "/");
+  var stripped = expr.replace(/^[(-]+/, "");
+  if (expr.length >= 3 && expr.length <= 40 && /^[\d+\-*/x().]+$/.test(expr)
+    && (expr.match(/\d+(?:\.\d+)?/g) || []).length >= 2
+    && /[+\-*/x]/.test(stripped)) {
+    var v = evalArithPmr(expr);
+    if (v === "DIV0") {
+      return { label: "Quick answer", lines: ["That one divides by zero, so it has no answer.", "For your pick, I still need the part of life, how the year felt, and what made past plans fail. Say it in your words, or tap an example above to see the shape."] };
+    }
+    var f = v === null ? null : fmtArithNum(v);
+    if (f !== null) {
+      var echo = expr.replace(/([+\-*/x])/g, " $1 ").replace(/\s+/g, " ").trim()
+        .replace(/\*/g, "×").replace(/ x /g, " × ").replace(/\//g, "÷");
+      return { label: "Quick answer", lines: [echo + " = " + f + ".", "For your pick, I still need the part of life, how the year felt, and what made past plans fail. Say it in your words, or tap an example above to see the shape."] };
+    }
+  }
+  return null;
+}
 function answerAskPmr(raw) {
   var out = document.getElementById("askp-answer");
+  var base = baselinePmr(raw);
+  if (base) {
+    out.innerHTML = '<div class="card"><p class="label">' + base.label + '</p>' +
+      base.lines.map(function (s) { return '<p>' + esc(s) + '</p>'; }).join("") + '</div>';
+    document.getElementById("askp-more").hidden = true;
+    return null;
+  }
   var p = parseAskPmr(raw);
   var missing = [];
   if (!p.area) missing.push("which part of life it is about (body and health, money, home, work, family and friends, or mind and calm)");
