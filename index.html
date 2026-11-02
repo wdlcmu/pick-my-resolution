@@ -592,8 +592,14 @@ window.FLEET_CFG = {
     <p class="saved-label" id="r-saved" hidden></p>
     <div class="card">
       <p class="big" id="r-resolution"></p>
+      <div id="r-why-block" hidden>
+        <p class="label">Your why</p>
+        <p id="r-why"></p>
+      </div>
       <p class="label">First move, week one</p>
       <p id="r-first"></p>
+      <p class="label">Easy start</p>
+      <p id="r-week1"></p>
       <div id="r-when-block" hidden>
         <p class="label">Your week one plan</p>
         <p id="r-when"></p>
@@ -602,22 +608,34 @@ window.FLEET_CFG = {
       <p id="r-guard"></p>
       <p class="label">Your time</p>
       <p id="r-note"></p>
+      <p class="label">By March 1</p>
+      <p id="r-stakes"></p>
+    </div>
+    <div id="why-block">
+      <p class="label">Why this one?</p>
+      <p class="tac-note">Tap your real reason, or write your own. It rides on your plan and your check-in.</p>
+      <div class="chips" id="why-chips"></div>
+      <input type="text" id="why-input" maxlength="60" autocomplete="off"
+        aria-label="Your own why, in your words"
+        placeholder="Or write your own why, in a few words">
+      <p class="tac-note">Skip it if you want. Your plan is already set above.</p>
     </div>
     <div class="card">
       <p class="label">Why this plan can stick</p>
       <ul class="sci-list">
-        <li><strong>Your guard line is an if-then plan.</strong> Gollwitzer found naming the moment first lifts follow-through.</li>
+        <li id="sci-why" hidden><strong>Your why leads.</strong> <span id="sci-why-text"></span></li>
+        <li id="sci-b1"><strong>Your guard line is an if-then plan.</strong> Gollwitzer found naming the moment first lifts follow-through.</li>
         <li><strong>Your first move is tiny on purpose.</strong> Fogg: small starts you cannot skip beat dreaded ones.</li>
         <li><strong>Your check-in is you watching you.</strong> People who track their own record keep going longer.</li>
       </ul>
     </div>
     <p class="label">Make it stick: your tactics</p>
-    <p class="sci-q">1. Pick your cue</p>
-    <p class="tac-note">Tie your move to a moment that already happens every day.</p>
+    <p class="sci-q">1. Your cue</p>
+    <p class="tac-note">Already set from your pick. Tap a cue to change it.</p>
     <div class="chips" id="tac-cue"></div>
     <p class="sci-q">2. Your if-then plan</p>
     <p class="sci-plan" id="tac-plan">Pick a cue above, and your plan writes itself here.</p>
-    <p class="sci-q">3. Pick your check-in rhythm</p>
+    <p class="sci-q">3. Your check-in rhythm</p>
     <div class="chips" id="tac-rhythm"></div>
     <p class="tac-note">Your picks join your check-in text below. They save on this device only.</p>
     <p class="label">Your weekly check-in</p>
@@ -1067,11 +1085,23 @@ function timeOf(k) {
   for (var i = 0; i < TIMES.length; i++) if (TIMES[i].k === k) return TIMES[i];
   return null;
 }
+// Week-one size (dogfood fix, Nov 2, 2026): week one runs smaller
+// than the steady dose and still counts in full, so "how easy is it"
+// is answered by the plan's own numbers. Half the minutes, rounded
+// to a clean 5, never under 5, and never above the dose itself.
+// Plans already at 5 minutes or under keep their full size.
+function weekOneMins(mins) {
+  if (mins <= 5) return mins;
+  if (mins < 10) return 5;
+  var w = Math.round(mins / 10) * 5;
+  return w < 5 ? 5 : w;
+}
 function buildResult(a) {
   var action = ACTIONS[a.area][a.off];
   var d = DOSES[action][a.time];
   var resolution = action + ": " + d.dose + ".";
-  var firstMove = (STARTERS[action] || (action + " for " + d.mins + " min.")).split("{m}").join(d.mins);
+  var w1 = weekOneMins(d.mins);
+  var firstMove = (STARTERS[action] || (action + " for " + d.mins + " min.")).split("{m}").join(w1);
   var guard = GUARDS[a.fail];
   // Honest time use (semantic-fit audit F3, Oct 29 2026; shipped Oct 30,
   // 2026): the time pick is a ceiling, and small moves stay small. The MCP
@@ -1083,6 +1113,17 @@ function buildResult(a) {
   var timeNote = total >= t.budget
     ? "This plan uses all " + t.budget + " minutes you offered."
     : "This plan uses " + total + " of your " + t.budget + " minutes a week. The rest of your time stays yours.";
+  // Prove ease (dogfood fix, Nov 2, 2026): the week-one size, stated
+  // on the card next to the full dose. The first move above is
+  // already written at this size.
+  var weekOne = w1 >= d.mins
+    ? "Week one: " + d.dose + ". That is the whole plan."
+    : "Week one: " + w1 + " min, " + d.times + "x a week. It counts in full. The " + d.mins + " min plan starts week two.";
+  // The stakes, in approach words (dogfood fix, Nov 2, 2026): what
+  // keeping it looks like by March 1, counted from this plan's own
+  // weekly sessions (about eight weeks from Jan 1). No doom, no
+  // invented numbers: the February line is the homepage's own.
+  var stakes = "About " + (d.times * 8) + " sessions in, and this is just your week. Most lists quit by February. Yours is built to land past it.";
   var qs = CHECKINS[action] || ["Did I do my move this week?", "What got in my way?"];
   // De-duplication (Oct 30, 2026): the check-in no longer repeats the
   // resolution, first move, or guard lines verbatim. It names the action
@@ -1124,6 +1165,8 @@ function buildResult(a) {
     firstMove: firstMove,
     guard: guard,
     timeNote: timeNote,
+    weekOne: weekOne,
+    stakes: stakes,
     checkin: checkin,
     futureNote: futureNote,
     share: share,
@@ -1173,6 +1216,7 @@ var TOTAL_STEPS = STEPS.length + 1; // 4 questions + 1 optional specificity step
 var current = null;
 var letter = null;
 var tactics = { cue: null, rhythm: null };
+var why = "";
 
 function saveResult() {
   try {
@@ -1180,7 +1224,8 @@ function saveResult() {
       answers: { area: quiz.area, off: quiz.off, time: quiz.time, fail: quiz.fail, when: quiz.when || "" },
       result: current,
       letter: letter,
-      tactics: tactics
+      tactics: tactics,
+      why: why
     }));
   } catch (e) {}
 }
@@ -1289,6 +1334,8 @@ function renderResult() {
   $("r-when-block").hidden = !whenTxt;
   $("r-guard").textContent = current.guard;
   $("r-note").textContent = current.timeNote || "";
+  $("r-week1").textContent = current.weekOne || "";
+  $("r-stakes").textContent = current.stakes || "";
   $("r-checkin").textContent = current.checkin;
   $("r-share").textContent = current.share;
   $("st-checkin").textContent = "";
@@ -1307,6 +1354,7 @@ function renderResult() {
   // saved letter (restored after this render) replaces the draft.
   if (current.futureNote && $("lt-note")) $("lt-note").value = current.futureNote;
   renderTactics();
+  renderWhy();
 }
 // Science tactics (2026-11-02): the result flow shows the research under
 // the plan and lets the user choose the tactics themselves: a daily cue
@@ -1325,6 +1373,65 @@ var TAC_RHYTHMS = [
   { k: "twice", label: "Twice a week", text: "twice a week" },
   { k: "daily", label: "Every day, 2 minutes", text: "every day, for two minutes" }
 ];
+// Default cue per pick (dogfood fix, Nov 2, 2026): each move's own
+// natural moment, read off its starter and note lines (the walk is
+// right after a meal, the balance check is right after breakfast,
+// the paper plan waits by the coffee). Tactics open already set;
+// the user changes them with one tap, never faces an empty form.
+var TAC_DEFAULT_CUE = {
+  "Take a short walk": "lunch",
+  "Cook a real meal": "dinner",
+  "Do a short workout": "wake",
+  "Stretch your whole body": "dinner",
+  "Walk with a friend": "lunch",
+  "Check your bank balance": "breakfast",
+  "Sort bills in one spot": "dinner",
+  "Move cash to savings": "breakfast",
+  "Write down what you spend": "dinner",
+  "Tell a friend your goal": "dinner",
+  "Tidy one small corner": "dinner",
+  "Clear one shelf fully": "work",
+  "Fix one small thing": "work",
+  "Make one room cozy": "dinner",
+  "Have a friend visit": "dinner",
+  "Plan your day on paper": "wake",
+  "Clear your desk top": "work",
+  "Learn one work skill": "work",
+  "Chat with a work friend": "lunch",
+  "Eat lunch with coworkers": "lunch",
+  "Talk with family at home": "dinner",
+  "Share one meal together": "dinner",
+  "Play one game together": "dinner",
+  "Call a friend you miss": "dinner",
+  "Visit someone you love": "lunch",
+  "Sit in a quiet place": "wake",
+  "Write thoughts on paper": "dinner",
+  "Read a calm book": "dinner",
+  "Breathe slow in fresh air": "lunch",
+  "Sit outside with others": "lunch"
+};
+function defaultTacticsFor(a) {
+  var action = (a && ACTIONS[a.area]) ? ACTIONS[a.area][a.off] : null;
+  return { cue: (action && TAC_DEFAULT_CUE[action]) || "dinner", rhythm: "weekly" };
+}
+// The why (dogfood fix, Nov 2, 2026): the plan page used to argue
+// with studies and never carried the person's own reason. After the
+// pick, one led step asks "Why this one?" with human reasons per
+// life area, plus a free line. The chosen why headlines the plan
+// card, takes the first science bullet's slot, and rides in the
+// weekly check-in text. It is the user's words, stored verbatim.
+var WHYS = {
+  health: ["I am tired of feeling stiff.", "I want to keep up with my kid.", "My back decides my day.", "I want energy left at 5pm."],
+  money: ["I want money off my mind.", "I want a cushion for surprises.", "I want bills to stop scaring me.", "I want one debt gone for good."],
+  home: ["I want home to feel calm.", "I want the mess off my mind.", "I want friends over, no panic.", "I want one room I love."],
+  work: ["I want work to end on time.", "I want my days to feel mine.", "I want less dread on Sundays.", "I want to grow, a little."],
+  family: ["I want more time that feels like us.", "I miss my people, plain and simple.", "I want my kid to remember this.", "I want to call before big news."],
+  calm: ["I want a quieter head.", "I want my evenings back.", "I want sleep without the spin.", "I want one calm spot in my day."]
+};
+function cleanWhy(v) {
+  if (typeof v !== "string") return "";
+  return v.replace(/\s+/g, " ").trim().slice(0, 60);
+}
 function tacFind(list, k) {
   for (var i = 0; i < list.length; i++) if (list[i].k === k) return list[i];
   return null;
@@ -1349,6 +1456,7 @@ function tacBaseCheckin() {
   for (var i = 0; i < lines.length; i++) {
     if (lines[i].indexOf("My if-then plan: ") === 0) continue;
     if (lines[i].indexOf("My check-in rhythm: ") === 0) continue;
+    if (lines[i].indexOf("You said: ") === 0) continue;
     kept.push(lines[i]);
   }
   var base = kept.join("\n");
@@ -1359,6 +1467,18 @@ function applyTactics() {
   var out = tacBaseCheckin();
   if (tactics.rhythm === "daily") {
     out = out.replace("Weekly check-in for my resolution.", "Check-in for my resolution.");
+  }
+  // The why rides in the check-in, right under the resolution line:
+  // the person reads their own reason back every week.
+  if (why) {
+    var wlines = out.split("\n");
+    var wins = -1;
+    for (var wi = 0; wi < wlines.length; wi++) {
+      if (wlines[wi].indexOf("My one resolution: ") === 0) { wins = wi; break; }
+    }
+    if (wins >= 0) wlines.splice(wins + 1, 0, "You said: " + why);
+    else wlines.push("You said: " + why);
+    out = wlines.join("\n");
   }
   var extra = [];
   var cue = tacFind(TAC_CUES, tactics.cue);
@@ -1401,14 +1521,74 @@ function renderTactics() {
   renderTacticChips("tac-rhythm", TAC_RHYTHMS, "rhythm");
   applyTactics();
 }
+function setWhy(t) {
+  var was = why;
+  why = t;
+  if (why && !was) {
+    try {
+      if (typeof fleetTrack === "function") {
+        fleetTrack("artifact_created", { tool: "resolution-picker", artifact: "why" });
+      }
+    } catch (e) {}
+  }
+  saveResult();
+  renderWhy();
+}
+function renderWhy() {
+  if (!current) return;
+  var list = WHYS[quiz.area] || [];
+  var box = $("why-chips");
+  if (box) {
+    box.innerHTML = list.map(function (o, i) {
+      var on = why === o;
+      return '<button class="chip" data-k="' + i + '" aria-pressed="' + on + '">' +
+        '<span class="tick">\u2713</span>' + o + "</button>";
+    }).join("");
+    var chips = box.querySelectorAll(".chip");
+    for (var c = 0; c < chips.length; c++) {
+      chips[c].onclick = (function (el) {
+        return function () {
+          var t = list[parseInt(el.getAttribute("data-k"), 10)];
+          setWhy(why === t ? "" : t);
+        };
+      })(chips[c]);
+    }
+  }
+  var inp = $("why-input");
+  if (inp && document.activeElement !== inp) {
+    inp.value = (why && list.indexOf(why) < 0) ? why : "";
+  }
+  var blk = $("r-why-block");
+  if (blk) blk.hidden = !why;
+  var rt = $("r-why");
+  if (rt) rt.textContent = why;
+  var sw = $("sci-why"), sb = $("sci-b1"), st = $("sci-why-text");
+  if (sw && sb) {
+    sw.hidden = !why;
+    sb.hidden = !!why;
+    if (st) st.textContent = why ? ("You said: " + why + " It holds on the hard weeks.") : "";
+  }
+  applyTactics();
+}
+var whyInputEl = $("why-input");
+if (whyInputEl && whyInputEl.addEventListener) {
+  whyInputEl.addEventListener("input", function () {
+    setWhy(cleanWhy(whyInputEl.value));
+  });
+}
 function finishQuiz() {
   current = buildResult(quiz);
   // A fresh pick starts with no letter; the old pick's letter must not
   // ride into the new saved record.
   letter = null;
-  // A fresh pick also starts with no tactics; the old pick's cue and
-  // rhythm must not ride into the new saved record.
-  tactics = { cue: null, rhythm: null };
+  // A fresh pick starts with tactics already set (dogfood fix, Nov 2,
+  // 2026): the cue comes from the pick's own natural moment and the
+  // rhythm is weekly, shown as chosen, one tap to change. The old
+  // pick's tactics never ride into the new record.
+  tactics = defaultTacticsFor(quiz);
+  // A fresh pick also starts with no why; the old pick's reason must
+  // not headline the new plan.
+  why = "";
   saveResult();
   // Measurement (Sprint Lane 1, Oct 31, 2026): a typed week-one plan is
   // the first-action commitment. Count it as its own artifact so a pick
@@ -1838,6 +2018,22 @@ if (hasStartFlag()) {
   quiz.when = saved.answers.when || "";
   current = saved.result;
   tactics = cleanTactics(saved.tactics);
+  why = cleanWhy(saved.why);
+  // Tactics defaults (dogfood fix, Nov 2, 2026): plans saved before
+  // defaults existed carry an empty form. Fill any unset cue or
+  // rhythm from the pick's own default, so a restored plan opens
+  // already set, exactly like a fresh one.
+  var dtac = defaultTacticsFor(saved.answers);
+  if (!tactics.cue) tactics.cue = dtac.cue;
+  if (!tactics.rhythm) tactics.rhythm = dtac.rhythm;
+  // Plans saved before the Nov 2, 2026 dogfood fix carry no week-one
+  // size or stakes line, and their first move is written at the full
+  // dose. The same answers through the current engine give the same
+  // resolution and guard, so rebuild the result in place.
+  if (typeof current.weekOne !== "string" || !current.weekOne ||
+      typeof current.stakes !== "string" || !current.stakes) {
+    current = buildResult(saved.answers);
+  }
   // Plans saved before the Oct 30, 2026 check-in depth build carry the
   // old generic check-in and no future note. The same answers through
   // the current engine give the same resolution, first move, and guard
@@ -2277,11 +2473,23 @@ function timeOf(k) {
   for (var i = 0; i < TIMES.length; i++) if (TIMES[i].k === k) return TIMES[i];
   return null;
 }
+// Week-one size (dogfood fix, Nov 2, 2026): week one runs smaller
+// than the steady dose and still counts in full, so "how easy is it"
+// is answered by the plan's own numbers. Half the minutes, rounded
+// to a clean 5, never under 5, and never above the dose itself.
+// Plans already at 5 minutes or under keep their full size.
+function weekOneMins(mins) {
+  if (mins <= 5) return mins;
+  if (mins < 10) return 5;
+  var w = Math.round(mins / 10) * 5;
+  return w < 5 ? 5 : w;
+}
 function buildResult(a) {
   var action = ACTIONS[a.area][a.off];
   var d = DOSES[action][a.time];
   var resolution = action + ": " + d.dose + ".";
-  var firstMove = (STARTERS[action] || (action + " for " + d.mins + " min.")).split("{m}").join(d.mins);
+  var w1 = weekOneMins(d.mins);
+  var firstMove = (STARTERS[action] || (action + " for " + d.mins + " min.")).split("{m}").join(w1);
   var guard = GUARDS[a.fail];
   // Honest time use (semantic-fit audit F3, Oct 29 2026; shipped Oct 30,
   // 2026): the time pick is a ceiling, and small moves stay small. The MCP
@@ -2293,6 +2501,17 @@ function buildResult(a) {
   var timeNote = total >= t.budget
     ? "This plan uses all " + t.budget + " minutes you offered."
     : "This plan uses " + total + " of your " + t.budget + " minutes a week. The rest of your time stays yours.";
+  // Prove ease (dogfood fix, Nov 2, 2026): the week-one size, stated
+  // on the card next to the full dose. The first move above is
+  // already written at this size.
+  var weekOne = w1 >= d.mins
+    ? "Week one: " + d.dose + ". That is the whole plan."
+    : "Week one: " + w1 + " min, " + d.times + "x a week. It counts in full. The " + d.mins + " min plan starts week two.";
+  // The stakes, in approach words (dogfood fix, Nov 2, 2026): what
+  // keeping it looks like by March 1, counted from this plan's own
+  // weekly sessions (about eight weeks from Jan 1). No doom, no
+  // invented numbers: the February line is the homepage's own.
+  var stakes = "About " + (d.times * 8) + " sessions in, and this is just your week. Most lists quit by February. Yours is built to land past it.";
   var qs = CHECKINS[action] || ["Did I do my move this week?", "What got in my way?"];
   // De-duplication (Oct 30, 2026): the check-in no longer repeats the
   // resolution, first move, or guard lines verbatim. It names the action
@@ -2334,6 +2553,8 @@ function buildResult(a) {
     firstMove: firstMove,
     guard: guard,
     timeNote: timeNote,
+    weekOne: weekOne,
+    stakes: stakes,
     checkin: checkin,
     futureNote: futureNote,
     share: share,
@@ -2823,6 +3044,8 @@ function answerAskPmr(raw) {
     '<p class="label">First move, week one</p><p>' + esc(r.firstMove) + '</p>' +
     '<p class="label">If it gets hard</p><p>' + esc(r.guard) + '</p>' +
     '<p class="label">Your time</p><p>' + esc(r.timeNote) + '</p>' +
+    '<p class="label">Easy start</p><p>' + esc(r.weekOne) + '</p>' +
+    '<p class="label">By March 1</p><p>' + esc(r.stakes) + '</p>' +
     '<p class="label">A note to future you</p><pre class="note">' + esc(r.futureNote) + '</pre>' +
     '<p class="label">Your weekly check-in</p><pre class="note">' + esc(r.checkin) + '</pre>' +
     '</div>';
