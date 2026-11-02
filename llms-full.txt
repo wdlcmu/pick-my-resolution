@@ -1,14 +1,14 @@
-# Pick My Resolution: full page text
+# Keep One Resolution: full page text
 
-> Complete text of pickmyresolution.com: every page, plus the full bank inside its free quiz.
+> Complete text of keeponeresolution.com: every page, plus the full bank inside its free quiz.
 > The quiz picks one New Year's resolution you can keep. Four questions, about one minute.
 > Free forever. No ads, no accounts. Your answers stay in your browser.
 > Text captured from the live site, 2026-11-01.
 
-## Homepage and quiz (https://pickmyresolution.com/)
+## Homepage and quiz (https://keeponeresolution.com/)
 
-New Year's Resolution - Pick My Resolution: One you can keep
-Pick My Resolution
+New Year's Resolution - Keep One Resolution: One you can keep
+Keep One Resolution
 This year, keep one. Just one.
 Last January, you wrote a list. By spring, none of it stuck.
 61 days
@@ -18,7 +18,7 @@ Last January, you wrote a list. By spring, none of it stuck.
 61 days until January 1, 2027.
 What&rsquo;s next? &#9662;
 The moment: January 1, 2027 &mdash; time to pick your one resolution.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Rather say it in your own words? Ask here
 .
@@ -48,7 +48,7 @@ This plan uses all 120 minutes offered.
 It ends with a note to future you. This one opens:
 &ldquo;Dear future me, I felt drained a lot back then. My pick was Take a short walk.&rdquo;
 You finish yours in your own words. It stays on your device.
-Pick my resolution
+Pick my one resolution
 How it works
 You pick one area. Body, money, home, work, family, calm.
 You say what felt hard. And what made past plans fail.
@@ -132,7 +132,7 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
@@ -309,13 +309,13 @@ Please keep your reply short and kind.
 
 ## Area pages
 
-### Body and health (https://pickmyresolution.com/body-and-health)
+### Body and health (https://keeponeresolution.com/body-and-health)
 
-New Year's body and health resolutions - Pick My Resolution
-Pick My Resolution
+New Year's body and health resolutions - Keep One Resolution
+Keep One Resolution
 Body and health
 Feel strong and well this year. Pick one small move to start. Each move fits the time you have.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Your five moves
 Take a short walk
@@ -363,7 +363,7 @@ Pick your time
 30 minutes a week: Walk with a friend: 30 min, 1x a week.
 2 hours a week: Walk with a friend: 30 min, 4x a week.
 5 hours a week: Walk with a friend: 45 min, 5x a week.
-Pick my resolution
+Pick my one resolution
 Four short questions. One clear plan for your year.
 Common questions
 How do I pick my body and health resolution?
@@ -401,17 +401,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### Money (https://pickmyresolution.com/money)
+### Money (https://keeponeresolution.com/money)
 
-New Year's money resolutions - Pick My Resolution
-Pick My Resolution
+New Year's money resolutions - Keep One Resolution
+Keep One Resolution
 Money
 Feel calm and clear about money. Pick one small move to start. Each move fits the time you have.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Your five moves
 Check your bank balance
@@ -459,7 +459,7 @@ Pick your time
 30 minutes a week: Tell a friend your goal: 15 min, 2x a week.
 2 hours a week: Tell a friend your goal: 30 min, 2x a week.
 5 hours a week: Tell a friend your goal: 30 min, 4x a week.
-Pick my resolution
+Pick my one resolution
 Four short questions. One clear plan for your year.
 Common questions
 How do I pick my money resolution?
@@ -497,17 +497,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### Home (https://pickmyresolution.com/home)
+### Home (https://keeponeresolution.com/home)
 
-New Year's home resolutions - Pick My Resolution
-Pick My Resolution
+New Year's home resolutions - Keep One Resolution
+Keep One Resolution
 Home
 Love the place where you live. Pick one small move to start. Each move fits the time you have.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Your five moves
 Tidy one small corner
@@ -555,7 +555,7 @@ Pick your time
 30 minutes a week: Have a friend visit: 30 min, 1x a week.
 2 hours a week: Have a friend visit: 60 min, 2x a week.
 5 hours a week: Have a friend visit: 60 min, 3x a week.
-Pick my resolution
+Pick my one resolution
 Four short questions. One clear plan for your year.
 Common questions
 How do I pick my home resolution?
@@ -593,17 +593,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### Work (https://pickmyresolution.com/work)
+### Work (https://keeponeresolution.com/work)
 
-New Year's work resolutions - Pick My Resolution
-Pick My Resolution
+New Year's work resolutions - Keep One Resolution
+Keep One Resolution
 Work
 Feel clear and calm at work. Pick one small move to start. Each move fits the time you have.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Your five moves
 Plan your day on paper
@@ -651,7 +651,7 @@ Pick your time
 30 minutes a week: Eat lunch with coworkers: 30 min, 1x a week.
 2 hours a week: Eat lunch with coworkers: 30 min, 4x a week.
 5 hours a week: Eat lunch with coworkers: 45 min, 5x a week.
-Pick my resolution
+Pick my one resolution
 Four short questions. One clear plan for your year.
 Common questions
 How do I pick my work resolution?
@@ -689,17 +689,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### Family and friends (https://pickmyresolution.com/family-and-friends)
+### Family and friends (https://keeponeresolution.com/family-and-friends)
 
-New Year's family and friends resolutions - Pick My Resolution
-Pick My Resolution
+New Year's family and friends resolutions - Keep One Resolution
+Keep One Resolution
 Family and friends
 Spend more time with loved ones. Pick one small move to start. Each move fits the time you have.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Your five moves
 Talk with family at home
@@ -747,7 +747,7 @@ Pick your time
 30 minutes a week: Visit someone you love: 30 min, 1x a week.
 2 hours a week: Visit someone you love: 60 min, 2x a week.
 5 hours a week: Visit someone you love: 60 min, 4x a week.
-Pick my resolution
+Pick my one resolution
 Four short questions. One clear plan for your year.
 Common questions
 How do I pick my family and friends resolution?
@@ -785,17 +785,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### Mind and calm (https://pickmyresolution.com/mind-and-calm)
+### Mind and calm (https://keeponeresolution.com/mind-and-calm)
 
-New Year's mind and calm resolutions - Pick My Resolution
-Pick My Resolution
+New Year's mind and calm resolutions - Keep One Resolution
+Keep One Resolution
 Mind and calm
 Feel calm and clear each day. Pick one small move to start. Each move fits the time you have.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Your five moves
 Sit in a quiet place
@@ -843,7 +843,7 @@ Pick your time
 30 minutes a week: Sit outside with others: 10 min, 3x a week.
 2 hours a week: Sit outside with others: 20 min, 5x a week.
 5 hours a week: Sit outside with others: 30 min, 5x a week.
-Pick my resolution
+Pick my one resolution
 Four short questions. One clear plan for your year.
 Common questions
 How do I pick my mind and calm resolution?
@@ -881,14 +881,14 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-## Privacy (https://pickmyresolution.com/privacy)
+## Privacy (https://keeponeresolution.com/privacy)
 
-Privacy - Pick My Resolution
-Pick My Resolution
+Privacy - Keep One Resolution
+Keep One Resolution
 Privacy
 Your quiz plan stays in your browser.
 Cloudflare and PostHog count visits to this site.
@@ -939,15 +939,15 @@ Browse by area: Body and health
 · Mind and calm
 · Terms
 
-## Terms (https://pickmyresolution.com/terms)
+## Terms (https://keeponeresolution.com/terms)
 
-Terms - Pick My Resolution
-Pick My Resolution
+Terms - Keep One Resolution
+Keep One Resolution
 Terms
 The short version: This site gives one free plan.
 What this site is
 These terms cover this website only.
-Pick My Resolution picks one resolution.
+Keep One Resolution picks one resolution.
 You answer four short questions.
 The quiz picks one move for you.
 Your plan fits the time you pick.
@@ -1001,13 +1001,13 @@ Browse by area: Body and health
 
 ## Question pages
 
-### Why do New Year's resolutions fail? (https://pickmyresolution.com/why-do-new-years-resolutions-fail)
+### Why do New Year's resolutions fail? (https://keeponeresolution.com/why-do-new-years-resolutions-fail)
 
-Why do New Year's resolutions fail? - Pick My Resolution
-Pick My Resolution
+Why do New Year's resolutions fail? - Keep One Resolution
+Keep One Resolution
 Why do New Year's resolutions fail?
 Most lists ask for too much, all at once. Last January, the list felt full of hope. By spring, none of it stuck.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 That fade is not a willpower problem. The plan was built to fade. Here are the four plain reasons, in the words people pick in our quiz.
 Four plain reasons
@@ -1038,7 +1038,7 @@ Same move, new place or playlist. Change one thing, not the move.
 What works: keep it small
 Keep one. Size it to the week you really have. Start with one small first move.
 That is the whole design of this site. Four short questions. One pick you can still be doing in March.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -1098,17 +1098,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### How to keep a New Year's resolution (https://pickmyresolution.com/how-to-keep-a-new-years-resolution)
+### How to keep a New Year's resolution (https://keeponeresolution.com/how-to-keep-a-new-years-resolution)
 
-How to keep a New Year's resolution - Pick My Resolution
-Pick My Resolution
+How to keep a New Year's resolution - Keep One Resolution
+Keep One Resolution
 How to keep a New Year's resolution
 Keep one. That is the whole trick, and it is harder than it sounds. Last January, the list was long. This year, one pick, sized to your week.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 The method, in six steps
 Step 1
@@ -1138,7 +1138,7 @@ Ask two short questions. Did I do my move this week? What got in my way? Your pi
 Step 6
 Write a note to future you
 Tell future you why this one matters. Save the note as a letter card. Read it when the year gets loud.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -1196,17 +1196,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### What is a good New Year's resolution? (https://pickmyresolution.com/what-is-a-good-new-years-resolution)
+### What is a good New Year's resolution? (https://keeponeresolution.com/what-is-a-good-new-years-resolution)
 
-What is a good New Year's resolution? - Pick My Resolution
-Pick My Resolution
+What is a good New Year's resolution? - Keep One Resolution
+Keep One Resolution
 What is a good New Year's resolution?
 A good one is small enough to keep in March. It names one move. It fits the time you really have.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 One real pick, start to finish
 This is the exact card the quiz gives for one set of answers. Nothing here is dressed up.
@@ -1251,7 +1251,7 @@ One move. Not a list of ten.
 Sized to real time. Your week, as it is.
 A first step you can name today.
 A plan for the hard day , picked early.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -1308,17 +1308,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### New Year's resolution ideas that fit a busy week (https://pickmyresolution.com/new-years-resolution-ideas-that-fit-a-busy-week)
+### New Year's resolution ideas that fit a busy week (https://keeponeresolution.com/new-years-resolution-ideas-that-fit-a-busy-week)
 
-New Year's resolution ideas that fit a busy week - Pick My Resolution
-Pick My Resolution
+New Year's resolution ideas that fit a busy week - Keep One Resolution
+Keep One Resolution
 New Year's resolution ideas that fit a busy week
 Start with 30 minutes a week. Here is one real pick for each part of life. Each one is a quiz result, word for word.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Body and health
 The pick
@@ -1365,7 +1365,7 @@ This plan uses all 30 minutes you offered.
 Got two hours some weeks?
 The same picks grow with your time. Answer the time question honestly. The plan grows only as much as your week allows.
 The smallest pick on this page takes six minutes a week. Small counts, when you keep it.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -1422,17 +1422,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### Small New Year's resolutions (https://pickmyresolution.com/small-new-years-resolutions)
+### Small New Year's resolutions (https://keeponeresolution.com/small-new-years-resolutions)
 
-Small New Year's resolutions - Pick My Resolution
-Pick My Resolution
+Small New Year's resolutions - Keep One Resolution
+Keep One Resolution
 Small New Year's resolutions
 Small is not a lesser goal. Small is the size that survives March.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Last January, the list was long and grand. By spring, none of it had stuck. These picks skip grand on purpose.
 The smallest of our picks
@@ -1485,7 +1485,7 @@ Put a notebook by your bed. Write for 10 min before sleep.
 Your time
 This plan uses all 30 minutes you offered.
 Small still counts, when you keep it. Two minutes a week is a kept promise. A grand plan quit in February is not.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -1542,17 +1542,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### One resolution ideas (https://pickmyresolution.com/one-resolution-ideas)
+### One resolution ideas (https://keeponeresolution.com/one-resolution-ideas)
 
-One resolution ideas - Pick My Resolution
-Pick My Resolution
+One resolution ideas - Keep One Resolution
+Keep One Resolution
 One resolution ideas
 You do not need fifty ideas. You need one that fits your week.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Idea lists feel helpful. They change nothing. You skim fifty, save a few, keep none.
 Last January proved that the hard way. This year gets one pick, chosen well.
@@ -1612,7 +1612,7 @@ First move, week one
 Pick one quiet spot in your home. Sit there 20 min, no phone.
 Your time
 This plan uses 100 of your 120 minutes a week. The rest of your time stays yours.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -1669,17 +1669,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### One small New Year's resolution for parents (https://pickmyresolution.com/one-small-new-years-resolution-for-parents)
+### One small New Year's resolution for parents (https://keeponeresolution.com/one-small-new-years-resolution-for-parents)
 
-One small New Year's resolution for parents - Pick My Resolution
-Pick My Resolution
+One small New Year's resolution for parents - Keep One Resolution
+Keep One Resolution
 One small New Year's resolution for parents
 Parents do not get free hours. You get scraps: ten minutes here, ten there.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 A big list never stood a chance. Last January, it faded by February. The fix is not more willpower.
 Why the smallest size fits parents
@@ -1737,7 +1737,7 @@ Pick one quiet spot in your home. Sit there 10 min, no phone.
 Your time
 This plan uses all 30 minutes you offered.
 Kept small beats planned big. Every parent learns that by March.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -1794,17 +1794,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### New Year's resolution quiz (https://pickmyresolution.com/new-years-resolution-quiz)
+### New Year's resolution quiz (https://keeponeresolution.com/new-years-resolution-quiz)
 
-New Year's resolution quiz - Pick My Resolution
-Pick My Resolution
+New Year's resolution quiz - Keep One Resolution
+Keep One Resolution
 New Year's resolution quiz
 Four questions. One pick. No list of fifty.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Most quizzes end in a label. This one ends in a plan.
 The four questions, word for word
@@ -1832,7 +1832,7 @@ One note for when it gets hard.
 A weekly check-in prompt to copy.
 A lock-screen picture with 52 dots.
 The quiz takes about one minute. Your answers stay in your browser.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -1889,14 +1889,14 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### New Year's resolution picker (https://pickmyresolution.com/new-years-resolution-picker)
+### New Year's resolution picker (https://keeponeresolution.com/new-years-resolution-picker)
 
-New Year's Resolution Picker - Pick My Resolution
-Pick My Resolution
+New Year's Resolution Picker - Keep One Resolution
+Keep One Resolution
 New Year's Resolution Picker
 A sample pick, not yours yet
 Body and health
@@ -1905,7 +1905,7 @@ I felt drained a lot.
 I just forgot to do it.
 Take a short walk: 30 min, 4x a week.
 Why: a drained year, two hours, one alarm against forgetting.
-Pick my resolution
+Pick my one resolution
 One sample pick, start to finish
 First move, week one
 Put your shoes by the front door. Walk 30 min right after a meal.
@@ -1919,7 +1919,7 @@ It ends with a note to future you. This one opens:
 &ldquo;Dear future me, I felt drained a lot back then. My pick was Take a short walk.&rdquo;
 You finish yours in your own words. It stays on your device.
 Other pickers hand you fifty ideas. This one hands you one plan.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Four questions. One pick, sized to your week.
 How it works
@@ -2017,17 +2017,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### New Year's resolution examples (https://pickmyresolution.com/new-years-resolution-examples)
+### New Year's resolution examples (https://keeponeresolution.com/new-years-resolution-examples)
 
-New Year's resolution examples - Pick My Resolution
-Pick My Resolution
+New Year's resolution examples - Keep One Resolution
+Keep One Resolution
 New Year's resolution examples
 Real quiz results, word for word. Not wishes. Plans.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Each card below came from the quiz itself. Six parts of life. Six real examples.
 Examples at the full-time size
@@ -2075,7 +2075,7 @@ Put your book on your pillow now. Read 60 min in bed tonight.
 Your time
 This plan uses all 300 minutes you offered.
 Your example will differ from these. It will fit your answers, not theirs.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -2132,17 +2132,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### What to do when you break your New Year's resolution (https://pickmyresolution.com/what-to-do-when-you-break-your-new-years-resolution)
+### What to do when you break your New Year's resolution (https://keeponeresolution.com/what-to-do-when-you-break-your-new-years-resolution)
 
-What to do when you break your New Year's resolution - Pick My Resolution
-Pick My Resolution
+What to do when you break your New Year's resolution - Keep One Resolution
+Keep One Resolution
 What to do when you break your New Year's resolution
 A broken streak is data, not a verdict.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 You missed a day. Maybe a week. The old list would die here.
 This one does not have to. Last January is not this January.
@@ -2196,7 +2196,7 @@ Set a timer for 10 min. Clear the desk top into one box.
 Your time
 This plan uses all 30 minutes you offered.
 Start again this week, at half size. A small kept year beats a grand quit.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -2253,17 +2253,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### Realistic New Year's resolutions (https://pickmyresolution.com/realistic-new-years-resolutions)
+### Realistic New Year's resolutions (https://keeponeresolution.com/realistic-new-years-resolutions)
 
-Realistic New Year's resolutions - Pick My Resolution
-Pick My Resolution
+Realistic New Year's resolutions - Keep One Resolution
+Keep One Resolution
 Realistic New Year's resolutions
 Sized to a normal week. Two hours, not five.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Most lists assume empty evenings and endless energy.
 A realistic pick assumes neither.
@@ -2321,7 +2321,7 @@ Two hours is the middle quiz answer.
 Two plans here use even less.
 Your pick will differ from these.
 It will fit your answers, not theirs.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -2378,17 +2378,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### How to pick a New Year's resolution (https://pickmyresolution.com/how-to-pick-a-new-years-resolution)
+### How to pick a New Year's resolution (https://keeponeresolution.com/how-to-pick-a-new-years-resolution)
 
-How to pick a New Year's resolution - Pick My Resolution
-Pick My Resolution
+How to pick a New Year's resolution - Keep One Resolution
+Keep One Resolution
 How to pick a New Year's resolution
 Pick for the year you had. Not the year you wanted.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Last January's list asked for everything.
 This January, pick one thing well.
@@ -2431,7 +2431,7 @@ Your time
 This plan uses all 30 minutes you offered.
 Notice what the card never does.
 It never asks for five things.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -2488,17 +2488,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### New Year's resolution template (https://pickmyresolution.com/new-years-resolution-template)
+### New Year's resolution template (https://keeponeresolution.com/new-years-resolution-template)
 
-New Year's resolution template - Pick My Resolution
-Pick My Resolution
+New Year's resolution template - Keep One Resolution
+Keep One Resolution
 New Year's resolution template
 Copy it. Fill it. Keep one.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 A pick fades without a weekly rhythm.
 This template is that rhythm, on paper.
@@ -2551,7 +2551,7 @@ I hope you still notice that small start.
 The hard part was plain forgetting, some days.
 Did the small move still fit my week?
 From past me.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -2608,17 +2608,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### What is Quitter's Day? (https://pickmyresolution.com/what-is-quitters-day)
+### What is Quitter's Day? (https://keeponeresolution.com/what-is-quitters-day)
 
-What is Quitter's Day? - Pick My Resolution
-Pick My Resolution
+What is Quitter's Day? - Keep One Resolution
+Keep One Resolution
 What is Quitter's Day?
 The day most plans wobble. Yours can bend instead.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Quitter's Day is January's second Friday.
 In 2027, it falls on Friday, January 8.
@@ -2650,7 +2650,7 @@ Shrink the dose that week.
 Do half after any miss.
 Mark the week. Then keep going.
 The day passes. The pick stays.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -2707,17 +2707,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### How many New Year's resolutions should you have? (https://pickmyresolution.com/how-many-new-years-resolutions-should-you-have)
+### How many New Year's resolutions should you have? (https://keeponeresolution.com/how-many-new-years-resolutions-should-you-have)
 
-How many New Year's resolutions should you have? - Pick My Resolution
-Pick My Resolution
+How many New Year's resolutions should you have? - Keep One Resolution
+Keep One Resolution
 How many New Year's resolutions should you have?
 One. This year, keep one. Just one.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Last January, the list felt exciting.
 By spring, none of it had stuck.
@@ -2753,7 +2753,7 @@ Home
 Work
 Family and friends
 Mind and calm
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -2810,17 +2810,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### New Year's resolution tracker (https://pickmyresolution.com/new-years-resolution-tracker)
+### New Year's resolution tracker (https://keeponeresolution.com/new-years-resolution-tracker)
 
-New Year's resolution tracker - Pick My Resolution
-Pick My Resolution
+New Year's resolution tracker - Keep One Resolution
+Keep One Resolution
 New Year's resolution tracker
 Fifty-two dots. One kept week at a time.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 A tracker turns willpower into marks.
 Each mark is one kept week.
@@ -2861,7 +2861,7 @@ Its dose and first move sit below.
 Download it right after you pick.
 An empty dot is honest, not shameful.
 Next week is another dot.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -2918,17 +2918,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### Should you tell people your New Year's resolution? (https://pickmyresolution.com/should-you-tell-people-your-new-years-resolution)
+### Should you tell people your New Year's resolution? (https://keeponeresolution.com/should-you-tell-people-your-new-years-resolution)
 
-Should you tell people your New Year's resolution? - Pick My Resolution
-Pick My Resolution
+Should you tell people your New Year's resolution? - Keep One Resolution
+Keep One Resolution
 Should you tell people your New Year's resolution?
 Tell one friend. Not everyone. Not nobody.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Yes. Tell exactly one friend.
 Keep it off public feeds.
@@ -2957,10 +2957,10 @@ Share text, word for word
 My 2027 resolution:
 Tell a friend your goal: 30 min, 2x a week.
 First move: Text one friend your money goal today. Ask them to check in Friday.
-Pick yours at https://pickmyresolution.com/?via=share
+Pick yours at https://keeponeresolution.com/?via=share
 Send it to one person only.
 Ask for check-ins, not applause.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -3017,17 +3017,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### New Year's resolution to save money (https://pickmyresolution.com/new-years-resolution-to-save-money)
+### New Year's resolution to save money (https://keeponeresolution.com/new-years-resolution-to-save-money)
 
-New Year's resolution to save money - Pick My Resolution
-Pick My Resolution
+New Year's resolution to save money - Keep One Resolution
+Keep One Resolution
 New Year's resolution to save money
 One saving pick. Two minutes at a time.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Saving fails as a vague wish.
 It works as an auto move.
@@ -3055,7 +3055,7 @@ What this page is not
 Not a budget overhaul plan.
 Not investment or debt advice.
 One move, repeated all year.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -3112,17 +3112,17 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-### New Year's resolution to exercise more (https://pickmyresolution.com/new-years-resolution-to-exercise-more)
+### New Year's resolution to exercise more (https://keeponeresolution.com/new-years-resolution-to-exercise-more)
 
-New Year's resolution to exercise more - Pick My Resolution
-Pick My Resolution
+New Year's resolution to exercise more - Keep One Resolution
+Keep One Resolution
 New Year's resolution to exercise more
 Move more, in doses you keep.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Exercise more is a wish.
 These are its engine picks.
@@ -3168,7 +3168,7 @@ No outcome promised
 No weight loss is promised here.
 No fitness level is promised either.
 Only sessions, sized to your week.
-Pick my resolution
+Pick my one resolution
 Free forever. No ads. No accounts.
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -3225,20 +3225,20 @@ Money piled up on me. 30 minutes a week. Life got busy.
 Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-## Ask (https://pickmyresolution.com/ask)
+## Ask (https://keeponeresolution.com/ask)
 
-Ask Pick My Resolution in your own words - one resolution you can keep
-Pick My Resolution
+Ask Keep One Resolution in your own words - one resolution you can keep
+Keep One Resolution
 Ask in your own words
 Skip the four questions. Say your year in a line or two.
 We run the same engine as the four questions
 , right on this page. Your words never leave this device. Nothing is sent or saved.
 Your year, in your words
-Pick my resolution
+Pick my one resolution
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.

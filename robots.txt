@@ -37,4 +37,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://pickmyresolution.com/sitemap.xml
+Sitemap: https://keeponeresolution.com/sitemap.xml

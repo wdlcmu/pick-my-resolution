@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ask Pick My Resolution in your own words - one resolution you can keep</title>
+<title>Ask Keep One Resolution in your own words - one resolution you can keep</title>
 <meta name="description" content="Say your year in your own words. Get one resolution you can keep, sized to your week. Same engine as the four questions. Your words never leave this device.">
-<link rel="canonical" href="https://pickmyresolution.com/ask">
+<link rel="canonical" href="https://keeponeresolution.com/ask">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Pick My Resolution">
-<meta property="og:title" content="Ask Pick My Resolution in your own words">
+<meta property="og:site_name" content="Keep One Resolution">
+<meta property="og:title" content="Ask Keep One Resolution in your own words">
 <meta property="og:description" content="Say your year in your own words. Get one resolution you can keep, sized to your week.">
-<meta property="og:url" content="https://pickmyresolution.com/ask">
+<meta property="og:url" content="https://keeponeresolution.com/ask">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ask Pick My Resolution in your own words">
+<meta name="twitter:title" content="Ask Keep One Resolution in your own words">
 <meta name="twitter:description" content="Say your year in your own words. Get one resolution you can keep, sized to your week.">
 <style>
   :root { --accent: #0f766e; --ink: #1a1a1a; --muted: #6b7280; --line: #dce8e2; --card: #ffffff; }
@@ -222,14 +222,14 @@ window.FLEET_CFG = {
 </head>
 <body>
 <div class="wrap">
-  <p class="brand"><a href="/">Pick My Resolution</a></p>
+  <p class="brand"><a href="/">Keep One Resolution</a></p>
   <h1>Ask in your own words</h1>
   <p class="sub">Skip the four questions. Say your year in a line or two.</p>
   <p>We run the same engine as the <a href="/">four questions</a>, right on this page. Your words never leave this device. Nothing is sent or saved.</p>
 
   <label for="q">Your year, in your words</label>
   <textarea id="q" rows="3" placeholder="My body felt drained all year. I have 2 hours a week. I just forgot to do it last time."></textarea>
-  <button class="cta" id="ask" type="button">Pick my resolution</button>
+  <button class="cta" id="ask" type="button">Pick my one resolution</button>
   <p>Or tap an example:</p>
   <div class="chips" role="group" aria-label="Example answers">
     <button type="button" class="chip" data-q="My body felt drained all year. I have 2 hours a week. I just forgot to do it last time.">My body felt drained. 2 hours a week. I just forgot.</button>
@@ -241,7 +241,7 @@ window.FLEET_CFG = {
   <p id="more" hidden>Want your pick as a lock-screen picture? <a href="/">The four questions</a> build it from this same pick.</p>
 
   <footer>
-    <p>Built with Muse.<br>
+    <p>Keep One Resolution. Built with Muse.<br>
     <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
   </footer>
 </div>
@@ -570,7 +570,7 @@ function buildResult(a) {
     "My 2027 resolution:",
     resolution,
     "First move: " + firstMove,
-    "Pick yours at https://pickmyresolution.com/?via=share"
+    "Pick yours at https://keeponeresolution.com/?via=share"
   ].join("\n");
   return {
     resolution: resolution,
@@ -977,12 +977,12 @@ function baselinePmr(raw) {
   var tq = t.replace(/[\s.!?]+$/, "");
   var needLine = "Say the part of life, how the year felt, and what made past plans fail, in your words. Or tap an example above to see the shape.";
   if (/^(sup|hi|hello|hey|yo|hiya|howdy|hey there|hi there|hello there|what's up|whats up|good morning|good afternoon|good evening)$/.test(tq)) {
-    return { label: "Hello", lines: ["Hi. This is Pick My Resolution.", "Say the part of life, how the year felt, and what made past plans fail, in your words, and I will pick one resolution that fits your week. Or tap an example above to see the shape."] };
+    return { label: "Hello", lines: ["Hi. This is Keep One Resolution.", "Say the part of life, how the year felt, and what made past plans fail, in your words, and I will pick one resolution that fits your week. Or tap an example above to see the shape."] };
   }
   if (/^(what is|what's|whats) (this|this site|this page|this place)$/.test(tq)
     || /^what does this (site|page) do$/.test(tq)
     || /^who are you$/.test(tq) || /^what do you do$/.test(tq)) {
-    return { label: "About this site", lines: ["This is Pick My Resolution. It picks one resolution that fits your real week.", "Say the part of life, how the year felt, and what made past plans fail, and you get the pick, the first move, a guard for when it gets hard, and a note to future you."] };
+    return { label: "About this site", lines: ["This is Keep One Resolution. It picks one resolution that fits your real week.", "Say the part of life, how the year felt, and what made past plans fail, and you get the pick, the first move, a guard for when it gets hard, and a note to future you."] };
   }
   var expr = tq.replace(/^(what's|what is|whats|calculate|compute|solve|how much is)\s+/, "");
   expr = expr.replace(/\s+/g, "").replace(/×/g, "*").replace(/÷/g, "/");
@@ -1086,7 +1086,7 @@ document.querySelectorAll(".chip").forEach(function (ch) { ch.addEventListener("
 <script>
 "use strict";
 /* ================= Fleet analytics — PostHog rollout (2026-10-25) =================
-   Pick My Resolution joins the fleet PostHog project (624507), rolling out the
+   Keep One Resolution joins the fleet PostHog project (624507), rolling out the
    pattern the Present Picker pilot proved on 2026-10-25. Every event
    carries $host automatically; site_id is registered as the friendly
    label. Posture: autocapture off, session recording off, no

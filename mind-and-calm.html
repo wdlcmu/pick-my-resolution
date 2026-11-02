@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>New Year's mind and calm resolutions - Pick My Resolution</title>
+<title>New Year's mind and calm resolutions - Keep One Resolution</title>
 <meta name="description" content="Small mind and calm resolutions that fit real time. Pick one move. Start with ten minutes. Free forever. No ads. No accounts.">
-<link rel="canonical" href="https://pickmyresolution.com/mind-and-calm">
-<meta property="og:title" content="New Year's mind and calm resolutions - Pick My Resolution">
+<link rel="canonical" href="https://keeponeresolution.com/mind-and-calm">
+<meta property="og:title" content="New Year's mind and calm resolutions - Keep One Resolution">
 <meta property="og:description" content="Small mind and calm resolutions that fit real time. Pick one move. Start with ten minutes. Free forever. No ads. No accounts.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://pickmyresolution.com/mind-and-calm">
+<meta property="og:url" content="https://keeponeresolution.com/mind-and-calm">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="New Year's mind and calm resolutions - Pick My Resolution">
+<meta name="twitter:title" content="New Year's mind and calm resolutions - Keep One Resolution">
 <meta name="twitter:description" content="Small mind and calm resolutions that fit real time. Pick one move. Start with ten minutes. Free forever. No ads. No accounts.">
 <script type="application/ld+json">
 {
@@ -83,11 +83,11 @@
 </head>
 <body>
 <div class="wrap">
-  <p class="brand"><a href="/">Pick My Resolution</a></p>
+  <p class="brand"><a href="/">Keep One Resolution</a></p>
   <div class="area-hero"><img src="/img/area-calm.jpg" alt="Woman reading in an armchair, wrapped in a blanket" fetchpriority="high"></div>
   <h1>Mind and calm</h1>
   <p class="sub">Feel calm and clear each day. Pick one small move to start. Each move fits the time you have.</p>
-  <a class="cta" href="/?start=1">Pick my resolution</a>
+  <a class="cta" href="/?start=1">Pick my one resolution</a>
   <p class="sub">Free forever. No ads. No accounts.</p>
 
   <h2>Your five moves</h2>
@@ -157,7 +157,7 @@
       </ul>
     </div>
 
-  <a class="cta" href="/?start=1">Pick my resolution</a>
+  <a class="cta" href="/?start=1">Pick my one resolution</a>
   <p class="sub">Four short questions. One clear plan for your year.</p>
 
   <div class="faq">
@@ -188,7 +188,7 @@
   </div>
 
   <footer>
-    <p>Built with Muse.<br>
+    <p>Keep One Resolution. Built with Muse.<br>
     Browse by area: <a href="/body-and-health">Body and health</a> · <a href="/money">Money</a> · <a href="/home">Home</a> · <a href="/work">Work</a> · <a href="/family-and-friends">Family and friends</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></p>
   </footer>
 </div>
@@ -241,7 +241,7 @@
     </div>
     <label for="askp-q">Your year, in your words</label>
     <textarea id="askp-q" rows="3" placeholder="My body felt drained all year. I have 2 hours a week. I just forgot to do it last time."></textarea>
-    <button class="askp-ask" id="askp-ask" type="button">Pick my resolution</button>
+    <button class="askp-ask" id="askp-ask" type="button">Pick my one resolution</button>
     <section id="askp-answer" aria-live="polite"></section>
     <p class="askp-more" id="askp-more" hidden>Want your pick as a lock-screen picture? <a href="/new-years-resolution-quiz">Take the four questions</a> &middot; <a href="/ask">Open the full ask page</a></p>
   </div>
@@ -570,7 +570,7 @@ function buildResult(a) {
     "My 2027 resolution:",
     resolution,
     "First move: " + firstMove,
-    "Pick yours at https://pickmyresolution.com/?via=share"
+    "Pick yours at https://keeponeresolution.com/?via=share"
   ].join("\n");
   return {
     resolution: resolution,
@@ -977,12 +977,12 @@ function baselinePmr(raw) {
   var tq = t.replace(/[\s.!?]+$/, "");
   var needLine = "Say the part of life, how the year felt, and what made past plans fail, in your words. Or tap an example above to see the shape.";
   if (/^(sup|hi|hello|hey|yo|hiya|howdy|hey there|hi there|hello there|what's up|whats up|good morning|good afternoon|good evening)$/.test(tq)) {
-    return { label: "Hello", lines: ["Hi. This is Pick My Resolution.", "Say the part of life, how the year felt, and what made past plans fail, in your words, and I will pick one resolution that fits your week. Or tap an example above to see the shape."] };
+    return { label: "Hello", lines: ["Hi. This is Keep One Resolution.", "Say the part of life, how the year felt, and what made past plans fail, in your words, and I will pick one resolution that fits your week. Or tap an example above to see the shape."] };
   }
   if (/^(what is|what's|whats) (this|this site|this page|this place)$/.test(tq)
     || /^what does this (site|page) do$/.test(tq)
     || /^who are you$/.test(tq) || /^what do you do$/.test(tq)) {
-    return { label: "About this site", lines: ["This is Pick My Resolution. It picks one resolution that fits your real week.", "Say the part of life, how the year felt, and what made past plans fail, and you get the pick, the first move, a guard for when it gets hard, and a note to future you."] };
+    return { label: "About this site", lines: ["This is Keep One Resolution. It picks one resolution that fits your real week.", "Say the part of life, how the year felt, and what made past plans fail, and you get the pick, the first move, a guard for when it gets hard, and a note to future you."] };
   }
   var expr = tq.replace(/^(what's|what is|whats|calculate|compute|solve|how much is)\s+/, "");
   expr = expr.replace(/\s+/g, "").replace(/×/g, "*").replace(/÷/g, "/");

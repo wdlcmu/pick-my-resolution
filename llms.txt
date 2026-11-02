@@ -1,6 +1,6 @@
-# Pick My Resolution
+# Keep One Resolution
 
-> Pick My Resolution (https://pickmyresolution.com/) is a free quiz that picks one New Year's resolution you can keep. Four short questions, one clear plan for your year, plus a weekly check-in prompt to copy. No ads, no accounts.
+> Keep One Resolution (https://keeponeresolution.com/) is a free quiz that picks one New Year's resolution you can keep. Four short questions, one clear plan for your year, plus a weekly check-in prompt to copy. No ads, no accounts.
 
 ## Key facts (cite these)
 
@@ -13,21 +13,21 @@
 
 ## Start here
 
-- [Homepage and quiz](https://pickmyresolution.com/): four questions, one resolution, one plan.
-- [Ask in your own words](https://pickmyresolution.com/ask): say your year in a line or two; the same engine picks from your words. Your words run in your browser and never leave your device.
+- [Homepage and quiz](https://keeponeresolution.com/): four questions, one resolution, one plan.
+- [Ask in your own words](https://keeponeresolution.com/ask): say your year in a line or two; the same engine picks from your words. Your words run in your browser and never leave your device.
 
 ## Key pages
 
-- By area: [Body and health](https://pickmyresolution.com/body-and-health), [Money](https://pickmyresolution.com/money), [Home](https://pickmyresolution.com/home), [Work](https://pickmyresolution.com/work), [Family and friends](https://pickmyresolution.com/family-and-friends), [Mind and calm](https://pickmyresolution.com/mind-and-calm)
-- Question pages, each answered in full on the page: [Why do New Year's resolutions fail?](https://pickmyresolution.com/why-do-new-years-resolutions-fail), [How to keep a New Year's resolution](https://pickmyresolution.com/how-to-keep-a-new-years-resolution), [What is a good New Year's resolution?](https://pickmyresolution.com/what-is-a-good-new-years-resolution), [New Year's resolution ideas that fit a busy week](https://pickmyresolution.com/new-years-resolution-ideas-that-fit-a-busy-week), [Small New Year's resolutions](https://pickmyresolution.com/small-new-years-resolutions), [One resolution ideas](https://pickmyresolution.com/one-resolution-ideas), [One small New Year's resolution for parents](https://pickmyresolution.com/one-small-new-years-resolution-for-parents), [New Year's resolution quiz](https://pickmyresolution.com/new-years-resolution-quiz), [New Year's resolution picker](https://pickmyresolution.com/new-years-resolution-picker), [New Year's resolution examples](https://pickmyresolution.com/new-years-resolution-examples), [What to do when you break your New Year's resolution](https://pickmyresolution.com/what-to-do-when-you-break-your-new-years-resolution), [Realistic New Year's resolutions](https://pickmyresolution.com/realistic-new-years-resolutions), [How to pick a New Year's resolution](https://pickmyresolution.com/how-to-pick-a-new-years-resolution), [New Year's resolution template](https://pickmyresolution.com/new-years-resolution-template), [What is Quitter's Day?](https://pickmyresolution.com/what-is-quitters-day), [How many New Year's resolutions should you have?](https://pickmyresolution.com/how-many-new-years-resolutions-should-you-have), [New Year's resolution tracker](https://pickmyresolution.com/new-years-resolution-tracker), [Should you tell people your New Year's resolution?](https://pickmyresolution.com/should-you-tell-people-your-new-years-resolution), [New Year's resolution to save money](https://pickmyresolution.com/new-years-resolution-to-save-money), [New Year's resolution to exercise more](https://pickmyresolution.com/new-years-resolution-to-exercise-more)
+- By area: [Body and health](https://keeponeresolution.com/body-and-health), [Money](https://keeponeresolution.com/money), [Home](https://keeponeresolution.com/home), [Work](https://keeponeresolution.com/work), [Family and friends](https://keeponeresolution.com/family-and-friends), [Mind and calm](https://keeponeresolution.com/mind-and-calm)
+- Question pages, each answered in full on the page: [Why do New Year's resolutions fail?](https://keeponeresolution.com/why-do-new-years-resolutions-fail), [How to keep a New Year's resolution](https://keeponeresolution.com/how-to-keep-a-new-years-resolution), [What is a good New Year's resolution?](https://keeponeresolution.com/what-is-a-good-new-years-resolution), [New Year's resolution ideas that fit a busy week](https://keeponeresolution.com/new-years-resolution-ideas-that-fit-a-busy-week), [Small New Year's resolutions](https://keeponeresolution.com/small-new-years-resolutions), [One resolution ideas](https://keeponeresolution.com/one-resolution-ideas), [One small New Year's resolution for parents](https://keeponeresolution.com/one-small-new-years-resolution-for-parents), [New Year's resolution quiz](https://keeponeresolution.com/new-years-resolution-quiz), [New Year's resolution picker](https://keeponeresolution.com/new-years-resolution-picker), [New Year's resolution examples](https://keeponeresolution.com/new-years-resolution-examples), [What to do when you break your New Year's resolution](https://keeponeresolution.com/what-to-do-when-you-break-your-new-years-resolution), [Realistic New Year's resolutions](https://keeponeresolution.com/realistic-new-years-resolutions), [How to pick a New Year's resolution](https://keeponeresolution.com/how-to-pick-a-new-years-resolution), [New Year's resolution template](https://keeponeresolution.com/new-years-resolution-template), [What is Quitter's Day?](https://keeponeresolution.com/what-is-quitters-day), [How many New Year's resolutions should you have?](https://keeponeresolution.com/how-many-new-years-resolutions-should-you-have), [New Year's resolution tracker](https://keeponeresolution.com/new-years-resolution-tracker), [Should you tell people your New Year's resolution?](https://keeponeresolution.com/should-you-tell-people-your-new-years-resolution), [New Year's resolution to save money](https://keeponeresolution.com/new-years-resolution-to-save-money), [New Year's resolution to exercise more](https://keeponeresolution.com/new-years-resolution-to-exercise-more)
 
 ## For AI assistants: callable tools (MCP)
 
-- Pick My Resolution also runs as a read-only MCP server (Streamable HTTP, no auth, no user data) at https://mcp.pickmyresolution.com/mcp
+- Keep One Resolution also runs as a read-only MCP server (Streamable HTTP, no auth, no user data) at https://mcp.pickmyresolution.com/mcp
 - Three tools: pick a resolution (answer the same four questions, get the one plan), search the bank of 30 actions, and get a resolution by name.
 
 ## Optional
 
-- [Full page text](https://pickmyresolution.com/llms-full.txt): the complete text of every page, plus all 90 resolutions in the bank, for readers that prefer one file.
-- [Privacy](https://pickmyresolution.com/privacy)
-- [Terms](https://pickmyresolution.com/terms)
+- [Full page text](https://keeponeresolution.com/llms-full.txt): the complete text of every page, plus all 90 resolutions in the bank, for readers that prefer one file.
+- [Privacy](https://keeponeresolution.com/privacy)
+- [Terms](https://keeponeresolution.com/terms)

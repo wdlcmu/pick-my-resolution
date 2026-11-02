@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>New Year's Resolution Picker - Pick My Resolution</title>
+<title>New Year's Resolution Picker - Keep One Resolution</title>
 <meta name="description" content="A New Year's resolution picker that gives you one resolution you can keep. Four questions. One pick, sized to your week. A real pick is shown before you start. Free. No ads. No accounts.">
-<link rel="canonical" href="https://pickmyresolution.com/new-years-resolution-picker">
-<meta property="og:title" content="New Year's Resolution Picker - Pick My Resolution">
+<link rel="canonical" href="https://keeponeresolution.com/new-years-resolution-picker">
+<meta property="og:title" content="New Year's Resolution Picker - Keep One Resolution">
 <meta property="og:description" content="A New Year's resolution picker that gives you one resolution you can keep. Four questions. One pick, sized to your week. A real pick is shown before you start. Free. No ads. No accounts.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://pickmyresolution.com/new-years-resolution-picker">
+<meta property="og:url" content="https://keeponeresolution.com/new-years-resolution-picker">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="New Year's Resolution Picker - Pick My Resolution">
+<meta name="twitter:title" content="New Year's Resolution Picker - Keep One Resolution">
 <meta name="twitter:description" content="A New Year's resolution picker that gives you one resolution you can keep. Four questions. One pick, sized to your week. A real pick is shown before you start. Free. No ads. No accounts.">
 <script type="application/ld+json">
 {
@@ -115,6 +115,11 @@
   .chip .tick { display: none; font-weight: 800; margin-right: 6px; }
   .chip[aria-pressed="true"] { border-color: var(--accent); background: #e0f2ee; }
   .chip[aria-pressed="true"] .tick { display: inline; }
+  .sci-list { margin: 6px 0 0; padding-left: 18px; text-align: left; }
+  .sci-list li { margin: 6px 0; line-height: 1.5; }
+  .sci-q { font-weight: 700; margin: 16px 0 2px; }
+  .sci-plan { background: #f0fdf9; border: 1px dashed var(--accent); border-radius: 10px; padding: 10px 12px; font-size: 16px; margin: 6px 0; }
+  .tac-note { font-size: 14px; color: var(--muted); margin: 2px 0 6px; }
   .hint { min-height: 20px; font-size: 14px; color: var(--accent); font-weight: 600; margin: 8px 0 0; }
   .card { background: var(--card); border: 2px solid var(--line); border-radius: 14px; padding: 16px; margin: 14px 0; }
   .big { font-size: 24px; font-weight: 800; line-height: 1.3; margin: 4px 0 6px; }
@@ -188,7 +193,7 @@
   <!-- ============ SCREEN 1: PICKER HOME ============ -->
   <section class="screen on" id="s-home">
     <div class="wrap">
-    <p class="brand"><a href="/">Pick My Resolution</a></p>
+    <p class="brand"><a href="/">Keep One Resolution</a></p>
     <h1>New Year's Resolution Picker</h1>
     <div class="card pk-card">
       <img class="pk-photo" src="/img/hero-walk.webp" width="800" height="600" alt="Two friends talking on a walk in the park" fetchpriority="high">
@@ -204,7 +209,7 @@
         <p class="pk-why">Why: a drained year, two hours, one alarm against forgetting.</p>
       </div>
     </div>
-    <button class="cta" id="btn-start">Pick my resolution</button>
+    <button class="cta" id="btn-start">Pick my one resolution</button>
     <div class="pk-plan">
       <h2>One sample pick, start to finish</h2>
       <div class="card">
@@ -222,9 +227,20 @@
       <p>You finish yours in your own words. It stays on your device.</p>
     </div>
     <p>Other pickers hand you fifty ideas. This one hands you one plan.</p>
-    <button class="cta" id="btn-start-2">Pick my resolution</button>
+    <button class="cta" id="btn-start-2">Pick my one resolution</button>
     <p class="sub">Free forever. No ads. No accounts.</p>
     <p class="sub">Four questions. One pick, sized to your week.</p>
+    <div class="science">
+      <h2>The science under the plan</h2>
+      <p>Four findings from real research shape every plan here:</p>
+      <ul class="sci-list">
+        <li><strong>If-then plans.</strong> Gollwitzer: "If 9am, then I walk" beats trying.</li>
+        <li><strong>Tiny first steps.</strong> BJ Fogg: start so small it is hard to skip.</li>
+        <li><strong>The fresh start effect.</strong> Dai, Milkman, and Riis: a new year lifts motivation.</li>
+        <li><strong>Weekly check-ins.</strong> Watching your own record keeps the streak alive.</li>
+      </ul>
+      <p>Your plan page lets you set each one yourself.</p>
+    </div>
     <div class="how">
       <h2>How it works</h2>
       <ol>
@@ -259,7 +275,7 @@
     </div>
     <div class="maker">
       <h2>Made by a dad, on the side</h2>
-      <p>I&apos;m Billy, a dad in Redmond, Washington. I build these tools on the side, with AI &mdash; one idea, one website, no company behind it. This one keeps it to one resolution, sized to a real week, because lists die by spring.</p>
+      <p>I&apos;m Billy, a dad in Redmond, Washington. I build these tools on the side, with AI &mdash; one idea, one website, no company behind it. Keep One Resolution holds it to one resolution, sized to a real week, because lists die by spring.</p>
     </div>
   <div class="qnav">
     <h2>More questions people ask</h2>
@@ -307,6 +323,23 @@
       <p class="label">Your time</p>
       <p id="r-note"></p>
     </div>
+    <div class="card">
+      <p class="label">Why this plan can stick</p>
+      <ul class="sci-list">
+        <li><strong>Your guard line is an if-then plan.</strong> Gollwitzer found naming the moment first lifts follow-through.</li>
+        <li><strong>Your first move is tiny on purpose.</strong> Fogg: small starts you cannot skip beat dreaded ones.</li>
+        <li><strong>Your check-in is you watching you.</strong> People who track their own record keep going longer.</li>
+      </ul>
+    </div>
+    <p class="label">Make it stick: your tactics</p>
+    <p class="sci-q">1. Pick your cue</p>
+    <p class="tac-note">Tie your move to a moment that already happens every day.</p>
+    <div class="chips" id="tac-cue"></div>
+    <p class="sci-q">2. Your if-then plan</p>
+    <p class="sci-plan" id="tac-plan">Pick a cue above, and your plan writes itself here.</p>
+    <p class="sci-q">3. Pick your check-in rhythm</p>
+    <div class="chips" id="tac-rhythm"></div>
+    <p class="tac-note">Your picks join your check-in text below. They save on this device only.</p>
     <p class="label">Your weekly check-in</p>
     <pre id="r-checkin"></pre>
     <button class="cta" id="btn-copy-checkin">Copy my weekly check-in</button>
@@ -339,7 +372,7 @@
   </section>
 
   <footer>
-    <p>Built with Muse.<br>
+    <p>Keep One Resolution. Built with Muse.<br>
     Browse by area: <a href="/body-and-health">Body and health</a> · <a href="/money">Money</a> · <a href="/home">Home</a> · <a href="/work">Work</a> · <a href="/family-and-friends">Family and friends</a> · <a href="/mind-and-calm">Mind and calm</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a><br>
     More family tools: <a href="https://fillmybracket.com">Fill My Bracket, your March bracket</a></p>
   </footer>
@@ -668,7 +701,7 @@ function buildResult(a) {
     "My 2027 resolution:",
     resolution,
     "First move: " + firstMove,
-    "Pick yours at https://pickmyresolution.com/?via=share"
+    "Pick yours at https://keeponeresolution.com/?via=share"
   ].join("\n");
   return {
     resolution: resolution,
@@ -723,13 +756,15 @@ var quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "" };
 var TOTAL_STEPS = STEPS.length + 1; // 4 questions + 1 optional specificity step
 var current = null;
 var letter = null;
+var tactics = { cue: null, rhythm: null };
 
 function saveResult() {
   try {
     localStorage.setItem(KEY, JSON.stringify({
       answers: { area: quiz.area, off: quiz.off, time: quiz.time, fail: quiz.fail, when: quiz.when || "" },
       result: current,
-      letter: letter
+      letter: letter,
+      tactics: tactics
     }));
   } catch (e) {}
 }
@@ -855,12 +890,109 @@ function renderResult() {
   // a draft only: nothing saves until the letter card is made, and a
   // saved letter (restored after this render) replaces the draft.
   if (current.futureNote && $("lt-note")) $("lt-note").value = current.futureNote;
+  renderTactics();
+}
+// Science tactics (2026-11-02): the result flow shows the research under
+// the plan and lets the user choose the tactics themselves: a daily cue
+// (habit anchor), their own if-then plan in Gollwitzer's shape, and a
+// check-in rhythm (self-monitoring). Choices join the copyable check-in
+// text and save on this device with the plan.
+var TAC_CUES = [
+  { k: "breakfast", label: "After breakfast", plan: "breakfast ends" },
+  { k: "lunch", label: "After lunch", plan: "lunch ends" },
+  { k: "work", label: "After work", plan: "work ends" },
+  { k: "dinner", label: "After dinner", plan: "dinner ends" },
+  { k: "wake", label: "When I wake up", plan: "I wake up" }
+];
+var TAC_RHYTHMS = [
+  { k: "weekly", label: "Once a week", text: "once a week" },
+  { k: "twice", label: "Twice a week", text: "twice a week" },
+  { k: "daily", label: "Every day, 2 minutes", text: "every day, for two minutes" }
+];
+function tacFind(list, k) {
+  for (var i = 0; i < list.length; i++) if (list[i].k === k) return list[i];
+  return null;
+}
+function cleanTactics(t) {
+  var out = { cue: null, rhythm: null };
+  if (t && typeof t === "object") {
+    if (tacFind(TAC_CUES, t.cue)) out.cue = t.cue;
+    if (tacFind(TAC_RHYTHMS, t.rhythm)) out.rhythm = t.rhythm;
+  }
+  return out;
+}
+function tacAction() {
+  var a = (current.resolution || "").split(":")[0];
+  return a.charAt(0).toLowerCase() + a.slice(1);
+}
+function tacBaseCheckin() {
+  // Strip tactic lines a previous save already folded in, so re-rendering
+  // never stacks them twice.
+  var lines = (current.checkin || "").split("\n");
+  var kept = [];
+  for (var i = 0; i < lines.length; i++) {
+    if (lines[i].indexOf("My if-then plan: ") === 0) continue;
+    if (lines[i].indexOf("My check-in rhythm: ") === 0) continue;
+    kept.push(lines[i]);
+  }
+  var base = kept.join("\n");
+  return base.replace("Check-in for my resolution.", "Weekly check-in for my resolution.");
+}
+function applyTactics() {
+  if (!current) return;
+  var out = tacBaseCheckin();
+  if (tactics.rhythm === "daily") {
+    out = out.replace("Weekly check-in for my resolution.", "Check-in for my resolution.");
+  }
+  var extra = [];
+  var cue = tacFind(TAC_CUES, tactics.cue);
+  if (cue) extra.push("My if-then plan: If " + cue.plan + ", then I will " + tacAction() + ".");
+  var rhy = tacFind(TAC_RHYTHMS, tactics.rhythm);
+  if (rhy) extra.push("My check-in rhythm: " + rhy.text + ".");
+  if (extra.length) out = out + "\n" + extra.join("\n");
+  current.checkin = out;
+  $("r-checkin").textContent = out;
+  var plan = $("tac-plan");
+  if (plan) {
+    plan.textContent = cue
+      ? "If " + cue.plan + ", then I will " + tacAction() + "."
+      : "Pick a cue above, and your plan writes itself here.";
+  }
+}
+function renderTacticChips(id, list, key) {
+  var box = $(id);
+  if (!box) return;
+  box.innerHTML = list.map(function (o) {
+    var on = tactics[key] === o.k;
+    return '<button class="chip" data-k="' + o.k + '" aria-pressed="' + on + '">' +
+      '<span class="tick">\u2713</span>' + o.label + "</button>";
+  }).join("");
+  var chips = box.querySelectorAll(".chip");
+  for (var c = 0; c < chips.length; c++) {
+    chips[c].onclick = (function (el) {
+      return function () {
+        var k = el.getAttribute("data-k");
+        tactics[key] = (tactics[key] === k) ? null : k;
+        saveResult();
+        renderTactics();
+      };
+    })(chips[c]);
+  }
+}
+function renderTactics() {
+  if (!current) return;
+  renderTacticChips("tac-cue", TAC_CUES, "cue");
+  renderTacticChips("tac-rhythm", TAC_RHYTHMS, "rhythm");
+  applyTactics();
 }
 function finishQuiz() {
   current = buildResult(quiz);
   // A fresh pick starts with no letter; the old pick's letter must not
   // ride into the new saved record.
   letter = null;
+  // A fresh pick also starts with no tactics; the old pick's cue and
+  // rhythm must not ride into the new saved record.
+  tactics = { cue: null, rhythm: null };
   saveResult();
   // Measurement (Sprint Lane 1, Oct 31, 2026): a typed week-one plan is
   // the first-action commitment. Count it as its own artifact so a pick
@@ -988,7 +1120,7 @@ function drawYearCard() {
   c.fillStyle = glow; c.fillRect(0, 0, 1080, 1350);
   // Brand + label
   c.fillStyle = "#f59f00"; c.font = "700 30px " + F;
-  c.fillText("PICK MY RESOLUTION", L, 108);
+  c.fillText("KEEP ONE RESOLUTION", L, 108);
   c.fillStyle = "#ffd88a"; c.font = "700 28px " + F;
   c.fillText("MY " + p.year + " RESOLUTION", L, 198);
   // The resolution name, big. Drop a size if a long name needs it.
@@ -1046,7 +1178,7 @@ function drawYearCard() {
   // Footer
   c.fillStyle = "#8fb3a4"; c.font = "400 26px " + F;
   c.fillText("Built with Muse.", L, 1292);
-  var site = "pickmyresolution.com";
+  var site = "keeponeresolution.com";
   c.fillText(site, 1080 - L - c.measureText(site).width, 1292);
   cv.toBlob(function (blob) {
     ycBlob = blob;
@@ -1165,7 +1297,7 @@ function drawLetterCard() {
   glow.addColorStop(0, "rgba(245,159,0,0.38)"); glow.addColorStop(1, "rgba(245,159,0,0)");
   c.fillStyle = glow; c.fillRect(0, 0, 1080, 1350);
   c.fillStyle = "#f59f00"; c.font = "700 30px " + F;
-  c.fillText("PICK MY RESOLUTION", L, 108);
+  c.fillText("KEEP ONE RESOLUTION", L, 108);
   c.fillStyle = "#ffd88a"; c.font = "700 28px " + F;
   c.fillText("A NOTE TO FUTURE YOU", L, 198);
   c.fillStyle = "#ffffff"; c.font = "800 66px " + F;
@@ -1196,7 +1328,7 @@ function drawLetterCard() {
   c.fillText(openText, L, 1188);
   c.fillStyle = "#8fb3a4"; c.font = "400 26px " + F;
   c.fillText("Built with Muse.", L, 1292);
-  var site = "pickmyresolution.com";
+  var site = "keeponeresolution.com";
   c.fillText(site, 1080 - L - c.measureText(site).width, 1292);
   cv.toBlob(function (blob) {
     ltBlob = blob;
@@ -1289,6 +1421,7 @@ if (hasStartFlag()) {
   quiz.fail = saved.answers.fail;
   quiz.when = saved.answers.when || "";
   current = saved.result;
+  tactics = cleanTactics(saved.tactics);
   // Plans saved before the Oct 30, 2026 check-in depth build carry the
   // old generic check-in and no future note. The same answers through
   // the current engine give the same resolution, first move, and guard
@@ -1315,7 +1448,7 @@ if (hasStartFlag()) {
 <script>
 "use strict";
 /* ================= Fleet analytics — PostHog rollout (2026-10-25) =================
-   Pick My Resolution joins the fleet PostHog project (624507), rolling out the
+   Keep One Resolution joins the fleet PostHog project (624507), rolling out the
    pattern the Present Picker pilot proved on 2026-10-25. Every event
    carries $host automatically; site_id is registered as the friendly
    label. Posture: autocapture off, session recording off, no
@@ -1451,7 +1584,7 @@ function fleetSessionMarks(){
     </div>
     <label for="askp-q">Your year, in your words</label>
     <textarea id="askp-q" rows="3" placeholder="My body felt drained all year. I have 2 hours a week. I just forgot to do it last time."></textarea>
-    <button class="askp-ask" id="askp-ask" type="button">Pick my resolution</button>
+    <button class="askp-ask" id="askp-ask" type="button">Pick my one resolution</button>
     <section id="askp-answer" aria-live="polite"></section>
     <p class="askp-more" id="askp-more" hidden>Want your pick as a lock-screen picture? <a href="/new-years-resolution-quiz">Take the four questions</a> &middot; <a href="/ask">Open the full ask page</a></p>
   </div>
@@ -1780,7 +1913,7 @@ function buildResult(a) {
     "My 2027 resolution:",
     resolution,
     "First move: " + firstMove,
-    "Pick yours at https://pickmyresolution.com/?via=share"
+    "Pick yours at https://keeponeresolution.com/?via=share"
   ].join("\n");
   return {
     resolution: resolution,
@@ -2187,12 +2320,12 @@ function baselinePmr(raw) {
   var tq = t.replace(/[\s.!?]+$/, "");
   var needLine = "Say the part of life, how the year felt, and what made past plans fail, in your words. Or tap an example above to see the shape.";
   if (/^(sup|hi|hello|hey|yo|hiya|howdy|hey there|hi there|hello there|what's up|whats up|good morning|good afternoon|good evening)$/.test(tq)) {
-    return { label: "Hello", lines: ["Hi. This is Pick My Resolution.", "Say the part of life, how the year felt, and what made past plans fail, in your words, and I will pick one resolution that fits your week. Or tap an example above to see the shape."] };
+    return { label: "Hello", lines: ["Hi. This is Keep One Resolution.", "Say the part of life, how the year felt, and what made past plans fail, in your words, and I will pick one resolution that fits your week. Or tap an example above to see the shape."] };
   }
   if (/^(what is|what's|whats) (this|this site|this page|this place)$/.test(tq)
     || /^what does this (site|page) do$/.test(tq)
     || /^who are you$/.test(tq) || /^what do you do$/.test(tq)) {
-    return { label: "About this site", lines: ["This is Pick My Resolution. It picks one resolution that fits your real week.", "Say the part of life, how the year felt, and what made past plans fail, and you get the pick, the first move, a guard for when it gets hard, and a note to future you."] };
+    return { label: "About this site", lines: ["This is Keep One Resolution. It picks one resolution that fits your real week.", "Say the part of life, how the year felt, and what made past plans fail, and you get the pick, the first move, a guard for when it gets hard, and a note to future you."] };
   }
   var expr = tq.replace(/^(what's|what is|whats|calculate|compute|solve|how much is)\s+/, "");
   expr = expr.replace(/\s+/g, "").replace(/×/g, "*").replace(/÷/g, "/");
