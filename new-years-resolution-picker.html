@@ -310,6 +310,7 @@
     <div class="dots" id="q-dots" aria-hidden="true"></div>
     <p class="step-tag" id="q-step"></p>
     <h2 id="q-title"></h2>
+    <p class="sub" id="q-why" style="font-size:15px;margin:4px 0 0"></p>
     <div class="chips" id="q-chips"></div>
     <div id="q-spec" hidden>
       <p class="sub" style="font-size:15px">Day, time, place, person. In your own words.</p>
@@ -317,6 +318,14 @@
         aria-label="Your week one plan: day, time, place, person"
         placeholder="Sat 9am, at the park, with Alex">
       <p class="sub" style="font-size:14px">Leave it blank to skip. You still get your full plan.</p>
+    </div>
+    <div id="q-love" hidden>
+      <p class="sub" style="font-size:15px">A game, a walk, a small routine. If it fits your pick, your plan rides on it.</p>
+      <div class="chips" id="q-love-chips" style="margin-bottom:6px"></div>
+      <input type="text" id="q-love-input" maxlength="90" autocomplete="off"
+        aria-label="One thing you already love doing, in your own words"
+        placeholder="5v5 basketball, Mondays at noon">
+      <p class="sub" style="font-size:14px">Leave it blank to skip. Nothing changes if you do.</p>
     </div>
     <p class="hint" id="q-hint"></p>
     <div class="row2">
@@ -335,6 +344,14 @@
     <div id="r-showdown"></div>
     <div class="card">
       <p class="big" id="r-resolution"></p>
+      <div id="r-plan-under-block" hidden>
+        <p class="label">The sized plan underneath</p>
+        <p id="r-plan-under"></p>
+      </div>
+      <div id="r-anchor-block" hidden>
+        <p class="label">Your anchor</p>
+        <p id="r-anchor"></p>
+      </div>
       <p class="label">First move, week one</p>
       <p id="r-first"></p>
       <p class="label">Easy start</p>
@@ -1088,14 +1105,14 @@ function copyText(text, statusEl, okMsg) {
 }
 
 var STEPS = [
-  { key: "area", title: "Pick one part of your life.", list: AREAS },
-  { key: "off", title: "What was hard this year?", list: OFFS },
-  { key: "time", title: "How much time do you have each week?", list: TIMES },
-  { key: "fail", title: "What made past plans fail?", list: FAILS }
+  { key: "area", title: "Pick one part of your life.", why: "One part only. Your pick lives there.", list: AREAS },
+  { key: "off", title: "What was hard this year?", why: "Your pick aims at the hard part.", list: OFFS },
+  { key: "time", title: "How much time do you have each week?", why: "So your plan fits your real week.", list: TIMES },
+  { key: "fail", title: "What made past plans fail?", why: "So your plan guards the old trap.", list: FAILS }
 ];
 var KEY = "pmr_result_v1";
-var quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "" };
-var TOTAL_STEPS = STEPS.length + 1; // 4 questions + 1 optional specificity step
+var quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "", love: "" };
+var TOTAL_STEPS = STEPS.length + 2; // 4 questions + 2 optional steps (week-one line, already-love line)
 var current = null;
 var letter = null;
 var tactics = { cue: null, rhythm: null };
@@ -1103,7 +1120,7 @@ var tactics = { cue: null, rhythm: null };
 function saveResult() {
   try {
     localStorage.setItem(KEY, JSON.stringify({
-      answers: { area: quiz.area, off: quiz.off, time: quiz.time, fail: quiz.fail, when: quiz.when || "" },
+      answers: { area: quiz.area, off: quiz.off, time: quiz.time, fail: quiz.fail, when: quiz.when || "", love: quiz.love || "" },
       result: current,
       letter: letter,
       tactics: tactics
@@ -1134,6 +1151,8 @@ function loadResult() {
     // missing one drops to empty; the valid plan still restores.
     if (typeof data.answers.when !== "string") data.answers.when = "";
     if (data.answers.when.length > 90) data.answers.when = data.answers.when.slice(0, 90);
+    if (typeof data.answers.love !== "string") data.answers.love = "";
+    if (data.answers.love.length > 90) data.answers.love = data.answers.love.slice(0, 90);
     if (typeof data.result.whenLine !== "string") data.result.whenLine = data.answers.when;
     var fields = ["resolution", "firstMove", "guard", "checkin", "share"];
     for (var f = 0; f < fields.length; f++) {
@@ -1158,9 +1177,16 @@ function captureSpec() {
   quiz.when = v;
   return v;
 }
+var LOVE_CHIPS = ["A walk I already take", "A game or sport I play", "My morning coffee", "My commute", "Time with my kid"];
+function captureLove() {
+  var v = $("q-love-input").value.replace(/\s+/g, " ").trim().slice(0, 90);
+  quiz.love = v;
+  return v;
+}
 function renderQuiz() {
-  var isSpec = quiz.step >= STEPS.length;
-  $("q-step").textContent = isSpec ? "Optional" : "Question " + (quiz.step + 1) + " of " + STEPS.length;
+  var isSpec = quiz.step === STEPS.length;
+  var isLove = quiz.step > STEPS.length;
+  $("q-step").textContent = (isSpec || isLove) ? "Optional" : "Question " + (quiz.step + 1) + " of " + STEPS.length;
   var dots = "";
   for (var i = 0; i < TOTAL_STEPS; i++) dots += '<span class="dot' + (i <= quiz.step ? " done" : "") + '"></span>';
   $("q-dots").innerHTML = dots;
@@ -1168,15 +1194,38 @@ function renderQuiz() {
   $("q-back").style.visibility = quiz.step === 0 ? "hidden" : "visible";
   if (isSpec) {
     $("q-title").textContent = "Make week one real.";
+    $("q-why").textContent = "";
     $("q-chips").innerHTML = "";
     $("q-spec").hidden = false;
+    $("q-love").hidden = true;
     $("q-spec-input").value = quiz.when || "";
+    $("q-next").textContent = "Continue";
+    return;
+  }
+  if (isLove) {
+    $("q-title").textContent = "One thing you already love?";
+    $("q-why").textContent = "";
+    $("q-chips").innerHTML = "";
+    $("q-spec").hidden = true;
+    $("q-love").hidden = false;
+    $("q-love-input").value = quiz.love || "";
+    $("q-love-chips").innerHTML = LOVE_CHIPS.map(function (o, i) {
+      return '<button class="chip" data-k="' + i + '">' + o + "</button>";
+    }).join("");
+    var lchips = $("q-love-chips").querySelectorAll(".chip");
+    for (var lc = 0; lc < lchips.length; lc++) {
+      lchips[lc].onclick = (function (el) {
+        return function () { $("q-love-input").value = LOVE_CHIPS[parseInt(el.getAttribute("data-k"), 10)]; };
+      })(lchips[lc]);
+    }
     $("q-next").textContent = "Get my resolution";
     return;
   }
   $("q-spec").hidden = true;
+  $("q-love").hidden = true;
   var st = STEPS[quiz.step];
   $("q-title").textContent = st.title;
+  $("q-why").textContent = st.why || "";
   var sel = quiz[st.key];
   $("q-chips").innerHTML = st.list.map(function (o) {
     var on = sel === o.k;
@@ -1232,7 +1281,15 @@ function renderResult() {
   $("r-saved").textContent = "";
   $("r-saved").hidden = true;
   renderShowdown();
-  $("r-resolution").textContent = current.resolution;
+  // Already-love headline (v1.1): a loved activity that IS the pick
+  // headlines the card in the user's own words; the engine's sized
+  // line prints right underneath, untouched.
+  var hl = (typeof current.headline === "string") ? current.headline : "";
+  $("r-resolution").textContent = hl || current.resolution;
+  $("r-plan-under").textContent = current.resolution;
+  $("r-plan-under-block").hidden = !hl;
+  $("r-anchor").textContent = current.anchorLine || "";
+  $("r-anchor-block").hidden = !current.anchorLine;
   $("r-first").textContent = current.firstMove;
   var whenTxt = (typeof current.whenLine === "string") ? current.whenLine : "";
   $("r-when").textContent = whenTxt;
@@ -1371,12 +1428,17 @@ function finishQuiz() {
       fleetTrack("artifact_created", { tool: "resolution-picker", artifact: "week-one-plan" });
     }
   } catch (e) {}
+  try {
+    if (quiz.love && typeof fleetTrack === "function") {
+      fleetTrack("artifact_created", { tool: "resolution-picker", artifact: "already-love" });
+    }
+  } catch (e) {}
   renderResult();
   show("s-result");
 }
 
 $("btn-start").onclick = function () {
-  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "" };
+  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "", love: "" };
   renderQuiz();
   show("s-quiz");
 };
@@ -1386,14 +1448,19 @@ $("q-back").onclick = function () {
   if (quiz.step > 0) { quiz.step--; renderQuiz(); }
 };
 $("q-next").onclick = function () {
-  if (quiz.step >= STEPS.length) { captureSpec(); finishQuiz(); return; }
+  if (quiz.step > STEPS.length) { captureLove(); finishQuiz(); return; }
+  if (quiz.step >= STEPS.length) { captureSpec(); quiz.step++; renderQuiz(); return; }
   var st = STEPS[quiz.step];
   if (!quiz[st.key]) { $("q-hint").textContent = "Pick one answer first."; return; }
   quiz.step++; renderQuiz();
 };
 // Enter in the specificity field submits it, same as the button.
 $("q-spec-input").addEventListener("keydown", function (e) {
-  if (e.key === "Enter") { e.preventDefault(); captureSpec(); finishQuiz(); }
+  if (e.key === "Enter") { e.preventDefault(); captureSpec(); quiz.step++; renderQuiz(); }
+});
+// Enter in the love field submits it, same as the button.
+$("q-love-input").addEventListener("keydown", function (e) {
+  if (e.key === "Enter") { e.preventDefault(); captureLove(); finishQuiz(); }
 });
 $("btn-copy-checkin").onclick = function () {
   copyText(current.checkin, $("st-checkin"), "Copied. Paste it in your AI or notes app.");
@@ -1752,7 +1819,7 @@ $("btn-again").onclick = function () {
   clearResult();
   current = null;
   resetLetter();
-  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "" };
+  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "", love: "" };
   renderQuiz();
   show("s-quiz");
 };
@@ -1779,7 +1846,7 @@ function hasStartFlag() {
 }
 var saved = loadResult();
 if (hasStartFlag()) {
-  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "" };
+  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "", love: "" };
   renderQuiz();
   show("s-quiz");
 } else if (saved) {
@@ -1788,6 +1855,7 @@ if (hasStartFlag()) {
   quiz.time = saved.answers.time;
   quiz.fail = saved.answers.fail;
   quiz.when = saved.answers.when || "";
+  quiz.love = saved.answers.love || "";
   current = saved.result;
   tactics = cleanTactics(saved.tactics);
   // Plans saved before the Oct 30, 2026 check-in depth build carry the
