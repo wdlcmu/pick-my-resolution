@@ -207,6 +207,7 @@
   .hero-copy { flex: 1 1 330px; min-width: 250px; padding-top: 10px; }
   .hero h1 { color: #fff; font-size: 42px; margin: 0 0 10px; }
   .hero .sub { color: #d7e8df; font-size: 17px; }
+  .hero .identity { color: #ffffff; font-size: 17px; font-weight: 700; margin: 0 0 6px; }
   .hero .countdown { color: #bcd6c9; margin: 14px 0 4px; }
   /* 2026-11-01 interactive countdown unit: digits, one tap target, What's-next panel */
   .cdx { margin: 14px 0 4px; }
@@ -230,7 +231,7 @@
   .cdx-mile { margin: 0; }
   .hero .cta { background: var(--amber); border-color: var(--amber); color: #231303; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28); }
   .hero .askdoor { color: #d7e8df; font-size: 15px; margin: 8px 0 0; }
-  .hero .askdoor a { color: #ffffff; font-weight: 700; }
+  .hero .askdoor a { color: #ffffff; font-weight: 700; display: inline-block; min-height: 44px; padding: 12px 6px; }
   .hero-photos { flex: 1 1 430px; display: flex; flex-direction: column; gap: 12px; min-width: 250px; }
   .ph { border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 12px 26px rgba(0, 0, 0, 0.30); }
   .ph img { display: block; width: 100%; height: 100%; object-fit: cover; }
@@ -458,6 +459,7 @@ window.FLEET_CFG = {
         <div class="hero-grid">
           <div class="hero-copy">
             <h1>This year, keep one. Just one.</h1>
+            <p class="identity">This site picks one resolution you can keep.</p>
             <p class="sub">Last January, you wrote a list. By spring, none of it stuck.</p>
             <div class="cdx">
               <div class="cdx-main" id="cdx-main" aria-label="Counting down to January 1, 2027.">
@@ -476,7 +478,7 @@ window.FLEET_CFG = {
             <div class="hero-pick-card">
               <p class="hp-line"><span class="hp-label">One real pick:</span> I felt drained a lot.</p>
               <p class="hp-pick">Take a short walk: 30 min, 4x a week.</p>
-              <p class="hp-plan">Week one &middot; Sat 9am, at the park, with Alex</p>
+              <p class="hp-plan">Week one starts at 15 min &middot; Sat 9am, at the park, with Alex</p>
             </div>
           </div>
           <div class="hero-photos">
@@ -1266,12 +1268,15 @@ function loveMatches(love, action) {
   }
   return false;
 }
-// The honest no, per rival. Openers, echoes, and closers rotate on
-// independent counters, so the four nos in one result never read as
-// one stamp, and no two reasons in a result can come out identical:
-// every reason leads with the rival's own fact (its feeling, its
-// starting size and frequency, its weekly cost, its payoff timing),
-// then echoes the user's own answer, then the principle, plainly.
+// The honest no, per rival. Each family carries FOUR variants and
+// the variant is the rival's own position in the result (0 to 3),
+// never a modulo: four rivals can share one family, and with three
+// variants the fourth reused the first one's closing sentences word
+// for word (verify lane D1, Nov 2, 2026). Every variant's last two
+// sentences are distinct strings across all four families, so no two
+// nos in one result share a closing sentence. Every reason still
+// leads with the rival's own fact, then echoes the user's answer,
+// then states the principle, plainly.
 function sdFreq(times) {
   if (times === 1) return "once";
   if (times === 2) return "twice";
@@ -1280,35 +1285,41 @@ function sdFreq(times) {
 function noBig(variant, cD, noun) {
   if (variant === 0) return "Its first step is a " + cD.mins + " minute session. It is built for " + noun + ". You said too much ended the last plan. Shrink the start, not the goal.";
   if (variant === 1) return "It opens at " + cD.mins + " minutes a session. It is built for " + noun + ". Your last plan died of too much. Tiny starts survive where big starts stall.";
-  return "One session asks " + cD.mins + " minutes up front. It is built for " + noun + ". Too much is your known trap. This plan starts small on purpose.";
+  if (variant === 2) return "One session asks " + cD.mins + " minutes up front. It is built for " + noun + ". Too much is your known trap. This plan starts small on purpose.";
+  return "Its sessions start at " + cD.mins + " minutes each. It is built for " + noun + ". You named too much as the breaker. Small first steps hold up better.";
 }
 function noBusy(variant, total, noun) {
   if (variant === 0) return "It needs " + total + " minutes every week. It is built for " + noun + ". You said life gets busy and loud. No slack means one loud week ends it.";
   if (variant === 1) return "At your time pick, it eats " + total + " minutes. It is built for " + noun + ". Busy weeks are your known trap. A plan with no slack snaps.";
-  return "It fills " + total + " of your weekly minutes. It is built for " + noun + ". One loud week would break its streak. Your plan keeps slack on purpose.";
+  if (variant === 2) return "It fills " + total + " of your weekly minutes. It is built for " + noun + ". One loud week would break its streak. Your plan keeps slack on purpose.";
+  return "Its weekly cost is " + total + " minutes total. It is built for " + noun + ". Your weeks fill up without warning. Room to breathe keeps plans alive.";
 }
 function noDelayed(variant, noun) {
   if (variant === 0) return "Its payoff is a number, months away. It is built for " + noun + ". Rewards you feel this week win. Distant payoffs lose to near ones.";
   if (variant === 1) return "The reward lands far in the future. It is built for " + noun + ". People keep plans that pay back fast.";
-  return "You would feel this win next season. It is built for " + noun + ". Wins you feel now hold people longer.";
+  if (variant === 2) return "You would feel this win next season. It is built for " + noun + ". Wins you feel now hold people longer.";
+  return "Its win shows up months from now. It is built for " + noun + ". Quick wins keep a plan going.";
 }
-function noMismatch(vOpen, vEcho, vClose, noun, said) {
+function noMismatch(variant, noun, said) {
   var openers = [
     "This is the move for " + noun + ".",
     "This one treats " + noun + ".",
-    "The move for " + noun + "."
+    "The move for " + noun + ".",
+    "That move answers " + noun + "."
   ];
   var echoes = [
     "You said " + said + ".",
     "Your words: " + said + ".",
-    "You named " + said + " instead."
+    "You named " + said + " instead.",
+    "Stated plainly: " + said + "."
   ];
   var closers = [
     "A fix for the wrong feeling misses.",
     "It solves a problem you did not name.",
-    "Help aimed elsewhere rarely lands."
+    "Help aimed elsewhere rarely lands.",
+    "Aimed at another feeling, it fades."
   ];
-  return openers[vOpen] + " " + echoes[vEcho] + " " + closers[vClose];
+  return openers[variant] + " " + echoes[variant] + " " + closers[variant];
 }
 function yesReason(variant, noun, w1) {
   if (variant === 0) return "This one is built for " + noun + ". It starts at " + w1 + " min, small on purpose. Its plan bends around your last failure.";
@@ -1466,13 +1477,13 @@ function buildResult(a) {
     var cTotal = cD.mins * cD.times;
     var reason;
     if (a.fail === "big" && cD.mins >= 30) {
-      reason = noBig(sdIdx % 3, cD, OFF_NOUN[oc]);
+      reason = noBig(sdIdx, cD, OFF_NOUN[oc]);
     } else if (a.fail === "busy" && cTotal >= 120 && cTotal > pickTotal) {
-      reason = noBusy(sdIdx % 3, cTotal, OFF_NOUN[oc]);
+      reason = noBusy(sdIdx, cTotal, OFF_NOUN[oc]);
     } else if (DELAYED_PAYOFF[cAct] && !DELAYED_PAYOFF[action]) {
-      reason = noDelayed(sdIdx % 3, OFF_NOUN[oc]);
+      reason = noDelayed(sdIdx, OFF_NOUN[oc]);
     } else {
-      reason = noMismatch(sdIdx % 3, (sdIdx + 1) % 3, (sdIdx + 2) % 3, OFF_NOUN[oc], OFF_SAID[a.off]);
+      reason = noMismatch(sdIdx, OFF_NOUN[oc], OFF_SAID[a.off]);
     }
     sdIdx++;
     showdown.push({ name: cAct, dose: cD.dose, out: true, reason: reason });
@@ -3019,12 +3030,15 @@ function loveMatches(love, action) {
   }
   return false;
 }
-// The honest no, per rival. Openers, echoes, and closers rotate on
-// independent counters, so the four nos in one result never read as
-// one stamp, and no two reasons in a result can come out identical:
-// every reason leads with the rival's own fact (its feeling, its
-// starting size and frequency, its weekly cost, its payoff timing),
-// then echoes the user's own answer, then the principle, plainly.
+// The honest no, per rival. Each family carries FOUR variants and
+// the variant is the rival's own position in the result (0 to 3),
+// never a modulo: four rivals can share one family, and with three
+// variants the fourth reused the first one's closing sentences word
+// for word (verify lane D1, Nov 2, 2026). Every variant's last two
+// sentences are distinct strings across all four families, so no two
+// nos in one result share a closing sentence. Every reason still
+// leads with the rival's own fact, then echoes the user's answer,
+// then states the principle, plainly.
 function sdFreq(times) {
   if (times === 1) return "once";
   if (times === 2) return "twice";
@@ -3033,35 +3047,41 @@ function sdFreq(times) {
 function noBig(variant, cD, noun) {
   if (variant === 0) return "Its first step is a " + cD.mins + " minute session. It is built for " + noun + ". You said too much ended the last plan. Shrink the start, not the goal.";
   if (variant === 1) return "It opens at " + cD.mins + " minutes a session. It is built for " + noun + ". Your last plan died of too much. Tiny starts survive where big starts stall.";
-  return "One session asks " + cD.mins + " minutes up front. It is built for " + noun + ". Too much is your known trap. This plan starts small on purpose.";
+  if (variant === 2) return "One session asks " + cD.mins + " minutes up front. It is built for " + noun + ". Too much is your known trap. This plan starts small on purpose.";
+  return "Its sessions start at " + cD.mins + " minutes each. It is built for " + noun + ". You named too much as the breaker. Small first steps hold up better.";
 }
 function noBusy(variant, total, noun) {
   if (variant === 0) return "It needs " + total + " minutes every week. It is built for " + noun + ". You said life gets busy and loud. No slack means one loud week ends it.";
   if (variant === 1) return "At your time pick, it eats " + total + " minutes. It is built for " + noun + ". Busy weeks are your known trap. A plan with no slack snaps.";
-  return "It fills " + total + " of your weekly minutes. It is built for " + noun + ". One loud week would break its streak. Your plan keeps slack on purpose.";
+  if (variant === 2) return "It fills " + total + " of your weekly minutes. It is built for " + noun + ". One loud week would break its streak. Your plan keeps slack on purpose.";
+  return "Its weekly cost is " + total + " minutes total. It is built for " + noun + ". Your weeks fill up without warning. Room to breathe keeps plans alive.";
 }
 function noDelayed(variant, noun) {
   if (variant === 0) return "Its payoff is a number, months away. It is built for " + noun + ". Rewards you feel this week win. Distant payoffs lose to near ones.";
   if (variant === 1) return "The reward lands far in the future. It is built for " + noun + ". People keep plans that pay back fast.";
-  return "You would feel this win next season. It is built for " + noun + ". Wins you feel now hold people longer.";
+  if (variant === 2) return "You would feel this win next season. It is built for " + noun + ". Wins you feel now hold people longer.";
+  return "Its win shows up months from now. It is built for " + noun + ". Quick wins keep a plan going.";
 }
-function noMismatch(vOpen, vEcho, vClose, noun, said) {
+function noMismatch(variant, noun, said) {
   var openers = [
     "This is the move for " + noun + ".",
     "This one treats " + noun + ".",
-    "The move for " + noun + "."
+    "The move for " + noun + ".",
+    "That move answers " + noun + "."
   ];
   var echoes = [
     "You said " + said + ".",
     "Your words: " + said + ".",
-    "You named " + said + " instead."
+    "You named " + said + " instead.",
+    "Stated plainly: " + said + "."
   ];
   var closers = [
     "A fix for the wrong feeling misses.",
     "It solves a problem you did not name.",
-    "Help aimed elsewhere rarely lands."
+    "Help aimed elsewhere rarely lands.",
+    "Aimed at another feeling, it fades."
   ];
-  return openers[vOpen] + " " + echoes[vEcho] + " " + closers[vClose];
+  return openers[variant] + " " + echoes[variant] + " " + closers[variant];
 }
 function yesReason(variant, noun, w1) {
   if (variant === 0) return "This one is built for " + noun + ". It starts at " + w1 + " min, small on purpose. Its plan bends around your last failure.";
@@ -3219,13 +3239,13 @@ function buildResult(a) {
     var cTotal = cD.mins * cD.times;
     var reason;
     if (a.fail === "big" && cD.mins >= 30) {
-      reason = noBig(sdIdx % 3, cD, OFF_NOUN[oc]);
+      reason = noBig(sdIdx, cD, OFF_NOUN[oc]);
     } else if (a.fail === "busy" && cTotal >= 120 && cTotal > pickTotal) {
-      reason = noBusy(sdIdx % 3, cTotal, OFF_NOUN[oc]);
+      reason = noBusy(sdIdx, cTotal, OFF_NOUN[oc]);
     } else if (DELAYED_PAYOFF[cAct] && !DELAYED_PAYOFF[action]) {
-      reason = noDelayed(sdIdx % 3, OFF_NOUN[oc]);
+      reason = noDelayed(sdIdx, OFF_NOUN[oc]);
     } else {
-      reason = noMismatch(sdIdx % 3, (sdIdx + 1) % 3, (sdIdx + 2) % 3, OFF_NOUN[oc], OFF_SAID[a.off]);
+      reason = noMismatch(sdIdx, OFF_NOUN[oc], OFF_SAID[a.off]);
     }
     sdIdx++;
     showdown.push({ name: cAct, dose: cD.dose, out: true, reason: reason });
@@ -3733,8 +3753,25 @@ function answerAskPmr(raw) {
   var timeHeard = p.timeLabel ? p.timeLabel : labelOf(TIMES, p.time) + (p.timeDefaulted ? " (the middle offer, since no time was named)" : "");
   var heard = "What I heard: " + labelOf(AREAS, p.area) + ". " + labelOf(OFFS, p.off) + " " +
     timeHeard + ". " + labelOf(FAILS, p.fail);
+  // Verify fix D3 (Nov 2, 2026): the Ask answer opens with the same
+  // honest-no showdown the quiz result shows, rendered from this same
+  // buildResult output (r.showdown) - no second engine, and no new
+  // copy beyond the quiz result's own heading lines.
+  var sdHtml = "";
+  if (r.showdown && r.showdown.length === 5) {
+    sdHtml = '<p class="label">First, the honest no</p>' +
+      '<p>Five moves live in your area. Four get a no, each with its reason. One is left standing.</p>' +
+      r.showdown.map(function (e) {
+        return '<div class="sd-row ' + (e.out ? "sd-out" : "sd-win") + ' sd-done">' +
+          (e.out ? "" : '<p class="sd-tag">The one left standing</p>') +
+          '<p class="sd-name">' + esc(e.name) + '</p>' +
+          '<p class="sd-dose">' + esc(e.dose) + '</p>' +
+          '<p class="sd-reason">' + esc(e.reason) + "</p></div>";
+      }).join("");
+  }
   out.innerHTML =
     '<div class="card">' +
+    sdHtml +
     '<p class="label">Your pick</p><p class="big">' + esc(r.resolution) + '</p>' +
     '<p>' + esc(heard) + '</p>' +
     '<p class="label">First move, week one</p><p>' + esc(r.firstMove) + '</p>' +
@@ -3802,6 +3839,32 @@ function answerAskPmr(raw) {
     });
     out.appendChild(card);
   }
+  // Verify fix D3 (Nov 2, 2026): when the chat reply is a pick, the
+  // same honest-no showdown opens the Ask result here too. The reply
+  // JSON carries facts.parsed; those answers go through this page's
+  // own buildResult, so the rows are the engine's, not a second copy.
+  function prependShowdown(reply, facts) {
+    try {
+      if (!facts || !facts.parsed) return;
+      if (String(reply).split("\n")[0].trim() !== "Your pick") return;
+      var p = facts.parsed;
+      if (!p.area || !p.off || !p.time || !p.fail) return;
+      var r = buildResult({ area: p.area, off: p.off, time: p.time, fail: p.fail, when: "", love: "" });
+      if (!r || !r.showdown || r.showdown.length !== 5) return;
+      var out = document.getElementById("askp-answer");
+      var box = document.createElement("div");
+      box.innerHTML = '<p class="label">First, the honest no</p>' +
+        '<p>Five moves live in your area. Four get a no, each with its reason. One is left standing.</p>' +
+        r.showdown.map(function (e) {
+          return '<div class="sd-row ' + (e.out ? "sd-out" : "sd-win") + ' sd-done">' +
+            (e.out ? "" : '<p class="sd-tag">The one left standing</p>') +
+            '<p class="sd-name">' + esc(e.name) + '</p>' +
+            '<p class="sd-dose">' + esc(e.dose) + '</p>' +
+            '<p class="sd-reason">' + esc(e.reason) + "</p></div>";
+        }).join("");
+      out.insertBefore(box, out.firstChild);
+    } catch (e) {}
+  }
   function askPanelSend(raw) {
     var msg = (raw || "").trim();
     if (!msg) { answerAskPmr(raw); return; }
@@ -3814,6 +3877,7 @@ function answerAskPmr(raw) {
         if (!j || !j.reply) { answerAskPmr(raw); return; }
         if (j.facts) chatFacts = j.facts;
         renderChatReply(j.reply);
+        prependShowdown(j.reply, j.facts);
         document.getElementById("askp-more").hidden = false;
       })
       .catch(function () { btn.disabled = false; answerAskPmr(raw); });
