@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>New Year's Resolution - Keep One Resolution: One you can keep</title>
-<meta name="description" content="Pick a New Year's resolution you can keep. Four questions. One optional line. About one minute. Free. No ads. No accounts.">
+<meta name="description" content="Pick a New Year's resolution you can keep. Four questions. Two optional lines. About one minute. Free. No ads. No accounts.">
 <link rel="canonical" href="https://keeponeresolution.com/">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
 <meta property="og:title" content="New Year's Resolution - Keep One Resolution: One you can keep">
-<meta property="og:description" content="Pick a New Year's resolution you can keep. Four questions. One optional line. About one minute. Free. No ads. No accounts.">
+<meta property="og:description" content="Pick a New Year's resolution you can keep. Four questions. Two optional lines. About one minute. Free. No ads. No accounts.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://keeponeresolution.com/">
 <meta property="og:image" content="https://keeponeresolution.com/img/hero-main.webp">
@@ -17,7 +17,7 @@
 <meta property="og:image:height" content="640">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="New Year's Resolution - Keep One Resolution: One you can keep">
-<meta name="twitter:description" content="Pick a New Year's resolution you can keep. Four questions. One optional line. About one minute. Free. No ads. No accounts.">
+<meta name="twitter:description" content="Pick a New Year's resolution you can keep. Four questions. Two optional lines. About one minute. Free. No ads. No accounts.">
 <meta name="twitter:image" content="https://keeponeresolution.com/img/hero-main.webp">
 <script type="application/ld+json">
 {
@@ -29,7 +29,7 @@
       "name": "How long does it take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "About one minute. Four short questions. One optional line names week one."
+        "text": "About one minute. Four short questions. Two optional lines."
       }
     },
     {
@@ -72,7 +72,7 @@
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Pick a New Year's resolution you can keep. Four questions. One optional line. About one minute. Free. No ads. No accounts."
+  "description": "Pick a New Year's resolution you can keep. Four questions. Two optional lines. About one minute. Free. No ads. No accounts."
 }
 </script>
 <style>
@@ -139,6 +139,19 @@
   .tac-note { font-size: 14px; color: var(--muted); margin: 2px 0 6px; }
   .hint { min-height: 20px; font-size: 14px; color: var(--accent); font-weight: 600; margin: 8px 0 0; }
   .card { background: var(--card); border: 2px solid var(--line); border-radius: 14px; padding: 16px; margin: 14px 0; }
+  /* Honest-no showdown (v1.1): rivals strike through one by one; the
+     survivor settles with a filled border. Reasons are readable from
+     the first paint, struck or not, so no content waits on motion. */
+  .sd-row { background: var(--card); border: 2px solid var(--line); border-radius: 14px; padding: 12px 16px; margin: 10px 0; }
+  .sd-name { font-size: 19px; font-weight: 800; margin: 0 0 2px; }
+  .sd-out .sd-name { color: var(--muted); }
+  .sd-out.sd-done .sd-name { text-decoration: line-through; text-decoration-thickness: 3px; }
+  .sd-dose { font-size: 15px; font-weight: 600; color: var(--muted); margin: 0 0 4px; }
+  .sd-reason { font-size: 16px; margin: 0; }
+  .sd-tag { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin: 0 0 2px; }
+  .sd-win.sd-done { border-color: var(--accent); background: #f0fdf9; }
+  .sd-row { transition: border-color .3s ease, background-color .3s ease; }
+  @media (prefers-reduced-motion: reduce) { .sd-row { transition: none; } }
   .big { font-size: 24px; font-weight: 800; line-height: 1.3; margin: 4px 0 6px; }
   .label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); }
   .status { min-height: 20px; font-size: 14px; font-weight: 600; color: var(--accent); margin: 6px 0; }
@@ -510,7 +523,9 @@ window.FLEET_CFG = {
       <div class="card">
         <p class="big">Take a short walk: 30 min, 4x a week.</p>
         <p class="label">First move, week one</p>
-        <p>Put your shoes by the front door. Walk 30 min right after a meal.</p>
+        <p>Step 1: set a phone alarm. Step 2: Put your shoes by the front door. Walk 15 min right after a meal.</p>
+        <p class="label">Your if-then</p>
+        <p>My cue: after lunch. Then I will take a short walk.</p>
         <p class="label">Your week one plan</p>
         <p>Sat 9am, at the park, with Alex</p>
         <p class="label">If it gets hard</p>
@@ -530,6 +545,7 @@ window.FLEET_CFG = {
         <li><strong>You pick your time.</strong> Thirty minutes, two hours, or five.</li>
         <li><strong>You get one plan.</strong> One move, sized to your time.</li>
         <li><strong>You name week one.</strong> Day, time, place, person. Or skip it.</li>
+        <li><strong>You name a favorite.</strong> One thing you already love. Your pick can ride on it.</li>
       </ol>
       <p><strong>One plan only.</strong> You get one, not a list of ten.</p>
       <p><strong>Your note stays here.</strong> It saves as a card on this device.</p>
@@ -550,6 +566,7 @@ window.FLEET_CFG = {
       <h3>How long does it take?</h3>
       <p>About one minute. Four short questions.</p>
       <p>One optional line names week one.</p>
+      <p>One more names something you already love.</p>
       <h3>What New Year's resolution can I keep?</h3>
       <p>One is easier to keep than a list.</p>
       <h3>Is it free?</h3>
@@ -580,6 +597,14 @@ window.FLEET_CFG = {
         placeholder="Sat 9am, at the park, with Alex">
       <p class="sub" style="font-size:14px">Leave it blank to skip. You still get your full plan.</p>
     </div>
+    <div id="q-love" hidden>
+      <p class="sub" style="font-size:15px">A game, a walk, a small routine. If it fits your pick, your plan rides on it.</p>
+      <div class="chips" id="q-love-chips" style="margin-bottom:6px"></div>
+      <input type="text" id="q-love-input" maxlength="90" autocomplete="off"
+        aria-label="One thing you already love doing, in your own words"
+        placeholder="5v5 basketball, Mondays at noon">
+      <p class="sub" style="font-size:14px">Leave it blank to skip. Nothing changes if you do.</p>
+    </div>
     <p class="hint" id="q-hint"></p>
     <div class="row2">
       <button class="ghost" id="q-back">Back</button>
@@ -592,8 +617,19 @@ window.FLEET_CFG = {
     <p class="step-tag">Your plan is set</p>
     <h2>Your one resolution</h2>
     <p class="saved-label" id="r-saved" hidden></p>
+    <p class="label">First, the honest no</p>
+    <p class="tac-note">Five moves live in your area. Four get a no, each with its reason. One is left standing.</p>
+    <div id="r-showdown"></div>
     <div class="card">
       <p class="big" id="r-resolution"></p>
+      <div id="r-plan-under-block" hidden>
+        <p class="label">The sized plan underneath</p>
+        <p id="r-plan-under"></p>
+      </div>
+      <div id="r-anchor-block" hidden>
+        <p class="label">Your anchor</p>
+        <p id="r-anchor"></p>
+      </div>
       <div id="r-why-block" hidden>
         <p class="label">Your why</p>
         <p id="r-why"></p>
@@ -608,6 +644,18 @@ window.FLEET_CFG = {
       </div>
       <p class="label">If it gets hard</p>
       <p id="r-guard"></p>
+      <div id="r-ifthen-block" hidden>
+        <p class="label">Your if-then</p>
+        <p id="r-ifthen"></p>
+      </div>
+      <div id="r-planb-block" hidden>
+        <p class="label">Plan B, for busy weeks</p>
+        <p id="r-planb"></p>
+      </div>
+      <div id="r-variation-block" hidden>
+        <p class="label">Week three twist</p>
+        <p id="r-variation"></p>
+      </div>
       <p class="label">Your time</p>
       <p id="r-note"></p>
       <p class="label">By March 1</p>
@@ -1072,6 +1120,202 @@ var GUARD_REFLECT = {
   busy: "Some weeks, half a move was enough.",
   bored: "The hard part was the same move, again."
 };
+// Honest-no layer (v1.1, Nov 2, 2026): the result now shows its work.
+// The four moves in your area that did not survive are named, each with
+// one reason tied to your own answers, and the fail answer rewires the
+// plan's mechanics instead of only its pep talk. The already-love line
+// (optional, last) lets a plan ride on an activity the user already
+// loves: enjoyment is the best-evidenced adherence lever we control
+// (Teixeira et al. 2012; Woolley and Fishbach on immediate rewards),
+// and an existing routine arrives with its anchor pre-installed
+// (Fogg's anchor moment; Gollwitzer's if-then plans).
+var OFF_NOUN = {
+  drained: "feeling drained",
+  piled: "things piling up",
+  stuck: "feeling stuck",
+  drift: "drifting from good habits",
+  alone: "feeling alone"
+};
+var OFF_SAID = {
+  drained: "you felt drained",
+  piled: "things piled up",
+  stuck: "you felt stuck",
+  drift: "you drifted from good habits",
+  alone: "you felt alone"
+};
+// Moves whose payoff is a number or a skill months away. Research on
+// follow-through (Woolley and Fishbach) says rewards felt this week
+// beat rewards felt next season, so when the pick itself pays back
+// fast, a slow-payoff rival can be ruled out on exactly that ground.
+var DELAYED_PAYOFF = {
+  "Move cash to savings": 1,
+  "Write down what you spend": 1,
+  "Learn one work skill": 1
+};
+// The cue each move naturally hangs on (the same defaults the tactics
+// chips use), for the if-then line the forgot answer now writes.
+var ANCHOR_CUE = {
+  "Take a short walk": "after lunch",
+  "Cook a real meal": "after dinner",
+  "Do a short workout": "when I wake up",
+  "Stretch your whole body": "after dinner",
+  "Walk with a friend": "after lunch",
+  "Check your bank balance": "after breakfast",
+  "Sort bills in one spot": "after dinner",
+  "Move cash to savings": "after breakfast",
+  "Write down what you spend": "after dinner",
+  "Tell a friend your goal": "after dinner",
+  "Tidy one small corner": "after dinner",
+  "Clear one shelf fully": "after work",
+  "Fix one small thing": "after work",
+  "Make one room cozy": "after dinner",
+  "Have a friend visit": "after dinner",
+  "Plan your day on paper": "when I wake up",
+  "Clear your desk top": "after work",
+  "Learn one work skill": "after work",
+  "Chat with a work friend": "after lunch",
+  "Eat lunch with coworkers": "after lunch",
+  "Talk with family at home": "after dinner",
+  "Share one meal together": "after dinner",
+  "Play one game together": "after dinner",
+  "Call a friend you miss": "after dinner",
+  "Visit someone you love": "after lunch",
+  "Sit in a quiet place": "when I wake up",
+  "Write thoughts on paper": "after dinner",
+  "Read a calm book": "after dinner",
+  "Breathe slow in fresh air": "after lunch",
+  "Sit outside with others": "after lunch"
+};
+// Week-three variation per move (the bored answer, named up front):
+// one element rotates (place, music, partner, route, timing), drawn
+// from the move's own materials. The move itself never changes.
+var VARIATIONS = {
+  "Take a short walk": "walk a new route this week",
+  "Cook a real meal": "add one new spice or side",
+  "Do a short workout": "swap one move for a new one",
+  "Stretch your whole body": "stretch outside, or to music",
+  "Walk with a friend": "walk somewhere new together",
+  "Check your bank balance": "check right after a different meal",
+  "Sort bills in one spot": "sort standing up, music on",
+  "Move cash to savings": "name the savings for one thing",
+  "Write down what you spend": "write the list on paper",
+  "Tell a friend your goal": "ask about your friend's goal too",
+  "Tidy one small corner": "pick the messiest corner left",
+  "Clear one shelf fully": "race the timer on the shelf",
+  "Fix one small thing": "pick the fix you see most",
+  "Make one room cozy": "move one lamp or chair",
+  "Have a friend visit": "walk and talk instead of sitting",
+  "Plan your day on paper": "write the plan the night before",
+  "Clear your desk top": "clear it standing, music on",
+  "Learn one work skill": "teach it to one person",
+  "Chat with a work friend": "chat with someone new at work",
+  "Eat lunch with coworkers": "eat outside, or somewhere new",
+  "Talk with family at home": "talk on a walk instead",
+  "Share one meal together": "cook the meal together too",
+  "Play one game together": "let the loser pick the game",
+  "Call a friend you miss": "call a different friend you miss",
+  "Visit someone you love": "bring one small thing they like",
+  "Sit in a quiet place": "sit in a new quiet spot",
+  "Write thoughts on paper": "write in the morning instead",
+  "Read a calm book": "read outside, or an old favorite",
+  "Breathe slow in fresh air": "breathe at a new spot outside",
+  "Sit outside with others": "sit after dinner instead of lunch"
+};
+// Words that say the loved activity IS this move in the user's own
+// form ("5v5 basketball" for the workout). A match lets the headline
+// render in the user's words; no match and the love line is an anchor
+// the first move rides on instead. Matching is whole-word, on the
+// cleaned line, so "already" never reads as "read".
+var LOVE_KEYS = {
+  "Take a short walk": ["walk", "stroll", "hike", "dog"],
+  "Cook a real meal": ["cook", "dinner", "baking", "bake", "kitchen", "meal"],
+  "Do a short workout": ["workout", "gym", "basketball", "5v5", "run", "running", "soccer", "tennis", "swim", "bike", "cycling", "yoga", "lift", "weights", "exercise", "sport"],
+  "Stretch your whole body": ["stretch", "yoga", "mobility"],
+  "Walk with a friend": ["walk", "stroll", "hike", "friend"],
+  "Check your bank balance": ["bank", "balance", "budget", "money"],
+  "Sort bills in one spot": ["bill", "bills", "paperwork", "mail"],
+  "Move cash to savings": ["savings", "save", "bank", "money"],
+  "Write down what you spend": ["spend", "budget", "money", "track"],
+  "Tell a friend your goal": ["friend", "goal"],
+  "Tidy one small corner": ["tidy", "clean", "corner", "declutter"],
+  "Clear one shelf fully": ["shelf", "declutter", "clean", "closet"],
+  "Fix one small thing": ["fix", "repair", "tools", "diy"],
+  "Make one room cozy": ["cozy", "room"],
+  "Have a friend visit": ["friend", "visit", "host"],
+  "Plan your day on paper": ["paper", "planner", "journal", "notebook"],
+  "Clear your desk top": ["desk", "office"],
+  "Learn one work skill": ["learn", "skill", "course", "study", "class"],
+  "Chat with a work friend": ["chat", "coffee", "coworker"],
+  "Eat lunch with coworkers": ["lunch", "coworker", "coworkers"],
+  "Talk with family at home": ["family", "talk", "dinner"],
+  "Share one meal together": ["meal", "dinner", "cook"],
+  "Play one game together": ["game", "games", "cards", "play"],
+  "Call a friend you miss": ["call", "phone", "friend"],
+  "Visit someone you love": ["visit", "mom", "dad", "grandma", "grandpa", "family"],
+  "Sit in a quiet place": ["quiet", "sit", "garden", "porch", "meditate"],
+  "Write thoughts on paper": ["write", "journal", "paper", "diary"],
+  "Read a calm book": ["read", "book", "novel"],
+  "Breathe slow in fresh air": ["breathe", "breathing", "outside"],
+  "Sit outside with others": ["outside", "porch", "garden", "sit"]
+};
+function loveMatches(love, action) {
+  var keys = LOVE_KEYS[action] || [];
+  var hay = " " + love.toLowerCase().replace(/[^a-z0-9]+/g, " ") + " ";
+  for (var i = 0; i < keys.length; i++) {
+    if (hay.indexOf(" " + keys[i] + " ") >= 0) return true;
+  }
+  return false;
+}
+// The honest no, per rival. Openers, echoes, and closers rotate on
+// independent counters, so the four nos in one result never read as
+// one stamp, and no two reasons in a result can come out identical:
+// every reason leads with the rival's own fact (its feeling, its
+// starting size and frequency, its weekly cost, its payoff timing),
+// then echoes the user's own answer, then the principle, plainly.
+function sdFreq(times) {
+  if (times === 1) return "once";
+  if (times === 2) return "twice";
+  return times + " times";
+}
+function noBig(variant, cD, noun) {
+  if (variant === 0) return "Its first step is a " + cD.mins + " minute session. It is built for " + noun + ". You said too much ended the last plan. Shrink the start, not the goal.";
+  if (variant === 1) return "It opens at " + cD.mins + " minutes a session. It is built for " + noun + ". Your last plan died of too much. Tiny starts survive where big starts stall.";
+  return "One session asks " + cD.mins + " minutes up front. It is built for " + noun + ". Too much is your known trap. This plan starts small on purpose.";
+}
+function noBusy(variant, total, noun) {
+  if (variant === 0) return "It needs " + total + " minutes every week. It is built for " + noun + ". You said life gets busy and loud. No slack means one loud week ends it.";
+  if (variant === 1) return "At your time pick, it eats " + total + " minutes. It is built for " + noun + ". Busy weeks are your known trap. A plan with no slack snaps.";
+  return "It fills " + total + " of your weekly minutes. It is built for " + noun + ". One loud week would break its streak. Your plan keeps slack on purpose.";
+}
+function noDelayed(variant, noun) {
+  if (variant === 0) return "Its payoff is a number, months away. It is built for " + noun + ". Rewards you feel this week win. Distant payoffs lose to near ones.";
+  if (variant === 1) return "The reward lands far in the future. It is built for " + noun + ". People keep plans that pay back fast.";
+  return "You would feel this win next season. It is built for " + noun + ". Wins you feel now hold people longer.";
+}
+function noMismatch(vOpen, vEcho, vClose, noun, said) {
+  var openers = [
+    "This is the move for " + noun + ".",
+    "This one treats " + noun + ".",
+    "The move for " + noun + "."
+  ];
+  var echoes = [
+    "You said " + said + ".",
+    "Your words: " + said + ".",
+    "You named " + said + " instead."
+  ];
+  var closers = [
+    "A fix for the wrong feeling misses.",
+    "It solves a problem you did not name.",
+    "Help aimed elsewhere rarely lands."
+  ];
+  return openers[vOpen] + " " + echoes[vEcho] + " " + closers[vClose];
+}
+function yesReason(variant, noun, w1) {
+  if (variant === 0) return "This one is built for " + noun + ". It starts at " + w1 + " min, small on purpose. Its plan bends around your last failure.";
+  if (variant === 1) return "Built for " + noun + ", in your words. Week one starts at " + w1 + " min. The plan below guards your weak spot.";
+  return "The match for " + noun + ". It opens at " + w1 + " min, not full size. Every line below answers your four answers.";
+}
+
 // Specificity line (PMR-SPECIFIC-1, Oct 31, 2026; Wave H fix): the
 // user may name week one's first session in their own words (day,
 // time, place, person). It is optional, capped at 90 chars, stored
@@ -1121,6 +1365,50 @@ function buildResult(a) {
   var weekOne = w1 >= d.mins
     ? "Week one: " + d.dose + ". That is the whole plan."
     : "Week one: " + w1 + " min, " + d.times + "x a week. It counts in full. The " + d.mins + " min plan starts week two.";
+  // Fail rewiring (v1.1, Nov 2, 2026): the fail answer now changes
+  // the plan's mechanics, not only its guard line. Too much slows the
+  // ramp (weeks one and two at the week-one size). Forgetting makes
+  // the reminder step 1 and writes the if-then into the plan. Busy
+  // ships a named Plan B dose inside the plan and the check-in. Bored
+  // names its week-three variation up front.
+  var planB = "", planBLine = "", variation = "", ifThen = "";
+  if (a.fail === "big") {
+    weekOne = w1 >= d.mins
+      ? "Weeks one and two: " + d.dose + ". It counts in full. Nothing gets added until week three."
+      : "Weeks one and two: " + w1 + " min, " + d.times + "x a week. It counts in full. The " + d.mins + " min plan starts week three.";
+  } else if (a.fail === "forgot") {
+    firstMove = "Step 1: set a phone alarm. Step 2: " + firstMove;
+    var lcAction = action.charAt(0).toLowerCase() + action.slice(1);
+    ifThen = "My cue: " + (ANCHOR_CUE[action] || "after dinner") + ". Then I will " + lcAction + ".";
+  } else if (a.fail === "busy") {
+    var bMins = weekOneMins(d.mins);
+    if (bMins < d.mins) {
+      planB = "Plan B: " + bMins + " min, " + d.times + "x a week. It counts in full.";
+      planBLine = "Busy week? My Plan B dose: " + bMins + " min, " + d.times + "x a week. It counts in full.";
+    } else {
+      planB = "Plan B: one short session still counts. A loud week cannot break this plan.";
+      planBLine = "Busy week? One short session still counts.";
+    }
+  } else if (a.fail === "bored") {
+    variation = "From week three: " + (VARIATIONS[action] || "change one thing, not the move") + ".";
+  }
+  // Already-love line (v1.1): optional, display-only for the pick
+  // itself (the engine still chooses), but it changes how the result
+  // is framed. A family match renders the headline and week one in
+  // the user's own form, sized plan underneath. No match: the line
+  // becomes the anchor the first move rides on. Skipped: every field
+  // below stays empty and the result is exactly the unwired one.
+  var love = cleanWhen(a.love);
+  var headline = "", anchorLine = "";
+  if (love) {
+    if (loveMatches(love, action)) {
+      headline = love.charAt(0).toUpperCase() + love.slice(1);
+      weekOne = "Week one: show up once. It already happens. The sized plan runs underneath. It is " + d.dose + ". Week one counts at " + w1 + " min.";
+    } else {
+      anchorLine = "Ride it on what you love: right after " + love + ", do the first move above.";
+    }
+  }
+
   // The stakes, in approach words (dogfood fix, Nov 2, 2026): what
   // keeping it looks like by March 1, counted from this plan's own
   // weekly sessions (about eight weeks from Jan 1). No doom, no
@@ -1141,6 +1429,11 @@ function buildResult(a) {
     "What is one small move for next week?",
     "Please keep your reply short and kind."
   ].join("\n");
+  if (planBLine) {
+    var clines = checkin.split("\n");
+    clines.splice(6, 0, planBLine);
+    checkin = clines.join("\n");
+  }
   // Reflective note (Oct 30, 2026): a short letter from past me, woven
   // only from this plan's own fields (the feeling picked, the action,
   // its dose, the starter's line, the guard told as experience). No full
@@ -1156,6 +1449,35 @@ function buildResult(a) {
     "Did the small move still fit my week?",
     "From past me."
   ].join("\n");
+
+  // The showdown (v1.1): the five moves in the picked area, the four
+  // honest nos first (in the bank's own order), the survivor last.
+  // Reason priority: a fail-mode fact that truly applies to the rival
+  // (a big start for a too-much history, a heavy week for a busy one),
+  // then a delayed payoff, then the plain feeling mismatch.
+  var showdown = [];
+  var sdIdx = 0;
+  var pickTotal = d.mins * d.times;
+  for (var oi = 0; oi < OFFS.length; oi++) {
+    var oc = OFFS[oi].k;
+    if (oc === a.off) continue;
+    var cAct = ACTIONS[a.area][oc];
+    var cD = DOSES[cAct][a.time];
+    var cTotal = cD.mins * cD.times;
+    var reason;
+    if (a.fail === "big" && cD.mins >= 30) {
+      reason = noBig(sdIdx % 3, cD, OFF_NOUN[oc]);
+    } else if (a.fail === "busy" && cTotal >= 120 && cTotal > pickTotal) {
+      reason = noBusy(sdIdx % 3, cTotal, OFF_NOUN[oc]);
+    } else if (DELAYED_PAYOFF[cAct] && !DELAYED_PAYOFF[action]) {
+      reason = noDelayed(sdIdx % 3, OFF_NOUN[oc]);
+    } else {
+      reason = noMismatch(sdIdx % 3, (sdIdx + 1) % 3, (sdIdx + 2) % 3, OFF_NOUN[oc], OFF_SAID[a.off]);
+    }
+    sdIdx++;
+    showdown.push({ name: cAct, dose: cD.dose, out: true, reason: reason });
+  }
+  showdown.push({ name: action, dose: d.dose, out: false, reason: yesReason(sdIdx % 3, OFF_NOUN[a.off], w1) });
   var share = [
     "My 2027 resolution:",
     resolution,
@@ -1172,7 +1494,14 @@ function buildResult(a) {
     checkin: checkin,
     futureNote: futureNote,
     share: share,
-    whenLine: cleanWhen(a.when)
+    whenLine: cleanWhen(a.when),
+    showdown: showdown,
+    planB: planB,
+    variation: variation,
+    ifThen: ifThen,
+    headline: headline,
+    anchorLine: anchorLine,
+    loveLine: love
   };
 }
 // ENGINE END
@@ -1213,8 +1542,8 @@ var STEPS = [
   { key: "fail", title: "What made past plans fail?", list: FAILS }
 ];
 var KEY = "pmr_result_v1";
-var quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "" };
-var TOTAL_STEPS = STEPS.length + 1; // 4 questions + 1 optional specificity step
+var quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "", love: "" };
+var TOTAL_STEPS = STEPS.length + 2; // 4 questions + 2 optional steps (week-one line, already-love line)
 var current = null;
 var letter = null;
 var tactics = { cue: null, rhythm: null };
@@ -1223,7 +1552,7 @@ var why = "";
 function saveResult() {
   try {
     localStorage.setItem(KEY, JSON.stringify({
-      answers: { area: quiz.area, off: quiz.off, time: quiz.time, fail: quiz.fail, when: quiz.when || "" },
+      answers: { area: quiz.area, off: quiz.off, time: quiz.time, fail: quiz.fail, when: quiz.when || "", love: quiz.love || "" },
       result: current,
       letter: letter,
       tactics: tactics,
@@ -1255,6 +1584,8 @@ function loadResult() {
     // missing one drops to empty; the valid plan still restores.
     if (typeof data.answers.when !== "string") data.answers.when = "";
     if (data.answers.when.length > 90) data.answers.when = data.answers.when.slice(0, 90);
+    if (typeof data.answers.love !== "string") data.answers.love = "";
+    if (data.answers.love.length > 90) data.answers.love = data.answers.love.slice(0, 90);
     if (typeof data.result.whenLine !== "string") data.result.whenLine = data.answers.when;
     var fields = ["resolution", "firstMove", "guard", "checkin", "share"];
     for (var f = 0; f < fields.length; f++) {
@@ -1279,8 +1610,15 @@ function captureSpec() {
   quiz.when = v;
   return v;
 }
+var LOVE_CHIPS = ["A walk I already take", "A game or sport I play", "My morning coffee", "My commute", "Time with my kid"];
+function captureLove() {
+  var v = $("q-love-input").value.replace(/\s+/g, " ").trim().slice(0, 90);
+  quiz.love = v;
+  return v;
+}
 function renderQuiz() {
-  var isSpec = quiz.step >= STEPS.length;
+  var isSpec = quiz.step === STEPS.length;
+  var isLove = quiz.step > STEPS.length;
   $("q-step").textContent = "Step " + (quiz.step + 1) + " of " + TOTAL_STEPS;
   var dots = "";
   for (var i = 0; i < TOTAL_STEPS; i++) dots += '<span class="dot' + (i <= quiz.step ? " done" : "") + '"></span>';
@@ -1291,11 +1629,31 @@ function renderQuiz() {
     $("q-title").textContent = "Make week one real.";
     $("q-chips").innerHTML = "";
     $("q-spec").hidden = false;
+    $("q-love").hidden = true;
     $("q-spec-input").value = quiz.when || "";
+    $("q-next").textContent = "Continue";
+    return;
+  }
+  if (isLove) {
+    $("q-title").textContent = "One thing you already love?";
+    $("q-chips").innerHTML = "";
+    $("q-spec").hidden = true;
+    $("q-love").hidden = false;
+    $("q-love-input").value = quiz.love || "";
+    $("q-love-chips").innerHTML = LOVE_CHIPS.map(function (o, i) {
+      return '<button class="chip" data-k="' + i + '">' + o + "</button>";
+    }).join("");
+    var lchips = $("q-love-chips").querySelectorAll(".chip");
+    for (var lc = 0; lc < lchips.length; lc++) {
+      lchips[lc].onclick = (function (el) {
+        return function () { $("q-love-input").value = LOVE_CHIPS[parseInt(el.getAttribute("data-k"), 10)]; };
+      })(lchips[lc]);
+    }
     $("q-next").textContent = "Get my resolution";
     return;
   }
   $("q-spec").hidden = true;
+  $("q-love").hidden = true;
   var st = STEPS[quiz.step];
   $("q-title").textContent = st.title;
   var sel = quiz[st.key];
@@ -1326,10 +1684,48 @@ function renderQuiz() {
     })(chips[c]);
   }
 }
+function renderShowdown() {
+  var box = $("r-showdown");
+  if (!box) return;
+  var sd = current.showdown || [];
+  box.innerHTML = sd.map(function (e) {
+    return '<div class="sd-row ' + (e.out ? "sd-out" : "sd-win") + '">' +
+      (e.out ? "" : '<p class="sd-tag">The one left standing</p>') +
+      '<p class="sd-name">' + e.name + '</p>' +
+      '<p class="sd-dose">' + e.dose + '</p>' +
+      '<p class="sd-reason">' + e.reason + "</p></div>";
+  }).join("");
+  // The nos land one by one; the survivor settles last. Reduced
+  // motion (or no timers) still shows every reason in full.
+  var rows = box.querySelectorAll(".sd-row");
+  var reduced = false;
+  try { reduced = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches); } catch (e) {}
+  for (var i = 0; i < rows.length; i++) {
+    (function (row, idx) {
+      if (reduced) { row.classList.add("sd-done"); return; }
+      setTimeout(function () { row.classList.add("sd-done"); }, 300 + idx * 500);
+    })(rows[i], i);
+  }
+}
 function renderResult() {
   $("r-saved").textContent = "";
   $("r-saved").hidden = true;
-  $("r-resolution").textContent = current.resolution;
+  renderShowdown();
+  // Already-love headline (v1.1): a loved activity that IS the pick
+  // headlines the card in the user's own words; the engine's sized
+  // line prints right underneath, untouched.
+  var hl = (typeof current.headline === "string") ? current.headline : "";
+  $("r-resolution").textContent = hl || current.resolution;
+  $("r-plan-under").textContent = current.resolution;
+  $("r-plan-under-block").hidden = !hl;
+  $("r-anchor").textContent = current.anchorLine || "";
+  $("r-anchor-block").hidden = !current.anchorLine;
+  $("r-ifthen").textContent = current.ifThen || "";
+  $("r-ifthen-block").hidden = !current.ifThen;
+  $("r-planb").textContent = current.planB || "";
+  $("r-planb-block").hidden = !current.planB;
+  $("r-variation").textContent = current.variation || "";
+  $("r-variation-block").hidden = !current.variation;
   $("r-first").textContent = current.firstMove;
   var whenTxt = (typeof current.whenLine === "string") ? current.whenLine : "";
   $("r-when").textContent = whenTxt;
@@ -1601,12 +1997,17 @@ function finishQuiz() {
       fleetTrack("artifact_created", { tool: "resolution-picker", artifact: "week-one-plan" });
     }
   } catch (e) {}
+  try {
+    if (quiz.love && typeof fleetTrack === "function") {
+      fleetTrack("artifact_created", { tool: "resolution-picker", artifact: "already-love" });
+    }
+  } catch (e) {}
   renderResult();
   show("s-result");
 }
 
 $("btn-start").onclick = function () {
-  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "" };
+  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "", love: "" };
   renderQuiz();
   show("s-quiz");
 };
@@ -1616,14 +2017,19 @@ $("q-back").onclick = function () {
   if (quiz.step > 0) { quiz.step--; renderQuiz(); }
 };
 $("q-next").onclick = function () {
-  if (quiz.step >= STEPS.length) { captureSpec(); finishQuiz(); return; }
+  if (quiz.step > STEPS.length) { captureLove(); finishQuiz(); return; }
+  if (quiz.step >= STEPS.length) { captureSpec(); quiz.step++; renderQuiz(); return; }
   var st = STEPS[quiz.step];
   if (!quiz[st.key]) { $("q-hint").textContent = "Pick one answer first."; return; }
   quiz.step++; renderQuiz();
 };
 // Enter in the specificity field submits it, same as the button.
 $("q-spec-input").addEventListener("keydown", function (e) {
-  if (e.key === "Enter") { e.preventDefault(); captureSpec(); finishQuiz(); }
+  if (e.key === "Enter") { e.preventDefault(); captureSpec(); quiz.step++; renderQuiz(); }
+});
+// Enter in the love field submits it, same as the button.
+$("q-love-input").addEventListener("keydown", function (e) {
+  if (e.key === "Enter") { e.preventDefault(); captureLove(); finishQuiz(); }
 });
 $("btn-copy-checkin").onclick = function () {
   copyText(current.checkin, $("st-checkin"), "Copied. Paste it in your AI or notes app.");
@@ -1982,7 +2388,7 @@ $("btn-again").onclick = function () {
   clearResult();
   current = null;
   resetLetter();
-  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "" };
+  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "", love: "" };
   renderQuiz();
   show("s-quiz");
 };
@@ -2009,7 +2415,7 @@ function hasStartFlag() {
 }
 var saved = loadResult();
 if (hasStartFlag()) {
-  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "" };
+  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "", love: "" };
   renderQuiz();
   show("s-quiz");
 } else if (saved) {
@@ -2018,6 +2424,7 @@ if (hasStartFlag()) {
   quiz.time = saved.answers.time;
   quiz.fail = saved.answers.fail;
   quiz.when = saved.answers.when || "";
+  quiz.love = saved.answers.love || "";
   current = saved.result;
   tactics = cleanTactics(saved.tactics);
   why = cleanWhy(saved.why);
@@ -2051,6 +2458,12 @@ if (hasStartFlag()) {
   if (typeof current.timeNote !== "string" || !current.timeNote) {
     var freshNote = buildResult(saved.answers);
     current.timeNote = freshNote.timeNote;
+  }
+  // Plans saved before the v1.1 honest-no build (Nov 2, 2026) carry
+  // no showdown and no plan mechanics. The same answers through the
+  // current engine give the same resolution and guard, so rebuild.
+  if (!current.showdown || typeof current.planB !== "string") {
+    current = buildResult(saved.answers);
   }
   renderResult();
   $("r-saved").textContent = "Your saved plan on this device.";
@@ -2460,6 +2873,202 @@ var GUARD_REFLECT = {
   busy: "Some weeks, half a move was enough.",
   bored: "The hard part was the same move, again."
 };
+// Honest-no layer (v1.1, Nov 2, 2026): the result now shows its work.
+// The four moves in your area that did not survive are named, each with
+// one reason tied to your own answers, and the fail answer rewires the
+// plan's mechanics instead of only its pep talk. The already-love line
+// (optional, last) lets a plan ride on an activity the user already
+// loves: enjoyment is the best-evidenced adherence lever we control
+// (Teixeira et al. 2012; Woolley and Fishbach on immediate rewards),
+// and an existing routine arrives with its anchor pre-installed
+// (Fogg's anchor moment; Gollwitzer's if-then plans).
+var OFF_NOUN = {
+  drained: "feeling drained",
+  piled: "things piling up",
+  stuck: "feeling stuck",
+  drift: "drifting from good habits",
+  alone: "feeling alone"
+};
+var OFF_SAID = {
+  drained: "you felt drained",
+  piled: "things piled up",
+  stuck: "you felt stuck",
+  drift: "you drifted from good habits",
+  alone: "you felt alone"
+};
+// Moves whose payoff is a number or a skill months away. Research on
+// follow-through (Woolley and Fishbach) says rewards felt this week
+// beat rewards felt next season, so when the pick itself pays back
+// fast, a slow-payoff rival can be ruled out on exactly that ground.
+var DELAYED_PAYOFF = {
+  "Move cash to savings": 1,
+  "Write down what you spend": 1,
+  "Learn one work skill": 1
+};
+// The cue each move naturally hangs on (the same defaults the tactics
+// chips use), for the if-then line the forgot answer now writes.
+var ANCHOR_CUE = {
+  "Take a short walk": "after lunch",
+  "Cook a real meal": "after dinner",
+  "Do a short workout": "when I wake up",
+  "Stretch your whole body": "after dinner",
+  "Walk with a friend": "after lunch",
+  "Check your bank balance": "after breakfast",
+  "Sort bills in one spot": "after dinner",
+  "Move cash to savings": "after breakfast",
+  "Write down what you spend": "after dinner",
+  "Tell a friend your goal": "after dinner",
+  "Tidy one small corner": "after dinner",
+  "Clear one shelf fully": "after work",
+  "Fix one small thing": "after work",
+  "Make one room cozy": "after dinner",
+  "Have a friend visit": "after dinner",
+  "Plan your day on paper": "when I wake up",
+  "Clear your desk top": "after work",
+  "Learn one work skill": "after work",
+  "Chat with a work friend": "after lunch",
+  "Eat lunch with coworkers": "after lunch",
+  "Talk with family at home": "after dinner",
+  "Share one meal together": "after dinner",
+  "Play one game together": "after dinner",
+  "Call a friend you miss": "after dinner",
+  "Visit someone you love": "after lunch",
+  "Sit in a quiet place": "when I wake up",
+  "Write thoughts on paper": "after dinner",
+  "Read a calm book": "after dinner",
+  "Breathe slow in fresh air": "after lunch",
+  "Sit outside with others": "after lunch"
+};
+// Week-three variation per move (the bored answer, named up front):
+// one element rotates (place, music, partner, route, timing), drawn
+// from the move's own materials. The move itself never changes.
+var VARIATIONS = {
+  "Take a short walk": "walk a new route this week",
+  "Cook a real meal": "add one new spice or side",
+  "Do a short workout": "swap one move for a new one",
+  "Stretch your whole body": "stretch outside, or to music",
+  "Walk with a friend": "walk somewhere new together",
+  "Check your bank balance": "check right after a different meal",
+  "Sort bills in one spot": "sort standing up, music on",
+  "Move cash to savings": "name the savings for one thing",
+  "Write down what you spend": "write the list on paper",
+  "Tell a friend your goal": "ask about your friend's goal too",
+  "Tidy one small corner": "pick the messiest corner left",
+  "Clear one shelf fully": "race the timer on the shelf",
+  "Fix one small thing": "pick the fix you see most",
+  "Make one room cozy": "move one lamp or chair",
+  "Have a friend visit": "walk and talk instead of sitting",
+  "Plan your day on paper": "write the plan the night before",
+  "Clear your desk top": "clear it standing, music on",
+  "Learn one work skill": "teach it to one person",
+  "Chat with a work friend": "chat with someone new at work",
+  "Eat lunch with coworkers": "eat outside, or somewhere new",
+  "Talk with family at home": "talk on a walk instead",
+  "Share one meal together": "cook the meal together too",
+  "Play one game together": "let the loser pick the game",
+  "Call a friend you miss": "call a different friend you miss",
+  "Visit someone you love": "bring one small thing they like",
+  "Sit in a quiet place": "sit in a new quiet spot",
+  "Write thoughts on paper": "write in the morning instead",
+  "Read a calm book": "read outside, or an old favorite",
+  "Breathe slow in fresh air": "breathe at a new spot outside",
+  "Sit outside with others": "sit after dinner instead of lunch"
+};
+// Words that say the loved activity IS this move in the user's own
+// form ("5v5 basketball" for the workout). A match lets the headline
+// render in the user's words; no match and the love line is an anchor
+// the first move rides on instead. Matching is whole-word, on the
+// cleaned line, so "already" never reads as "read".
+var LOVE_KEYS = {
+  "Take a short walk": ["walk", "stroll", "hike", "dog"],
+  "Cook a real meal": ["cook", "dinner", "baking", "bake", "kitchen", "meal"],
+  "Do a short workout": ["workout", "gym", "basketball", "5v5", "run", "running", "soccer", "tennis", "swim", "bike", "cycling", "yoga", "lift", "weights", "exercise", "sport"],
+  "Stretch your whole body": ["stretch", "yoga", "mobility"],
+  "Walk with a friend": ["walk", "stroll", "hike", "friend"],
+  "Check your bank balance": ["bank", "balance", "budget", "money"],
+  "Sort bills in one spot": ["bill", "bills", "paperwork", "mail"],
+  "Move cash to savings": ["savings", "save", "bank", "money"],
+  "Write down what you spend": ["spend", "budget", "money", "track"],
+  "Tell a friend your goal": ["friend", "goal"],
+  "Tidy one small corner": ["tidy", "clean", "corner", "declutter"],
+  "Clear one shelf fully": ["shelf", "declutter", "clean", "closet"],
+  "Fix one small thing": ["fix", "repair", "tools", "diy"],
+  "Make one room cozy": ["cozy", "room"],
+  "Have a friend visit": ["friend", "visit", "host"],
+  "Plan your day on paper": ["paper", "planner", "journal", "notebook"],
+  "Clear your desk top": ["desk", "office"],
+  "Learn one work skill": ["learn", "skill", "course", "study", "class"],
+  "Chat with a work friend": ["chat", "coffee", "coworker"],
+  "Eat lunch with coworkers": ["lunch", "coworker", "coworkers"],
+  "Talk with family at home": ["family", "talk", "dinner"],
+  "Share one meal together": ["meal", "dinner", "cook"],
+  "Play one game together": ["game", "games", "cards", "play"],
+  "Call a friend you miss": ["call", "phone", "friend"],
+  "Visit someone you love": ["visit", "mom", "dad", "grandma", "grandpa", "family"],
+  "Sit in a quiet place": ["quiet", "sit", "garden", "porch", "meditate"],
+  "Write thoughts on paper": ["write", "journal", "paper", "diary"],
+  "Read a calm book": ["read", "book", "novel"],
+  "Breathe slow in fresh air": ["breathe", "breathing", "outside"],
+  "Sit outside with others": ["outside", "porch", "garden", "sit"]
+};
+function loveMatches(love, action) {
+  var keys = LOVE_KEYS[action] || [];
+  var hay = " " + love.toLowerCase().replace(/[^a-z0-9]+/g, " ") + " ";
+  for (var i = 0; i < keys.length; i++) {
+    if (hay.indexOf(" " + keys[i] + " ") >= 0) return true;
+  }
+  return false;
+}
+// The honest no, per rival. Openers, echoes, and closers rotate on
+// independent counters, so the four nos in one result never read as
+// one stamp, and no two reasons in a result can come out identical:
+// every reason leads with the rival's own fact (its feeling, its
+// starting size and frequency, its weekly cost, its payoff timing),
+// then echoes the user's own answer, then the principle, plainly.
+function sdFreq(times) {
+  if (times === 1) return "once";
+  if (times === 2) return "twice";
+  return times + " times";
+}
+function noBig(variant, cD, noun) {
+  if (variant === 0) return "Its first step is a " + cD.mins + " minute session. It is built for " + noun + ". You said too much ended the last plan. Shrink the start, not the goal.";
+  if (variant === 1) return "It opens at " + cD.mins + " minutes a session. It is built for " + noun + ". Your last plan died of too much. Tiny starts survive where big starts stall.";
+  return "One session asks " + cD.mins + " minutes up front. It is built for " + noun + ". Too much is your known trap. This plan starts small on purpose.";
+}
+function noBusy(variant, total, noun) {
+  if (variant === 0) return "It needs " + total + " minutes every week. It is built for " + noun + ". You said life gets busy and loud. No slack means one loud week ends it.";
+  if (variant === 1) return "At your time pick, it eats " + total + " minutes. It is built for " + noun + ". Busy weeks are your known trap. A plan with no slack snaps.";
+  return "It fills " + total + " of your weekly minutes. It is built for " + noun + ". One loud week would break its streak. Your plan keeps slack on purpose.";
+}
+function noDelayed(variant, noun) {
+  if (variant === 0) return "Its payoff is a number, months away. It is built for " + noun + ". Rewards you feel this week win. Distant payoffs lose to near ones.";
+  if (variant === 1) return "The reward lands far in the future. It is built for " + noun + ". People keep plans that pay back fast.";
+  return "You would feel this win next season. It is built for " + noun + ". Wins you feel now hold people longer.";
+}
+function noMismatch(vOpen, vEcho, vClose, noun, said) {
+  var openers = [
+    "This is the move for " + noun + ".",
+    "This one treats " + noun + ".",
+    "The move for " + noun + "."
+  ];
+  var echoes = [
+    "You said " + said + ".",
+    "Your words: " + said + ".",
+    "You named " + said + " instead."
+  ];
+  var closers = [
+    "A fix for the wrong feeling misses.",
+    "It solves a problem you did not name.",
+    "Help aimed elsewhere rarely lands."
+  ];
+  return openers[vOpen] + " " + echoes[vEcho] + " " + closers[vClose];
+}
+function yesReason(variant, noun, w1) {
+  if (variant === 0) return "This one is built for " + noun + ". It starts at " + w1 + " min, small on purpose. Its plan bends around your last failure.";
+  if (variant === 1) return "Built for " + noun + ", in your words. Week one starts at " + w1 + " min. The plan below guards your weak spot.";
+  return "The match for " + noun + ". It opens at " + w1 + " min, not full size. Every line below answers your four answers.";
+}
+
 // Specificity line (PMR-SPECIFIC-1, Oct 31, 2026; Wave H fix): the
 // user may name week one's first session in their own words (day,
 // time, place, person). It is optional, capped at 90 chars, stored
@@ -2509,6 +3118,50 @@ function buildResult(a) {
   var weekOne = w1 >= d.mins
     ? "Week one: " + d.dose + ". That is the whole plan."
     : "Week one: " + w1 + " min, " + d.times + "x a week. It counts in full. The " + d.mins + " min plan starts week two.";
+  // Fail rewiring (v1.1, Nov 2, 2026): the fail answer now changes
+  // the plan's mechanics, not only its guard line. Too much slows the
+  // ramp (weeks one and two at the week-one size). Forgetting makes
+  // the reminder step 1 and writes the if-then into the plan. Busy
+  // ships a named Plan B dose inside the plan and the check-in. Bored
+  // names its week-three variation up front.
+  var planB = "", planBLine = "", variation = "", ifThen = "";
+  if (a.fail === "big") {
+    weekOne = w1 >= d.mins
+      ? "Weeks one and two: " + d.dose + ". It counts in full. Nothing gets added until week three."
+      : "Weeks one and two: " + w1 + " min, " + d.times + "x a week. It counts in full. The " + d.mins + " min plan starts week three.";
+  } else if (a.fail === "forgot") {
+    firstMove = "Step 1: set a phone alarm. Step 2: " + firstMove;
+    var lcAction = action.charAt(0).toLowerCase() + action.slice(1);
+    ifThen = "My cue: " + (ANCHOR_CUE[action] || "after dinner") + ". Then I will " + lcAction + ".";
+  } else if (a.fail === "busy") {
+    var bMins = weekOneMins(d.mins);
+    if (bMins < d.mins) {
+      planB = "Plan B: " + bMins + " min, " + d.times + "x a week. It counts in full.";
+      planBLine = "Busy week? My Plan B dose: " + bMins + " min, " + d.times + "x a week. It counts in full.";
+    } else {
+      planB = "Plan B: one short session still counts. A loud week cannot break this plan.";
+      planBLine = "Busy week? One short session still counts.";
+    }
+  } else if (a.fail === "bored") {
+    variation = "From week three: " + (VARIATIONS[action] || "change one thing, not the move") + ".";
+  }
+  // Already-love line (v1.1): optional, display-only for the pick
+  // itself (the engine still chooses), but it changes how the result
+  // is framed. A family match renders the headline and week one in
+  // the user's own form, sized plan underneath. No match: the line
+  // becomes the anchor the first move rides on. Skipped: every field
+  // below stays empty and the result is exactly the unwired one.
+  var love = cleanWhen(a.love);
+  var headline = "", anchorLine = "";
+  if (love) {
+    if (loveMatches(love, action)) {
+      headline = love.charAt(0).toUpperCase() + love.slice(1);
+      weekOne = "Week one: show up once. It already happens. The sized plan runs underneath. It is " + d.dose + ". Week one counts at " + w1 + " min.";
+    } else {
+      anchorLine = "Ride it on what you love: right after " + love + ", do the first move above.";
+    }
+  }
+
   // The stakes, in approach words (dogfood fix, Nov 2, 2026): what
   // keeping it looks like by March 1, counted from this plan's own
   // weekly sessions (about eight weeks from Jan 1). No doom, no
@@ -2529,6 +3182,11 @@ function buildResult(a) {
     "What is one small move for next week?",
     "Please keep your reply short and kind."
   ].join("\n");
+  if (planBLine) {
+    var clines = checkin.split("\n");
+    clines.splice(6, 0, planBLine);
+    checkin = clines.join("\n");
+  }
   // Reflective note (Oct 30, 2026): a short letter from past me, woven
   // only from this plan's own fields (the feeling picked, the action,
   // its dose, the starter's line, the guard told as experience). No full
@@ -2544,6 +3202,35 @@ function buildResult(a) {
     "Did the small move still fit my week?",
     "From past me."
   ].join("\n");
+
+  // The showdown (v1.1): the five moves in the picked area, the four
+  // honest nos first (in the bank's own order), the survivor last.
+  // Reason priority: a fail-mode fact that truly applies to the rival
+  // (a big start for a too-much history, a heavy week for a busy one),
+  // then a delayed payoff, then the plain feeling mismatch.
+  var showdown = [];
+  var sdIdx = 0;
+  var pickTotal = d.mins * d.times;
+  for (var oi = 0; oi < OFFS.length; oi++) {
+    var oc = OFFS[oi].k;
+    if (oc === a.off) continue;
+    var cAct = ACTIONS[a.area][oc];
+    var cD = DOSES[cAct][a.time];
+    var cTotal = cD.mins * cD.times;
+    var reason;
+    if (a.fail === "big" && cD.mins >= 30) {
+      reason = noBig(sdIdx % 3, cD, OFF_NOUN[oc]);
+    } else if (a.fail === "busy" && cTotal >= 120 && cTotal > pickTotal) {
+      reason = noBusy(sdIdx % 3, cTotal, OFF_NOUN[oc]);
+    } else if (DELAYED_PAYOFF[cAct] && !DELAYED_PAYOFF[action]) {
+      reason = noDelayed(sdIdx % 3, OFF_NOUN[oc]);
+    } else {
+      reason = noMismatch(sdIdx % 3, (sdIdx + 1) % 3, (sdIdx + 2) % 3, OFF_NOUN[oc], OFF_SAID[a.off]);
+    }
+    sdIdx++;
+    showdown.push({ name: cAct, dose: cD.dose, out: true, reason: reason });
+  }
+  showdown.push({ name: action, dose: d.dose, out: false, reason: yesReason(sdIdx % 3, OFF_NOUN[a.off], w1) });
   var share = [
     "My 2027 resolution:",
     resolution,
@@ -2560,7 +3247,14 @@ function buildResult(a) {
     checkin: checkin,
     futureNote: futureNote,
     share: share,
-    whenLine: cleanWhen(a.when)
+    whenLine: cleanWhen(a.when),
+    showdown: showdown,
+    planB: planB,
+    variation: variation,
+    ifThen: ifThen,
+    headline: headline,
+    anchorLine: anchorLine,
+    loveLine: love
   };
 }
 // ENGINE END
