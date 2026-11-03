@@ -591,6 +591,7 @@ window.FLEET_CFG = {
     <div class="dots" id="q-dots" aria-hidden="true"></div>
     <p class="step-tag" id="q-step"></p>
     <h2 id="q-title"></h2>
+    <p class="sub" id="q-why" style="font-size:15px;margin:4px 0 0"></p>
     <div class="chips" id="q-chips"></div>
     <div id="q-spec" hidden>
       <p class="sub" style="font-size:15px">Day, time, place, person. In your own words.</p>
@@ -1547,10 +1548,10 @@ function copyText(text, statusEl, okMsg) {
 }
 
 var STEPS = [
-  { key: "area", title: "Pick one part of your life.", list: AREAS },
-  { key: "off", title: "What was hard this year?", list: OFFS },
-  { key: "time", title: "How much time do you have each week?", list: TIMES },
-  { key: "fail", title: "What made past plans fail?", list: FAILS }
+  { key: "area", title: "Pick one part of your life.", why: "One part only. Your pick lives there.", list: AREAS },
+  { key: "off", title: "What was hard this year?", why: "Your pick aims at the hard part.", list: OFFS },
+  { key: "time", title: "How much time do you have each week?", why: "So your plan fits your real week.", list: TIMES },
+  { key: "fail", title: "What made past plans fail?", why: "So your plan guards the old trap.", list: FAILS }
 ];
 var KEY = "pmr_result_v1";
 var quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "", love: "" };
@@ -1638,6 +1639,7 @@ function renderQuiz() {
   $("q-back").style.visibility = quiz.step === 0 ? "hidden" : "visible";
   if (isSpec) {
     $("q-title").textContent = "Make week one real.";
+    $("q-why").textContent = "";
     $("q-chips").innerHTML = "";
     $("q-spec").hidden = false;
     $("q-love").hidden = true;
@@ -1647,6 +1649,7 @@ function renderQuiz() {
   }
   if (isLove) {
     $("q-title").textContent = "One thing you already love?";
+    $("q-why").textContent = "";
     $("q-chips").innerHTML = "";
     $("q-spec").hidden = true;
     $("q-love").hidden = false;
@@ -1667,6 +1670,7 @@ function renderQuiz() {
   $("q-love").hidden = true;
   var st = STEPS[quiz.step];
   $("q-title").textContent = st.title;
+  $("q-why").textContent = st.why || "";
   var sel = quiz[st.key];
   $("q-chips").innerHTML = st.list.map(function (o) {
     var on = sel === o.k;
