@@ -3,7 +3,7 @@
 > Complete text of keeponeresolution.com: every page, plus the full bank inside its free quiz.
 > The quiz picks one New Year's resolution you can keep. Four questions, about one minute.
 > Free forever. No ads, no accounts. Your answers stay in your browser.
-> Text captured from the live site, 2026-11-01.
+> Text captured from the live site, 2026-11-03.
 
 ## Homepage and quiz (https://keeponeresolution.com/)
 
@@ -12,11 +12,11 @@ Keep One Resolution
 This year, keep one. Just one.
 This site picks one resolution you can keep.
 Last January, you wrote a list. By spring, none of it stuck.
-61 days
+59 days
 00 hrs
 00 min
 00 sec
-61 days until January 1, 2027.
+59 days until January 1, 2027.
 What&rsquo;s next? &#9662;
 The moment: January 1, 2027 &mdash; time to pick your one resolution.
 Pick my one resolution
@@ -29,6 +29,13 @@ Week one starts at 15 min &middot; Sat 9am, at the park, with Alex
 The January list
 Two friends, one walk
 Breakfast, together
+Why this one sticks
+One pick. Not fifty. Most lists quit by February.
+Sized to your week. In minutes you actually have.
+A first move. For week one, not a wish.
+An if-then plan. Gollwitzer: &ldquo;If 9am, then I walk&rdquo; (94 tests).
+One dot a week. 52 dots. No streak to break.
+Norcross tracked it: 46% still going at six months.
 One real pick, start to finish
 Say your year felt like this:
 Body and health
@@ -49,7 +56,6 @@ Your time
 This plan uses all 120 minutes offered.
 It ends with a note to future you. This one opens:
 &ldquo;Dear future me, I felt drained a lot back then. My pick was Take a short walk.&rdquo;
-You finish yours in your own words. It stays on your device.
 Pick my one resolution
 How it works
 You pick one area. Body, money, home, work, family, calm.
@@ -74,31 +80,51 @@ One optional line names week one.
 One more names something you already love.
 What New Year's resolution can I keep?
 One is easier to keep than a list.
-Small steps add up over time.
 Is it free?
 Yes. It is free for good.
 No ads. No accounts.
 What we don't do
-Your letter lives as a card on this device for now.
 Reminders and signup stay off: we send no reminder emails, and there is no email signup.
 Your plan and note live in this browser only &mdash; they stay off our servers.
-You leave with one plan, sized to your week.
-Our guarantees
-The full plan is yours with no account or email.
-We never sell your data, and your words stay on this device.
-This site is ad-free.
 Made by a dad, on the side
-I&apos;m Billy, a dad in Redmond, Washington. I build these tools on the side, with AI &mdash; one idea, one website, no company behind it. This one keeps it to one resolution, sized to a real week, because lists die by spring.
+I&apos;m Billy, a dad in Redmond, Washington. I build these tools on the side, with AI &mdash; one idea, one website, no company behind it. Keep One Resolution holds it to one resolution, sized to a real week, because lists die by spring.
 Day, time, place, person. In your own words.
 Leave it blank to skip. You still get your full plan.
+A game, a walk, a small routine. If it fits your pick, your plan rides on it.
+Leave it blank to skip. Nothing changes if you do.
 Back
 Continue
 Your plan is set
 Your one resolution
+First, the honest no
+Five moves live in your area. Four get a no, each with its reason. One is left standing.
+The sized plan underneath
+Your anchor
+Your why
 First move, week one
+Easy start
 Your week one plan
 If it gets hard
+Your if-then
+Plan B, for busy weeks
+Week three twist
 Your time
+By March 1
+Why this one?
+Tap your real reason, or write your own. It rides on your plan and your check-in.
+Skip it if you want. Your plan is already set above.
+Why this plan can stick
+Your why leads.
+Your guard line is an if-then plan. Gollwitzer found naming the moment first lifts follow-through.
+Your first move is tiny on purpose. Fogg: small starts you cannot skip beat dreaded ones.
+Your check-in is you watching you. People who track their own record keep going longer.
+Make it stick: your tactics
+1. Your cue
+Already set from your pick. Tap a cue to change it.
+2. Your if-then plan
+Pick a cue above, and your plan writes itself here.
+3. Your check-in rhythm
+Your picks join your check-in text below. They save on this device only.
 Your weekly check-in
 Copy my weekly check-in
 Share text
@@ -116,7 +142,7 @@ Share my letter card
 Download my letter card
 Change answers
 Start over
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -129,12 +155,10 @@ More family tools: Fill My Bracket, your March bracket
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Say your year in a line or two. This is an AI helper. It picks only from this site's own resolutions, the same picks the picker makes. Nothing you type is saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
-Stuck at work, bored, quit. 5 hours a week.
-Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
@@ -156,25 +180,25 @@ a weekly check-in prompt to copy into your own AI, and a year card with 52 dots,
 #### Body and health
 
 - Take a short walk (when you felt: I felt drained a lot.)
-  - 30 minutes a week: "Take a short walk: 10 min, 3x a week." First move: Put your shoes by the front door. Walk 10 min right after a meal.
-  - 2 hours a week: "Take a short walk: 30 min, 4x a week." First move: Put your shoes by the front door. Walk 30 min right after a meal.
-  - 5 hours a week: "Take a short walk: 30 min, 7x a week." First move: Put your shoes by the front door. Walk 30 min right after a meal.
+  - 30 minutes a week: "Take a short walk: 10 min, 3x a week." First move: Put your shoes by the front door. Walk 5 min right after a meal.
+  - 2 hours a week: "Take a short walk: 30 min, 4x a week." First move: Put your shoes by the front door. Walk 15 min right after a meal.
+  - 5 hours a week: "Take a short walk: 30 min, 7x a week." First move: Put your shoes by the front door. Walk 15 min right after a meal.
 - Cook a real meal (when you felt: Things piled up on me.)
-  - 30 minutes a week: "Cook a real meal: 30 min, 1x a week." First move: Write one meal on a sticky note. Cook it tonight in about 30 min.
-  - 2 hours a week: "Cook a real meal: 30 min, 4x a week." First move: Write one meal on a sticky note. Cook it tonight in about 30 min.
-  - 5 hours a week: "Cook a real meal: 60 min, 5x a week." First move: Write one meal on a sticky note. Cook it tonight in about 60 min.
+  - 30 minutes a week: "Cook a real meal: 30 min, 1x a week." First move: Write one meal on a sticky note. Cook it tonight in about 15 min.
+  - 2 hours a week: "Cook a real meal: 30 min, 4x a week." First move: Write one meal on a sticky note. Cook it tonight in about 15 min.
+  - 5 hours a week: "Cook a real meal: 60 min, 5x a week." First move: Write one meal on a sticky note. Cook it tonight in about 30 min.
 - Do a short workout (when you felt: I felt stuck in place.)
-  - 30 minutes a week: "Do a short workout: 10 min, 3x a week." First move: Lay out your clothes the night before. Do 10 min in your living room.
-  - 2 hours a week: "Do a short workout: 30 min, 4x a week." First move: Lay out your clothes the night before. Do 30 min in your living room.
-  - 5 hours a week: "Do a short workout: 40 min, 5x a week." First move: Lay out your clothes the night before. Do 40 min in your living room.
+  - 30 minutes a week: "Do a short workout: 10 min, 3x a week." First move: Lay out your clothes the night before. Do 5 min in your living room.
+  - 2 hours a week: "Do a short workout: 30 min, 4x a week." First move: Lay out your clothes the night before. Do 15 min in your living room.
+  - 5 hours a week: "Do a short workout: 40 min, 5x a week." First move: Lay out your clothes the night before. Do 20 min in your living room.
 - Stretch your whole body (when you felt: I drifted from good habits.)
-  - 30 minutes a week: "Stretch your whole body: 10 min, 3x a week." First move: Roll out a mat or bath towel. Stretch slow for 10 min.
-  - 2 hours a week: "Stretch your whole body: 20 min, 5x a week." First move: Roll out a mat or bath towel. Stretch slow for 20 min.
-  - 5 hours a week: "Stretch your whole body: 20 min, 7x a week." First move: Roll out a mat or bath towel. Stretch slow for 20 min.
+  - 30 minutes a week: "Stretch your whole body: 10 min, 3x a week." First move: Roll out a mat or bath towel. Stretch slow for 5 min.
+  - 2 hours a week: "Stretch your whole body: 20 min, 5x a week." First move: Roll out a mat or bath towel. Stretch slow for 10 min.
+  - 5 hours a week: "Stretch your whole body: 20 min, 7x a week." First move: Roll out a mat or bath towel. Stretch slow for 10 min.
 - Walk with a friend (when you felt: I felt alone a lot.)
-  - 30 minutes a week: "Walk with a friend: 30 min, 1x a week." First move: Text one friend and pick a day. Walk and talk for 30 min.
-  - 2 hours a week: "Walk with a friend: 30 min, 4x a week." First move: Text one friend and pick a day. Walk and talk for 30 min.
-  - 5 hours a week: "Walk with a friend: 45 min, 5x a week." First move: Text one friend and pick a day. Walk and talk for 45 min.
+  - 30 minutes a week: "Walk with a friend: 30 min, 1x a week." First move: Text one friend and pick a day. Walk and talk for 15 min.
+  - 2 hours a week: "Walk with a friend: 30 min, 4x a week." First move: Text one friend and pick a day. Walk and talk for 15 min.
+  - 5 hours a week: "Walk with a friend: 45 min, 5x a week." First move: Text one friend and pick a day. Walk and talk for 25 min.
 
 #### Money
 
@@ -202,17 +226,17 @@ a weekly check-in prompt to copy into your own AI, and a year card with 52 dots,
 #### Home
 
 - Tidy one small corner (when you felt: I felt drained a lot.)
-  - 30 minutes a week: "Tidy one small corner: 10 min, 3x a week." First move: Pick the corner by the front door. Tidy only it for 10 min.
-  - 2 hours a week: "Tidy one small corner: 20 min, 4x a week." First move: Pick the corner by the front door. Tidy only it for 20 min.
-  - 5 hours a week: "Tidy one small corner: 20 min, 7x a week." First move: Pick the corner by the front door. Tidy only it for 20 min.
+  - 30 minutes a week: "Tidy one small corner: 10 min, 3x a week." First move: Pick the corner by the front door. Tidy only it for 5 min.
+  - 2 hours a week: "Tidy one small corner: 20 min, 4x a week." First move: Pick the corner by the front door. Tidy only it for 10 min.
+  - 5 hours a week: "Tidy one small corner: 20 min, 7x a week." First move: Pick the corner by the front door. Tidy only it for 10 min.
 - Clear one shelf fully (when you felt: Things piled up on me.)
-  - 30 minutes a week: "Clear one shelf fully: 25 min, 1x a week." First move: Pick the fullest shelf you have. Clear it fully in about 25 min.
-  - 2 hours a week: "Clear one shelf fully: 30 min, 2x a week." First move: Pick the fullest shelf you have. Clear it fully in about 30 min.
-  - 5 hours a week: "Clear one shelf fully: 30 min, 5x a week." First move: Pick the fullest shelf you have. Clear it fully in about 30 min.
+  - 30 minutes a week: "Clear one shelf fully: 25 min, 1x a week." First move: Pick the fullest shelf you have. Clear it fully in about 15 min.
+  - 2 hours a week: "Clear one shelf fully: 30 min, 2x a week." First move: Pick the fullest shelf you have. Clear it fully in about 15 min.
+  - 5 hours a week: "Clear one shelf fully: 30 min, 5x a week." First move: Pick the fullest shelf you have. Clear it fully in about 15 min.
 - Fix one small thing (when you felt: I felt stuck in place.)
-  - 30 minutes a week: "Fix one small thing: 30 min, 1x a week." First move: Write down the fix that bugs you. Start it. Give it 30 min.
-  - 2 hours a week: "Fix one small thing: 45 min, 1x a week." First move: Write down the fix that bugs you. Start it. Give it 45 min.
-  - 5 hours a week: "Fix one small thing: 45 min, 3x a week." First move: Write down the fix that bugs you. Start it. Give it 45 min.
+  - 30 minutes a week: "Fix one small thing: 30 min, 1x a week." First move: Write down the fix that bugs you. Start it. Give it 15 min.
+  - 2 hours a week: "Fix one small thing: 45 min, 1x a week." First move: Write down the fix that bugs you. Start it. Give it 25 min.
+  - 5 hours a week: "Fix one small thing: 45 min, 3x a week." First move: Write down the fix that bugs you. Start it. Give it 25 min.
 - Make one room cozy (when you felt: I drifted from good habits.)
   - 30 minutes a week: "Make one room cozy: 30 min, 1x a week." First move: Pick the room you sit in most. Add one lamp or soft blanket.
   - 2 hours a week: "Make one room cozy: 60 min, 1x a week." First move: Pick the room you sit in most. Add one lamp or soft blanket.
@@ -229,17 +253,17 @@ a weekly check-in prompt to copy into your own AI, and a year card with 52 dots,
   - 2 hours a week: "Plan your day on paper: 10 min, 5x a week." First move: Put paper and pen by your coffee. Write your top three tasks first.
   - 5 hours a week: "Plan your day on paper: 10 min, 7x a week." First move: Put paper and pen by your coffee. Write your top three tasks first.
 - Clear your desk top (when you felt: Things piled up on me.)
-  - 30 minutes a week: "Clear your desk top: 10 min, 3x a week." First move: Set a timer for 10 min. Clear the desk top into one box.
-  - 2 hours a week: "Clear your desk top: 15 min, 4x a week." First move: Set a timer for 15 min. Clear the desk top into one box.
-  - 5 hours a week: "Clear your desk top: 20 min, 5x a week." First move: Set a timer for 20 min. Clear the desk top into one box.
+  - 30 minutes a week: "Clear your desk top: 10 min, 3x a week." First move: Set a timer for 5 min. Clear the desk top into one box.
+  - 2 hours a week: "Clear your desk top: 15 min, 4x a week." First move: Set a timer for 10 min. Clear the desk top into one box.
+  - 5 hours a week: "Clear your desk top: 20 min, 5x a week." First move: Set a timer for 10 min. Clear the desk top into one box.
 - Learn one work skill (when you felt: I felt stuck in place.)
-  - 30 minutes a week: "Learn one work skill: 10 min, 3x a week." First move: Pick one small skill for your job. Learn it for 10 min today.
-  - 2 hours a week: "Learn one work skill: 30 min, 4x a week." First move: Pick one small skill for your job. Learn it for 30 min today.
-  - 5 hours a week: "Learn one work skill: 60 min, 5x a week." First move: Pick one small skill for your job. Learn it for 60 min today.
+  - 30 minutes a week: "Learn one work skill: 10 min, 3x a week." First move: Pick one small skill for your job. Learn it for 5 min today.
+  - 2 hours a week: "Learn one work skill: 30 min, 4x a week." First move: Pick one small skill for your job. Learn it for 15 min today.
+  - 5 hours a week: "Learn one work skill: 60 min, 5x a week." First move: Pick one small skill for your job. Learn it for 30 min today.
 - Chat with a work friend (when you felt: I drifted from good habits.)
-  - 30 minutes a week: "Chat with a work friend: 10 min, 3x a week." First move: Ask one work friend for coffee. Chat for 10 min this week.
-  - 2 hours a week: "Chat with a work friend: 30 min, 4x a week." First move: Ask one work friend for coffee. Chat for 30 min this week.
-  - 5 hours a week: "Chat with a work friend: 30 min, 5x a week." First move: Ask one work friend for coffee. Chat for 30 min this week.
+  - 30 minutes a week: "Chat with a work friend: 10 min, 3x a week." First move: Ask one work friend for coffee. Chat for 5 min this week.
+  - 2 hours a week: "Chat with a work friend: 30 min, 4x a week." First move: Ask one work friend for coffee. Chat for 15 min this week.
+  - 5 hours a week: "Chat with a work friend: 30 min, 5x a week." First move: Ask one work friend for coffee. Chat for 15 min this week.
 - Eat lunch with coworkers (when you felt: I felt alone a lot.)
   - 30 minutes a week: "Eat lunch with coworkers: 30 min, 1x a week." First move: Ask two coworkers to lunch today. Eat together. Leave phones in pockets.
   - 2 hours a week: "Eat lunch with coworkers: 30 min, 4x a week." First move: Ask two coworkers to lunch today. Eat together. Leave phones in pockets.
@@ -248,9 +272,9 @@ a weekly check-in prompt to copy into your own AI, and a year card with 52 dots,
 #### Family and friends
 
 - Talk with family at home (when you felt: I felt drained a lot.)
-  - 30 minutes a week: "Talk with family at home: 10 min, 3x a week." First move: Pick a time right after dinner. Talk at the table for 10 min.
-  - 2 hours a week: "Talk with family at home: 30 min, 4x a week." First move: Pick a time right after dinner. Talk at the table for 30 min.
-  - 5 hours a week: "Talk with family at home: 60 min, 5x a week." First move: Pick a time right after dinner. Talk at the table for 60 min.
+  - 30 minutes a week: "Talk with family at home: 10 min, 3x a week." First move: Pick a time right after dinner. Talk at the table for 5 min.
+  - 2 hours a week: "Talk with family at home: 30 min, 4x a week." First move: Pick a time right after dinner. Talk at the table for 15 min.
+  - 5 hours a week: "Talk with family at home: 60 min, 5x a week." First move: Pick a time right after dinner. Talk at the table for 30 min.
 - Share one meal together (when you felt: Things piled up on me.)
   - 30 minutes a week: "Share one meal together: 30 min, 1x a week." First move: Pick one dinner this week together. Eat at the table. No phones there.
   - 2 hours a week: "Share one meal together: 30 min, 4x a week." First move: Pick one dinner this week together. Eat at the table. No phones there.
@@ -271,25 +295,25 @@ a weekly check-in prompt to copy into your own AI, and a year card with 52 dots,
 #### Mind and calm
 
 - Sit in a quiet place (when you felt: I felt drained a lot.)
-  - 30 minutes a week: "Sit in a quiet place: 10 min, 3x a week." First move: Pick one quiet spot in your home. Sit there 10 min, no phone.
-  - 2 hours a week: "Sit in a quiet place: 20 min, 5x a week." First move: Pick one quiet spot in your home. Sit there 20 min, no phone.
-  - 5 hours a week: "Sit in a quiet place: 20 min, 7x a week." First move: Pick one quiet spot in your home. Sit there 20 min, no phone.
+  - 30 minutes a week: "Sit in a quiet place: 10 min, 3x a week." First move: Pick one quiet spot in your home. Sit there 5 min, no phone.
+  - 2 hours a week: "Sit in a quiet place: 20 min, 5x a week." First move: Pick one quiet spot in your home. Sit there 10 min, no phone.
+  - 5 hours a week: "Sit in a quiet place: 20 min, 7x a week." First move: Pick one quiet spot in your home. Sit there 10 min, no phone.
 - Write thoughts on paper (when you felt: Things piled up on me.)
-  - 30 minutes a week: "Write thoughts on paper: 10 min, 3x a week." First move: Put a notebook by your bed. Write for 10 min before sleep.
-  - 2 hours a week: "Write thoughts on paper: 20 min, 5x a week." First move: Put a notebook by your bed. Write for 20 min before sleep.
-  - 5 hours a week: "Write thoughts on paper: 20 min, 7x a week." First move: Put a notebook by your bed. Write for 20 min before sleep.
+  - 30 minutes a week: "Write thoughts on paper: 10 min, 3x a week." First move: Put a notebook by your bed. Write for 5 min before sleep.
+  - 2 hours a week: "Write thoughts on paper: 20 min, 5x a week." First move: Put a notebook by your bed. Write for 10 min before sleep.
+  - 5 hours a week: "Write thoughts on paper: 20 min, 7x a week." First move: Put a notebook by your bed. Write for 10 min before sleep.
 - Read a calm book (when you felt: I felt stuck in place.)
-  - 30 minutes a week: "Read a calm book: 10 min, 3x a week." First move: Put your book on your pillow now. Read 10 min in bed tonight.
-  - 2 hours a week: "Read a calm book: 30 min, 4x a week." First move: Put your book on your pillow now. Read 30 min in bed tonight.
-  - 5 hours a week: "Read a calm book: 60 min, 5x a week." First move: Put your book on your pillow now. Read 60 min in bed tonight.
+  - 30 minutes a week: "Read a calm book: 10 min, 3x a week." First move: Put your book on your pillow now. Read 5 min in bed tonight.
+  - 2 hours a week: "Read a calm book: 30 min, 4x a week." First move: Put your book on your pillow now. Read 15 min in bed tonight.
+  - 5 hours a week: "Read a calm book: 60 min, 5x a week." First move: Put your book on your pillow now. Read 30 min in bed tonight.
 - Breathe slow in fresh air (when you felt: I drifted from good habits.)
-  - 30 minutes a week: "Breathe slow in fresh air: 10 min, 3x a week." First move: Step outside your front door today. Breathe slow for 10 min.
-  - 2 hours a week: "Breathe slow in fresh air: 10 min, 5x a week." First move: Step outside your front door today. Breathe slow for 10 min.
-  - 5 hours a week: "Breathe slow in fresh air: 10 min, 7x a week." First move: Step outside your front door today. Breathe slow for 10 min.
+  - 30 minutes a week: "Breathe slow in fresh air: 10 min, 3x a week." First move: Step outside your front door today. Breathe slow for 5 min.
+  - 2 hours a week: "Breathe slow in fresh air: 10 min, 5x a week." First move: Step outside your front door today. Breathe slow for 5 min.
+  - 5 hours a week: "Breathe slow in fresh air: 10 min, 7x a week." First move: Step outside your front door today. Breathe slow for 5 min.
 - Sit outside with others (when you felt: I felt alone a lot.)
-  - 30 minutes a week: "Sit outside with others: 10 min, 3x a week." First move: Sit outside with others after lunch. Stay 10 min and just talk.
-  - 2 hours a week: "Sit outside with others: 20 min, 5x a week." First move: Sit outside with others after lunch. Stay 20 min and just talk.
-  - 5 hours a week: "Sit outside with others: 30 min, 5x a week." First move: Sit outside with others after lunch. Stay 30 min and just talk.
+  - 30 minutes a week: "Sit outside with others: 10 min, 3x a week." First move: Sit outside with others after lunch. Stay 5 min and just talk.
+  - 2 hours a week: "Sit outside with others: 20 min, 5x a week." First move: Sit outside with others after lunch. Stay 10 min and just talk.
+  - 5 hours a week: "Sit outside with others: 30 min, 5x a week." First move: Sit outside with others after lunch. Stay 15 min and just talk.
 
 ### The four notes for when it gets hard
 
@@ -386,7 +410,7 @@ What if I have just 30 minutes a week?
 That is fine.
 Your plan fits inside that time.
 Small moves count when you keep them.
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Money
 · Home
 · Work
@@ -481,7 +505,7 @@ What if I have just 30 minutes a week?
 That is fine.
 Your plan fits inside that time.
 Small moves count when you keep them.
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Home
 · Work
@@ -576,7 +600,7 @@ What if I have just 30 minutes a week?
 That is fine.
 Your plan fits inside that time.
 Small moves count when you keep them.
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Work
@@ -671,7 +695,7 @@ What if I have just 30 minutes a week?
 That is fine.
 Your plan fits inside that time.
 Small moves count when you keep them.
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -766,7 +790,7 @@ What if I have just 30 minutes a week?
 That is fine.
 Your plan fits inside that time.
 Small moves count when you keep them.
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -861,7 +885,7 @@ What if I have just 30 minutes a week?
 That is fine.
 Your plan fits inside that time.
 Small moves count when you keep them.
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -928,7 +952,7 @@ Contact
 Questions about privacy: hello@pickmyresolution.com.
 Changes
 Changes appear on this page.
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -988,7 +1012,7 @@ Contact
 Questions about terms: hello@pickmyresolution.com.
 Changes
 Changes will appear on this page.
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -1075,7 +1099,7 @@ How to keep one
 · Save money
 · Exercise more
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -1171,7 +1195,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -1281,7 +1305,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -1393,7 +1417,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -1511,7 +1535,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -1636,7 +1660,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -1759,7 +1783,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -1787,7 +1811,17 @@ Want your pick as a lock-screen picture? Take the four questions
 New Year's resolution quiz - Keep One Resolution
 Keep One Resolution
 New Year's resolution quiz
+This site picks one resolution you can keep.
 Four questions. One pick. No list of fifty.
+One real result
+Picked for
+I drifted from good habits. · 2 hours a week
+The pick
+Chat with a work friend: 30 min, 4x a week.
+First move, week one
+Step 1: set a phone alarm. Step 2: Ask one work friend for coffee. Chat for 15 min this week.
+Easy start
+Week one: 15 min, 4x a week. It counts in full. The 30 min plan starts week two.
 Pick my one resolution
 Most quizzes end in a label. This one ends in a plan.
 The four questions, word for word
@@ -1796,18 +1830,6 @@ Two: What was hard this year?
 Three: How much time do you have each week?
 Four: What made past plans fail?
 The areas: body and health, money, home. Work, family and friends, mind and calm.
-One full result, start to finish
-This card is a real quiz result. Nothing here is dressed up.
-Picked for
-I drifted from good habits. · 2 hours a week
-The pick
-Chat with a work friend: 30 min, 4x a week.
-First move, week one
-Ask one work friend for coffee. Chat for 30 min this week.
-For when it gets hard
-Set a phone alarm for session days. Same time, same sound.
-Your time
-This plan uses all 120 minutes you offered.
 What every result gives you
 One pick, sized to your time.
 A first move for week one.
@@ -1829,9 +1851,8 @@ One resolution, sized to your week.
 Plus a first move for week one.
 And one guard for hard days.
 Is the quiz free?
-Yes. Free forever.
+Yes. It is free for good.
 No ads. No accounts.
-Your answers stay in your browser.
 More questions people ask
 Why do resolutions fail?
 · How to keep one
@@ -1852,7 +1873,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -1880,29 +1901,42 @@ Want your pick as a lock-screen picture? Take the four questions
 New Year's Resolution Picker - Keep One Resolution
 Keep One Resolution
 New Year's Resolution Picker
+This site picks one resolution you can keep.
 A sample pick, not yours yet
 Body and health
 I felt drained a lot.
 2 hours a week
 I just forgot to do it.
 Take a short walk: 30 min, 4x a week.
+Week one starts at 15 min.
 Why: a drained year, two hours, one alarm against forgetting.
 Pick my one resolution
 One sample pick, start to finish
 First move, week one
-Put your shoes by the front door. Walk 30 min right after a meal.
+Step 1: set a phone alarm. Step 2: Put your shoes by the front door. Walk 15 min right after a meal.
 Your week one plan
 Sat 9am, at the park, with Alex
 If it gets hard
 Set a phone alarm for session days. Same time, same sound.
 Your time
 This plan uses all 120 minutes offered.
+Easy start
+Week one: 15 min, 4x a week. It counts in full. The 30 min plan starts week two.
+By March 1
+About 32 sessions in, and this is just your week. Most lists quit by February. Yours is built to land past it.
 It ends with a note to future you. This one opens:
 &ldquo;Dear future me, I felt drained a lot back then. My pick was Take a short walk.&rdquo;
 You finish yours in your own words. It stays on your device.
 Other pickers hand you fifty ideas. This one hands you one plan.
 Pick my one resolution
 Four questions. One pick, sized to your week.
+The science under the plan
+Four findings from real research shape every plan here:
+If-then plans. Gollwitzer: "If 9am, then I walk" beats trying.
+Tiny first steps. BJ Fogg: start so small it is hard to skip.
+The fresh start effect. Dai, Milkman, and Riis: a new year lifts motivation.
+Weekly check-ins. Watching your own record keeps the streak alive.
+Your plan page lets you set each one yourself.
 How it works
 You pick one area. Body, money, home, work, family, calm.
 You say what felt hard. And what made past plans fail.
@@ -1930,7 +1964,7 @@ Yes. Free for good.
 No ads. No accounts.
 Your answers stay in your browser.
 Made by a dad, on the side
-I&apos;m Billy, a dad in Redmond, Washington. I build these tools on the side, with AI &mdash; one idea, one website, no company behind it. This one keeps it to one resolution, sized to a real week, because lists die by spring.
+I&apos;m Billy, a dad in Redmond, Washington. I build these tools on the side, with AI &mdash; one idea, one website, no company behind it. Keep One Resolution holds it to one resolution, sized to a real week, because lists die by spring.
 More questions people ask
 Why do resolutions fail?
 · How to keep one
@@ -1953,14 +1987,33 @@ Why do resolutions fail?
 &middot; Ask in your own words
 Day, time, place, person. In your own words.
 Leave it blank to skip. You still get your full plan.
+A game, a walk, a small routine. If it fits your pick, your plan rides on it.
+Leave it blank to skip. Nothing changes if you do.
 Back
 Continue
 Your plan is set
 Your one resolution
+First, the honest no
+Five moves live in your area. Four get a no, each with its reason. One is left standing.
+The sized plan underneath
+Your anchor
 First move, week one
+Easy start
 Your week one plan
 If it gets hard
 Your time
+By March 1
+Why this plan can stick
+Your guard line is an if-then plan. Gollwitzer found naming the moment first lifts follow-through.
+Your first move is tiny on purpose. Fogg: small starts you cannot skip beat dreaded ones.
+Your check-in is you watching you. People who track their own record keep going longer.
+Make it stick: your tactics
+1. Pick your cue
+Tie your move to a moment that already happens every day.
+2. Your if-then plan
+Pick a cue above, and your plan writes itself here.
+3. Pick your check-in rhythm
+Your picks join your check-in text below. They save on this device only.
 Your weekly check-in
 Copy my weekly check-in
 Share text
@@ -1978,7 +2031,7 @@ Share my letter card
 Download my letter card
 Change answers
 Start over
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -2092,7 +2145,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -2211,7 +2264,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -2334,7 +2387,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -2442,7 +2495,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -2560,7 +2613,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -2657,7 +2710,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -2758,7 +2811,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -2864,7 +2917,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -2961,7 +3014,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -3054,7 +3107,7 @@ Why do resolutions fail?
 · Should you tell people?
 · Exercise more
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -3165,7 +3218,7 @@ Why do resolutions fail?
 · Should you tell people?
 · Save money
 &middot; Ask in your own words
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
 · Home
@@ -3205,6 +3258,6 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Want your pick as a lock-screen picture? The four questions
 build it from this same pick.
-Built with Muse.
+Keep One Resolution. Built with Muse.
 Privacy
 · Terms
