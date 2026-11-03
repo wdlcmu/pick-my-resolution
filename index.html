@@ -2578,6 +2578,8 @@ function fleetSessionMarks(){
 <style>
 .askp-pill{position:fixed;right:16px;bottom:16px;z-index:60;min-height:48px;padding:12px 18px;font-size:16px;font-weight:700;color:#fff;background:#0f766e;border:2px solid #0f766e;border-radius:999px;cursor:pointer;box-shadow:0 6px 20px rgba(26,26,26,.22);font-family:inherit}
 .askp-pill:active{transform:translateY(1px)}
+/* N3 fix (Nov 2, 2026): while the quiz result screen is up, the fixed pill hides, so no showdown row text can sit under it at any scroll position. It returns on every other screen. */
+body:has(#s-result.on) .askp-pill{display:none}
 .askp-overlay{position:fixed;inset:0;z-index:70;background:rgba(26,26,26,.45);display:flex;align-items:flex-end;justify-content:center}
 .askp-overlay[hidden]{display:none}
 .askp-panel{background:#faf7f2;color:#1a1a1a;width:100%;max-width:640px;max-height:88vh;overflow-y:auto;border-radius:18px 18px 0 0;padding:18px 18px 22px;box-shadow:0 -8px 32px rgba(26,26,26,.25);animation:askp-in .25s ease both;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
@@ -3839,6 +3841,41 @@ function answerAskPmr(raw) {
     });
     out.appendChild(card);
   }
+  // N2 fix (Nov 2, 2026): the chat worker's reply text is frozen
+  // with the plugin review, and its first-move line still names the
+  // full dose for week one (for example "Walk 30 min") where this
+  // page's engine starts week one smaller (15 min). One card must
+  // never state two week-one sizes, so when the reply is a pick, its
+  // first-move block is re-rendered from this page's own buildResult
+  // for the reply's parsed answers - the same move the local
+  // fallback prints - and the engine's Easy start line is added
+  // right after it. Every other line of the worker's reply is left
+  // exactly as sent. Website only; the worker is not touched.
+  function reconcileChatReply(reply, facts) {
+    try {
+      if (!facts || !facts.parsed) return;
+      if (String(reply).split("\n")[0].trim() !== "Your pick") return;
+      var p = facts.parsed;
+      if (!p.area || !p.off || !p.time || !p.fail) return;
+      var r = buildResult({ area: p.area, off: p.off, time: p.time, fail: p.fail, when: "", love: "" });
+      if (!r || !r.firstMove || !r.weekOne) return;
+      var card = document.querySelector("#askp-answer .card");
+      if (!card) return;
+      var ps = card.querySelectorAll("p");
+      for (var i = 0; i < ps.length; i++) {
+        if (ps[i].textContent.trim().toLowerCase() === "first move, week one" && ps[i + 1]) {
+          ps[i + 1].textContent = r.firstMove;
+          var lab = document.createElement("p");
+          lab.className = "label";
+          lab.textContent = "Easy start";
+          var wk = document.createElement("p");
+          wk.textContent = r.weekOne;
+          ps[i + 1].after(lab, wk);
+          return;
+        }
+      }
+    } catch (e) {}
+  }
   // Verify fix D3 (Nov 2, 2026): when the chat reply is a pick, the
   // same honest-no showdown opens the Ask result here too. The reply
   // JSON carries facts.parsed; those answers go through this page's
@@ -3877,6 +3914,7 @@ function answerAskPmr(raw) {
         if (!j || !j.reply) { answerAskPmr(raw); return; }
         if (j.facts) chatFacts = j.facts;
         renderChatReply(j.reply);
+        reconcileChatReply(j.reply, j.facts);
         prependShowdown(j.reply, j.facts);
         document.getElementById("askp-more").hidden = false;
       })
