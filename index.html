@@ -618,13 +618,12 @@ window.FLEET_CFG = {
   <!-- ============ SCREEN 3: RESULT ============ -->
   <section class="screen" id="s-result">
     <p class="step-tag">Your plan is set</p>
-    <h2>Your one resolution</h2>
+    <h2 id="r-headline">Your one resolution</h2>
     <p class="saved-label" id="r-saved" hidden></p>
     <p class="label">First, the honest no</p>
     <p class="tac-note">Five moves live in your area. Four get a no, each with its reason. One is left standing.</p>
     <div id="r-showdown"></div>
     <div class="card">
-      <p class="big" id="r-resolution"></p>
       <div id="r-plan-under-block" hidden>
         <p class="label">The sized plan underneath</p>
         <p id="r-plan-under"></p>
@@ -1315,10 +1314,10 @@ function noMismatch(variant, noun, said) {
     "Stated plainly: " + said + "."
   ];
   var closers = [
-    "A fix for the wrong feeling misses.",
-    "It solves a problem you did not name.",
-    "Help aimed elsewhere rarely lands.",
-    "Aimed at another feeling, it fades."
+    "Your weeks would go to the wrong problem, and the one you named would still be waiting.",
+    "On a hard day this is the first plan you would skip, because it was never about your day.",
+    "Nothing in your week would tell you it is working, because the change would happen somewhere you were not hurting.",
+    "The mornings that made you pick this quiz would feel exactly the same."
   ];
   return openers[variant] + " " + echoes[variant] + " " + closers[variant];
 }
@@ -1730,7 +1729,13 @@ function renderResult() {
   // headlines the card in the user's own words; the engine's sized
   // line prints right underneath, untouched.
   var hl = (typeof current.headline === "string") ? current.headline : "";
-  $("r-resolution").textContent = hl || current.resolution;
+  // Readability fix pass (Nov 3, 2026): the headline names the pick, so
+  // the plan card no longer repeats the winner card's title line above
+  // its own first section (the sized line still prints once, under
+  // "The sized plan underneath", when a loved-activity headline exists).
+  var sdArr = current.showdown || [];
+  var winName = sdArr.length ? sdArr[sdArr.length - 1].name : "";
+  $("r-headline").textContent = winName ? "Your one resolution: " + winName : "Your one resolution";
   $("r-plan-under").textContent = current.resolution;
   $("r-plan-under-block").hidden = !hl;
   $("r-anchor").textContent = current.anchorLine || "";
@@ -3082,10 +3087,10 @@ function noMismatch(variant, noun, said) {
     "Stated plainly: " + said + "."
   ];
   var closers = [
-    "A fix for the wrong feeling misses.",
-    "It solves a problem you did not name.",
-    "Help aimed elsewhere rarely lands.",
-    "Aimed at another feeling, it fades."
+    "Your weeks would go to the wrong problem, and the one you named would still be waiting.",
+    "On a hard day this is the first plan you would skip, because it was never about your day.",
+    "Nothing in your week would tell you it is working, because the change would happen somewhere you were not hurting.",
+    "The mornings that made you pick this quiz would feel exactly the same."
   ];
   return openers[variant] + " " + echoes[variant] + " " + closers[variant];
 }
