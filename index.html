@@ -765,10 +765,14 @@ window.FLEET_CFG = {
   var el = document.getElementById("countdown");
   if (!el) return;
   /* 2026-11-01 countdown fleet pass: live clock to New Year's Day. Ticks
-     every second (days, hours, minutes, seconds) to the end of Jan 1;
-     the day itself says so and carries the pick-your-one line. In
-     resolution season (Dec 26-31) the season line rides along, as before.
-     Reduced motion: one static day count, no ticking. */
+     every second (days, hours, minutes, seconds) to Jan 1 (00:00
+     local); the day itself says so and carries the pick-your-one line.
+     In resolution season (Dec 26-31) the season line rides along, as
+     before. Reduced motion: one static day count, no ticking.
+     2026-11-05 countdown sweep fix (SPEC-PMR-COLDQA1105-01): the tick
+     previously ran to Jan 2 00:00 (the end of Jan 1), overstating the
+     time until January 1 by 24 hours; it now ticks to Jan 1 00:00
+     local, one true duration. */
 
   function cdUnit(n, w) { return n + " " + w + (n === 1 ? "" : "s"); }
   function cdTick(ms, tail) {
@@ -874,7 +878,7 @@ window.FLEET_CFG = {
       sentence = "New Year's Day is today, January 1, " + c.target.getFullYear() + ". Time to pick your one resolution.";
       if (noteEl) noteEl.hidden = true;
     } else {
-      var end = new Date(c.target.getFullYear(), 0, 2);
+      var end = c.target;
       tickMs = end - now; tail = "January 1, " + c.target.getFullYear() + ".";
       var seasonStart = new Date(c.target.getFullYear() - 1, 11, 26);
       if (noteEl) {
