@@ -152,6 +152,25 @@
   .sd-win.sd-done { border-color: var(--accent); background: #f0fdf9; }
   .sd-row { transition: border-color .3s ease, background-color .3s ease; }
   @media (prefers-reduced-motion: reduce) { .sd-row { transition: none; } }
+  /* De-mess pass (Nov 5, 2026): on the result screen the plan card is
+     the hero and the honest no is a compact unit under it — one line
+     per no, the full reason one tap away. Scoped to #s-result so the
+     Ask panel's own showdown keeps its current styling. */
+  #s-result .card.plan-hero { border-color: var(--accent); background: #f0fdf9; padding: 20px 18px; margin: 16px 0 26px; }
+  #s-result .yes-line { font-size: 17px; margin: 2px 0 4px; }
+  #s-result .sd-row { padding: 10px 14px; margin: 8px 0; }
+  #s-result .sd-name { font-size: 17px; }
+  #s-result .sd-short, .hn-unit .sd-short { font-size: 15px; margin: 0; }
+  #s-result .sd-why { background: none; border: 0; font: inherit; font-size: 14px; font-weight: 700; color: var(--accent); cursor: pointer; min-height: 44px; padding: 10px 6px; margin-left: -6px; }
+  #s-result .sd-why:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
+  #s-result .sd-reason { font-size: 15px; }
+  /* Homepage de-mess (Nov 5, 2026): the worked example carries the
+     honest no as a compact struck unit; depth sits behind taps. */
+  .hn-unit { margin: 16px 0 6px; }
+  .ex-toggle { margin: 8px 0 4px; }
+  .faq details { border-top: 1px solid #e5e7eb; padding: 4px 0; }
+  .faq summary { font-size: 17px; font-weight: 700; margin: 0; padding: 12px 0; min-height: 44px; cursor: pointer; }
+  .how details summary { font-weight: 700; font-size: 16px; cursor: pointer; min-height: 44px; padding: 10px 0; }
   .big { font-size: 24px; font-weight: 800; line-height: 1.3; margin: 4px 0 6px; }
   .label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); }
   .status { min-height: 20px; font-size: 14px; font-weight: 600; color: var(--accent); margin: 6px 0; }
@@ -210,15 +229,15 @@
   .hero .identity { color: #ffffff; font-size: 17px; font-weight: 700; margin: 0 0 6px; }
   .hero .countdown { color: #bcd6c9; margin: 14px 0 4px; }
   /* 2026-11-01 interactive countdown unit: digits, one tap target, What's-next panel */
-  .cdx { margin: 14px 0 4px; }
+  .cdx { margin: 16px 0 10px; }
   .cdx [hidden] { display: none !important; }
   /* 2026-11-01 readability pass: the clock is a display, not a button.
      One clear action per screen: the gold button below starts the pick. */
   .cdx-main { display: block; width: 100%; text-align: left; padding: .8rem .9rem; }
-  .cdx-digits { display: flex; gap: .9rem; justify-content: flex-start; align-items: flex-start; margin-bottom: .35rem; }
-  .cdx-cell { display: flex; flex-direction: column; align-items: center; min-width: 2.7ch; }
-  .cdx-cell.cd-d { min-width: 3.7ch; }
-  .cdx-cell b { font-size: clamp(1.85rem, 8.5vw, 2.5rem); line-height: 1; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--accent); }
+  .cdx-digits { display: flex; gap: 1.15rem; justify-content: flex-start; align-items: flex-start; margin-bottom: .35rem; }
+  .cdx-cell { display: flex; flex-direction: column; align-items: center; min-width: 3.4ch; }
+  .cdx-cell.cd-d { min-width: 4.6ch; }
+  .cdx-cell b { font-size: clamp(2.6rem, 11vw, 3.3rem); line-height: 1; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--accent); }
   .cdx-cell i { font-style: normal; font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: .32rem; }
   .cdx .countdown { display: block; margin: 0; }
   .cdx-note { display: block; margin-top: .35rem; font-size: 15px; color: #bcd6c9; }
@@ -460,7 +479,6 @@ window.FLEET_CFG = {
           <div class="hero-copy">
             <h1>This year, keep one. Just one.</h1>
             <p class="identity">This site picks one resolution you can keep.</p>
-            <p class="sub">Last January, you wrote a list. Nothing stuck.</p>
             <div class="cdx">
               <div class="cdx-main" id="cdx-main" aria-label="Counting down to January 1, 2027.">
                 <span class="cdx-digits" id="cdx-digits" aria-hidden="true" hidden><span class="cdx-cell cd-d"><b id="cdx-d"></b><i id="cdx-dl">days</i></span><span class="cdx-cell"><b id="cdx-h">00</b><i>hrs</i></span><span class="cdx-cell"><b id="cdx-m">00</b><i>min</i></span><span class="cdx-cell"><b id="cdx-s">00</b><i>sec</i></span></span>
@@ -473,6 +491,7 @@ window.FLEET_CFG = {
                 <p class="cdx-mile" id="cdx-mile">The moment: <strong>January 1, 2027</strong> &mdash; time to pick your one resolution.</p>
               </div>
             </div>
+            <p class="sub">Four short questions. One resolution, sized to your week. Free, about a minute.</p>
             <button class="cta" id="btn-start">Pick my one resolution</button>
             <p class="askdoor">Rather say it in your own words? <a href="/ask">Ask here</a>.</p>
             <div class="hero-pick-card">
@@ -515,7 +534,7 @@ window.FLEET_CFG = {
     </div>
     <div class="example">
       <h2>One real pick, start to finish</h2>
-      <p>Say your year felt like this:</p>
+      <p>Last January, you wrote a list. Nothing stuck. Say your year felt like this:</p>
       <div class="chips" aria-label="Sample answers">
         <span class="ex-pill">Body and health</span>
         <span class="ex-pill">I felt drained a lot.</span>
@@ -523,6 +542,17 @@ window.FLEET_CFG = {
         <span class="ex-pill">I just forgot to do it.</span>
       </div>
       <p style="margin-top:14px"><strong>Why this pick:</strong> Drained, in body and health, points to a walk. Two hours sizes the dose. Forgot before, so the plan adds an alarm.</p>
+      <div class="hn-unit">
+        <p class="label">First, the honest no</p>
+        <div class="sd-row sd-out sd-done"><p class="sd-name">Cook a real meal</p><p class="sd-dose">30 min, 4x a week</p><p class="sd-short">This is the move for things piling up. Your weeks would go to the wrong problem, and the one you named would still be waiting.</p></div>
+        <div class="sd-row sd-out sd-done"><p class="sd-name">Do a short workout</p><p class="sd-dose">30 min, 4x a week</p><p class="sd-short">This one treats feeling stuck. On a hard day this is the first plan you would skip, because it was never about your day.</p></div>
+        <div class="sd-row sd-out sd-done"><p class="sd-name">Stretch your whole body</p><p class="sd-dose">20 min, 5x a week</p><p class="sd-short">The move for drifting from good habits. Nothing in your week would tell you it is working, because the change would happen somewhere you were not hurting.</p></div>
+        <div class="sd-row sd-out sd-done"><p class="sd-name">Walk with a friend</p><p class="sd-dose">30 min, 4x a week</p><p class="sd-short">That move answers feeling alone. The mornings that made you pick this quiz would feel exactly the same.</p></div>
+        <div class="sd-row sd-win sd-done"><p class="sd-tag">The one left standing</p><p class="sd-name">Take a short walk</p><p class="sd-dose">30 min, 4x a week</p><p class="sd-short">Built for feeling drained, in your words. The plan below guards your weak spot.</p></div>
+        <p class="tac-note"><a href="/resolutions-you-should-not-keep" style="color:var(--accent);font-weight:700;display:inline-block;padding:12px 6px;min-height:44px">See the resolutions you should not keep</a></p>
+      </div>
+      <button class="ghost ex-toggle" id="ex-toggle" type="button" aria-expanded="false" aria-controls="ex-plan">See the full plan</button>
+      <div id="ex-plan" hidden>
       <div class="card">
         <p class="big">Take a short walk: 30 min, 4x a week.</p>
         <p class="label">First move, week one</p>
@@ -536,22 +566,26 @@ window.FLEET_CFG = {
         <p class="label">Your time</p>
         <p>This plan uses all 120 minutes offered.</p>
       </div>
+      </div>
       <p>It ends with a note to future you. This one opens:</p>
       <p class="ex-note">&ldquo;Dear future me, I felt drained a lot back then. My pick was Take a short walk.&rdquo;</p>
       <button class="cta" id="btn-start-2">Pick my one resolution</button>
     </div>
     <div class="how">
       <h2>How it works</h2>
-      <ol>
-        <li><strong>You pick one area.</strong> Body, money, home, work, family, calm.</li>
-        <li><strong>You say what felt hard.</strong> And what made past plans fail.</li>
-        <li><strong>You pick your time.</strong> Thirty minutes, two hours, or five.</li>
-        <li><strong>You get one plan.</strong> One move, sized to your time.</li>
-        <li><strong>You name week one.</strong> Day, time, place, person. Or skip it.</li>
-        <li><strong>You name a favorite.</strong> One thing you already love. Your pick can ride on it.</li>
-      </ol>
-      <p><strong>One plan only.</strong> You get one, not a list of ten.</p>
-      <p><strong>Your note stays here.</strong> It saves as a card on this device.</p>
+      <details>
+        <summary>See the six steps</summary>
+        <ol>
+          <li><strong>You pick one area.</strong> Body, money, home, work, family, calm.</li>
+          <li><strong>You say what felt hard.</strong> And what made past plans fail.</li>
+          <li><strong>You pick your time.</strong> Thirty minutes, two hours, or five.</li>
+          <li><strong>You get one plan.</strong> One move, sized to your time.</li>
+          <li><strong>You name week one.</strong> Day, time, place, person. Or skip it.</li>
+          <li><strong>You name a favorite.</strong> One thing you already love. Your pick can ride on it.</li>
+        </ol>
+        <p><strong>One plan only.</strong> You get one, not a list of ten.</p>
+        <p><strong>Your note stays here.</strong> It saves as a card on this device.</p>
+      </details>
     </div>
     <div class="areas">
       <h2>Pick a part of your life</h2>
@@ -566,18 +600,26 @@ window.FLEET_CFG = {
     </div>
     <div class="faq">
       <h2>Common questions</h2>
-      <h3>How long does it take?</h3>
-      <p>About one minute. Four short questions.</p>
-      <p>One optional line names week one.</p>
-      <p>One more names something you already love.</p>
-      <h3>What New Year's resolution can I keep?</h3>
-      <p>One is easier to keep than a list.</p>
-      <h3>Is it free?</h3>
-      <p>Yes. It is free for good.</p>
-      <p>No ads. No accounts.</p>
-      <h3>What we don't do</h3>
-      <p>Reminders and signup stay off: we send no reminder emails, and there is no email signup.</p>
-      <p>Your plan and note live in this browser only &mdash; they stay off our servers.</p>
+      <details>
+        <summary>How long does it take?</summary>
+        <p>About one minute. Four short questions.</p>
+        <p>One optional line names week one.</p>
+        <p>One more names something you already love.</p>
+      </details>
+      <details>
+        <summary>What New Year's resolution can I keep?</summary>
+        <p>One is easier to keep than a list.</p>
+      </details>
+      <details>
+        <summary>Is it free?</summary>
+        <p>Yes. It is free for good.</p>
+        <p>No ads. No accounts.</p>
+      </details>
+      <details>
+        <summary>What we don't do</summary>
+        <p>Reminders and signup stay off: we send no reminder emails, and there is no email signup.</p>
+        <p>Your plan and note live in this browser only &mdash; they stay off our servers.</p>
+      </details>
     </div>
     <div class="maker">
       <h2>Made by a dad, on the side</h2>
@@ -621,11 +663,9 @@ window.FLEET_CFG = {
     <p class="step-tag">Your plan is set</p>
     <h2 id="r-headline">Your one resolution</h2>
     <p class="saved-label" id="r-saved" hidden></p>
-    <p class="label">First, the honest no</p>
-    <p class="tac-note">Five moves live in your area. Four get a no, each with its reason. One is left standing.</p>
-    <p class="tac-note"><a href="/resolutions-you-should-not-keep" style="color:var(--accent);font-weight:700;display:inline-block;padding:12px 6px;min-height:44px">See the resolutions you should not keep</a></p>
-    <div id="r-showdown"></div>
-    <div class="card">
+    <div class="card plan-hero">
+      <p class="sd-tag" id="r-yes-tag">The one left standing</p>
+      <p class="yes-line" id="r-yes"></p>
       <div id="r-plan-under-block" hidden>
         <p class="label">The sized plan underneath</p>
         <p id="r-plan-under"></p>
@@ -665,6 +705,10 @@ window.FLEET_CFG = {
       <p class="label">By March 1</p>
       <p id="r-stakes"></p>
     </div>
+    <p class="label">First, the honest no</p>
+    <p class="tac-note">Five moves live in your area. Four get a no, each with its reason. One is left standing.</p>
+    <p class="tac-note"><a href="/resolutions-you-should-not-keep" style="color:var(--accent);font-weight:700;display:inline-block;padding:12px 6px;min-height:44px">See the resolutions you should not keep</a></p>
+    <div id="r-showdown"></div>
     <div id="why-block">
       <p class="label">Why this one?</p>
       <p class="tac-note">Tap your real reason, or write your own. It rides on your plan and your check-in.</p>
@@ -1736,17 +1780,43 @@ function renderQuiz() {
     })(chips[c]);
   }
 }
+// One line per no (de-mess pass, Nov 5, 2026): the rival's own fact
+// (the reason's first sentence) plus its closing principle (the last
+// sentence), both verbatim from the engine's full reason. Nothing is
+// rewritten; the middle sentences are what the tap below reveals.
+function sdShort(reason) {
+  var parts = String(reason || "").match(/[^.]+\./g);
+  if (!parts) return reason || "";
+  parts = parts.map(function (s) { return s.trim(); });
+  if (parts.length <= 2) return parts.join(" ");
+  return parts[0] + " " + parts[parts.length - 1];
+}
 function renderShowdown() {
   var box = $("r-showdown");
   if (!box) return;
-  var sd = current.showdown || [];
-  box.innerHTML = sd.map(function (e) {
-    return '<div class="sd-row ' + (e.out ? "sd-out" : "sd-win") + '">' +
-      (e.out ? "" : '<p class="sd-tag">The one left standing</p>') +
+  // The winner stands alone in the plan-hero card above; this unit is
+  // the four nos only, each a struck name, its dose, one line of
+  // reason, and the full paragraph behind a tap.
+  var sd = (current.showdown || []).filter(function (e) { return e.out; });
+  box.innerHTML = sd.map(function (e, i) {
+    return '<div class="sd-row sd-out">' +
       '<p class="sd-name">' + e.name + '</p>' +
       '<p class="sd-dose">' + e.dose + '</p>' +
-      '<p class="sd-reason">' + e.reason + "</p></div>";
+      '<p class="sd-short">' + sdShort(e.reason) + '</p>' +
+      '<button type="button" class="sd-why" aria-expanded="false" aria-controls="sd-full-' + i + '">Why not this one?</button>' +
+      '<p class="sd-reason" id="sd-full-' + i + '" hidden>' + e.reason + "</p></div>";
   }).join("");
+  var btns = box.querySelectorAll(".sd-why");
+  for (var b = 0; b < btns.length; b++) {
+    btns[b].onclick = function () {
+      var full = document.getElementById(this.getAttribute("aria-controls"));
+      if (!full) return;
+      var open = !full.hidden;
+      full.hidden = open;
+      this.setAttribute("aria-expanded", open ? "false" : "true");
+      this.textContent = open ? "Why not this one?" : "Hide the full reason";
+    };
+  }
   // The nos land one by one; the survivor settles last. Reduced
   // motion (or no timers) still shows every reason in full.
   var rows = box.querySelectorAll(".sd-row");
@@ -1774,6 +1844,13 @@ function renderResult() {
   var sdArr = current.showdown || [];
   var winName = sdArr.length ? sdArr[sdArr.length - 1].name : "";
   $("r-headline").textContent = winName ? "Your one resolution: " + winName : "Your one resolution";
+  // The winner's own reason leads the hero card (it used to close the
+  // showdown list; the showdown below is the four nos only now).
+  var winEntry = sdArr.length ? sdArr[sdArr.length - 1] : null;
+  var hasWin = !!(winEntry && !winEntry.out);
+  $("r-yes").textContent = hasWin ? winEntry.reason : "";
+  $("r-yes").hidden = !hasWin;
+  $("r-yes-tag").hidden = !hasWin;
   $("r-plan-under").textContent = current.resolution;
   $("r-plan-under-block").hidden = !hl;
   $("r-anchor").textContent = current.anchorLine || "";
@@ -2071,6 +2148,17 @@ $("btn-start").onclick = function () {
 };
 var btnStart2 = $("btn-start-2");
 if (btnStart2) btnStart2.onclick = function () { $("btn-start").click(); };
+// Worked-example depth (de-mess pass, Nov 5, 2026): the sample plan
+// card sits behind one tap; the honest-no unit above it stays visible.
+var exToggle = $("ex-toggle");
+if (exToggle) exToggle.onclick = function () {
+  var panel = $("ex-plan");
+  if (!panel) return;
+  var open = !panel.hidden;
+  panel.hidden = open;
+  exToggle.setAttribute("aria-expanded", open ? "false" : "true");
+  exToggle.textContent = open ? "See the full plan" : "Hide the full plan";
+};
 $("q-back").onclick = function () {
   if (quiz.step > 0) { quiz.step--; renderQuiz(); }
 };
