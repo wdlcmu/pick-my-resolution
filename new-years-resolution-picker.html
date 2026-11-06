@@ -1942,15 +1942,26 @@ function fleetSessionMarks(){
       fired = true; fleetTrack("tool_start", {tool: "resolution-picker", entry: "area-page"});
     }
   } catch (e) {}
+  // SPEC-FUNNEL-MEASURE-1 (Nov 5, 2026): a complete may never fire without
+  // a start earlier in the same page view, and it fires at most once per
+  // page view (the old reset-on-hide let repeat completions outrun the
+  // once-only start). Start over / Change answers begin a fresh run, so
+  // on a page where no start has fired yet (a restored saved plan) their
+  // tap is the start.
+  ["btn-again", "btn-change"].forEach(function(id){
+    var rb = document.getElementById(id);
+    if (rb) rb.addEventListener("click", function(){
+      if (!fired){ fired = true; fleetTrack("tool_start", {tool: "resolution-picker", entry: "restart"}); }
+    });
+  });
   var res = document.getElementById("s-result"), done = false;
   if (res && window.MutationObserver){
     var check = function(){
       var on = res.className.indexOf("on") !== -1;
-      if (on && !done){
+      if (on && !done && fired){
         done = true;
         fleetTrack("tool_complete", {tool: "resolution-picker", results_count: 1});
       }
-      if (!on) done = false;
     };
     new MutationObserver(check).observe(res, {attributes: true, attributeFilter: ["class"]});
   }

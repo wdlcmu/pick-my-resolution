@@ -310,8 +310,11 @@ window.FLEET_CFG = {
   starts: [
     {sel: "#btn-start", surface: "picker"},
     {sel: "#btn-start-2", surface: "picker"},
+    {sel: "#btn-again", surface: "picker"},
+    {sel: "#btn-change", surface: "picker"},
     {sel: "#askp-open", surface: "ask"}
   ],
+  autoStartSurface: "picker",
   completes: [
     {sel: "#s-result", surface: "picker", minText: 20}
   ],
@@ -402,12 +405,19 @@ window.FLEET_CFG = {
           });
         });
       });
+      try {
+        if (CFG.autoStartSurface && /[?&]start=1(?:&|$)/.test(location.search || "")) {
+          var ak = CFG.autoStartSurface;
+          if (!started[ak]) { started[ak] = true; track("tool_start", {surface: ak}); }
+        }
+      } catch(e){}
       (CFG.completes || []).forEach(function(cp){
         var el = document.querySelector(cp.sel);
         if (!el) return;
         var done = false;
         function check(){
           if (done) return;
+          if (!started[cp.surface || "tool"]) return;
           if (vis(el) && txt(el).length >= (cp.minText || 1)) {
             done = true;
             track("tool_complete", {surface: cp.surface || "tool"});
@@ -437,7 +447,7 @@ window.FLEET_CFG = {
             (A.kinds || []).some(function(k){ if (k.re.test(t)) { props.outcome = k.outcome; return true; } return false; });
             if (!props.outcome && A.defaultOutcome) props.outcome = A.defaultOutcome;
             track("ask_answered", props);
-            if (A.completeOnAnswer && !completed) { completed = true; track("tool_complete", {surface: "ask"}); }
+            if (A.completeOnAnswer && !completed && started["ask"]) { completed = true; track("tool_complete", {surface: "ask"}); }
           };
           new MutationObserver(checkA).observe(ans, {childList: true, subtree: true, characterData: true});
         }
@@ -2678,15 +2688,26 @@ function fleetSessionMarks(){
       fired = true; fleetTrack("tool_start", {tool: "resolution-picker", entry: "area-page"});
     }
   } catch (e) {}
+  // SPEC-FUNNEL-MEASURE-1 (Nov 5, 2026): a complete may never fire without
+  // a start earlier in the same page view, and it fires at most once per
+  // page view (the old reset-on-hide let repeat completions outrun the
+  // once-only start). Start over / Change answers begin a fresh run, so
+  // on a page where no start has fired yet (a restored saved plan) their
+  // tap is the start.
+  ["btn-again", "btn-change"].forEach(function(id){
+    var rb = document.getElementById(id);
+    if (rb) rb.addEventListener("click", function(){
+      if (!fired){ fired = true; fleetTrack("tool_start", {tool: "resolution-picker", entry: "restart"}); }
+    });
+  });
   var res = document.getElementById("s-result"), done = false;
   if (res && window.MutationObserver){
     var check = function(){
       var on = res.className.indexOf("on") !== -1;
-      if (on && !done){
+      if (on && !done && fired){
         done = true;
         fleetTrack("tool_complete", {tool: "resolution-picker", results_count: 1});
       }
-      if (!on) done = false;
     };
     new MutationObserver(check).observe(res, {attributes: true, attributeFilter: ["class"]});
   }
