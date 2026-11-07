@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Built with Muse//Fleet Calendar Feeds//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Keep One Resolution — 2027 check-ins
+REFRESH-INTERVAL;VALUE=DURATION:PT24H
+X-PUBLISHED-TTL:PT24H
+BEGIN:VEVENT
+UID:kor-start-2027@keeponeresolution.com
+DTSTAMP:20261107T195033Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270102
+SUMMARY:Start day — keep ONE resolution
+DESCRIPTION:Start day. Keep one\, sized to your real week\, and make one sm
+ all first move this week. Pick yours: https://keeponeresolution.com/how-to
+ -keep-a-new-years-resolution
+URL:https://keeponeresolution.com/how-to-keep-a-new-years-resolution
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:kor-quitters-2027@keeponeresolution.com
+DTSTAMP:20261107T195033Z
+DTSTART;VALUE=DATE:20270108
+DTEND;VALUE=DATE:20270109
+SUMMARY:Quitter's Day — the day most plans wobble
+DESCRIPTION:Quitter's Day is January's second Friday\, when early-January e
+ ffort drops sharply. Yours can bend instead: miss a day\, do half the next
+  day — half still keeps the streak. https://keeponeresolution.com/what-i
+ s-quitters-day
+URL:https://keeponeresolution.com/what-is-quitters-day
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:kor-checkin-2027@keeponeresolution.com
+DTSTAMP:20261107T195033Z
+DTSTART;VALUE=DATE:20270103
+RRULE:FREQ=WEEKLY;UNTIL=20271226
+DTEND;VALUE=DATE:20270104
+SUMMARY:Weekly check-in — Did I do my move this week?
+DESCRIPTION:Keep One Resolution's weekly check-in (Step 5): ask two short q
+ uestions. Did I do my move this week? What got in my way? Missed a week? D
+ o half at the next chance — half still keeps the streak. These ride on S
+ undays\; drag yours to any day — the rule is once a week.
+URL:https://keeponeresolution.com/how-to-keep-a-new-years-resolution
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
