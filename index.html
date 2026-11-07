@@ -4065,7 +4065,7 @@ function answerAskPmr(raw) {
     if (!msg) { answerAskPmr(raw); return; }
     var btn = document.getElementById("askp-ask");
     btn.disabled = true;
-    fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ message: msg, facts: chatFacts || undefined }) })
+    fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ message: msg, facts: chatFacts || undefined, tz: (function () { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || undefined; } catch (e) { return undefined; } })() }) })
       .then(function (r) { if (!r.ok) throw new Error("chat " + r.status); return r.json(); })
       .then(function (j) {
         btn.disabled = false;
