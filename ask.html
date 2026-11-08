@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ask Keep One Resolution in your own words - one resolution you can keep</title>
+<title>Ask in your own words - Keep One Resolution</title>
 <meta name="description" content="Say your year in your own words. Get one resolution you can keep, sized to your week. Same engine as the four questions. Your words never leave this device.">
 <link rel="canonical" href="https://keeponeresolution.com/ask">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Keep One Resolution">
-<meta property="og:title" content="Ask Keep One Resolution in your own words">
-<meta property="og:description" content="Say your year in your own words. Get one resolution you can keep, sized to your week.">
+<meta property="og:title" content="Ask in your own words - Keep One Resolution">
+<meta property="og:description" content="Say your year in your own words. Get one resolution you can keep, sized to your week. Same engine as the four questions. Your words never leave this device.">
 <meta property="og:url" content="https://keeponeresolution.com/ask">
 <meta property="og:image" content="https://keeponeresolution.com/og-card.png">
 <meta property="og:image:width" content="1200">
@@ -19,8 +19,8 @@
 <meta property="og:image:alt" content="Pick a New Year's resolution you can keep. Four questions. Two optional lines. About one minute. Free. No ads. No accounts.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://keeponeresolution.com/og-card.png">
-<meta name="twitter:title" content="Ask Keep One Resolution in your own words">
-<meta name="twitter:description" content="Say your year in your own words. Get one resolution you can keep, sized to your week.">
+<meta name="twitter:title" content="Ask in your own words - Keep One Resolution">
+<meta name="twitter:description" content="Say your year in your own words. Get one resolution you can keep, sized to your week. Same engine as the four questions. Your words never leave this device.">
 <style>
   :root { --accent: #0f766e; --ink: #1a1a1a; --muted: #6b7280; --line: #dce8e2; --card: #ffffff; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -136,38 +136,6 @@ window.FLEET_CFG = {
     } catch(e){}
   }
   window.FA = { track: track };
-  /* FLEET-ATTRIB-2026-11-07: first-touch attribution (pattern: SPEC-SS-ATTRIB-01).
-     On first pageview, persist the door as PostHog person properties via
-     people.set_once (a later visit never overwrites): entry_referrer (bare
-     origin only), entry_referring_domain, entry_url (origin+path, no query,
-     no fragment, no tokens), entry_at, entry_app (app kind classified from
-     the user-agent string - in-app browsers name themselves there even when
-     they strip the referrer). No raw UA stored, no PII. */
-  function fleetFirstTouch(){
-    try {
-      if (!window.posthog || !posthog.people || !posthog.people.set_once) return;
-      var ref = document.referrer || "";
-      var refOrigin = "", refDomain = "$direct";
-      if (ref) { try { var ru = new URL(ref); if (ru.origin && ru.origin !== "null") { refOrigin = ru.origin + "/"; refDomain = ru.hostname || "$direct"; } } catch (e) {} }
-      var ua = (navigator.userAgent || "").toLowerCase();
-      var app = "other";
-      if (ua.indexOf("kakaotalk") !== -1) app = "kakaotalk";
-      else if (ua.indexOf("whatsapp") !== -1) app = "whatsapp";
-      else if (ua.indexOf("instagram") !== -1) app = "instagram";
-      else if (ua.indexOf("telegram") !== -1) app = "telegram";
-      else if (ua.indexOf("teams") !== -1) app = "teams";
-      else if (ua.indexOf("fban") !== -1 || ua.indexOf("fbav") !== -1 || ua.indexOf("fb_iab") !== -1 || ua.indexOf("facebook") !== -1) app = "facebook";
-      else if (ua.indexOf("mozilla/") !== -1) app = "browser";
-      posthog.people.set_once({
-        entry_referrer: refOrigin,
-        entry_referring_domain: refDomain,
-        entry_url: window.location.origin + (window.location.pathname || "/"),
-        entry_at: new Date().toISOString(),
-        entry_app: app
-      });
-    } catch (e) {}
-  }
-
   var s = document.createElement("script");
   s.async = true;
   s.src = "https://us.i.posthog.com/static/array.js";
@@ -177,7 +145,6 @@ window.FLEET_CFG = {
         posthog.init(KEY, {api_host: "https://us.i.posthog.com", autocapture: false, capture_pageview: true, disable_session_recording: true});
         try { posthog.register({site: SITE, internal: isInternal()}); } catch(e){}
         try { if (isInternal() && posthog.people && posthog.people.set) posthog.people.set({fleet_internal: true}); } catch(e){}
-        try { fleetFirstTouch(); } catch(e){}
         while (Q.length) { var e0 = Q.shift(); try { posthog.capture(e0[0], e0[1]); } catch(e){} }
       }
     } catch(e){}
