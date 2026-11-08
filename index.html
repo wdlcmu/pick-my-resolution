@@ -821,10 +821,11 @@ window.FLEET_CFG = {
     <button class="cta" id="btn-letter">Save my letter card</button>
     <div id="lt-out"></div>
     <p class="status" id="st-letter"></p>
-    <button class="ghost" id="btn-lt-share" hidden>Share my letter card</button>
     <a class="ghost" id="lt-dl" href="#" download="letter-card.png" hidden style="text-decoration:none">Download my letter card</a>
     <p class="done-line">You&rsquo;re done.</p>
     <p class="sub" style="font-size:15px">Your plan is set. It saves on this device only.</p>
+    <button class="cta" id="btn-share">Share my resolution</button>
+    <p class="status" id="st-share-main"></p>
     <button class="ghost" id="btn-stick" type="button" aria-expanded="false" aria-controls="stick-panel">Make it stick</button>
     <div id="stick-panel" hidden>
 <div id="why-block">
@@ -858,16 +859,11 @@ window.FLEET_CFG = {
     <pre id="r-checkin"></pre>
     <button class="ghost" id="btn-copy-checkin">Copy my weekly check-in</button>
     <p class="status" id="st-checkin"></p>
-    <p class="label">Share text</p>
-    <pre id="r-share"></pre>
-    <button class="ghost" id="btn-copy-share">Copy my share text</button>
-    <p class="status" id="st-share"></p>
     <p class="label">Your lock-screen picture</p>
     <p class="sub" style="font-size:14px">Your pick and your first move, as one picture. 52 dots, one for each week.</p>
     <button class="ghost" id="btn-yearcard">Get my lock-screen picture</button>
     <div id="yc-out"></div>
     <p class="status" id="st-yearcard"></p>
-    <button class="ghost" id="btn-yc-share" hidden>Share my lock-screen picture</button>
     <a class="ghost" id="yc-dl" href="#" download="lock-screen-picture.png" hidden style="text-decoration:none">Download my lock-screen picture</a>
         </div>
     <button class="ghost" id="btn-change">Change answers</button>
@@ -1995,14 +1991,12 @@ function renderResult() {
   $("r-week1").textContent = current.weekOne || "";
   $("r-stakes").textContent = current.stakes || "";
   $("r-checkin").textContent = current.checkin;
-  $("r-share").textContent = current.share;
   $("st-checkin").textContent = "";
-  $("st-share").textContent = "";
+  if ($("st-share-main")) $("st-share-main").textContent = "";
   // A new result retires any year card drawn from the old one.
   ycBlob = null;
   $("st-yearcard").textContent = "";
   $("yc-out").innerHTML = "";
-  $("btn-yc-share").hidden = true;
   $("yc-dl").hidden = true;
   // A new result also retires any letter written for the old one.
   resetLetter();
@@ -2345,8 +2339,17 @@ $("q-love-input").addEventListener("keydown", function (e) {
 $("btn-copy-checkin").onclick = function () {
   copyText(current.checkin, $("st-checkin"), "Copied. Paste it in your AI or notes app.");
 };
-$("btn-copy-share").onclick = function () {
-  copyText(current.share, $("st-share"), "Copied. Paste it where you share things.");
+// SPEC-KOR-SHARE1108-01: the result's ONE share action. Native share carries
+// the existing well-worded payload (current.share); copy is only the
+// automatic fallback where native share does not exist. The payload is
+// never displayed as text on the screen.
+$("btn-share").onclick = async function () {
+  if (!current) return;
+  if (navigator.share) {
+    try { await navigator.share({ title: "Keep One Resolution", text: current.share }); } catch (e) { /* sheet closed, nothing to do */ }
+  } else {
+    copyText(current.share, $("st-share-main"), "Copied. Paste it where you share things.");
+  }
 };
 
 // Year card (2026-10-24): a 1080x1350 lock-screen PNG drawn from the
@@ -2505,18 +2508,10 @@ function drawYearCard() {
     im.src = url;
     wrap.appendChild(im);
     var dl = $("yc-dl"); dl.href = url; dl.hidden = false;
-    var can = false;
-    try { can = !!(blob && navigator.canShare && navigator.canShare({ files: [new File([blob], "lock-screen-picture.png", { type: "image/png" })] })); } catch (e) { can = false; }
-    $("btn-yc-share").hidden = !can;
-    $("st-yearcard").textContent = can ? "Tap share to send it, or download the picture." : "Download the picture. Keep it where you will see it.";
+    $("st-yearcard").textContent = "Download the picture. Keep it where you will see it.";
   }, "image/png");
 }
 $("btn-yearcard").onclick = function () { drawYearCard(); };
-$("btn-yc-share").onclick = async function () {
-  if (!ycBlob) return;
-  var f = new File([ycBlob], "lock-screen-picture.png", { type: "image/png" });
-  try { await navigator.share({ files: [f], title: "My lock-screen picture" }); } catch (e) { /* sheet closed, nothing to do */ }
-};
 
 // Future-you letter (2026-10-27): an optional note written under the
 // result just made, drawn as a letter card in the year card's dawn
@@ -2561,7 +2556,6 @@ function renderLetterChips() {
 function retireLetterCard() {
   ltBlob = null;
   $("lt-out").innerHTML = "";
-  $("btn-lt-share").hidden = true;
   $("lt-dl").hidden = true;
   $("st-letter").textContent = "";
 }
@@ -2655,10 +2649,7 @@ function drawLetterCard() {
     im.src = url;
     wrap.appendChild(im);
     var dl = $("lt-dl"); dl.href = url; dl.hidden = false;
-    var can = false;
-    try { can = !!(blob && navigator.canShare && navigator.canShare({ files: [new File([blob], "letter-card.png", { type: "image/png" })] })); } catch (e) { can = false; }
-    $("btn-lt-share").hidden = !can;
-    $("st-letter").textContent = can ? "Tap share to send it, or download the picture." : "Download the picture. Keep it where you will see it.";
+    $("st-letter").textContent = "Download the picture. Keep it where you will see it.";
   }, "image/png");
 }
 function restoreLetter(savedLetter) {
@@ -2674,11 +2665,6 @@ function restoreLetter(savedLetter) {
   drawLetterCard();
 }
 $("btn-letter").onclick = function () { drawLetterCard(); };
-$("btn-lt-share").onclick = async function () {
-  if (!ltBlob) return;
-  var f = new File([ltBlob], "letter-card.png", { type: "image/png" });
-  try { await navigator.share({ files: [f], title: "My letter card" }); } catch (e) { /* sheet closed, nothing to do */ }
-};
 $("lt-note").addEventListener("input", function () {
   var note = $("lt-note").value.replace(/\s+/g, " ").trim();
   if (letter && note !== letter.note) {
@@ -2883,12 +2869,8 @@ function fleetSessionMarks(){
   if (lb) lb.addEventListener("click", function(){ var t = document.getElementById("lt-note"); if (t && t.value.trim()) fleetTrack("artifact_created", {tool: "resolution-picker", artifact: "letter-card"}); });
   var ld = document.getElementById("lt-dl");
   if (ld) ld.addEventListener("click", function(){ fleetTrack("artifact_created", {tool: "resolution-picker", artifact: "letter-card-download"}); });
-  var lsh = document.getElementById("btn-lt-share");
-  if (lsh) lsh.addEventListener("click", function(){ fleetTrack("share_intent", {tool: "resolution-picker", channel: "native"}); });
-  var cs = document.getElementById("btn-copy-share");
-  if (cs) cs.addEventListener("click", function(){ fleetTrack("share_intent", {tool: "resolution-picker", channel: "clipboard"}); });
-  var ys = document.getElementById("btn-yc-share");
-  if (ys) ys.addEventListener("click", function(){ fleetTrack("share_intent", {tool: "resolution-picker", channel: "native"}); });
+  var sh = document.getElementById("btn-share");
+  if (sh) sh.addEventListener("click", function(){ fleetTrack("share_intent", {tool: "resolution-picker", channel: "native"}); });
 })();
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "620ee36c9c5e4adc9a7ff104dce8a422"}'></script>
