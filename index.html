@@ -55,7 +55,7 @@
       "name": "What we don't do",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Reminders and signup stay off: we send no reminder emails, and there is no email signup. Your plan and note live in this browser only — they stay off our servers. You leave with one plan, sized to your week."
+        "text": "Reminders and signup stay off: we send no reminder emails, and there is no email signup. Your plan and note live in this browser only: they stay off our servers. You leave with one plan, sized to your week."
       }
     }
   ]
@@ -264,6 +264,9 @@
     position: absolute; left: 10px; bottom: 10px; background: rgba(8, 28, 23, 0.74);
     color: #fff; font-size: 13px; font-weight: 700; padding: 5px 11px; border-radius: 999px;
   }
+  .hero-q1 { margin: 12px 0 0; }
+  .hero-q1 .hq-title { color: #fff; font-size: 22px; line-height: 1.25; margin: 0 0 2px; }
+  .hero-q1 .hq-why { color: #d7e8df; font-size: 15px; margin: 0 0 4px; }
   .hero-pick-card {
     background: #fff; color: var(--ink); border-radius: 14px;
     padding: 12px 14px; margin: 12px 0 0; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
@@ -310,7 +313,7 @@
 window.FLEET_CFG = {
   site: "resolution",
   starts: [
-    {sel: "#btn-start", surface: "picker"},
+    {sel: "#hq-chips .chip", surface: "picker"},
     {sel: "#btn-start-2", surface: "picker"},
     {sel: "#btn-again", surface: "picker"},
     {sel: "#btn-change", surface: "picker"},
@@ -533,11 +536,15 @@ window.FLEET_CFG = {
               <button class="cdx-more" id="cdx-more" type="button" aria-expanded="false" aria-controls="cdx-panel" hidden>What&rsquo;s next? <span aria-hidden="true">&#9662;</span></button>
               <div class="cdx-panel" id="cdx-panel" hidden>
                 <p class="cdx-break" id="cdx-break"></p>
-                <p class="cdx-mile" id="cdx-mile">The moment: <strong>January 1, 2027</strong> &mdash; time to pick your one resolution.</p>
+                <p class="cdx-mile" id="cdx-mile">The moment: <strong>January 1, 2027</strong>: time to pick your one resolution.</p>
               </div>
             </div>
             <p class="sub">Four short questions. One resolution, sized to your week. Free, about a minute.</p>
-            <button class="cta" id="btn-start">Pick my one resolution</button>
+            <div class="hero-q1" id="hero-q1">
+              <h2 class="hq-title">Pick one part of your life.</h2>
+              <p class="hq-why">One part only. Your pick lives there.</p>
+              <div class="chips" id="hq-chips"></div>
+            </div>
             <p class="askdoor">Rather say it in your own words? <a href="/ask">Ask here</a>.</p>
             <div class="hero-pick-card">
               <p class="hp-line"><span class="hp-label">One real pick:</span> I felt drained a lot.</p>
@@ -663,12 +670,12 @@ window.FLEET_CFG = {
       <details>
         <summary>What we don't do</summary>
         <p>Reminders and signup stay off: we send no reminder emails, and there is no email signup.</p>
-        <p>Your plan and note live in this browser only &mdash; they stay off our servers.</p>
+        <p>Your plan and note live in this browser only: they stay off our servers.</p>
       </details>
     </div>
     <div class="maker">
       <h2>Made by a dad, on the side</h2>
-      <p>I&apos;m Billy, a dad in Redmond, Washington. I build these tools on the side, with AI &mdash; one idea, one website, no company behind it. Keep One Resolution holds it to one resolution, sized to a real week, because lists die by spring.</p>
+      <p>I&apos;m Billy, a dad in Redmond, Washington. I build these tools on the side, with AI: one idea, one website, no company behind it. Keep One Resolution holds it to one resolution, sized to a real week, because lists die by spring.</p>
     </div>
     </div>
   </section>
@@ -824,11 +831,11 @@ window.FLEET_CFG = {
 </div>
 <p style="margin:.9rem 0 .3rem"><strong>2. Add it to your AI</strong></p>
 <details>
-<summary style="min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:600">Claude Code — one command</summary>
+<summary style="min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:600">Claude Code: one command</summary>
 <pre style="overflow-x:auto;padding:.7rem;border:1px solid rgba(127,127,127,.35);border-radius:10px"><code>claude mcp add --transport http keep-one-resolution https://mcp.pickmyresolution.com/mcp</code></pre>
 </details>
 <details>
-<summary style="min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:600">Claude Desktop or Cursor — paste into the MCP settings</summary>
+<summary style="min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:600">Claude Desktop or Cursor: paste into the MCP settings</summary>
 <pre style="overflow-x:auto;padding:.7rem;border:1px solid rgba(127,127,127,.35);border-radius:10px"><code>{
   "mcpServers": {
     "keep-one-resolution": {
@@ -979,7 +986,7 @@ window.FLEET_CFG = {
       }
       if (mileEl && lastMileYear !== c.target.getFullYear()) {
         lastMileYear = c.target.getFullYear();
-        mileEl.innerHTML = "The moment: <strong>January 1, " + lastMileYear + "</strong> &mdash; time to pick your one resolution.";
+        mileEl.innerHTML = "The moment: <strong>January 1, " + lastMileYear + "</strong>: time to pick your one resolution.";
       }
     }
     if (tickMs !== null) { lastMs = tickMs; showDigits(tickMs, tail); setAria(cdTick(tickMs, tail), now); }
@@ -2186,13 +2193,29 @@ function finishQuiz() {
   show("s-result");
 }
 
-$("btn-start").onclick = function () {
-  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "", love: "" };
-  renderQuiz();
-  show("s-quiz");
-};
+var hqChips = $("hq-chips");
+if (hqChips) {
+  hqChips.innerHTML = AREAS.map(function (o) {
+    return '<button class="chip" data-k="' + o.k + '" aria-pressed="false">' +
+      '<span class="tick">\u2713</span>' + o.label + "</button>";
+  }).join("");
+  var hcs = hqChips.querySelectorAll(".chip");
+  for (var hc = 0; hc < hcs.length; hc++) {
+    hcs[hc].onclick = (function (el) {
+      return function () {
+        quiz = { step: 1, area: el.getAttribute("data-k"), off: null, time: null, fail: null, when: "", love: "" };
+        renderQuiz();
+        show("s-quiz");
+      };
+    })(hcs[hc]);
+  }
+}
 var btnStart2 = $("btn-start-2");
-if (btnStart2) btnStart2.onclick = function () { $("btn-start").click(); };
+if (btnStart2) btnStart2.onclick = function () {
+  window.scrollTo(0, 0);
+  var firstChip = document.querySelector("#hq-chips .chip");
+  if (firstChip) firstChip.focus();
+};
 // Worked-example depth (de-mess pass, Nov 5, 2026): the sample plan
 // card sits behind one tap; the honest-no unit above it stays visible.
 var exToggle = $("ex-toggle");
