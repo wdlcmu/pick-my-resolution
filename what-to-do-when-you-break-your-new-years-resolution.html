@@ -1082,6 +1082,88 @@ function crisisPmr(raw) {
     "I'm glad you said something. Please reach out to a person right now: call or text 988, the Suicide and Crisis Lifeline (US, free, day or night), or text HOME to 741741. If you might act on this, call 911. I'm only a resolution picker, and this part matters more than any pick."
   ] };
 }
+/* Stand-down layer (SPEC-PMR-ASKADV1109-08/-11, Nov 9, 2026):
+   traps the local door used to answer with the slot request - or,
+   with a complete brief, with a live pick (C11 payday -> money pick,
+   C12 diagnose -> pick, EN09 stop-eating -> walking pick). Checked
+   after the crisis and red-flag layers, before facts and picker.
+   Eating-harm first (SPEC-08, both doors): a stated plan to stop
+   eating for days is named plainly and stood down, never routed
+   into the normal pick flow. Then the worker-parity refusals:
+   diagnosis/medication (the worker's pinned medical line), payday
+   loans and specific stock picks (financial words, never the
+   medical text), legal drafting/advice, and guarantee demands
+   (the worker's pinned honesty line). English and Spanish. */
+function safetyPmr(raw) {
+  var t = " " + String(raw || "").toLowerCase().replace(/’/g, "'") + " ";
+  var es = esPmr(t) || /\b(dejar de comer|diagnosticarme|antidepresivo|préstamo|prestamo|demandar|garant)/.test(t);
+  if (/\bstop eating for (days|a week|weeks)\b/.test(t) || /\bnot eat(ing)? for (days|a week)\b/.test(t)
+    || /\bstarv(e|ing) myself\b/.test(t) || /\bgo days without eating\b/.test(t)
+    || /\bdejar de comer por (d(i|í)as|una semana)\b/.test(t) || /\bno comer por (d(i|í)as)\b/.test(t)
+    || /\bayunar por (d(i|í)as)\b/.test(t)) {
+    if (es) return { label: "Por favor, pausa con esa meta", lines: [
+      "No voy a crear un plan alrededor de dejar de comer por días.",
+      "Pasar días sin comer puede hacerte daño, y no es una forma segura de bajar de peso. Si comer o la comida se siente difícil de manejar, un médico o un consejero que trabaja con la alimentación es la persona indicada para hablar.",
+      "Si quieres, puedo elegir en cambio una resolución pequeña y constante — una que sume algo, como una caminata corta o una comida regular a una hora fija. Solo di la parte de la vida, cómo se sintió el año y qué hizo que los planes pasados fallaran."
+    ] };
+    return { label: "Please pause on that goal", lines: [
+      "I won't build a plan around not eating for days at a time.",
+      "Going days without eating can harm you, and it is not a safe way to lose weight. If eating or food feels hard to manage, a doctor or a counselor who works with eating is the right person to talk to.",
+      "If you want, I can pick a small, steady resolution instead — one that adds something, like a short walk or a regular meal at a set time. Just say the part of life, how the year felt, and what made past plans fail."
+    ] };
+  }
+  if (/\bpayday loan\b/.test(t) || /\bpr(e|é)stamo (r(a|á)pido|de d(i|í)a de pago)\b/.test(t)) {
+    if (es) return { label: "No puedo aconsejar sobre préstamos", lines: [
+      "No puedo decirte si deberías pedir un préstamo rápido, y no lo voy a tratar como una elección de dinero.",
+      "Los préstamos rápidos son deuda de alto costo. Usar uno para pagar tarjetas de crédito suele hacer que la deuda cueste más, no menos. Un consejero de crédito sin fines de lucro puede ver el panorama completo contigo, gratis o barato.",
+      "Lo que sí puedo hacer es elegir una resolución pequeña de dinero del banco de este sitio — di la parte de la vida, cómo se sintió el año y qué hizo que los planes pasados fallaran."
+    ] };
+    return { label: "I can't advise on loans", lines: [
+      "I can't tell you whether to take a payday loan, and I won't treat it as a money pick.",
+      "Payday loans are high-cost debt. Using one to pay credit cards usually makes the debt cost more, not less. A nonprofit credit counselor can look at the whole picture with you, for free or cheap.",
+      "What I can do is pick one small money resolution from this site's bank — say the part of life, how the year felt, and what made past plans fail."
+    ] };
+  }
+  if (/\b(which|what) stock should i buy\b/.test(t) || /\bspecific (stock|investment) (pick|recommendation)\b/.test(t)
+    || /\bqu(e|é) acci(o|ó)n deber(i|í)a comprar\b/.test(t)) {
+    if (es) return { label: "No puedo elegir inversiones", lines: [
+      "No puedo elegir una acción específica ni decirte dónde invertir tus ahorros. Esa decisión depende de todo tu panorama de dinero, que un asesor financiero con licencia puede ver y yo no.",
+      "Lo que sí puedo hacer es elegir una resolución pequeña de dinero del banco de este sitio — di la parte de la vida, cómo se sintió el año y qué hizo que los planes pasados fallaran."
+    ] };
+    return { label: "I can't pick investments", lines: [
+      "I can't pick a specific stock or tell you where to invest your savings. That call depends on your whole money picture, which a licensed financial adviser can see and I can't.",
+      "What I can do is pick one small money resolution from this site's bank — say the part of life, how the year felt, and what made past plans fail."
+    ] };
+  }
+  if (/\b(diagnos\w*|prescri\w*|medication|antidepressant|what (dose|dosage)|should i (take|stop taking)|treat my (depression|anxiety|adhd|bipolar|insomnia|eating)|therapy for|am i (depressed|bipolar|mentally ill)|eating disorder)\b/.test(t)
+    || /\b(diagnosticarme|diagnosticar|antidepresivo|qu(e|é) medicina deber(i|í)a tomar|dejar de tomar mi|qu(e|é) tratamiento)\b/.test(t)) {
+    if (es) return { label: "No puedo dar consejo médico", lines: [
+      "No puedo dar consejo médico ni de salud mental, y no diagnostico ni trato nada. Si esto es sobre tu salud, un médico o un terapeuta es la persona indicada para preguntar. Lo que sí puedo hacer, cuando quieras, es elegir una resolución pequeña del banco de este sitio — di la parte de la vida, cómo se sintió el año y qué hizo que los planes pasados fallaran."
+    ] };
+    return { label: "I can't give medical advice", lines: [
+      "I can't give medical or mental-health advice, and I don't diagnose or treat anything. If this is about your health, a doctor or a therapist is the right person to ask. What I can do, any time, is pick one small resolution from this site's bank — say the part of life, how the year felt, and what made past plans fail."
+    ] };
+  }
+  if (/\bwrite (a |the )?(legal )?(contract|divorce papers)\b/.test(t) || /\bhow to sue\b/.test(t)
+    || /\bsue my (landlord|boss|employer)\b/.test(t) || /\blegal advice\b/.test(t)
+    || /\bdemandar a\b/.test(t) || /\bpapeles legales\b/.test(t)) {
+    if (es) return { label: "No puedo ayudar con trabajo legal", lines: [
+      "No puedo escribir contratos ni papeles legales, y no puedo decirte cómo demandar a alguien. Un abogado o la oficina local de ayuda legal es la ayuda indicada para eso.",
+      "Lo que sí puedo hacer es elegir una resolución pequeña del banco de este sitio — di la parte de la vida, cómo se sintió el año y qué hizo que los planes pasados fallaran."
+    ] };
+    return { label: "I can't help with legal work", lines: [
+      "I can't write contracts or legal papers, and I can't tell you how to sue someone. A lawyer or your local legal aid office is the right help for that.",
+      "What I can do is pick one small resolution from this site's bank — say the part of life, how the year felt, and what made past plans fail."
+    ] };
+  }
+  if (/\bguarantee (me|this|that|it)\b/.test(t) || /\bpromise me\b/.test(t)
+    || /\bgarant(i|í)zame\b/.test(t) || /\bprom(e|é)teme que\b/.test(t)) {
+    return { label: "No guarantees here", lines: [
+      "No pick comes with a guarantee, and I will not promise one. What this site does instead: one resolution only, sized to the time you actually have, with a first move small enough to start this week."
+    ] };
+  }
+  return null;
+}
 /* Health red-flag stand-down (SPEC-PMR-ADV1108-01, Nov 8, 2026):
    a visitor who REPORTS a serious symptom or a condition that makes
    the suggested activity risky must never be handed an exercise
@@ -1324,6 +1406,13 @@ function answerAskPmr(raw) {
   if (rf) {
     out.innerHTML = '<div class="card"><p class="label">' + rf.label + '</p>' +
       rf.lines.map(function (s) { return '<p>' + esc(s) + '</p>'; }).join("") + '</div>';
+    document.getElementById("askp-more").hidden = true;
+    return null;
+  }
+  var sf = safetyPmr(raw);
+  if (sf) {
+    out.innerHTML = '<div class="card"><p class="label">' + sf.label + '</p>' +
+      sf.lines.map(function (s) { return '<p>' + esc(s) + '</p>'; }).join("") + '</div>';
     document.getElementById("askp-more").hidden = true;
     return null;
   }
