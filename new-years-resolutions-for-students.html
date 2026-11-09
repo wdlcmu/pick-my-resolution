@@ -1015,6 +1015,38 @@ function baselinePmr(raw) {
   }
   return null;
 }
+/* Crisis + Spanish helpers (SPEC-PMR-ASKADV1109-03/-04, Nov 9, 2026):
+   the local door had NO crisis layer at all - zero "988" wording in
+   the engine - so every crisis wording got the slot request and a
+   complete-brief crisis message got a live walking pick (C08). This
+   layer is checked FIRST in answerAskPmr, before the red-flag, facts,
+   baseline and picker layers, in English and Spanish. The English
+   line is the chat worker's pinned crisis line, verbatim; the Spanish
+   line is the same content in Spanish. Detection mirrors the worker's
+   selfHarm list plus the Spanish wordings of SPEC-PMR-ASKADV1109-01
+   (morirme / hacerme daño / matarme). */
+function esPmr(t) {
+  return /\b(tengo|estoy|quiero|pecho|embarazada|cirug(i|í)a|operarme|operaron|coraz(o|ó)n|deber(i|í)a|semana|acabo)\b/.test(t);
+}
+function crisisPmr(raw) {
+  var t = " " + String(raw || "").toLowerCase().replace(/’/g, "'") + " ";
+  var en = /\b(kill myself|hurt myself|harm myself|self[-\s]?harm|suicid\w*|end my life|don't want to (live|be here)|want to die)\b/.test(t);
+  var es = /quiero\s+(morirme|matarme|suicidarme|hacerme\s+daño|quitarme\s+la\s+vida|acabar\s+con\s+mi\s+vida)/.test(t)
+    || /me\s+quiero\s+(morir|matar)/.test(t)
+    || /hacerme\s+daño/.test(t)
+    || /quitarme\s+la\s+vida/.test(t)
+    || /(ya\s+)?no\s+quiero\s+(vivir|estar\s+aqu(i|í)|seguir\s+viviendo)/.test(t)
+    || /\bsuicid\w*\b/.test(t);
+  if (!en && !es) return null;
+  if (es && esPmr(t)) {
+    return { label: "Esto importa más que una resolución", lines: [
+      "Me alegra que lo hayas dicho. Por favor, habla con una persona ahora mismo: llama o envía un mensaje de texto al 988, la Línea de Suicidio y Crisis (EE. UU., gratis, día y noche), o envía HOME al 741741. Si crees que podrías actuar en consecuencia, llama al 911. Solo soy una herramienta para elegir una resolución, y esto importa más que cualquier elección."
+    ] };
+  }
+  return { label: "Please reach out now", lines: [
+    "I'm glad you said something. Please reach out to a person right now: call or text 988, the Suicide and Crisis Lifeline (US, free, day or night), or text HOME to 741741. If you might act on this, call 911. I'm only a resolution picker, and this part matters more than any pick."
+  ] };
+}
 /* Health red-flag stand-down (SPEC-PMR-ADV1108-01, Nov 8, 2026):
    a visitor who REPORTS a serious symptom or a condition that makes
    the suggested activity risky must never be handed an exercise
@@ -1034,7 +1066,20 @@ function redFlagPmr(raw) {
     || /\b(shortness of breath|trouble breathing|difficulty breathing|can't breathe|cannot breathe|hard to breathe)\b/.test(t)
     || /\b(fainted|fainting)\b/.test(t)
     || /\bpain (when|while) (i )?(walk|walking|exercise|exercising|climb|climbing|run|running)\b/.test(t)
-    || /\bhurts? (when|while) (i )?(walk|walking|exercise|exercising)\b/.test(t)) {
+    || /\bhurts? (when|while) (i )?(walk|walking|exercise|exercising)\b/.test(t)
+    || /\bdolor (en el|de) pecho\b/.test(t)
+    || /\b(presi(o|ó)n|opresi(o|ó)n) en el pecho\b/.test(t)
+    || /\bdificultad para respirar\b/.test(t)
+    || /\bno puedo respirar\b/.test(t)
+    || /\bme (desmay(e|é)|desmayo)\b/.test(t)
+    || /\bdolor cuando (camino|corro|hago ejercicio)\b/.test(t)) {
+    if (esPmr(t)) {
+      return { label: "Por favor, haz que te revisen esto primero", lines: [
+        "No voy a elegir una resolución de ejercicio para esto, y no voy a sugerir caminar más aquí.",
+        "Este sitio no es un servicio médico, y no puedo decir qué está causando lo que sientes. El dolor en el pecho y síntomas como estos pueden ser urgentes. Por favor, habla con un médico pronto, y si está pasando ahora o empeora, busca atención urgente o llama al 911.",
+        "Cuando un médico te haya dicho qué actividad es segura para ti, vuelve y puedo elegir una resolución que se ajuste a lo que dijo. Por ahora, puedo elegir una resolución en una parte de la vida que no le pida más a tu cuerpo, como dinero, casa, o familia y amigos — solo dilo."
+      ] };
+    }
     return { label: "Please get this checked first", lines: [
       "I won't pick an exercise resolution for this, and I won't suggest walking more here.",
       "This site is not a medical service, and I can't say what is causing what you feel. Chest pain and symptoms like these can be urgent. Please talk to a doctor promptly, and if it is happening now or gets worse, get urgent care or call 911.",
@@ -1049,7 +1094,25 @@ function redFlagPmr(raw) {
     || /\brecent surgery\b/.test(t)
     || /\bafter (my )?(surgery|operation)\b/.test(t)
     || /\bi (broke|fractured|sprained|tore)\b/.test(t)
-    || /\bdoctor (said|told me)\b[^.?!]{0,40}\bnot to\b/.test(t)) {
+    || /\bdoctor (said|told me)\b[^.?!]{0,40}\bnot to\b/.test(t)
+    || /\bembarazada\b/.test(t)
+    || /\bembarazo\b/.test(t)
+    || /\bcirug(i|í)a\b/.test(t)
+    || /\boperarme\b/.test(t)
+    || /\bme operaron\b/.test(t)
+    || /\boperaci(o|ó)n\b/.test(t)
+    || /\bproblema (del|de) coraz(o|ó)n\b/.test(t)
+    || /\benfermedad card(i|í)aca\b/.test(t)
+    || /\bme romp(i|í)\b/.test(t)
+    || /\bme fractur\w*\b/.test(t)
+    || /\bel m(e|é)dico me dijo\b[^.?!]{0,40}\bno\b/.test(t)) {
+    if (esPmr(t)) {
+      return { label: "Por favor, consulta primero con tu médico", lines: [
+        "No voy a elegir una resolución de ejercicio para esto todavía.",
+        "Este sitio no es un servicio médico. Con lo que mencionaste, por favor consulta primero con tu médico y pregúntale qué actividad es segura para ti antes de empezar un plan de ejercicio nuevo.",
+        "Cuando sepas qué es seguro, vuelve y puedo elegir una resolución que se ajuste a lo que dijo. Por ahora, puedo elegir una resolución en una parte de la vida que no le pida más a tu cuerpo, como dinero, casa, o familia y amigos — solo dilo."
+      ] };
+    }
     return { label: "Please check with your doctor first", lines: [
       "I won't pick an exercise resolution for this yet.",
       "This site is not a medical service. With what you mentioned, please check with your doctor first and ask what activity is safe for you before starting a new exercise plan.",
@@ -1215,6 +1278,13 @@ function goalNotePmr(goal, resolution) {
 }
 function answerAskPmr(raw) {
   var out = document.getElementById("askp-answer");
+  var cr = crisisPmr(raw);
+  if (cr) {
+    out.innerHTML = '<div class="card"><p class="label">' + cr.label + '</p>' +
+      cr.lines.map(function (s) { return '<p>' + esc(s) + '</p>'; }).join("") + '</div>';
+    document.getElementById("askp-more").hidden = true;
+    return null;
+  }
   var rf = redFlagPmr(raw);
   if (rf) {
     out.innerHTML = '<div class="card"><p class="label">' + rf.label + '</p>' +
