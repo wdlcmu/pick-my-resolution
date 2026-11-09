@@ -1134,7 +1134,8 @@ function factsPmr(raw) {
     if (cdays === 0) return { label: "Christmas", lines: ["Christmas is today — " + cwd + ", December 25, " + cy + "."] };
     return { label: "Christmas", lines: [cdays + (cdays === 1 ? " day" : " days") + " until Christmas — " + cwd + ", December 25, " + cy + "."] };
   }
-  var cdAsk = (/\b(days?|sleeps?|nights?)\b/.test(t) && /\b(january\s+1|jan\.?\s+1|new year's?( day)?)\b/.test(t) && /\b(until|till|to|before|left)\b/.test(t)) || /\bcountdown\b/.test(t);
+  /* SPEC-PMR-COLDQA1109-01: bare "new year" (no apostrophe) is the same countdown ask; pattern now matches the chat worker's asksCountdown exactly. */
+  var cdAsk = (/\b(days?|sleeps?|nights?)\b/.test(t) && /\b(january\s+1|jan\.?\s+1|new year'?s?( day)?)\b/.test(t) && /\b(until|till|to|before|left)\b/.test(t)) || /\bcountdown\b/.test(t);
   if (cdAsk) {
     var now = new Date();
     var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());

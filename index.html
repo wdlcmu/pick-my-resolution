@@ -611,6 +611,12 @@ window.FLEET_CFG = {
                 <p class="cdx-mile" id="cdx-mile">The moment: <strong>January 1, 2027</strong>: time to pick your one resolution.</p>
               </div>
             </div>
+            <!-- SPEC-PMR-COLDQA1109-02: worked example directly under the identity/countdown block, above the first question. Compact card only: the honest-no summary line was dropped here (full showdown is lower on this page and on every result) so the first question and its chips stay on screen one. -->
+            <div class="hero-pick-card">
+              <p class="hp-line"><span class="hp-label">One real pick:</span> I felt drained a lot.</p>
+              <p class="hp-pick">Take a short walk: 30 min, 4x a week.</p>
+              <p class="hp-plan">Week one starts at 15 min &middot; Sat 9am, at the park, with Alex</p>
+            </div>
             <p class="sub">Four questions. Two optional lines. One resolution, sized to your week.</p>
             <div class="hero-q1" id="hero-q1">
               <h2 class="hq-title">Pick one part of your life.</h2>
@@ -618,12 +624,6 @@ window.FLEET_CFG = {
               <div class="chips" id="hq-chips"></div>
             </div>
             <p class="askdoor">Rather say it in your own words? <a href="/ask">Ask here</a>.</p>
-            <div class="hero-pick-card">
-              <p class="hp-line"><span class="hp-label">One real pick:</span> I felt drained a lot.</p>
-              <p class="hp-pick">Take a short walk: 30 min, 4x a week.</p>
-              <p class="hp-plan">Week one starts at 15 min &middot; Sat 9am, at the park, with Alex</p>
-              <p class="hp-line" style="margin-top:6px"><span class="hp-label">First, the honest no:</span> Five moves (small weekly actions) live in your area. Four get a no, each with its reason. One is left standing.</p>
-            </div>
           </div>
           <div class="hero-photos">
             <figure class="ph ph-main">
@@ -4245,7 +4245,8 @@ function factsPmr(raw) {
     if (cdays === 0) return { label: "Christmas", lines: ["Christmas is today — " + cwd + ", December 25, " + cy + "."] };
     return { label: "Christmas", lines: [cdays + (cdays === 1 ? " day" : " days") + " until Christmas — " + cwd + ", December 25, " + cy + "."] };
   }
-  var cdAsk = (/\b(days?|sleeps?|nights?)\b/.test(t) && /\b(january\s+1|jan\.?\s+1|new year's?( day)?)\b/.test(t) && /\b(until|till|to|before|left)\b/.test(t)) || /\bcountdown\b/.test(t);
+  /* SPEC-PMR-COLDQA1109-01: bare "new year" (no apostrophe) is the same countdown ask; pattern now matches the chat worker's asksCountdown exactly. */
+  var cdAsk = (/\b(days?|sleeps?|nights?)\b/.test(t) && /\b(january\s+1|jan\.?\s+1|new year'?s?( day)?)\b/.test(t) && /\b(until|till|to|before|left)\b/.test(t)) || /\bcountdown\b/.test(t);
   if (cdAsk) {
     var now = new Date();
     var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
