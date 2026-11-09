@@ -1370,27 +1370,53 @@ function redFlagPmr(raw) {
   }
   return null;
 }
-/* Named-day + countdown facts (SPEC-PMR-ADV1108-04/-05, Nov 8, 2026):
-   this local carrier answered NONE of the site's factual questions
-   (the -06 divergence), so the two facts this lane closes are pinned
-   here in the worker's exact words. Ditch Day: the site's own page
-   (/what-is-ditch-new-years-resolutions-day) — January 17 every
-   year; the year's weekday is computed, never recalled. Countdown:
-   the whole-calendar-day difference in the visitor's own timezone,
-   midnight-to-midnight — the homepage dayText() convention, so the
-   Ask, the worker, and the page sentence can never disagree again
-   (the worker's old floored-duration figure read one day short).
-   Scoped: a COMPLETE pick brief (area + felt + fail all heard)
-   returns null here and keeps its pick, exactly as before. */
+/* Factual layer completed (SPEC-PMR-ADV1108-06, Nov 8, 2026): the
+   -04/-05 lane pinned Ditch Day + the January countdown; this lane
+   ports the REST of the worker's grounded factual answers into this
+   local carrier, in the same words, so the standalone /ask page —
+   and the homepage panel whenever the worker is down — answers all
+   13 factual questions the adversarial pass filed. Every fact is
+   grounded in the site's own pages, re-read this lane: Quitter's
+   Day (second Friday of January; /what-is-quitters-day), New Year's
+   Day (January 1; the weekday is computed, never recalled), the
+   keep-rate studies (/new-years-resolution-statistics: Norcross
+   2002, 46% vs 4% at six months; Oscarsson 2020, 55% of 1,066;
+   Forbes Health/OnePoll, 3.74 months average — the scary
+   failure rate quoted elsewhere appears in none of them), how long
+   (the worker's pinned canon line), how many (/how-many-new-years-
+   resolutions-should-you-have: "One. This year, keep one."), restart
+   (/how-to-restart-a-new-years-resolution: keep the same one, shrink
+   the dose, next normal chance, Lally 2010), share (the result
+   screen's own Share text: the message carries the resolution and
+   its first move; the link opens the picker), privacy (/privacy:
+   the note is never sent to us; it lives in this browser's local
+   storage), mid-year starts (the picker works any time of year;
+   the year holds 52 weekly dots), and Christmas (December 25; the
+   day count is computed from the visitor's own clock, the same
+   calendar-day math as the January countdown). Scoped as before:
+   a COMPLETE pick brief (area + felt + fail all heard) returns
+   null here and keeps its pick. */
 function factsPmr(raw) {
   var t = " " + String(raw || "").toLowerCase().replace(/’/g, "'") + " ";
   var p = parseAskPmr(raw);
   if (p.area && p.off && p.fail) return null;
+  var WD = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   if (/\bditch\b/.test(t)) {
     var ym = t.match(/\b(20\d{2})\b/);
     var year = ym ? parseInt(ym[1], 10) : 2027;
-    var wd = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][new Date(Date.UTC(year, 0, 17)).getUTCDay()];
+    var wd = WD[new Date(Date.UTC(year, 0, 17)).getUTCDay()];
     return { label: "Ditch Day", lines: ["Ditch New Year's Resolutions Day — Ditch Day — falls on January 17 every year. In " + year + ", it falls on " + wd + ", January 17, " + year + ". National Today lists it every January 17. It is the joke day for quitting a resolution; this site's answer is to keep one and shrink it, not ditch it."] };
+  }
+  if (/\bchristmas\b/.test(t) && /\b(days?|until|till|when|countdown|how long|left)\b/.test(t)) {
+    var cNow = new Date();
+    var cTodayUTC = Date.UTC(cNow.getFullYear(), cNow.getMonth(), cNow.getDate());
+    var cym = t.match(/\b(20\d{2})\b/);
+    var cy = cym ? parseInt(cym[1], 10) : (cTodayUTC <= Date.UTC(cNow.getFullYear(), 11, 25) ? cNow.getFullYear() : cNow.getFullYear() + 1);
+    if (cym && Date.UTC(cy, 11, 25) < cTodayUTC) cy = cy + 1;
+    var cwd = WD[new Date(Date.UTC(cy, 11, 25)).getUTCDay()];
+    var cdays = Math.round((Date.UTC(cy, 11, 25) - cTodayUTC) / 86400000);
+    if (cdays === 0) return { label: "Christmas", lines: ["Christmas is today — " + cwd + ", December 25, " + cy + "."] };
+    return { label: "Christmas", lines: [cdays + (cdays === 1 ? " day" : " days") + " until Christmas — " + cwd + ", December 25, " + cy + "."] };
   }
   var cdAsk = (/\b(days?|sleeps?|nights?)\b/.test(t) && /\b(january\s+1|jan\.?\s+1|new year's?( day)?)\b/.test(t) && /\b(until|till|to|before|left)\b/.test(t)) || /\bcountdown\b/.test(t);
   if (cdAsk) {
@@ -1409,6 +1435,50 @@ function factsPmr(raw) {
     var seasonStart = new Date(ty - 1, 11, 26);
     if (today >= seasonStart && today < new Date(ty, 0, 1)) line += " Resolution season is here. Time to pick your one resolution.";
     return { label: "Countdown", lines: [line] };
+  }
+  if (/\bquitter/.test(t)) {
+    var qym = t.match(/\b(20\d{2})\b/);
+    var qy = qym ? parseInt(qym[1], 10) : 2027;
+    var qdow = new Date(Date.UTC(qy, 0, 1)).getUTCDay();
+    var qday = 1 + ((5 - qdow + 7) % 7) + 7;
+    return { label: "Quitter's Day", lines: ["Quitter's Day is January's second Friday — the day in January when many people give up on a New Year's resolution. In " + qy + ", it falls on Friday, January " + qday + ", " + qy + "."] };
+  }
+  if (/\bnew year's? day\b/.test(t) && /\b(when|what day|which day|what date|falls|is it)\b/.test(t)) {
+    var nNow = new Date();
+    var nTodayUTC = Date.UTC(nNow.getFullYear(), nNow.getMonth(), nNow.getDate());
+    var nym = t.match(/\b(20\d{2})\b/);
+    var ny = nym ? parseInt(nym[1], 10) : (nTodayUTC <= Date.UTC(nNow.getFullYear(), 0, 1) ? nNow.getFullYear() : nNow.getFullYear() + 1);
+    var nwd = WD[new Date(Date.UTC(ny, 0, 1)).getUTCDay()];
+    return { label: "New Year's Day", lines: ["New Year's Day " + ny + " falls on " + nwd + ", January 1, " + ny + "."] };
+  }
+  if ((/\b(percentage|percent|proportion|fraction)\b/.test(t) && /\b(keep|kept|stick|succeed|success|resolutions?)\b/.test(t))
+    || (/\bhow many people\b/.test(t) && /\bkeep\b/.test(t))
+    || /\b(keep|success) rate\b/.test(t)) {
+    return { label: "What the studies say", lines: ["No single percentage is settled, and the scary failure rate quoted on most pages appears in none of the studies this site cites. The studies this site uses: Norcross et al. (2002) tracked people who made resolutions, and 46% of resolvers were still succeeding at six months; only 4% of nonresolvers were. Oscarsson et al. (2020) followed 1,066 people, and 55% called their year a success. A Forbes Health and OnePoll survey of 1,000 adults put the average resolution at 3.74 months."] };
+  }
+  if (/\bhow long\b[^.?!]{0,60}\bresolutions?\b/.test(t) || (/\bhow long\b/.test(t) && /\blast\b/.test(t) && /\bresolutions?\b/.test(t))) {
+    return { label: "How long resolutions last", lines: ["Most resolutions fade fast on their own: Quitter's Day, January's second Friday, is when many people give up. The research this site uses says keeping one is still worth it: Norcross and colleagues (2002) tracked people who made resolutions, and 46% of resolvers were still succeeding at six months. Only 4% of nonresolvers were. That is why this site picks just one, sized to your real week."] };
+  }
+  if (/\bhow many resolutions? should\b/.test(t) || /\bhow many (should|can) i\b/.test(t)
+    || /\bshould i (have|keep|pick|make) (more than one|two|three|four|five|\d)\b/.test(t)
+    || /\bcan i (have|keep|pick) (two|three|more than one|\d) resolutions?\b/.test(t)) {
+    return { label: "How many", lines: ["One. This year, keep one — just one. That is this site's whole answer: the picker returns exactly one resolution per person, every time, because a list splits one week thin. It picks that one from 30 actions across 6 parts of life: body and health, money, home, work, family and friends, and mind and calm."] };
+  }
+  if ((/\b(restart|start again|get back|start over)\b/.test(t) && /\b(resolution|habit|it|one)\b/.test(t))
+    || (/\b(broke|broken|quit|gave up|failed|dropped)\b/.test(t) && /\bresolution\b/.test(t))) {
+    return { label: "Restarting", lines: ["Keep the same one resolution — do not swap the goal. Shrink it to its smallest dose and restart at the next normal chance: not Monday, not next month, the next chance. After any miss, do half next time; half still keeps the streak. Missing one day did not wreck it in Lally et al. (2010), and a long break is not a verdict — restarting in spring still counts."] };
+  }
+  if (/\bshare\b/.test(t) && /\b(friend|resolution|result|pick|how|will|they|see|send)\b/.test(t)) {
+    return { label: "Sharing", lines: ["After you get your pick, tap the Share button on the result screen. Your friend gets your resolution and its first move as a message; the link in it opens the picker so they can pick their own one resolution."] };
+  }
+  if ((/\bnote\b/.test(t) && /\b(server|saved|save|store|stored|happen|sent|private|future)\b/.test(t))
+    || /\bsaved on (your|a|the|our) server\b/.test(t) || /\bdo you (save|store|keep|send)\b/.test(t) || /\bprivacy\b/.test(t)) {
+    return { label: "Your note stays here", lines: ["Your note to future you is never sent to us, and it is not saved on a server. Like your answers and your plan, it is saved only in this browser's local storage, on this device. There is no account. Anyone using this browser can open it, and tapping Start over on your saved plan removes your answers, your result, and your note."] };
+  }
+  if (/\bdon't want to wait\b/.test(t) || /\bdont want to wait\b/.test(t) || /\bwait (for|until|till) january\b/.test(t)
+    || (/\b(start|begin|use|pick)\b/.test(t) && /\b(middle of the year|mid-year|mid year|in june|in july|june|july)\b/.test(t))
+    || (/\bcan i (still )?(use|start|begin)\b/.test(t) && /\b(june|july|then|any time)\b/.test(t))) {
+    return { label: "Starting mid-year", lines: ["Yes. You can start at any time of year — you do not have to wait for January. The picker works the same whenever you start: one resolution, sized to your real week. The year holds 52 weekly dots, and yours start the week you begin."] };
   }
   return null;
 }
