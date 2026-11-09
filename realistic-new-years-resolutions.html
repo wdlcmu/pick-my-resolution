@@ -1160,8 +1160,17 @@ function safetyPmr(raw) {
       "What I can do is pick one small resolution from this site's bank — say the part of life, how the year felt, and what made past plans fail."
     ] };
   }
-  if (/\bguarantee (me|this|that|it)\b/.test(t) || /\bpromise me\b/.test(t)
-    || /\bgarant(i|í)zame\b/.test(t) || /\bprom(e|é)teme que\b/.test(t)) {
+  /* VERIFY-01 (Nov 9, 2026): the guarantee trigger also takes the
+     pronoun-clause and modal shapes ("guarantee I will...", "can you
+     guarantee...") and promise-you/it/this/that outcome asks, so a
+     guarantee demand never passes silently on this door. */
+  if (/\bguarantee (me|this|that|it|i|we|you|he|she|they|us|my)\b/.test(t)
+    || /\b(can|could|will|would|do|does) you guarantee\b/.test(t)
+    || /\bguaranteed to\b/.test(t)
+    || /\bpromise (me|you|it|this|that)\b/.test(t)
+    || /\b(can|could|will|would) you promise\b/.test(t)
+    || /\bgarant\w+\b/.test(t) || /\bprom(e|é)teme\b/.test(t)
+    || /\bpromete que\b/.test(t) || /\bprometerme\b/.test(t)) {
     return { label: "No guarantees here", lines: [
       "No pick comes with a guarantee, and I will not promise one. What this site does instead: one resolution only, sized to the time you actually have, with a first move small enough to start this week."
     ] };
