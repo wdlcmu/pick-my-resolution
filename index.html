@@ -345,6 +345,7 @@ window.FLEET_CFG = {
     {sel: "#btn-start-2", surface: "picker"},
     {sel: "#btn-again", surface: "picker"},
     {sel: "#btn-change", surface: "picker"},
+    {sel: "#sr-pick-own", surface: "picker"},
     {sel: "#askp-open", surface: "ask"}
   ],
   autoStartSurface: "picker",
@@ -2930,9 +2931,27 @@ function fleetSessionMarks(){
 })();
 (function(){
   var fired = false;
-  var start = document.getElementById("btn-start");
-  if (start) start.addEventListener("click", function(){
-    if (!fired){ fired = true; fleetTrack("tool_start", {tool: "resolution-picker", entry: "home", via: fleetArrivalVia()}); }
+  // SPEC-PMR-ADV1108-11 (Nov 8, 2026): the home start control on this
+  // page is #btn-start-2 - the old listener bound to #btn-start, an
+  // element that does not exist here, so a home start never set the
+  // completion gate. Every real start control now marks the start
+  // through markStart: the home button and a home area chip (entry
+  // "home"), and the share recipient card's button, so a generation-two
+  // completion fires tool_complete with its via stamp (entry
+  // "share-recipient"). Start over / Change answers keep their own
+  // restart binding below; fired still fires tool_start at most once
+  // per page view.
+  function markStart(entry){
+    if (!fired){ fired = true; fleetTrack("tool_start", {tool: "resolution-picker", entry: entry, via: fleetArrivalVia()}); }
+  }
+  var start = document.getElementById("btn-start-2");
+  if (start) start.addEventListener("click", function(){ markStart("home"); });
+  var srStart = document.getElementById("sr-pick-own");
+  if (srStart) srStart.addEventListener("click", function(){ markStart("share-recipient"); });
+  var hqChipsBox = document.getElementById("hq-chips");
+  if (hqChipsBox) hqChipsBox.addEventListener("click", function(ev){
+    var t = ev.target;
+    if (t && t.closest && t.closest(".chip")) markStart("home");
   });
   try {
     if (new URLSearchParams(window.location.search).get("start") === "1" && !fired){
