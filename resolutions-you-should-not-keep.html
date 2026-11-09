@@ -937,6 +937,7 @@ function parseAskPmr(raw) {
     ["busy", /\b(busy|no time|out of time|life got|chaos|loud)\b/g],
     ["bored", /\b(bored|boring|boredom)\b/g]
   ]);
+  p.goal = goalPmr(raw);
   return p;
 }
 function labelOf(list, k) { for (var i = 0; i < list.length; i++) if (list[i].k === k) return list[i].label; return ""; }
@@ -1175,6 +1176,47 @@ function factsPmr(raw) {
   }
   return null;
 }
+/* Goal disclosure (SPEC-PMR-ADV1108-10, Nov 9, 2026): when a visitor
+   states an explicit goal the bank has no plan for by that name, the
+   pick must say so up front — one line directly under "Your pick",
+   in the visitor's own words — never silently, and never buried
+   after the note and check-in (the chat worker's old spot). The
+   extractor is deterministic and narrow: an "I want to / I need to /
+   my goal is" clause, cut at the sentence end, with a trailing
+   "this year"-style tail and any trailing brief enumeration removed.
+   A negated want ("I don't want to...") is a refusal, not a goal.
+   A bare wish the pick itself names (walk more -> a walk pick) is a
+   literal match and gets no line. Same words, same match test as
+   the chat worker (carrier parity). */
+function goalPmr(raw) {
+  var s = String(raw || "");
+  var m = s.match(/\bmy goal is (?:to\s+)?([^.!?;]{3,90})/i);
+  if (!m) {
+    m = s.match(/\bi\s+(?:really\s+|just\s+|also\s+)?(?:want to|wanna|need to|hope to|want|need)\s+([^.!?;]{3,90})/i);
+    if (m) {
+      var pre = s.slice(Math.max(0, m.index - 12), m.index).toLowerCase();
+      if (/(?:don['\u2019]t|do not|didn['\u2019]t|never)\s*$/.test(pre)) return null;
+    }
+  }
+  if (!m) return null;
+  var g = m[1].split(/\s+but\s+/i)[0].trim();
+  var cm = g.match(/,\s*(?:body and health|money|home|work|family and friends|mind and calm|i felt|i feel|things piled|life got|i got bored|i just forgot|\d+\s*(?:hours?|minutes?|mins?)\s*(?:a|per)\s+week)\b/i);
+  if (cm && cm.index >= 3) g = g.slice(0, cm.index).trim();
+  g = g.replace(/\s+(this year|next year|in 20\d\d|for 20\d\d)$/i, "").trim();
+  g = g.replace(/[,;\s]+$/, "").trim();
+  if (g.length < 3 || g.length > 90) return null;
+  if (/^(a |an |one |my )?(new year'?s )?resolutions?$/i.test(g)) return null;
+  return g;
+}
+function goalNotePmr(goal, resolution) {
+  if (!goal) return null;
+  var GENERIC = { learn: 1, want: 1, more: 1, stop: 1, start: 1, make: 1, take: 1, keep: 1, spend: 1, less: 1, much: 1, really: 1, just: 1, with: 1, your: 1, year: 1, resolution: 1, something: 1, better: 1, every: 1, about: 1 };
+  var words = String(goal).toLowerCase().split(/[^a-z]+/).filter(function (w) { return w.length >= 4 && !GENERIC[w]; });
+  if (!words.length) return null;
+  var resLow = String(resolution || "").toLowerCase();
+  for (var i = 0; i < words.length; i++) if (resLow.indexOf(words[i]) >= 0) return null;
+  return 'Your goal, in your words: "' + goal + '". The bank has no plan with that exact name, so this pick is its closest fit, sized to your time.';
+}
 function answerAskPmr(raw) {
   var out = document.getElementById("askp-answer");
   var rf = redFlagPmr(raw);
@@ -1245,9 +1287,11 @@ function answerAskPmr(raw) {
   var timeHeard = p.timeLabel ? p.timeLabel : labelOf(TIMES, p.time) + (p.timeDefaulted ? " (the middle offer, since no time was named)" : "");
   var heard = "What I heard: " + labelOf(AREAS, p.area) + ". " + labelOf(OFFS, p.off) + " " +
     timeHeard + ". " + labelOf(FAILS, p.fail);
+  var goalNote = goalNotePmr(p.goal, r.resolution);
   out.innerHTML =
     '<div class="card">' +
     '<p class="label">Your pick</p><p class="big">' + esc(r.resolution) + '</p>' +
+    (goalNote ? '<p>' + esc(goalNote) + '</p>' : '') +
     '<p>' + esc(heard) + '</p>' +
     '<p class="label">First move, week one</p><p>' + esc(r.firstMove) + '</p>' +
     '<p class="label">If it gets hard</p><p>' + esc(r.guard) + '</p>' +
