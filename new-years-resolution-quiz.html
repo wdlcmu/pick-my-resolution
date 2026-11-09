@@ -1370,12 +1370,61 @@ function redFlagPmr(raw) {
   }
   return null;
 }
+/* Named-day + countdown facts (SPEC-PMR-ADV1108-04/-05, Nov 8, 2026):
+   this local carrier answered NONE of the site's factual questions
+   (the -06 divergence), so the two facts this lane closes are pinned
+   here in the worker's exact words. Ditch Day: the site's own page
+   (/what-is-ditch-new-years-resolutions-day) — January 17 every
+   year; the year's weekday is computed, never recalled. Countdown:
+   the whole-calendar-day difference in the visitor's own timezone,
+   midnight-to-midnight — the homepage dayText() convention, so the
+   Ask, the worker, and the page sentence can never disagree again
+   (the worker's old floored-duration figure read one day short).
+   Scoped: a COMPLETE pick brief (area + felt + fail all heard)
+   returns null here and keeps its pick, exactly as before. */
+function factsPmr(raw) {
+  var t = " " + String(raw || "").toLowerCase().replace(/’/g, "'") + " ";
+  var p = parseAskPmr(raw);
+  if (p.area && p.off && p.fail) return null;
+  if (/\bditch\b/.test(t)) {
+    var ym = t.match(/\b(20\d{2})\b/);
+    var year = ym ? parseInt(ym[1], 10) : 2027;
+    var wd = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][new Date(Date.UTC(year, 0, 17)).getUTCDay()];
+    return { label: "Ditch Day", lines: ["Ditch New Year's Resolutions Day — Ditch Day — falls on January 17 every year. In " + year + ", it falls on " + wd + ", January 17, " + year + ". National Today lists it every January 17. It is the joke day for quitting a resolution; this site's answer is to keep one and shrink it, not ditch it."] };
+  }
+  var cdAsk = (/\b(days?|sleeps?|nights?)\b/.test(t) && /\b(january\s+1|jan\.?\s+1|new year's?( day)?)\b/.test(t) && /\b(until|till|to|before|left)\b/.test(t)) || /\bcountdown\b/.test(t);
+  if (cdAsk) {
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var todayUTC = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
+    var ym2 = t.match(/\b(?:january|jan\.?)\s+1(?:st)?,?\s+(20\d{2})\b/) || t.match(/\b(20\d{2})\b/);
+    var ty = ym2 ? parseInt(ym2[1], 10) : null;
+    if (ty === null || Date.UTC(ty, 0, 1) < todayUTC) ty = todayUTC <= Date.UTC(today.getFullYear(), 0, 1) ? today.getFullYear() : today.getFullYear() + 1;
+    if (ty === today.getFullYear() && today.getMonth() === 0 && today.getDate() === 1) {
+      return { label: "Countdown", lines: ["New Year's Day is today, January 1, " + ty + ". Time to pick your one resolution."] };
+    }
+    var days = Math.round((Date.UTC(ty, 0, 1) - todayUTC) / 86400000);
+    if (days < 0) days = 0;
+    var line = days + (days === 1 ? " day" : " days") + " until January 1, " + ty + ".";
+    var seasonStart = new Date(ty - 1, 11, 26);
+    if (today >= seasonStart && today < new Date(ty, 0, 1)) line += " Resolution season is here. Time to pick your one resolution.";
+    return { label: "Countdown", lines: [line] };
+  }
+  return null;
+}
 function answerAskPmr(raw) {
   var out = document.getElementById("askp-answer");
   var rf = redFlagPmr(raw);
   if (rf) {
     out.innerHTML = '<div class="card"><p class="label">' + rf.label + '</p>' +
       rf.lines.map(function (s) { return '<p>' + esc(s) + '</p>'; }).join("") + '</div>';
+    document.getElementById("askp-more").hidden = true;
+    return null;
+  }
+  var fq = factsPmr(raw);
+  if (fq) {
+    out.innerHTML = '<div class="card"><p class="label">' + fq.label + '</p>' +
+      fq.lines.map(function (s) { return '<p>' + esc(s) + '</p>'; }).join("") + '</div>';
     document.getElementById("askp-more").hidden = true;
     return null;
   }
