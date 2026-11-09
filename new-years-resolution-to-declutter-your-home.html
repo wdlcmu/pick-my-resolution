@@ -578,11 +578,26 @@ function buildResult(a) {
     "Did the small move still fit my week?",
     "From past me."
   ].join("\n");
+  // SPEC-PMR-ADV1108-02 (Nov 8, 2026): the share link now carries the
+  // pick itself (base64url JSON: resolution + first move, the same two
+  // lines the message names), so the link opens an on-site recipient
+  // view showing them - the homepage recipient card reads ?s= and sets
+  // them as text, never displaying the raw payload. Encoding failure
+  // falls back to the plain picker link, exactly as before.
+  var shareUrl = "https://keeponeresolution.com/?via=share";
+  try {
+    var spJson = JSON.stringify({ r: resolution, f: firstMove });
+    if (typeof btoa === "function") {
+      shareUrl += "&s=" + btoa(unescape(encodeURIComponent(spJson))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+    } else {
+      shareUrl += "&s=" + encodeURIComponent(spJson);
+    }
+  } catch (e) {}
   var share = [
     "My 2027 resolution:",
     resolution,
     "First move: " + firstMove,
-    "Pick yours at https://keeponeresolution.com/?via=share"
+    "Pick yours at " + shareUrl
   ].join("\n");
   return {
     resolution: resolution,
@@ -1076,7 +1091,8 @@ function redFlagPmr(raw) {
    (/how-to-restart-a-new-years-resolution: keep the same one, shrink
    the dose, next normal chance, Lally 2010), share (the result
    screen's own Share text: the message carries the resolution and
-   its first move; the link opens the picker), privacy (/privacy:
+   its first move; since SPEC-PMR-ADV1108-02 the link opens the
+   recipient view showing them at the top, then the picker), privacy (/privacy:
    the note is never sent to us; it lives in this browser's local
    storage), mid-year starts (the picker works any time of year;
    the year holds 52 weekly dots), and Christmas (December 25; the
@@ -1157,7 +1173,7 @@ function factsPmr(raw) {
     return { label: "Restarting", lines: ["Keep the same one resolution — do not swap the goal. Shrink it to its smallest dose and restart at the next normal chance: not Monday, not next month, the next chance. After any miss, do half next time; half still keeps the streak. Missing one day did not wreck it in Lally et al. (2010), and a long break is not a verdict — restarting in spring still counts."] };
   }
   if (/\bshare\b/.test(t) && /\b(friend|resolution|result|pick|how|will|they|see|send)\b/.test(t)) {
-    return { label: "Sharing", lines: ["After you get your pick, tap the Share button on the result screen. Your friend gets your resolution and its first move as a message; the link in it opens the picker so they can pick their own one resolution."] };
+    return { label: "Sharing", lines: ["After you get your pick, tap the Share button on the result screen. Your friend gets your resolution and its first move as a message, and the link in it opens this site showing that same resolution and first move at the top, with a button to pick their own one resolution."] };
   }
   if ((/\bnote\b/.test(t) && /\b(server|saved|save|store|stored|happen|sent|private|future)\b/.test(t))
     || /\bsaved on (your|a|the|our) server\b/.test(t) || /\bdo you (save|store|keep|send)\b/.test(t) || /\bprivacy\b/.test(t)) {

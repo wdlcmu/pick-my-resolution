@@ -117,6 +117,10 @@ localStorage.setItem("fleet_ft2",JSON.stringify(ft));
   p { margin: 0 0 12px; }
   .sub { color: var(--muted); font-size: 16px; }
   .countdown { font-size: 15px; color: var(--muted); margin-bottom: 6px; font-variant-numeric: tabular-nums; }
+  /* SPEC-PMR-ADV1108-02 recipient view (Nov 8, 2026) */
+  .share-recipient { background: var(--card); border: 2px solid var(--accent); border-radius: 14px; padding: 18px; margin: 4px 0 10px; }
+  .share-recipient .sr-pick { font-size: 24px; font-weight: 800; line-height: 1.3; margin: 0 0 12px; }
+  .share-recipient .cta { width: 100%; min-height: 52px; }
   .cta {
     display: block; width: 100%; min-height: 52px; padding: 14px 18px; margin: 14px 0;
     font-size: 18px; font-weight: 700; color: #fff; background: var(--accent);
@@ -573,6 +577,20 @@ window.FLEET_CFG = {
 
   <!-- ============ SCREEN 1: HOME ============ -->
   <section class="screen on" id="s-home">
+    <div class="wrap" style="padding-bottom:0">
+    <!-- SPEC-PMR-ADV1108-02 recipient view: shown only on a ?via=share
+         arrival. The sender's resolution and first move are set as text
+         by the script below; the encoded payload is never displayed. -->
+    <div class="share-recipient" id="share-recipient" hidden>
+      <p class="label" id="sr-label">A friend shared their one resolution</p>
+      <p class="sr-pick" id="sr-resolution"></p>
+      <p class="label" id="sr-first-label">First move, week one</p>
+      <p id="sr-first"></p>
+      <p id="sr-fallback" hidden></p>
+      <button class="cta" id="sr-pick-own" type="button">Pick your own resolution</button>
+      <p class="sub" style="font-size:14px;margin:8px 0 0">Four questions. About one minute. Free, no account.</p>
+    </div>
+    </div>
     <div class="hero">
       <div class="hero-in">
         <p class="brand">Keep One Resolution</p>
@@ -1690,11 +1708,26 @@ function buildResult(a) {
     showdown.push({ name: cAct, dose: cD.dose, out: true, reason: reason });
   }
   showdown.push({ name: action, dose: d.dose, out: false, reason: yesReason(sdIdx % 3, OFF_NOUN[a.off], w1) });
+  // SPEC-PMR-ADV1108-02 (Nov 8, 2026): the share link now carries the
+  // pick itself (base64url JSON: resolution + first move, the same two
+  // lines the message names), so the link opens an on-site recipient
+  // view showing them - the homepage recipient card reads ?s= and sets
+  // them as text, never displaying the raw payload. Encoding failure
+  // falls back to the plain picker link, exactly as before.
+  var shareUrl = "https://keeponeresolution.com/?via=share";
+  try {
+    var spJson = JSON.stringify({ r: resolution, f: firstMove });
+    if (typeof btoa === "function") {
+      shareUrl += "&s=" + btoa(unescape(encodeURIComponent(spJson))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+    } else {
+      shareUrl += "&s=" + encodeURIComponent(spJson);
+    }
+  } catch (e) {}
   var share = [
     "My 2027 resolution:",
     resolution,
     "First move: " + firstMove,
-    "Pick yours at https://keeponeresolution.com/?via=share"
+    "Pick yours at " + shareUrl
   ].join("\n");
   return {
     resolution: resolution,
@@ -2290,6 +2323,73 @@ if (hqChips) {
     })(hcs[hc]);
   }
 }
+// SPEC-PMR-ADV1108-02 (Nov 8, 2026): recipient view. A share link
+// carries the sender's pick in ?s= (base64url JSON: r = resolution,
+// f = first move - the same two lines the share message names). This
+// reads it in a clean arrival (no creator state is consulted), sets
+// the two lines as text (never innerHTML, never the raw payload),
+// and offers exactly one next step: pick your own. A missing payload
+// (a pre-fix link) and a broken or tampered one both degrade to a
+// plain note plus that same one button - no dead end, no raw text.
+function cleanShareText(v, max) {
+  if (typeof v !== "string") return "";
+  v = v.replace(/\s+/g, " ").trim();
+  if (!v || v.length > max) return "";
+  if (/[<>"'\u0000-\u001f\u007f]/.test(v)) return "";
+  if (/https?:\/\//i.test(v)) return "";
+  return v;
+}
+function shareArrivalData() {
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var s = params.get("s");
+    if (params.get("via") !== "share" && !s) return null;
+    if (!s) return { ok: false, legacy: true };
+    var json = null;
+    if (s.charAt(0) === "{") { json = s; }
+    else {
+      var b64 = s.replace(/-/g, "+").replace(/_/g, "/");
+      while (b64.length % 4) b64 += "=";
+      json = decodeURIComponent(escape(atob(b64)));
+    }
+    var obj = JSON.parse(json);
+    var r = cleanShareText(obj && obj.r, 140);
+    var f = cleanShareText(obj && obj.f, 260);
+    if (!r || !f) return { ok: false, legacy: false };
+    return { ok: true, r: r, f: f };
+  } catch (e) { return { ok: false, legacy: false }; }
+}
+var srData = shareArrivalData();
+if (srData) {
+  var srBox = $("share-recipient");
+  if (srBox) {
+    srBox.hidden = false;
+    if (srData.ok) {
+      $("sr-resolution").textContent = srData.r;
+      $("sr-first").textContent = srData.f;
+    } else {
+      $("sr-resolution").hidden = true;
+      $("sr-first").hidden = true;
+      $("sr-first-label").hidden = true;
+      var srFb = $("sr-fallback");
+      srFb.hidden = false;
+      srFb.textContent = srData.legacy
+        ? "A friend picked their one resolution and shared it with you. The message they sent names it - and you can pick yours right here."
+        : "That shared link did not carry a resolution - it may have been cut off in the message. You can still pick your own right here.";
+    }
+  }
+}
+var srBtn = $("sr-pick-own");
+if (srBtn) srBtn.onclick = function () {
+  quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "", love: "" };
+  renderQuiz();
+  show("s-quiz");
+  try {
+    if (typeof fleetTrack === "function") {
+      fleetTrack("share_recipient_gen2_start", { tool: "resolution-picker", via: "share-link" });
+    }
+  } catch (e) {}
+};
 var btnStart2 = $("btn-start-2");
 if (btnStart2) btnStart2.onclick = function () {
   window.scrollTo(0, 0);
@@ -2715,7 +2815,7 @@ if (hasStartFlag()) {
   quiz = { step: 0, area: null, off: null, time: null, fail: null, when: "", love: "" };
   renderQuiz();
   show("s-quiz");
-} else if (saved) {
+} else if (saved && !srData) {
   quiz.area = saved.answers.area;
   quiz.off = saved.answers.off;
   quiz.time = saved.answers.time;
@@ -2792,12 +2892,15 @@ function fleetTrack(name, props){
     else _fleetQ.push([name, props || {}]);
   } catch (e) {}
 }
+function fleetArrivalVia(){
+  try { return sessionStorage.getItem("pmr_arr") ? "share" : "direct"; } catch (e) { return "direct"; }
+}
 function fleetSessionMarks(){
   try {
     var params = new URLSearchParams(window.location.search);
     if (params.get("via") === "share" && !sessionStorage.getItem("pmr_arr")){
       sessionStorage.setItem("pmr_arr", "1");
-      fleetTrack("share_arrival", {tool: "resolution-picker", via: "share-link"});
+      fleetTrack("share_arrival", {tool: "resolution-picker", via: "share-link", has_pick: params.get("s") ? true : false});
     }
     if (!sessionStorage.getItem("pmr_ret")){
       var raw = null;
@@ -2829,11 +2932,11 @@ function fleetSessionMarks(){
   var fired = false;
   var start = document.getElementById("btn-start");
   if (start) start.addEventListener("click", function(){
-    if (!fired){ fired = true; fleetTrack("tool_start", {tool: "resolution-picker", entry: "home"}); }
+    if (!fired){ fired = true; fleetTrack("tool_start", {tool: "resolution-picker", entry: "home", via: fleetArrivalVia()}); }
   });
   try {
     if (new URLSearchParams(window.location.search).get("start") === "1" && !fired){
-      fired = true; fleetTrack("tool_start", {tool: "resolution-picker", entry: "area-page"});
+      fired = true; fleetTrack("tool_start", {tool: "resolution-picker", entry: "area-page", via: fleetArrivalVia()});
     }
   } catch (e) {}
   // SPEC-FUNNEL-MEASURE-1 (Nov 5, 2026): a complete may never fire without
@@ -2845,7 +2948,7 @@ function fleetSessionMarks(){
   ["btn-again", "btn-change"].forEach(function(id){
     var rb = document.getElementById(id);
     if (rb) rb.addEventListener("click", function(){
-      if (!fired){ fired = true; fleetTrack("tool_start", {tool: "resolution-picker", entry: "restart"}); }
+      if (!fired){ fired = true; fleetTrack("tool_start", {tool: "resolution-picker", entry: "restart", via: fleetArrivalVia()}); }
     });
   });
   var res = document.getElementById("s-result"), done = false;
@@ -2854,7 +2957,7 @@ function fleetSessionMarks(){
       var on = res.className.indexOf("on") !== -1;
       if (on && !done && fired){
         done = true;
-        fleetTrack("tool_complete", {tool: "resolution-picker", results_count: 1});
+        fleetTrack("tool_complete", {tool: "resolution-picker", results_count: 1, via: fleetArrivalVia()});
       }
     };
     new MutationObserver(check).observe(res, {attributes: true, attributeFilter: ["class"]});
@@ -3569,11 +3672,26 @@ function buildResult(a) {
     showdown.push({ name: cAct, dose: cD.dose, out: true, reason: reason });
   }
   showdown.push({ name: action, dose: d.dose, out: false, reason: yesReason(sdIdx % 3, OFF_NOUN[a.off], w1) });
+  // SPEC-PMR-ADV1108-02 (Nov 8, 2026): the share link now carries the
+  // pick itself (base64url JSON: resolution + first move, the same two
+  // lines the message names), so the link opens an on-site recipient
+  // view showing them - the homepage recipient card reads ?s= and sets
+  // them as text, never displaying the raw payload. Encoding failure
+  // falls back to the plain picker link, exactly as before.
+  var shareUrl = "https://keeponeresolution.com/?via=share";
+  try {
+    var spJson = JSON.stringify({ r: resolution, f: firstMove });
+    if (typeof btoa === "function") {
+      shareUrl += "&s=" + btoa(unescape(encodeURIComponent(spJson))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+    } else {
+      shareUrl += "&s=" + encodeURIComponent(spJson);
+    }
+  } catch (e) {}
   var share = [
     "My 2027 resolution:",
     resolution,
     "First move: " + firstMove,
-    "Pick yours at https://keeponeresolution.com/?via=share"
+    "Pick yours at " + shareUrl
   ].join("\n");
   return {
     resolution: resolution,
@@ -4076,7 +4194,8 @@ function redFlagPmr(raw) {
    (/how-to-restart-a-new-years-resolution: keep the same one, shrink
    the dose, next normal chance, Lally 2010), share (the result
    screen's own Share text: the message carries the resolution and
-   its first move; the link opens the picker), privacy (/privacy:
+   its first move; since SPEC-PMR-ADV1108-02 the link opens the
+   recipient view showing them at the top, then the picker), privacy (/privacy:
    the note is never sent to us; it lives in this browser's local
    storage), mid-year starts (the picker works any time of year;
    the year holds 52 weekly dots), and Christmas (December 25; the
@@ -4157,7 +4276,7 @@ function factsPmr(raw) {
     return { label: "Restarting", lines: ["Keep the same one resolution — do not swap the goal. Shrink it to its smallest dose and restart at the next normal chance: not Monday, not next month, the next chance. After any miss, do half next time; half still keeps the streak. Missing one day did not wreck it in Lally et al. (2010), and a long break is not a verdict — restarting in spring still counts."] };
   }
   if (/\bshare\b/.test(t) && /\b(friend|resolution|result|pick|how|will|they|see|send)\b/.test(t)) {
-    return { label: "Sharing", lines: ["After you get your pick, tap the Share button on the result screen. Your friend gets your resolution and its first move as a message; the link in it opens the picker so they can pick their own one resolution."] };
+    return { label: "Sharing", lines: ["After you get your pick, tap the Share button on the result screen. Your friend gets your resolution and its first move as a message, and the link in it opens this site showing that same resolution and first move at the top, with a button to pick their own one resolution."] };
   }
   if ((/\bnote\b/.test(t) && /\b(server|saved|save|store|stored|happen|sent|private|future)\b/.test(t))
     || /\bsaved on (your|a|the|our) server\b/.test(t) || /\bdo you (save|store|keep|send)\b/.test(t) || /\bprivacy\b/.test(t)) {
