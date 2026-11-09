@@ -3,7 +3,7 @@
 > Complete text of keeponeresolution.com: every page, plus the full bank inside its free quiz.
 > The quiz picks one New Year's resolution you can keep. Four questions, about one minute.
 > Free forever. No ads, no accounts. Your answers stay in your browser.
-> Text captured from the live site, 2026-11-03; thirteen page sections added from the live pages on 2026-11-06, five more on 2026-11-06 for the wave-2 pages, and three more on 2026-11-06 for the wave-3 pages, and four more on 2026-11-08 for the distribution P1 pages, and three more on 2026-11-08 for the distribution P2 pages: all fifty-eight sitemap pages now have a section.
+> Text captured from the live site, 2026-11-08.
 
 ## Homepage and quiz (https://keeponeresolution.com/)
 
@@ -11,20 +11,23 @@ New Year's Resolution - Keep One Resolution: One you can keep
 Keep One Resolution
 This year, keep one. Just one.
 This site picks one resolution you can keep.
-Last January, you wrote a list. Nothing stuck.
 00 hrs
 00 min
 00 sec
 Counting down to January 1, 2027.
 What&rsquo;s next? &#9662;
-The moment: January 1, 2027 &mdash; time to pick your one resolution.
-Pick my one resolution
+The moment: January 1, 2027 : time to pick your one resolution.
+Four questions. Two optional lines. One resolution, sized to your week.
+Pick one part of your life.
+One part only. Your pick lives there.
 Rather say it in your own words? Ask here
 .
 One real pick:
 I felt drained a lot.
 Take a short walk: 30 min, 4x a week.
 Week one starts at 15 min &middot; Sat 9am, at the park, with Alex
+First, the honest no:
+Five moves (small weekly actions) live in your area. Four get a no, each with its reason. One is left standing.
 The January list
 Two friends, one walk
 Breakfast, together
@@ -32,37 +35,54 @@ Why this one sticks
 One pick. Not fifty. Most lists quit by February.
 Sized to your week. In minutes you actually have.
 A first move. For week one, not a wish.
-An if-then plan. Gollwitzer: &ldquo;If 9am, then I walk&rdquo; (94 tests).
+An if-then plan. Gollwitzer, a psychologist who studied follow-through: &ldquo;If 9am, then I walk&rdquo; (94 tests).
 One dot a week. 52 dots. No streak to break.
-Norcross tracked it: 46% still going at six months.
+Norcross, who tracked resolution-keepers for years: 46% still going at six months.
 One real pick, start to finish
-Say your year felt like this:
+Last January, you wrote a list. Nothing stuck. Say your year felt like this:
 Body and health
 I felt drained a lot.
 2 hours a week
 I just forgot to do it.
 Why this pick: Drained, in body and health, points to a walk. Two hours sizes the dose. Forgot before, so the plan adds an alarm.
+First, the honest no
+Cook a real meal
+30 min, 4x a week
+This is the move for things piling up. Your weeks would go to the wrong problem, and the one you named would still be waiting.
+Do a short workout
+30 min, 4x a week
+This one treats feeling stuck. On a hard day this is the first plan you would skip, because it was never about your day.
+Stretch your whole body
+20 min, 5x a week
+The move for drifting from good habits. Nothing in your week would tell you it is working, because the change would happen somewhere you were not hurting.
+Walk with a friend
+30 min, 4x a week
+That move answers feeling alone. The mornings that made you pick this quiz would feel exactly the same.
+The one left standing
+Take a short walk
+30 min, 4x a week
+Built for feeling drained, in your words. The plan below guards your weak spot.
+See the resolutions you should not keep
+See the full plan
 Take a short walk: 30 min, 4x a week.
 First move, week one
 Step 1: set a phone alarm. Step 2: Put your shoes by the front door. Walk 15 min right after a meal.
-Your if-then
-My cue: after lunch. Then I will take a short walk.
+One if-then that works
+One cue that works: after lunch. Then I will take a short walk.
 Your week one plan
 Sat 9am, at the park, with Alex
 If it gets hard
 Set a phone alarm for session days. Same time, same sound.
 Your time
-This plan uses all 120 minutes offered.
+Week one uses 60 of your 120 minutes a week. From week two, it uses all 120 minutes offered.
 It ends with a note to future you. This one opens:
 &ldquo;Dear future me, I felt drained a lot back then. My pick was Take a short walk.&rdquo;
 Pick my one resolution
 How it works
-You pick one area. Body, money, home, work, family, calm.
-You say what felt hard. And what made past plans fail.
-You pick your time. Thirty minutes, two hours, or five.
+See how it works
+Four questions. Your area, what felt hard, your time, what failed before.
+Two optional lines. Name week one, and one thing you already love. Or skip both.
 You get one plan. One move, sized to your time.
-You name week one. Day, time, place, person. Or skip it.
-You name a favorite. One thing you already love. Your pick can ride on it.
 One plan only. You get one, not a list of ten.
 Your note stays here. It saves as a card on this device.
 Pick a part of your life
@@ -74,9 +94,9 @@ Family and friends
 Mind and calm
 Common questions
 How long does it take?
-About one minute. Four short questions.
-One optional line names week one.
-One more names something you already love.
+About one minute. Four questions, then two optional lines.
+One line names week one.
+One names something you already love.
 What New Year's resolution can I keep?
 One is easier to keep than a list.
 Is it free?
@@ -84,9 +104,9 @@ Yes. It is free for good.
 No ads. No accounts.
 What we don't do
 Reminders and signup stay off: we send no reminder emails, and there is no email signup.
-Your plan and note live in this browser only &mdash; they stay off our servers.
+Your plan and note live in this browser only: they stay off our servers.
 Made by a dad, on the side
-I&apos;m Billy, a dad in Redmond, Washington. I build these tools on the side, with AI &mdash; one idea, one website, no company behind it. Keep One Resolution holds it to one resolution, sized to a real week, because lists die by spring.
+I&apos;m Billy, a dad in Redmond, Washington. I build these tools on the side, with AI: one idea, one website, no company behind it. Keep One Resolution holds it to one resolution, sized to a real week, because lists die by spring.
 Day, time, place, person. In your own words.
 Leave it blank to skip. You still get your full plan.
 A game, a walk, a small routine. If it fits your pick, your plan rides on it.
@@ -95,8 +115,7 @@ Back
 Continue
 Your plan is set
 Your one resolution
-First, the honest no
-Five moves live in your area. Four get a no, each with its reason. One is left standing.
+The one left standing
 The sized plan underneath
 Your anchor
 Your why
@@ -104,43 +123,64 @@ First move, week one
 Easy start
 Your week one plan
 If it gets hard
-Your if-then
+One if-then that works
 Plan B, for busy weeks
 Week three twist
 Your time
 By March 1
+First, the honest no
+Five moves live in your area. Four get a no, each with its reason. One is left standing.
+See the resolutions you should not keep
+A note to future you
+A first note is ready below. Edit any line before you save.
+Your note stays in this browser. It never leaves your device.
+Save my letter card
+Download my letter card
+You&rsquo;re done.
+Your plan is set. It saves on this device only.
+Share my resolution
+Make it stick
 Why this one?
 Tap your real reason, or write your own. It rides on your plan and your check-in.
 Skip it if you want. Your plan is already set above.
 Why this plan can stick
 Your why leads.
-Your guard line is an if-then plan. Gollwitzer found naming the moment first lifts follow-through.
-Your first move is tiny on purpose. Fogg: small starts you cannot skip beat dreaded ones.
+Your guard line (the if-then sentence you set for a hard moment) guards the plan. Gollwitzer found naming the moment first lifts follow-through.
+Your first move is tiny on purpose. Fogg, a behavior researcher: small starts you cannot skip beat dreaded ones.
 Your check-in is you watching you. People who track their own record keep going longer.
-Make it stick: your tactics
-1. Your cue
-Already set from your pick. Tap a cue to change it.
+Your tactics
+1. Your cue (the moment that sets the move off: a time, a place, a person)
+One cue that works is set below. Tap a cue to make it yours.
 2. Your if-then plan
 Pick a cue above, and your plan writes itself here.
 3. Your check-in rhythm
 Your picks join your check-in text below. They save on this device only.
 Your weekly check-in
 Copy my weekly check-in
-Share text
-Copy my share text
 Your lock-screen picture
 Your pick and your first move, as one picture. 52 dots, one for each week.
 Get my lock-screen picture
-Share my lock-screen picture
 Download my lock-screen picture
-A note to future you
-A first note is ready below. Edit any line before you save.
-Your note stays in this browser. It never leaves your device.
-Save my letter card
-Share my letter card
-Download my letter card
 Change answers
 Start over
+Works with your AI
+Your AI can run this site's picker: one resolution small enough to still be alive in December, with a first step you can do this week.
+Connect this site to Claude, Cursor, or any other MCP client (MCP, the standard way AI apps connect to outside tools). It is free, and it takes about a minute.
+1. Copy the server address
+https://mcp.pickmyresolution.com/mcp
+Copy
+2. Add it to your AI
+Claude Code: one command
+claude mcp add --transport http keep-one-resolution https://mcp.pickmyresolution.com/mcp
+Claude Desktop or Cursor: paste into the MCP settings
+{
+"mcpServers": {
+"keep-one-resolution": {
+"url": "https://mcp.pickmyresolution.com/mcp"
+}
+}
+}
+3. Ask your AI: &ldquo;Pick one resolution I will actually keep, and give me the first step.&rdquo;
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -148,6 +188,14 @@ Browse by area: Body and health
 · Work
 · Family and friends
 · Mind and calm
+· Quitter's Day 2027
+· Resolution statistics
+· Most common
+· Restart one
+· Cook more
+· Ditch Day
+· For January
+· Meditate
 · Privacy
 · Terms
 More family tools: Fill My Bracket, your March bracket
@@ -405,6 +453,7 @@ What if I have just 30 minutes a week?
 That is fine.
 Your plan fits inside that time.
 Small moves count when you keep them.
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Money
 · Home
@@ -496,6 +545,7 @@ What if I have just 30 minutes a week?
 That is fine.
 Your plan fits inside that time.
 Small moves count when you keep them.
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Home
@@ -587,6 +637,7 @@ What if I have just 30 minutes a week?
 That is fine.
 Your plan fits inside that time.
 Small moves count when you keep them.
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -678,6 +729,7 @@ What if I have just 30 minutes a week?
 That is fine.
 Your plan fits inside that time.
 Small moves count when you keep them.
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -769,6 +821,7 @@ What if I have just 30 minutes a week?
 That is fine.
 Your plan fits inside that time.
 Small moves count when you keep them.
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -860,6 +913,7 @@ What if I have just 30 minutes a week?
 That is fine.
 Your plan fits inside that time.
 Small moves count when you keep them.
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -1074,6 +1128,7 @@ How to keep one
 · Save money
 · Exercise more
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -1129,6 +1184,8 @@ page.
 Step 5
 Check in once a week
 Ask two short questions. Did I do my move this week? What got in my way? Your pick comes with a prompt you can copy into your own AI.
+📅 Add the check-in to your calendar: every week of 2027
+Subscribes to the whole year: start day, Quitter&rsquo;s Day, and a check-in every week of 2027. Free, no signup. Google Calendar: Other calendars → From URL, then paste the link.
 Step 6
 Write a note to future you
 Tell future you why this one matters. Save the note as a letter card. Read it when the year gets loud.
@@ -1170,6 +1227,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -1280,6 +1338,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -1392,6 +1451,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -1491,7 +1551,8 @@ Easy is the point in week one.
 The dose grows only with your time.
 Start small. Stay all year.
 More questions people ask
-Why do resolutions fail?
+Stress less
+· Why do resolutions fail?
 · How to keep one
 · What is a good one?
 · Ideas for a busy week
@@ -1509,7 +1570,10 @@ Why do resolutions fail?
 · Should you tell people?
 · Save money
 · Exercise more
+· Read more
+· Start journaling
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -1635,6 +1699,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -1758,6 +1823,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -1848,6 +1914,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -1885,6 +1952,7 @@ I just forgot to do it.
 Take a short walk: 30 min, 4x a week.
 Week one starts at 15 min.
 Why: a drained year, two hours, one alarm against forgetting.
+First, the honest no: Five moves live in your area. Four get a no, each with its reason. One is left standing.
 Pick my one resolution
 One sample pick, start to finish
 First move, week one
@@ -1939,7 +2007,7 @@ Yes. Free for good.
 No ads. No accounts.
 Your answers stay in your browser.
 Made by a dad, on the side
-I&apos;m Billy, a dad in Redmond, Washington. I build these tools on the side, with AI &mdash; one idea, one website, no company behind it. Keep One Resolution holds it to one resolution, sized to a real week, because lists die by spring.
+I&apos;m Billy, a dad in Redmond, Washington. I build these tools on the side, with AI: one idea, one website, no company behind it. Keep One Resolution holds it to one resolution, sized to a real week, because lists die by spring.
 More questions people ask
 Why do resolutions fail?
 · How to keep one
@@ -2030,6 +2098,108 @@ Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
+### Resolutions you should not keep (https://keeponeresolution.com/resolutions-you-should-not-keep)
+
+Resolutions you should not keep - Keep One Resolution
+Keep One Resolution
+Resolutions you should not keep
+This site picks one resolution you can keep.
+Pick my one resolution
+First, the honest no.
+Five moves live in your area. Four get a no, each with its reason. One is left standing.
+One real showdown, start to finish
+Say your year felt like this: Body and health. I felt drained a lot. 2 hours a week. I just forgot to do it.
+Cook a real meal
+30 min, 4x a week
+This is the move for things piling up. You said you felt drained. Your weeks would go to the wrong problem, and the one you named would still be waiting.
+Do a short workout
+30 min, 4x a week
+This one treats feeling stuck. Your words: you felt drained. On a hard day this is the first plan you would skip, because it was never about your day.
+Stretch your whole body
+20 min, 5x a week
+The move for drifting from good habits. You named you felt drained instead. Nothing in your week would tell you it is working, because the change would happen somewhere you were not hurting.
+Walk with a friend
+30 min, 4x a week
+That move answers feeling alone. Stated plainly: you felt drained. The mornings that made you pick this quiz would feel exactly the same.
+The one left standing
+Take a short walk
+30 min, 4x a week
+Built for feeling drained, in your words. Week one starts at 15 min. The plan below guards your weak spot.
+First move, week one
+Step 1: set a phone alarm. Step 2: Put your shoes by the front door. Walk 15 min right after a meal.
+Your if-then
+My cue: after lunch. Then I will take a short walk.
+If it gets hard
+Set a phone alarm for session days. Same time, same sound.
+Your time
+This plan uses all 120 minutes you offered.
+The four kinds of no
+Big start. Tiny starts survive where big starts stall.
+No slack. A plan with no slack snaps.
+Payoff months away. Rewards you feel this week win. Distant payoffs lose to near ones.
+Wrong feeling. Your weeks would go to the wrong problem.
+Your four nos depend on your answers.
+Get my honest no
+Or say it in your own words
+Tell the ask page your year in a line or two. The same engine picks from your words.
+Ask in your own words
+Common questions
+Which resolutions should I not keep?
+Four of the five moves in your area.
+Each gets a no, each with its reason.
+One is left standing.
+Why does the picker say no first?
+Lists die by spring.
+One kept move beats a list you quit in February.
+What do I get after the nos?
+One plan, sized to your time.
+A first move for week one.
+One guard for hard days.
+More questions people ask
+Why do resolutions fail?
+· How to keep one
+· What is a good one?
+· Ideas for a busy week
+· Small resolutions
+· One resolution ideas
+· One small one for parents
+· The resolution quiz
+· Resolution examples
+· When you break one
+· Realistic resolutions
+· How to pick one
+· The check-in template
+· What is Quitter's Day?
+· How many should you have?
+· The resolution tracker
+· Should you tell people?
+· Save money
+· Exercise more
+&middot; Ask in your own words
+Share this page
+Keep One Resolution. Built with Muse.
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
+Ask in your own words
+Ask in your own words
+&times;
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Your year, in your words
+Pick my one resolution
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
+
 ### New Year's resolution examples (https://keeponeresolution.com/new-years-resolution-examples)
 
 New Year's resolution examples - Keep One Resolution
@@ -2101,7 +2271,8 @@ Yes. Take the quiz.
 Four questions. One example, yours.
 It takes about one minute.
 More questions people ask
-Why do resolutions fail?
+Most common resolutions
+· Why do resolutions fail?
 · How to keep one
 · What is a good one?
 · Ideas for a busy week
@@ -2120,6 +2291,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -2220,7 +2392,8 @@ At the next normal chance.
 Not Monday. Not next month.
 The next chance is close enough.
 More questions people ask
-Why do resolutions fail?
+How to restart one
+· Why do resolutions fail?
 · How to keep one
 · What is a good one?
 · Ideas for a busy week
@@ -2239,6 +2412,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -2361,7 +2535,10 @@ Why do resolutions fail?
 · Should you tell people?
 · Save money
 · Exercise more
+· Get organized
+· Learn a new skill
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -2470,6 +2647,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -2588,6 +2766,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -2613,7 +2792,7 @@ Want your pick as a lock-screen picture? Take the four questions
 
 ### What is Quitter's Day? (https://keeponeresolution.com/what-is-quitters-day)
 
-What is Quitter's Day? - Keep One Resolution
+What is Quitter's Day 2027? - Keep One Resolution
 Keep One Resolution
 What is Quitter's Day?
 The day most plans wobble. Yours can bend instead.
@@ -2666,7 +2845,8 @@ Fitness app data showed the drop.
 Activity fell sharply that Friday.
 The name stuck after that.
 More questions people ask
-Why do resolutions fail?
+How to restart one
+· Why do resolutions fail?
 · How to keep one
 · What is a good one?
 · Ideas for a busy week
@@ -2685,6 +2865,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -2786,6 +2967,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -2892,6 +3074,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -2989,6 +3172,7 @@ Why do resolutions fail?
 · Save money
 · Exercise more
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -3081,7 +3265,9 @@ Why do resolutions fail?
 · The resolution tracker
 · Should you tell people?
 · Exercise more
+· Spend less
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -3174,7 +3360,8 @@ Each pick names its own count.
 Seven walks. Five workouts. Five stretches.
 Pick one count, not all three.
 More questions people ask
-Why do resolutions fail?
+Stretch more
+· Why do resolutions fail?
 · How to keep one
 · What is a good one?
 · Ideas for a busy week
@@ -3192,7 +3379,10 @@ Why do resolutions fail?
 · The resolution tracker
 · Should you tell people?
 · Save money
+· Walk more
+· Eat better
 &middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
 Browse by area: Body and health
 · Money
@@ -3216,104 +3406,9 @@ Pick my one resolution
 Want your pick as a lock-screen picture? Take the four questions
 &middot; Open the full ask page
 
-## Ask (https://keeponeresolution.com/ask)
+### Do New Year's resolutions work? (https://keeponeresolution.com/do-new-years-resolutions-work)
 
-Ask Keep One Resolution in your own words - one resolution you can keep
-Keep One Resolution
-Ask in your own words
-Skip the four questions. Say your year in a line or two.
-We run the same engine as the four questions
-, right on this page. Your words never leave this device. Nothing is sent or saved.
-Your year, in your words
-Pick my one resolution
-Or tap an example:
-My body felt drained. 2 hours a week. I just forgot.
-Money piled up on me. 30 minutes a week. Life got busy.
-Stuck at work, bored, quit. 5 hours a week.
-Alone a lot. Family first. I tried to do too much.
-Want your pick as a lock-screen picture? The four questions
-build it from this same pick.
-Keep One Resolution. Built with Muse.
-Privacy
-· Terms
-
-## Page text (added 2026-11-06)
-
-## Page: https://keeponeresolution.com/resolutions-you-should-not-keep
-
-Keep One Resolution
-Resolutions you should not keep
-This site picks one resolution you can keep.
-Pick my one resolution
-First, the honest no.
-Five moves live in your area. Four get a no, each with its reason. One is left standing.
-One real showdown, start to finish
-Say your year felt like this: Body and health. I felt drained a lot. 2 hours a week. I just forgot to do it.
-Cook a real meal
-30 min, 4x a week
-This is the move for things piling up. You said you felt drained. Your weeks would go to the wrong problem, and the one you named would still be waiting.
-Do a short workout
-30 min, 4x a week
-This one treats feeling stuck. Your words: you felt drained. On a hard day this is the first plan you would skip, because it was never about your day.
-Stretch your whole body
-20 min, 5x a week
-The move for drifting from good habits. You named you felt drained instead. Nothing in your week would tell you it is working, because the change would happen somewhere you were not hurting.
-Walk with a friend
-30 min, 4x a week
-That move answers feeling alone. Stated plainly: you felt drained. The mornings that made you pick this quiz would feel exactly the same.
-The one left standing
-Take a short walk
-30 min, 4x a week
-Built for feeling drained, in your words. Week one starts at 15 min. The plan below guards your weak spot.
-First move, week one
-Step 1: set a phone alarm. Step 2: Put your shoes by the front door. Walk 15 min right after a meal.
-Your if-then
-My cue: after lunch. Then I will take a short walk.
-If it gets hard
-Set a phone alarm for session days. Same time, same sound.
-Your time
-This plan uses all 120 minutes you offered.
-The four kinds of no
-Big start. Tiny starts survive where big starts stall.
-No slack. A plan with no slack snaps.
-Payoff months away. Rewards you feel this week win. Distant payoffs lose to near ones.
-Wrong feeling. Your weeks would go to the wrong problem.
-Your four nos depend on your answers.
-Get my honest no
-Or say it in your own words
-Tell the ask page your year in a line or two. The same engine picks from your words.
-Ask in your own words
-Common questions
-Which resolutions should I not keep?
-Four of the five moves in your area.
-Each gets a no, each with its reason.
-One is left standing.
-Why does the picker say no first?
-Lists die by spring.
-One kept move beats a list you quit in February.
-What do I get after the nos?
-One plan, sized to your time.
-A first move for week one.
-One guard for hard days.
-More questions people ask
-Why do resolutions fail? · How to keep one · What is a good one? · Ideas for a busy week · Small resolutions · One resolution ideas · One small one for parents · The resolution quiz · Resolution examples · When you break one · Realistic resolutions · How to pick one · The check-in template · What is Quitter's Day? · How many should you have? · The resolution tracker · Should you tell people? · Save money · Exercise more · Ask in your own words
-Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
-Ask in your own words
-Ask in your own words
-×
-Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
-Or tap an example:
-My body felt drained. 2 hours a week. I just forgot.
-Money piled up on me. 30 minutes a week. Life got busy.
-Stuck at work, bored, quit. 5 hours a week.
-Alone a lot. Family first. I tried to do too much.
-Your year, in your words
-Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
-
-## Page: https://keeponeresolution.com/do-new-years-resolutions-work
-
+Do New Year's resolutions work? - Keep One Resolution
 Keep One Resolution
 Do New Year's resolutions work?
 Yes, when they are built right. Here is the research, in plain words.
@@ -3387,12 +3482,30 @@ Write an if-then plan.
 Name the moment, then the move.
 Across 94 tests, plans lifted goal success. (Gollwitzer and Sheeran, 2006)
 More questions people ask
-How long do they last? · Resolutions for students · Ideas for moms · Why do resolutions fail? · How to keep one · What is Quitter's Day? · The resolution tracker · The check-in template · How many should you have? · Ask in your own words
+Resolution statistics
+· How long do they last?
+· Resolutions for students
+· Ideas for moms
+· Why do resolutions fail?
+· How to keep one
+· What is Quitter's Day?
+· The resolution tracker
+· The check-in template
+· How many should you have?
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -3401,10 +3514,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/how-long-do-new-years-resolutions-last
+### How long do New Year's resolutions last? (https://keeponeresolution.com/how-long-do-new-years-resolutions-last)
 
+How long do New Year's resolutions last? - Keep One Resolution
 Keep One Resolution
 How long do New Year's resolutions last?
 About 3.74 months, on average, in one large survey. The full picture is kinder than the myth.
@@ -3462,12 +3577,29 @@ The drop is steepest in the first weeks.
 Week two even has a name: Quitter's Day.
 Past about 66 days, a habit starts to feel automatic.
 More questions people ask
-Do resolutions work? · What is Quitter's Day? · The resolution tracker · Why do resolutions fail? · How to keep one · What is Quitter's Day? · The check-in template · How many should you have? · Ask in your own words
+Resolution statistics
+· Do resolutions work?
+· What is Quitter's Day?
+· The resolution tracker
+· Why do resolutions fail?
+· How to keep one
+· What is Quitter's Day?
+· The check-in template
+· How many should you have?
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -3476,10 +3608,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolutions-for-students
+### New Year's resolutions for students (https://keeponeresolution.com/new-years-resolutions-for-students)
 
+New Year's resolutions for students - Keep One Resolution
 Keep One Resolution
 New Year's resolutions for students
 One small pick that fits a class schedule. Not a list that dies by February.
@@ -3532,12 +3666,29 @@ Shrink the dose that week.
 Do half, then return to full size.
 A bent streak still counts.
 More questions people ask
-Do resolutions work? · How long do they last? · Ideas for moms · Why do resolutions fail? · How to keep one · What is Quitter's Day? · The resolution tracker · The check-in template · How many should you have? · Ask in your own words
+Do resolutions work?
+· How long do they last?
+· Ideas for moms
+· Why do resolutions fail?
+· How to keep one
+· What is Quitter's Day?
+· The resolution tracker
+· The check-in template
+· How many should you have?
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -3546,10 +3697,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-ideas-for-moms
+### New Year's resolution ideas for moms (https://keeponeresolution.com/new-years-resolution-ideas-for-moms)
 
+New Year's resolution ideas for moms - Keep One Resolution
 Keep One Resolution
 New Year's resolution ideas for moms
 One pick for the person who holds the list for everyone else.
@@ -3600,12 +3753,30 @@ Yes, at the smallest size.
 The picker starts at 30 minutes a week.
 It splits that into 10 minute pieces.
 More questions people ask
-One small one for parents · Resolutions for students · Do resolutions work? · Why do resolutions fail? · How to keep one · What is Quitter's Day? · The resolution tracker · The check-in template · How many should you have? · Ideas for dads · Ask in your own words
+One small one for parents
+· Resolutions for students
+· Do resolutions work?
+· Why do resolutions fail?
+· How to keep one
+· What is Quitter's Day?
+· The resolution tracker
+· The check-in template
+· How many should you have?
+· Ideas for dads
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -3614,10 +3785,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-to-read-more
+### New Year's resolution to read more (https://keeponeresolution.com/new-years-resolution-to-read-more)
 
+New Year's resolution to read more - Keep One Resolution
 Keep One Resolution
 New Year's resolution to read more
 One book. One pillow. Thirty minutes.
@@ -3665,12 +3838,34 @@ Set a phone alarm for session days.
 Same time, same sound.
 That guard ships with this pick.
 More questions people ask
-Walk more · Eat better · Get organized · Spend less · Learn a new skill · Start journaling · Ideas for dads · Save money · Exercise more · Why do resolutions fail? · How to keep one · The resolution quiz · Resolution examples · The resolution tracker · Ask in your own words
+Walk more
+· Eat better
+· Get organized
+· Spend less
+· Learn a new skill
+· Start journaling
+· Ideas for dads
+· Save money
+· Exercise more
+· Why do resolutions fail?
+· How to keep one
+· The resolution quiz
+· Resolution examples
+· The resolution tracker
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -3679,10 +3874,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-to-walk-more
+### New Year's resolution to walk more (https://keeponeresolution.com/new-years-resolution-to-walk-more)
 
+New Year's resolution to walk more - Keep One Resolution
 Keep One Resolution
 New Year's resolution to walk more
 One walk, right after a meal.
@@ -3741,12 +3938,36 @@ Miss a day? Do half the next day.
 Half still keeps the streak.
 That guard ships with this pick.
 More questions people ask
-Read more · Eat better · Get organized · Spend less · Learn a new skill · Start journaling · Ideas for dads · Save money · Exercise more · Why do resolutions fail? · How to keep one · The resolution quiz · Resolution examples · The resolution tracker · Ask in your own words
+Spend more time with friends
+· Stretch more
+· Read more
+· Eat better
+· Get organized
+· Spend less
+· Learn a new skill
+· Start journaling
+· Ideas for dads
+· Save money
+· Exercise more
+· Why do resolutions fail?
+· How to keep one
+· The resolution quiz
+· Resolution examples
+· The resolution tracker
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -3755,10 +3976,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-to-eat-better
+### New Year's resolution to eat better (https://keeponeresolution.com/new-years-resolution-to-eat-better)
 
+New Year's resolution to eat better - Keep One Resolution
 Keep One Resolution
 New Year's resolution to eat better
 Cook one real meal, at home.
@@ -3808,12 +4031,35 @@ Do just this move all month.
 Add more next month, not now.
 That guard ships with this pick.
 More questions people ask
-Read more · Walk more · Get organized · Spend less · Learn a new skill · Start journaling · Ideas for dads · Save money · Exercise more · Why do resolutions fail? · How to keep one · The resolution quiz · Resolution examples · The resolution tracker · Ask in your own words
+Cook more
+· Read more
+· Walk more
+· Get organized
+· Spend less
+· Learn a new skill
+· Start journaling
+· Ideas for dads
+· Save money
+· Exercise more
+· Why do resolutions fail?
+· How to keep one
+· The resolution quiz
+· Resolution examples
+· The resolution tracker
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -3822,10 +4068,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-to-get-organized
+### New Year's resolution to get organized (https://keeponeresolution.com/new-years-resolution-to-get-organized)
 
+New Year's resolution to get organized - Keep One Resolution
 Keep One Resolution
 New Year's resolution to get organized
 One shelf. One corner. Not the house.
@@ -3882,12 +4130,36 @@ Set a phone alarm for session days.
 Same time, same sound.
 That guard ships with the shelf pick.
 More questions people ask
-Read more · Walk more · Eat better · Spend less · Learn a new skill · Start journaling · Ideas for dads · Save money · Exercise more · Why do resolutions fail? · How to keep one · The resolution quiz · Resolution examples · The resolution tracker · Ask in your own words
+Finish home projects
+· Declutter your home
+· Read more
+· Walk more
+· Eat better
+· Spend less
+· Learn a new skill
+· Start journaling
+· Ideas for dads
+· Save money
+· Exercise more
+· Why do resolutions fail?
+· How to keep one
+· The resolution quiz
+· Resolution examples
+· The resolution tracker
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -3896,10 +4168,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-to-spend-less
+### New Year's resolution to spend less (https://keeponeresolution.com/new-years-resolution-to-spend-less)
 
+New Year's resolution to spend less - Keep One Resolution
 Keep One Resolution
 New Year's resolution to spend less
 Watch the money leaving, on paper.
@@ -3950,12 +4224,34 @@ Set a phone alarm for session days.
 Same time, same sound.
 That guard ships with this pick.
 More questions people ask
-Read more · Walk more · Eat better · Get organized · Learn a new skill · Start journaling · Ideas for dads · Save money · Exercise more · Why do resolutions fail? · How to keep one · The resolution quiz · Resolution examples · The resolution tracker · Ask in your own words
+Read more
+· Walk more
+· Eat better
+· Get organized
+· Learn a new skill
+· Start journaling
+· Ideas for dads
+· Save money
+· Exercise more
+· Why do resolutions fail?
+· How to keep one
+· The resolution quiz
+· Resolution examples
+· The resolution tracker
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -3964,10 +4260,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-to-learn-a-new-skill
+### New Year's resolution to learn a new skill (https://keeponeresolution.com/new-years-resolution-to-learn-a-new-skill)
 
+New Year's resolution to learn a new skill - Keep One Resolution
 Keep One Resolution
 New Year's resolution to learn a new skill
 One small skill. Not five.
@@ -4015,12 +4313,35 @@ Same move, new place or playlist.
 Change one thing, not the move.
 That guard ships with this pick.
 More questions people ask
-Read more · Walk more · Eat better · Get organized · Spend less · Start journaling · Ideas for dads · Save money · Exercise more · Why do resolutions fail? · How to keep one · The resolution quiz · Resolution examples · The resolution tracker · Ask in your own words
+Be more productive
+· Read more
+· Walk more
+· Eat better
+· Get organized
+· Spend less
+· Start journaling
+· Ideas for dads
+· Save money
+· Exercise more
+· Why do resolutions fail?
+· How to keep one
+· The resolution quiz
+· Resolution examples
+· The resolution tracker
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -4029,10 +4350,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-to-start-journaling
+### New Year's resolution to start journaling (https://keeponeresolution.com/new-years-resolution-to-start-journaling)
 
+New Year's resolution to start journaling - Keep One Resolution
 Keep One Resolution
 New Year's resolution to start journaling
 One notebook. Ten minutes. Before sleep.
@@ -4080,12 +4403,35 @@ Set a phone alarm for session days.
 Same time, same sound.
 That guard ships with this pick.
 More questions people ask
-Read more · Walk more · Eat better · Get organized · Spend less · Learn a new skill · Ideas for dads · Save money · Exercise more · Why do resolutions fail? · How to keep one · The resolution quiz · Resolution examples · The resolution tracker · Ask in your own words
+Sleep better
+· Read more
+· Walk more
+· Eat better
+· Get organized
+· Spend less
+· Learn a new skill
+· Ideas for dads
+· Save money
+· Exercise more
+· Why do resolutions fail?
+· How to keep one
+· The resolution quiz
+· Resolution examples
+· The resolution tracker
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -4094,10 +4440,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-ideas-for-dads
+### New Year's resolution ideas for dads (https://keeponeresolution.com/new-years-resolution-ideas-for-dads)
 
+New Year's resolution ideas for dads - Keep One Resolution
 Keep One Resolution
 New Year's resolution ideas for dads
 One pick for the dad himself.
@@ -4149,12 +4497,35 @@ Yes, at the smallest size.
 The picker starts at thirty weekly minutes.
 It splits that into ten minute pieces.
 More questions people ask
-Read more · Walk more · Eat better · Get organized · Spend less · Learn a new skill · Start journaling · Save money · Exercise more · Why do resolutions fail? · How to keep one · The resolution quiz · Resolution examples · The resolution tracker · Ask in your own words
+Spend more time with family
+· Read more
+· Walk more
+· Eat better
+· Get organized
+· Spend less
+· Learn a new skill
+· Start journaling
+· Save money
+· Exercise more
+· Why do resolutions fail?
+· How to keep one
+· The resolution quiz
+· Resolution examples
+· The resolution tracker
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -4163,10 +4534,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-to-sleep-better
+### New Year's resolution to sleep better (https://keeponeresolution.com/new-years-resolution-to-sleep-better)
 
+New Year's resolution to sleep better - Keep One Resolution
 Keep One Resolution
 New Year's resolution to sleep better
 A calmer last ten minutes tonight.
@@ -4219,12 +4592,34 @@ No fix is promised on this page.
 The pick only calms the last minutes.
 A book replaces the bright phone scroll.
 More questions people ask
-Spend more time with family · Be more productive · Declutter your home · Stress less · Read more · Walk more · Get organized · Start journaling · Ideas for dads · Why do resolutions fail? · How to keep one · The resolution quiz · Resolution examples · The resolution tracker · Ask in your own words
+Spend more time with family
+· Be more productive
+· Declutter your home
+· Stress less
+· Read more
+· Walk more
+· Get organized
+· Start journaling
+· Ideas for dads
+· Why do resolutions fail?
+· How to keep one
+· The resolution quiz
+· Resolution examples
+· The resolution tracker
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -4233,10 +4628,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-to-spend-more-time-with-family
+### New Year's resolution to spend more time with family (https://keeponeresolution.com/new-years-resolution-to-spend-more-time-with-family)
 
+New Year's resolution to spend more time with family - Keep One Resolution
 Keep One Resolution
 New Year's resolution to spend more time with family
 Talk at the table, after dinner.
@@ -4295,12 +4692,35 @@ Miss a day? Do half the next day.
 Half still keeps the streak.
 That guard ships with the talk pick.
 More questions people ask
-Sleep better · Be more productive · Declutter your home · Stress less · Read more · Walk more · Get organized · Start journaling · Ideas for dads · Why do resolutions fail? · How to keep one · The resolution quiz · Resolution examples · The resolution tracker · Ask in your own words
+Spend more time with friends
+· Sleep better
+· Be more productive
+· Declutter your home
+· Stress less
+· Read more
+· Walk more
+· Get organized
+· Start journaling
+· Ideas for dads
+· Why do resolutions fail?
+· How to keep one
+· The resolution quiz
+· Resolution examples
+· The resolution tracker
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -4309,10 +4729,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-to-be-more-productive
+### New Year's resolution to be more productive (https://keeponeresolution.com/new-years-resolution-to-be-more-productive)
 
+New Year's resolution to be more productive - Keep One Resolution
 Keep One Resolution
 New Year's resolution to be more productive
 Top three tasks, on paper, first.
@@ -4371,12 +4793,34 @@ Set a phone alarm for session days.
 Same time, same sound.
 That guard ships with this pick.
 More questions people ask
-Sleep better · Spend more time with family · Declutter your home · Stress less · Read more · Walk more · Get organized · Start journaling · Ideas for dads · Why do resolutions fail? · How to keep one · The resolution quiz · Resolution examples · The resolution tracker · Ask in your own words
+Sleep better
+· Spend more time with family
+· Declutter your home
+· Stress less
+· Read more
+· Walk more
+· Get organized
+· Start journaling
+· Ideas for dads
+· Why do resolutions fail?
+· How to keep one
+· The resolution quiz
+· Resolution examples
+· The resolution tracker
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -4385,10 +4829,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-to-declutter-your-home
+### New Year's resolution to declutter your home (https://keeponeresolution.com/new-years-resolution-to-declutter-your-home)
 
+New Year's resolution to declutter your home - Keep One Resolution
 Keep One Resolution
 New Year's resolution to declutter your home
 One shelf fully clear. Stuff leaves.
@@ -4447,12 +4893,35 @@ No. One shelf, or one corner.
 This site keeps one resolution only.
 The rest waits for next month.
 More questions people ask
-Sleep better · Spend more time with family · Be more productive · Stress less · Read more · Walk more · Get organized · Start journaling · Ideas for dads · Why do resolutions fail? · How to keep one · The resolution quiz · Resolution examples · The resolution tracker · Ask in your own words
+Finish home projects
+· Sleep better
+· Spend more time with family
+· Be more productive
+· Stress less
+· Read more
+· Walk more
+· Get organized
+· Start journaling
+· Ideas for dads
+· Why do resolutions fail?
+· How to keep one
+· The resolution quiz
+· Resolution examples
+· The resolution tracker
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -4461,10 +4930,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-to-stress-less
+### New Year's resolution to stress less (https://keeponeresolution.com/new-years-resolution-to-stress-less)
 
+New Year's resolution to stress less - Keep One Resolution
 Keep One Resolution
 New Year's resolution to stress less
 Fresh air. Slow breaths. Ten minutes.
@@ -4523,12 +4994,34 @@ Same move, new place or playlist.
 Change one thing, not the move.
 That guard ships with the breathing pick.
 More questions people ask
-Sleep better · Spend more time with family · Be more productive · Declutter your home · Read more · Walk more · Get organized · Start journaling · Ideas for dads · Why do resolutions fail? · How to keep one · The resolution quiz · Resolution examples · The resolution tracker · Ask in your own words
+Sleep better
+· Spend more time with family
+· Be more productive
+· Declutter your home
+· Read more
+· Walk more
+· Get organized
+· Start journaling
+· Ideas for dads
+· Why do resolutions fail?
+· How to keep one
+· The resolution quiz
+· Resolution examples
+· The resolution tracker
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -4537,10 +5030,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-to-spend-more-time-with-friends
+### New Year's resolution to spend more time with friends (https://keeponeresolution.com/new-years-resolution-to-spend-more-time-with-friends)
 
+New Year's resolution to spend more time with friends - Keep One Resolution
 Keep One Resolution
 New Year's resolution to spend more time with friends
 Call one friend. Talk after dinner.
@@ -4600,12 +5095,32 @@ What if I forget a call day?
 Set a phone alarm for session days. Same time, same sound.
 That guard ships with this pick.
 More questions people ask
-Finish home projects · Stretch more · Spend more time with family · Walk more · Eat better · Exercise more · Get organized · Why do resolutions fail? · How to keep one · The resolution quiz · Resolution examples · The resolution tracker · Ask in your own words
+Finish home projects
+· Stretch more
+· Spend more time with family
+· Walk more
+· Eat better
+· Exercise more
+· Get organized
+· Why do resolutions fail?
+· How to keep one
+· The resolution quiz
+· Resolution examples
+· The resolution tracker
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -4614,10 +5129,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-to-finish-home-projects
+### New Year's resolution to finish home projects (https://keeponeresolution.com/new-years-resolution-to-finish-home-projects)
 
+New Year's resolution to finish home projects - Keep One Resolution
 Keep One Resolution
 New Year's resolution to finish home projects
 One small fix. Done fully.
@@ -4667,12 +5184,32 @@ What if the fix list feels huge?
 Do just this move all month. Add more next month, not now.
 That guard ships with this pick.
 More questions people ask
-Spend more time with friends · Stretch more · Spend more time with family · Walk more · Eat better · Exercise more · Get organized · Why do resolutions fail? · How to keep one · The resolution quiz · Resolution examples · The resolution tracker · Ask in your own words
+Spend more time with friends
+· Stretch more
+· Spend more time with family
+· Walk more
+· Eat better
+· Exercise more
+· Get organized
+· Why do resolutions fail?
+· How to keep one
+· The resolution quiz
+· Resolution examples
+· The resolution tracker
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -4681,10 +5218,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-to-stretch-more
+### New Year's resolution to stretch more (https://keeponeresolution.com/new-years-resolution-to-stretch-more)
 
+New Year's resolution to stretch more - Keep One Resolution
 Keep One Resolution
 New Year's resolution to stretch more
 A mat. Slow moves. No rush.
@@ -4734,12 +5273,32 @@ What if I get bored?
 Same move, new place or playlist. Change one thing, not the move.
 That guard ships with this pick.
 More questions people ask
-Spend more time with friends · Finish home projects · Spend more time with family · Walk more · Eat better · Exercise more · Get organized · Why do resolutions fail? · How to keep one · The resolution quiz · Resolution examples · The resolution tracker · Ask in your own words
+Spend more time with friends
+· Finish home projects
+· Spend more time with family
+· Walk more
+· Eat better
+· Exercise more
+· Get organized
+· Why do resolutions fail?
+· How to keep one
+· The resolution quiz
+· Resolution examples
+· The resolution tracker
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -4748,17 +5307,20 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-statistics
+### New Year's resolution statistics (https://keeponeresolution.com/new-years-resolution-statistics)
 
+New Year's resolution statistics - Keep One Resolution
 Keep One Resolution
 New Year's resolution statistics
 Six studies. Plain numbers. No myths.
 Pick my one resolution
 Most pages quote one scary failure rate.
 This page shows the studies themselves.
-Full studies: Do resolutions work? · How long do they last?
+Full studies: Do resolutions work?
+· How long do they last?
 How long resolutions last, on average
 Forbes Health and OnePoll
 Resolutions lasted 3.74 months, on average.
@@ -4821,12 +5383,29 @@ Friday, January 8, 2027.
 It is January's second Friday.
 Eight days into the new year.
 More questions people ask
-Most common resolutions · How to restart one · Cook more · Do resolutions work? · How long do they last? · What is Quitter's Day? · The resolution quiz · Resolution examples · The resolution tracker · Ask in your own words
+Most common resolutions
+· How to restart one
+· Cook more
+· Do resolutions work?
+· How long do they last?
+· What is Quitter's Day?
+· The resolution quiz
+· Resolution examples
+· The resolution tracker
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -4835,10 +5414,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/most-common-new-years-resolutions
+### Most common New Year's resolutions (https://keeponeresolution.com/most-common-new-years-resolutions)
 
+Most common New Year's resolutions - Keep One Resolution
 Keep One Resolution
 Most common New Year's resolutions
 The goals people pick most, in plain words.
@@ -4901,12 +5482,28 @@ Pick the one that fits your week.
 Common does not mean right for you.
 The quiz starts from your life, not the list.
 More questions people ask
-Resolution statistics · How to restart one · Cook more · Resolution examples · One resolution ideas · Small resolutions · The resolution quiz · Do resolutions work? · Ask in your own words
+Resolution statistics
+· How to restart one
+· Cook more
+· Resolution examples
+· One resolution ideas
+· Small resolutions
+· The resolution quiz
+· Do resolutions work?
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -4915,10 +5512,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/how-to-restart-a-new-years-resolution
+### How to restart a New Year's resolution (https://keeponeresolution.com/how-to-restart-a-new-years-resolution)
 
+How to restart a New Year's resolution - Keep One Resolution
 Keep One Resolution
 How to restart a New Year's resolution
 Same one resolution. Smaller dose. Start again.
@@ -4956,9 +5555,12 @@ Restarting in spring still counts.
 The year holds 52 weekly dots.
 Missing one day did not wreck it. (Lally et al., 2010)
 Keep going from here
-What to do when you break one covers the week it breaks.
-Quitter's Day names the week two wobble.
-The tracker marks each kept week.
+What to do when you break one
+covers the week it breaks.
+Quitter's Day
+names the week two wobble.
+The tracker
+marks each kept week.
 Pick my one resolution
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -4977,12 +5579,28 @@ No. A long break is not a verdict.
 Missing one day did not wreck it. (Lally et al., 2010)
 Restart small. The habit rebuilds from there.
 More questions people ask
-Resolution statistics · Most common resolutions · Cook more · When you break one · What is Quitter's Day? · The resolution tracker · How to keep one · Why do resolutions fail? · Ask in your own words
+Resolution statistics
+· Most common resolutions
+· Cook more
+· When you break one
+· What is Quitter's Day?
+· The resolution tracker
+· How to keep one
+· Why do resolutions fail?
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -4991,10 +5609,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-to-cook-more
+### New Year's resolution to cook more (https://keeponeresolution.com/new-years-resolution-to-cook-more)
 
+New Year's resolution to cook more - Keep One Resolution
 Keep One Resolution
 New Year's resolution to cook more
 Cook one real meal, at home.
@@ -5045,12 +5665,29 @@ Do just this move all month.
 Add more next month, not now.
 That guard ships with this pick.
 More questions people ask
-Resolution statistics · Most common resolutions · How to restart one · Eat better · Exercise more · Walk more · Get organized · The resolution quiz · Resolution examples · Ask in your own words
+Resolution statistics
+· Most common resolutions
+· How to restart one
+· Eat better
+· Exercise more
+· Walk more
+· Get organized
+· The resolution quiz
+· Resolution examples
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -5059,10 +5696,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/what-is-ditch-new-years-resolutions-day
+### What is Ditch New Year's Resolutions Day? (https://keeponeresolution.com/what-is-ditch-new-years-resolutions-day)
 
+What is Ditch New Year's Resolutions Day 2027? - Keep One Resolution
 Keep One Resolution
 What is Ditch New Year's Resolutions Day?
 The joke day for quitting. Shrink yours instead.
@@ -5098,9 +5737,12 @@ Do half after any miss.
 Mark the week. Then keep going.
 The day passes. The pick stays.
 Keep going from here
-Quitter's Day names the week two wobble.
-What to do when you break one covers the week it breaks.
-How to restart one covers coming back later.
+Quitter's Day
+names the week two wobble.
+What to do when you break one
+covers the week it breaks.
+How to restart one
+covers coming back later.
 Pick my one resolution
 Or say it in your own words
 Tell the ask page your year in a line or two. The same engine picks from your words.
@@ -5119,12 +5761,29 @@ Holiday calendars list it yearly.
 Its exact origin is unknown.
 No single founder is named.
 More questions people ask
-What is Quitter's Day? · When you break one · How to restart one · A resolution for January · Meditate · Resolution statistics · The resolution tracker · The resolution quiz · Resolution examples · Ask in your own words
+What is Quitter's Day?
+· When you break one
+· How to restart one
+· A resolution for January
+· Meditate
+· Resolution statistics
+· The resolution tracker
+· The resolution quiz
+· Resolution examples
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -5133,10 +5792,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-for-january
+### New Year's resolution for January (https://keeponeresolution.com/new-years-resolution-for-january)
 
+New Year's resolution for January - Keep One Resolution
 Keep One Resolution
 New Year's resolution for January
 Month one of one year-long pick.
@@ -5189,12 +5850,28 @@ Do just this move all month.
 Add more next month, not now.
 That guard ships with this pick.
 More questions people ask
-Ditch Resolutions Day · Meditate · How to restart one · The resolution tracker · The resolution quiz · Resolution examples · Small resolutions · How to keep one · Ask in your own words
+Ditch Resolutions Day
+· Meditate
+· How to restart one
+· The resolution tracker
+· The resolution quiz
+· Resolution examples
+· Small resolutions
+· How to keep one
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -5203,10 +5880,12 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
 
-## Page: https://keeponeresolution.com/new-years-resolution-to-meditate
+### New Year's resolution to meditate (https://keeponeresolution.com/new-years-resolution-to-meditate)
 
+New Year's resolution to meditate - Keep One Resolution
 Keep One Resolution
 New Year's resolution to meditate
 Two quiet picks. No program promised.
@@ -5276,12 +5955,28 @@ No program lives on this page.
 No technique or benefit is promised.
 Only quiet sitting, sized small.
 More questions people ask
-Stress less · Mind and calm · Sleep better · Ditch Resolutions Day · A resolution for January · Read more · Start journaling · The resolution quiz · Ask in your own words
+Stress less
+· Mind and calm
+· Sleep better
+· Ditch Resolutions Day
+· A resolution for January
+· Read more
+· Start journaling
+· The resolution quiz
+&middot; Ask in your own words
+Share this page
 Keep One Resolution. Built with Muse.
-Browse by area: Body and health · Money · Home · Work · Family and friends · Mind and calm · Privacy · Terms
+Browse by area: Body and health
+· Money
+· Home
+· Work
+· Family and friends
+· Mind and calm
+&middot; Privacy
+&middot; Terms
 Ask in your own words
 Ask in your own words
-×
+&times;
 Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
@@ -5290,4 +5985,26 @@ Stuck at work, bored, quit. 5 hours a week.
 Alone a lot. Family first. I tried to do too much.
 Your year, in your words
 Pick my one resolution
-Want your pick as a lock-screen picture? Take the four questions · Open the full ask page
+Want your pick as a lock-screen picture? Take the four questions
+&middot; Open the full ask page
+
+## Ask (https://keeponeresolution.com/ask)
+
+Ask in your own words - Keep One Resolution
+Keep One Resolution
+Ask in your own words
+Skip the four questions. Say your year in a line or two.
+We run the same engine as the four questions
+, right on this page. Your words never leave this device. Nothing is sent or saved.
+Your year, in your words
+Pick my one resolution
+Or tap an example:
+My body felt drained. 2 hours a week. I just forgot.
+Money piled up on me. 30 minutes a week. Life got busy.
+Stuck at work, bored, quit. 5 hours a week.
+Alone a lot. Family first. I tried to do too much.
+Want your pick as a lock-screen picture? The four questions
+build it from this same pick.
+Keep One Resolution. Built with Muse.
+Privacy
+· Terms
