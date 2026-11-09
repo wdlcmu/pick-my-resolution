@@ -1024,8 +1024,58 @@ function baselinePmr(raw) {
   }
   return null;
 }
+/* Health red-flag stand-down (SPEC-PMR-ADV1108-01, Nov 8, 2026):
+   a visitor who REPORTS a serious symptom or a condition that makes
+   the suggested activity risky must never be handed an exercise
+   pick. Two tiers: URGENT symptoms (chest pain/pressure, trouble
+   breathing, fainting, pain or hurting on exertion) get the
+   prompt-care stand-down; listed conditions (diabetes, pregnancy,
+   a heart condition, recent surgery or a fresh break/sprain/tear,
+   a doctor's own "not to" instruction) get the check-first
+   stand-down. Scoped narrowly: a bare wish to walk more, get fit,
+   exercise more, or lose weight names no symptom and no condition
+   and is NOT caught - those briefs keep their normal picks. Same
+   words as the chat worker's stand-down (carrier parity). */
+function redFlagPmr(raw) {
+  var t = " " + String(raw || "").toLowerCase().replace(/’/g, "'") + " ";
+  if (/\bchest (pain|pains|pressure|tightness)\b/.test(t)
+    || /\bpain in (my |the )?chest\b/.test(t)
+    || /\b(shortness of breath|trouble breathing|difficulty breathing|can't breathe|cannot breathe|hard to breathe)\b/.test(t)
+    || /\b(fainted|fainting)\b/.test(t)
+    || /\bpain (when|while) (i )?(walk|walking|exercise|exercising|climb|climbing|run|running)\b/.test(t)
+    || /\bhurts? (when|while) (i )?(walk|walking|exercise|exercising)\b/.test(t)) {
+    return { label: "Please get this checked first", lines: [
+      "I won't pick an exercise resolution for this, and I won't suggest walking more here.",
+      "This site is not a medical service, and I can't say what is causing what you feel. Chest pain and symptoms like these can be urgent. Please talk to a doctor promptly, and if it is happening now or gets worse, get urgent care or call 911.",
+      "When a doctor has told you what activity is safe for you, come back and I can pick a resolution that fits what they said. For now, I can pick a resolution in a part of life that does not ask more of your body, like money, home, or family and friends — just say the word."
+    ] };
+  }
+  if (/\bdiabet\w*\b/.test(t)
+    || /\bpregnan\w*\b/.test(t)
+    || /\bheart (condition|disease|problem)\b/.test(t)
+    || /\b(had|just had|have had|having) (a |an |my )?(surgery|operation)\b/.test(t)
+    || /\brecovering from\b[^.?!]{0,24}\b(surgery|operation|injury)\b/.test(t)
+    || /\brecent surgery\b/.test(t)
+    || /\bafter (my )?(surgery|operation)\b/.test(t)
+    || /\bi (broke|fractured|sprained|tore)\b/.test(t)
+    || /\bdoctor (said|told me)\b[^.?!]{0,40}\bnot to\b/.test(t)) {
+    return { label: "Please check with your doctor first", lines: [
+      "I won't pick an exercise resolution for this yet.",
+      "This site is not a medical service. With what you mentioned, please check with your doctor first and ask what activity is safe for you before starting a new exercise plan.",
+      "Once you know what is safe, come back and I can pick a resolution that fits what they said. For now, I can pick a resolution in a part of life that does not ask more of your body, like money, home, or family and friends — just say the word."
+    ] };
+  }
+  return null;
+}
 function answerAskPmr(raw) {
   var out = document.getElementById("askp-answer");
+  var rf = redFlagPmr(raw);
+  if (rf) {
+    out.innerHTML = '<div class="card"><p class="label">' + rf.label + '</p>' +
+      rf.lines.map(function (s) { return '<p>' + esc(s) + '</p>'; }).join("") + '</div>';
+    document.getElementById("askp-more").hidden = true;
+    return null;
+  }
   var base = baselinePmr(raw);
   if (base) {
     out.innerHTML = '<div class="card"><p class="label">' + base.label + '</p>' +
