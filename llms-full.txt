@@ -3,11 +3,15 @@
 > Complete text of keeponeresolution.com: every page, plus the full bank inside its free quiz.
 > The quiz picks one New Year's resolution you can keep. Four questions, about one minute.
 > Free forever. No ads, no accounts. Your answers stay in your browser.
-> Text captured from the live site, 2026-11-08.
+> Text captured from the live site, 2026-11-09.
 
 ## Homepage and quiz (https://keeponeresolution.com/)
 
 New Year's Resolution - Keep One Resolution: One you can keep
+A friend shared their one resolution
+First move, week one
+Pick your own resolution
+Four questions. About one minute. Free, no account.
 Keep One Resolution
 This year, keep one. Just one.
 This site picks one resolution you can keep.
@@ -17,17 +21,15 @@ This site picks one resolution you can keep.
 Counting down to January 1, 2027.
 What&rsquo;s next? &#9662;
 The moment: January 1, 2027 : time to pick your one resolution.
+One real pick:
+I felt drained a lot.
+Take a short walk: 30 min, 4x a week.
+Week one starts at 15 min &middot; Sat 9am, at the park, with Alex
 Four questions. Two optional lines. One resolution, sized to your week.
 Pick one part of your life.
 One part only. Your pick lives there.
 Rather say it in your own words? Ask here
 .
-One real pick:
-I felt drained a lot.
-Take a short walk: 30 min, 4x a week.
-Week one starts at 15 min &middot; Sat 9am, at the park, with Alex
-First, the honest no:
-Five moves (small weekly actions) live in your area. Four get a no, each with its reason. One is left standing.
 The January list
 Two friends, one walk
 Breakfast, together
@@ -85,7 +87,7 @@ Two optional lines. Name week one, and one thing you already love. Or skip both.
 You get one plan. One move, sized to your time.
 One plan only. You get one, not a list of ten.
 Your note stays here. It saves as a card on this device.
-Pick a part of your life
+Browse by part of life
 Body and health
 Money
 Home
@@ -137,7 +139,7 @@ Your note stays in this browser. It never leaves your device.
 Save my letter card
 Download my letter card
 You&rsquo;re done.
-Your plan is set. It saves on this device only.
+It saves on this device only.
 Share my resolution
 Make it stick
 Why this one?
@@ -199,6 +201,7 @@ Browse by area: Body and health
 · Privacy
 · Terms
 More family tools: Fill My Bracket, your March bracket
+&middot; ThawDay, the turkey timeline
 Ask in your own words
 Ask in your own words
 &times;
@@ -2392,7 +2395,8 @@ At the next normal chance.
 Not Monday. Not next month.
 The next chance is close enough.
 More questions people ask
-How to restart one
+Ditch Resolutions Day
+· How to restart one
 · Why do resolutions fail?
 · How to keep one
 · What is a good one?
@@ -2845,7 +2849,8 @@ Fitness app data showed the drop.
 Activity fell sharply that Friday.
 The name stuck after that.
 More questions people ask
-How to restart one
+Ditch Resolutions Day
+· How to restart one
 · Why do resolutions fail?
 · How to keep one
 · What is a good one?
@@ -3055,7 +3060,8 @@ As a picture on your phone.
 We keep no plan on servers.
 Your words never leave this device.
 More questions people ask
-Why do resolutions fail?
+A resolution for January
+· Why do resolutions fail?
 · How to keep one
 · What is a good one?
 · Ideas for a busy week
@@ -3132,7 +3138,7 @@ Share text, word for word
 My 2027 resolution:
 Tell a friend your goal: 30 min, 2x a week.
 First move: Text one friend your money goal today. Ask them to check in Friday.
-Pick yours at https://keeponeresolution.com/?via=share
+Pick yours at https://keeponeresolution.com/?via=share&s=eyJyIjoiVGVsbCBhIGZyaWVuZCB5b3VyIGdvYWw6IDMwIG1pbiwgMnggYSB3ZWVrLiIsImYiOiJUZXh0IG9uZSBmcmllbmQgeW91ciBtb25leSBnb2FsIHRvZGF5LiBBc2sgdGhlbSB0byBjaGVjayBpbiBGcmlkYXkuIn0
 Send it to one person only.
 Ask for check-ins, not applause.
 Pick my one resolution
@@ -4592,7 +4598,8 @@ No fix is promised on this page.
 The pick only calms the last minutes.
 A book replaces the bright phone scroll.
 More questions people ask
-Spend more time with family
+Meditate
+· Spend more time with family
 · Be more productive
 · Declutter your home
 · Stress less
@@ -4994,7 +5001,8 @@ Same move, new place or playlist.
 Change one thing, not the move.
 That guard ships with the breathing pick.
 More questions people ask
-Sleep better
+Meditate
+· Sleep better
 · Spend more time with family
 · Be more productive
 · Declutter your home
@@ -5579,7 +5587,8 @@ No. A long break is not a verdict.
 Missing one day did not wreck it. (Lally et al., 2010)
 Restart small. The habit rebuilds from there.
 More questions people ask
-Resolution statistics
+A resolution for January
+· Resolution statistics
 · Most common resolutions
 · Cook more
 · When you break one
