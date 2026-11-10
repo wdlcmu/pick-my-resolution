@@ -3,7 +3,7 @@
 > Complete text of keeponeresolution.com: every page, plus the full bank inside its free quiz.
 > The quiz picks one New Year's resolution you can keep. Four questions, about one minute.
 > Free forever. No ads, no accounts. Your answers stay in your browser.
-> Text captured from the live site, 2026-11-09.
+> Text captured from the live site, 2026-11-10.
 
 ## Homepage and quiz (https://keeponeresolution.com/)
 
@@ -15,16 +15,16 @@ Four questions. About one minute. Free, no account.
 Keep One Resolution
 This year, keep one. Just one.
 This site picks one resolution you can keep.
-00 hrs
-00 min
-00 sec
-Counting down to January 1, 2027.
+51 days
+21 hrs
+53 min
+53 sec
+until January 1, 2027.
 What&rsquo;s next? &#9662;
-The moment: January 1, 2027 : time to pick your one resolution.
+Time to pick your one resolution.
 One real pick:
 I felt drained a lot.
 Take a short walk: 30 min, 4x a week.
-Week one starts at 15 min &middot; Sat 9am, at the park, with Alex
 Four questions. Two optional lines. One resolution, sized to your week.
 Pick one part of your life.
 One part only. Your pick lives there.
@@ -38,7 +38,7 @@ One pick. Not fifty. Most lists quit by February.
 Sized to your week. In minutes you actually have.
 A first move. For week one, not a wish.
 An if-then plan. Gollwitzer, a psychologist who studied follow-through: &ldquo;If 9am, then I walk&rdquo; (94 tests).
-One dot a week. 52 dots. No streak to break.
+52 dots, one for each week. No streak to break.
 Norcross, who tracked resolution-keepers for years: 46% still going at six months.
 One real pick, start to finish
 Last January, you wrote a list. Nothing stuck. Say your year felt like this:
@@ -205,7 +205,7 @@ More family tools: Fill My Bracket, your March bracket
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. This is an AI helper. It picks only from this site's own resolutions, the same picks the picker makes. Nothing you type is saved.
+Say your year in a line or two. This is an AI helper. It picks only from this site's own resolutions, the same picks the picker makes. Your words go to this site's helper to make your pick. Nothing you type is saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.

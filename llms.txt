@@ -14,7 +14,7 @@
 ## Start here
 
 - [Homepage and quiz](https://keeponeresolution.com/): four questions, one resolution, one plan.
-- [Ask in your own words](https://keeponeresolution.com/ask): say your year in a line or two; the same engine picks from your words. Your words run in your browser and never leave your device.
+- [Ask in your own words](https://keeponeresolution.com/ask): say your year in a line or two; the same engine picks from your words. On this page your words run in your browser and never leave your device. The homepage's Ask helper is different: it sends your words to this site's own helper to make your pick, and nothing you type is saved.
 
 ## Key pages
 

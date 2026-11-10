@@ -601,21 +601,20 @@ window.FLEET_CFG = {
             <p class="identity">This site picks one resolution you can keep.</p>
             <div class="cdx">
               <div class="cdx-main" id="cdx-main" aria-label="Counting down to January 1, 2027.">
-                <span class="cdx-digits" id="cdx-digits" aria-hidden="true" hidden><span class="cdx-cell cd-d"><b id="cdx-d"></b><i id="cdx-dl">days</i></span><span class="cdx-cell"><b id="cdx-h">00</b><i>hrs</i></span><span class="cdx-cell"><b id="cdx-m">00</b><i>min</i></span><span class="cdx-cell"><b id="cdx-s">00</b><i>sec</i></span></span>
-                <span class="countdown" id="countdown">Counting down to January 1, 2027.</span>
+                <span class="cdx-digits" id="cdx-digits" aria-hidden="true"><span class="cdx-cell cd-d"><b id="cdx-d">51</b><i id="cdx-dl">days</i></span><span class="cdx-cell"><b id="cdx-h">21</b><i>hrs</i></span><span class="cdx-cell"><b id="cdx-m">53</b><i>min</i></span><span class="cdx-cell"><b id="cdx-s">53</b><i>sec</i></span></span>
+                <span class="countdown" id="countdown">until January 1, 2027.</span>
                 <span class="cdx-note" id="cdx-note" hidden></span>
               </div>
               <button class="cdx-more" id="cdx-more" type="button" aria-expanded="false" aria-controls="cdx-panel" hidden>What&rsquo;s next? <span aria-hidden="true">&#9662;</span></button>
               <div class="cdx-panel" id="cdx-panel" hidden>
                 <p class="cdx-break" id="cdx-break"></p>
-                <p class="cdx-mile" id="cdx-mile">The moment: <strong>January 1, 2027</strong>: time to pick your one resolution.</p>
+                <p class="cdx-mile" id="cdx-mile">Time to pick your one resolution.</p>
               </div>
             </div>
             <!-- SPEC-PMR-COLDQA1109-02: worked example directly under the identity/countdown block, above the first question. Compact card only: the honest-no summary line was dropped here (full showdown is lower on this page and on every result) so the first question and its chips stay on screen one. -->
             <div class="hero-pick-card">
               <p class="hp-line"><span class="hp-label">One real pick:</span> I felt drained a lot.</p>
               <p class="hp-pick">Take a short walk: 30 min, 4x a week.</p>
-              <p class="hp-plan">Week one starts at 15 min &middot; Sat 9am, at the park, with Alex</p>
             </div>
             <p class="sub">Four questions. Two optional lines. One resolution, sized to your week.</p>
             <div class="hero-q1" id="hero-q1">
@@ -652,7 +651,7 @@ window.FLEET_CFG = {
         <li><strong>Sized to your week.</strong> In minutes you actually have.</li>
         <li><strong>A first move.</strong> For week one, not a wish.</li>
         <li><strong>An if-then plan.</strong> Gollwitzer, a psychologist who studied follow-through: &ldquo;If 9am, then I walk&rdquo; (94 tests).</li>
-        <li><strong>One dot a week.</strong> 52 dots. No streak to break.</li>
+        <li><strong>52 dots, one for each week.</strong> No streak to break.</li>
       </ul>
       <p>Norcross, who tracked resolution-keepers for years: 46% still going at six months.</p>
     </div>
@@ -923,7 +922,7 @@ window.FLEET_CFG = {
 
   <footer>
     <p>Keep One Resolution. Built with Muse.<br>
-    Browse by area: <a href="/body-and-health">Body and health</a> · <a href="/money">Money</a> · <a href="/home">Home</a> · <a href="/work">Work</a> · <a href="/family-and-friends">Family and friends</a> · <a href="/mind-and-calm">Mind and calm</a> · <a href="/what-is-quitters-day">Quitter's Day 2027</a> · <a href="/new-years-resolution-statistics">Resolution statistics</a> · <a href="/most-common-new-years-resolutions">Most common</a> · <a href="/how-to-restart-a-new-years-resolution">Restart one</a> · <a href="/new-years-resolution-to-cook-more">Cook more</a> · <a href="/what-is-ditch-new-years-resolutions-day">Ditch Day</a> · <a href="/new-years-resolution-for-january">For January</a> · <a href="/new-years-resolution-to-meditate">Meditate</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a><br>
+    Browse by area: <a href="/body-and-health">Body and health</a> · <a href="/money">Money</a> · <a href="/home">Home</a> · <a href="/work">Work</a> · <a href="/family-and-friends">Family and friends</a> · <a href="/mind-and-calm">Mind and calm</a> · <a href="/what-is-quitters-day">Quitter's Day 2027</a> · <a href="/new-years-resolution-picker">The resolution picker</a> · <a href="/new-years-resolution-statistics">Resolution statistics</a> · <a href="/most-common-new-years-resolutions">Most common</a> · <a href="/how-to-restart-a-new-years-resolution">Restart one</a> · <a href="/new-years-resolution-to-cook-more">Cook more</a> · <a href="/what-is-ditch-new-years-resolutions-day">Ditch Day</a> · <a href="/new-years-resolution-for-january">For January</a> · <a href="/new-years-resolution-to-meditate">Meditate</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a><br>
     More family tools: <a href="https://fillmybracket.com">Fill My Bracket, your March bracket</a> &middot; <a href="https://thawday.com" style="display:inline-flex;align-items:center;min-height:44px">ThawDay, the turkey timeline</a></p>
   </footer>
 </div>
@@ -1056,7 +1055,7 @@ window.FLEET_CFG = {
       }
       if (mileEl && lastMileYear !== c.target.getFullYear()) {
         lastMileYear = c.target.getFullYear();
-        mileEl.innerHTML = "The moment: <strong>January 1, " + lastMileYear + "</strong>: time to pick your one resolution.";
+        mileEl.innerHTML = "Time to pick your one resolution.";
       }
     }
     if (tickMs !== null) { lastMs = tickMs; showDigits(tickMs, tail); setAria(cdTick(tickMs, tail), now); }
@@ -3036,7 +3035,7 @@ body:has(#s-result.on) .askp-pill{display:none}
       <h2 id="askp-title">Ask in your own words</h2>
       <button type="button" class="askp-close" id="askp-close" aria-label="Close ask panel">&times;</button>
     </div>
-    <p class="askp-promise">Say your year in a line or two. This is an AI helper. It picks only from this site's own resolutions, the same picks the picker makes. Nothing you type is saved.</p>
+    <p class="askp-promise">Say your year in a line or two. This is an AI helper. It picks only from this site's own resolutions, the same picks the picker makes. Your words go to this site's helper to make your pick. Nothing you type is saved.</p>
     <p>Or tap an example:</p>
     <div class="askp-chips" role="group" aria-label="Example answers">
       <button type="button" class="askp-chip" data-q="My body felt drained all year. I have 2 hours a week. I just forgot to do it last time.">My body felt drained. 2 hours a week. I just forgot.</button>
