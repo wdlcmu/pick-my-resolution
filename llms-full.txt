@@ -102,7 +102,7 @@ One names something you already love.
 What New Year's resolution can I keep?
 One is easier to keep than a list.
 Is it free?
-Yes. It is free for good.
+Yes. It is free.
 No ads. No accounts.
 What we don't do
 Reminders and signup stay off: we send no reminder emails, and there is no email signup.
@@ -369,7 +369,7 @@ a weekly check-in prompt to copy into your own AI, and a year card with 52 dots,
 
 - I tried to do too much. -> Do just this move all month. Add more next month, not now.
 - I just forgot to do it. -> Set a phone alarm for session days. Same time, same sound.
-- Life got busy and loud. -> Miss a day? Do half the next day. Half still keeps the streak.
+- Life got busy and loud. -> Miss a day? Do half the next day. Half still counts.
 - I got bored and quit. -> Same move, new place or playlist. Change one thing, not the move.
 
 ### The weekly check-in prompt (template)
@@ -1081,7 +1081,7 @@ One loud week breaks the chain.
 Then the missed days feel like proof.
 Proof that it failed, when it only bent.
 The counter the quiz gives you
-Miss a day? Do half the next day. Half still keeps the streak.
+Miss a day? Do half the next day. Half still counts.
 I got bored and quit.
 Same move. Same room. Same song.
 Boredom starts to read as failure.
@@ -1204,7 +1204,7 @@ A list splits your time too thin.
 You can add more next year.
 What if I miss a week?
 Do half at the next chance.
-Half still keeps the streak.
+Half still counts.
 One missed week is weather, not failure.
 When should I start?
 This week is fine.
@@ -1428,7 +1428,7 @@ Check your bank balance: 2 min, 3x a week.
 Small counts when you keep it.
 What if my week changes?
 Do half at the next chance.
-Half still keeps the streak.
+Half still counts.
 The plan bends. It does not break.
 Can I swap my pick later?
 Yes.
@@ -1749,7 +1749,7 @@ Play one game together: 10 min, 3x a week.
 First move, week one
 Pick a short game from the shelf. Play one round tonight together.
 For when it gets hard
-Miss a day? Do half the next day. Half still keeps the streak.
+Miss a day? Do half the next day. Half still counts.
 Your time
 This plan uses all 30 minutes you offered.
 One small pick per part of life
@@ -1804,7 +1804,7 @@ After breakfast. During nap time. After bedtime.
 Pick the scrap that repeats weekly.
 What if the week blows up?
 Do half at the next chance.
-Half still keeps the streak.
+Half still counts.
 Sick kids are weather, not failure.
 More questions people ask
 Why do resolutions fail?
@@ -1895,7 +1895,7 @@ One resolution, sized to your week.
 Plus a first move for week one.
 And one guard for hard days.
 Is the quiz free?
-Yes. It is free for good.
+Yes. It is free.
 No ads. No accounts.
 More questions people ask
 Why do resolutions fail?
@@ -1981,7 +1981,7 @@ Four findings from real research shape every plan here:
 If-then plans. Gollwitzer: "If 9am, then I walk" beats trying.
 Tiny first steps. BJ Fogg: start so small it is hard to skip.
 The fresh start effect. Dai, Milkman, and Riis: a new year lifts motivation.
-Weekly check-ins. Watching your own record keeps the streak alive.
+Weekly check-ins. Watching your own record still counts.
 Your plan page lets you set each one yourself.
 How it works
 You pick one area. Body, money, home, work, family, calm.
@@ -2338,7 +2338,7 @@ Do just this move all month. Add more next month, not now.
 I just forgot to do it.
 Set a phone alarm for session days. Same time, same sound.
 Life got busy and loud.
-Miss a day? Do half the next day. Half still keeps the streak.
+Miss a day? Do half the next day. Half still counts.
 I got bored and quit.
 Same move, new place or playlist. Change one thing, not the move.
 Those four notes are the quiz's own guards. Each pick ships with one.
@@ -2351,7 +2351,7 @@ Sit outside with others: 10 min, 3x a week.
 First move, week one
 Sit outside with others after lunch. Stay 10 min and just talk.
 For when it gets hard
-Miss a day? Do half the next day. Half still keeps the streak.
+Miss a day? Do half the next day. Half still counts.
 Your time
 This plan uses all 30 minutes you offered.
 More restarts at the smallest size
@@ -2815,7 +2815,7 @@ Read a calm book: 10 min, 3x a week.
 First move, week one
 Put your book on your pillow now. Read 10 min in bed tonight.
 For when it gets hard
-Miss a day? Do half the next day. Half still keeps the streak.
+Miss a day? Do half the next day. Half still counts.
 Your time
 This plan uses all 30 minutes you offered.
 Why that week feels hard
@@ -3314,7 +3314,7 @@ Take a short walk: 30 min, 7x a week.
 First move, week one
 Put your shoes by the front door. Walk 30 min right after a meal.
 For when it gets hard
-Miss a day? Do half the next day. Half still keeps the streak.
+Miss a day? Do half the next day. Half still counts.
 Your time
 This plan uses 210 of your 300 minutes a week. The rest of your time stays yours.
 Picked for
@@ -3900,7 +3900,7 @@ Take a short walk: 30 min, 7x a week.
 First move, week one
 Put your shoes by the front door. Walk 15 min right after a meal.
 For when it gets hard
-Miss a day? Do half the next day. Half still keeps the streak.
+Miss a day? Do half the next day. Half still counts.
 Your time
 This plan uses 210 of your 300 minutes a week. The rest of your time stays yours.
 Seven walks a week means daily.
@@ -3941,7 +3941,7 @@ It walks thirty minutes, seven times weekly.
 Smaller sizes sit on this page too.
 What if I miss a day?
 Miss a day? Do half the next day.
-Half still keeps the streak.
+Half still counts.
 That guard ships with this pick.
 More questions people ask
 Spend more time with friends
@@ -4110,7 +4110,7 @@ Tidy one small corner: 10 min, 3x a week.
 First move, week one
 Pick the corner by the front door. Tidy only it for 5 min.
 For when it gets hard
-Miss a day? Do half the next day. Half still keeps the streak.
+Miss a day? Do half the next day. Half still counts.
 Your time
 This plan uses all 30 minutes you offered.
 Pick one card. Not both.
@@ -4467,7 +4467,7 @@ Play one game together: 10 min, 3x a week.
 First move, week one
 Pick a short game from the shelf. Play one round tonight together.
 For when it gets hard
-Miss a day? Do half the next day. Half still keeps the streak.
+Miss a day? Do half the next day. Half still counts.
 Your time
 This plan uses all 30 minutes you offered.
 That pick and dose come from the picker.
@@ -4655,7 +4655,7 @@ Talk with family at home: 30 min, 4x a week.
 First move, week one
 Pick a time right after dinner. Talk at the table for 15 min.
 For when it gets hard
-Miss a day? Do half the next day. Half still keeps the streak.
+Miss a day? Do half the next day. Half still counts.
 Your time
 This plan uses all 120 minutes you offered.
 That pick comes straight from the picker.
@@ -4696,7 +4696,7 @@ Eat at the table, together.
 That line ships with the meal pick.
 What if a busy week hits?
 Miss a day? Do half the next day.
-Half still keeps the streak.
+Half still counts.
 That guard ships with the talk pick.
 More questions people ask
 Spend more time with friends
@@ -4774,7 +4774,7 @@ Clear your desk top: 10 min, 3x a week.
 First move, week one
 Set a timer for 5 min. Clear the desk top into one box.
 For when it gets hard
-Miss a day? Do half the next day. Half still keeps the streak.
+Miss a day? Do half the next day. Half still counts.
 Your time
 This plan uses all 30 minutes you offered.
 Pick one card. Not both.
@@ -4872,7 +4872,7 @@ Tidy one small corner: 20 min, 4x a week.
 First move, week one
 Pick the corner by the front door. Tidy only it for 10 min.
 For when it gets hard
-Miss a day? Do half the next day. Half still keeps the streak.
+Miss a day? Do half the next day. Half still counts.
 Your time
 This plan uses 80 of your 120 minutes a week. The rest of your time stays yours.
 Pick one card. Not both.
@@ -5076,7 +5076,7 @@ Walk with a friend: 30 min, 4x a week.
 First move, week one
 Text one friend and pick a day. Walk and talk for 15 min.
 For when it gets hard
-Miss a day? Do half the next day. Half still keeps the streak.
+Miss a day? Do half the next day. Half still counts.
 Your time
 This plan uses all 120 minutes you offered.
 Pick one card. Not both.
@@ -5543,7 +5543,7 @@ Not Monday. Not next month. The next chance.
 Four ways back, by what broke
 I tried to do too much. Do just this move all month. Add more next month, not now.
 I just forgot to do it. Set a phone alarm for session days. Same time, same sound.
-Life got busy and loud. Miss a day? Do half the next day. Half still keeps the streak.
+Life got busy and loud. Miss a day? Do half the next day. Half still counts.
 I got bored and quit. Same move, new place or playlist. Change one thing, not the move.
 Those four notes are the quiz's own guards.
 Each pick ships with one of them.
@@ -5555,7 +5555,7 @@ Sit outside with others: 10 min, 3x a week.
 First move, week one
 Sit outside with others after lunch. Stay 5 min and just talk.
 For when it gets hard
-Miss a day? Do half the next day. Half still keeps the streak.
+Miss a day? Do half the next day. Half still counts.
 Your time
 This plan uses all 30 minutes you offered.
 This restart sits at the smallest size.
@@ -5729,7 +5729,7 @@ Take a short walk: 10 min, 3x a week.
 First move, week one
 Put your shoes by the front door. Walk 5 min right after a meal.
 For when it gets hard
-Miss a day? Do half the next day. Half still keeps the streak.
+Miss a day? Do half the next day. Half still counts.
 Your time
 This plan uses all 30 minutes you offered.
 Why this day gets named
@@ -5921,7 +5921,7 @@ Breathe slow in fresh air: 10 min, 3x a week.
 First move, week one
 Step outside your front door today. Breathe slow for 5 min.
 For when it gets hard
-Miss a day? Do half the next day. Half still keeps the streak.
+Miss a day? Do half the next day. Half still counts.
 Your time
 This plan uses all 30 minutes you offered.
 Pick one pick, not both at once.
