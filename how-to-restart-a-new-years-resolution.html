@@ -138,7 +138,7 @@ localStorage.setItem("fleet_ft2",JSON.stringify(ft));
       <ul>
         <li>I tried to do too much. Do just this move all month. Add more next month, not now.</li>
         <li>I just forgot to do it. Set a phone alarm for session days. Same time, same sound.</li>
-        <li>Life got busy and loud. Miss a day? Do half the next day. Half still keeps the streak.</li>
+        <li>Life got busy and loud. Miss a day? Do half the next day. Half still counts.</li>
         <li>I got bored and quit. Same move, new place or playlist. Change one thing, not the move.</li>
       </ul>
     </div>
@@ -154,7 +154,7 @@ localStorage.setItem("fleet_ft2",JSON.stringify(ft));
       <p class="label">First move, week one</p>
       <p>Sit outside with others after lunch. Stay 5 min and just talk.</p>
       <p class="label">For when it gets hard</p>
-      <p>Miss a day? Do half the next day. Half still keeps the streak.</p>
+      <p>Miss a day? Do half the next day. Half still counts.</p>
       <p class="label">Your time</p>
       <p>This plan uses all 30 minutes you offered.</p>
     </div>
@@ -333,7 +333,7 @@ var ACTIONS = {
 var GUARDS = {
   big: "Do just this move all month. Add more next month, not now.",
   forgot: "Set a phone alarm for session days. Same time, same sound.",
-  busy: "Miss a day? Do half the next day. Half still keeps the streak.",
+  busy: "Miss a day? Do half the next day. Half still counts.",
   bored: "Same move, new place or playlist. Change one thing, not the move."
 };
 // Engine-truth fix (2026-10-23, design: engine-truth-audit-2026-10-23.md
@@ -1325,7 +1325,7 @@ function factsPmr(raw) {
   }
   if ((/\b(restart|start again|get back|start over)\b/.test(t) && /\b(resolution|habit|it|one)\b/.test(t))
     || (/\b(broke|broken|quit|gave up|failed|dropped)\b/.test(t) && /\bresolution\b/.test(t))) {
-    return { label: "Restarting", lines: ["Keep the same one resolution — do not swap the goal. Shrink it to its smallest dose and restart at the next normal chance: not Monday, not next month, the next chance. After any miss, do half next time; half still keeps the streak. Missing one day did not wreck it in Lally et al. (2010), and a long break is not a verdict — restarting in spring still counts."] };
+    return { label: "Restarting", lines: ["Keep the same one resolution — do not swap the goal. Shrink it to its smallest dose and restart at the next normal chance: not Monday, not next month, the next chance. After any miss, do half next time; half still counts. Missing one day did not wreck it in Lally et al. (2010), and a long break is not a verdict — restarting in spring still counts."] };
   }
   if (/\bshare\b/.test(t) && /\b(friend|resolution|result|pick|how|will|they|see|send)\b/.test(t)) {
     return { label: "Sharing", lines: ["After you get your pick, tap the Share button on the result screen. Your friend gets your resolution and its first move as a message, and the link in it opens this site showing that same resolution and first move at the top, with a button to pick their own one resolution."] };
