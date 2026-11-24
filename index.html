@@ -589,7 +589,7 @@ window.FLEET_CFG = {
       <p id="sr-first"></p>
       <p id="sr-fallback" hidden></p>
       <button class="cta" id="sr-pick-own" type="button">Pick your own resolution</button>
-      <p class="sub" style="font-size:14px;margin:8px 0 0">Four questions. About one minute. Free, no account.</p>
+      <p class="sub" style="font-size:14px;margin:8px 0 0">Pick yours in about one minute.</p>
     </div>
     </div>
     <div class="hero">
@@ -620,7 +620,7 @@ window.FLEET_CFG = {
             <div class="hero-q1" id="hero-q1">
               <h2 class="hq-title">Pick one part of your life.</h2>
               <p class="hq-why">One part only. Your pick lives there.</p>
-              <div class="chips" id="hq-chips"></div>
+              <div class="chips" id="hq-chips"><button class="chip" data-k="health" aria-pressed="false"><span class="tick">✓</span>Body and health</button><button class="chip" data-k="money" aria-pressed="false"><span class="tick">✓</span>Money</button><button class="chip" data-k="home" aria-pressed="false"><span class="tick">✓</span>Home</button><button class="chip" data-k="work" aria-pressed="false"><span class="tick">✓</span>Work</button><button class="chip" data-k="family" aria-pressed="false"><span class="tick">✓</span>Family and friends</button><button class="chip" data-k="calm" aria-pressed="false"><span class="tick">✓</span>Mind and calm</button></div>
             </div>
             <p class="askdoor">Rather say it in your own words? <a href="/ask">Ask here</a>.</p>
           </div>
@@ -671,13 +671,13 @@ window.FLEET_CFG = {
         <div class="sd-row sd-out sd-done"><p class="sd-name">Do a short workout</p><p class="sd-dose">30 min, 4x a week</p><p class="sd-short">This one treats feeling stuck. On a hard day this is the first plan you would skip, because it was never about your day.</p></div>
         <div class="sd-row sd-out sd-done"><p class="sd-name">Stretch your whole body</p><p class="sd-dose">20 min, 5x a week</p><p class="sd-short">The move for drifting from good habits. Nothing in your week would tell you it is working, because the change would happen somewhere you were not hurting.</p></div>
         <div class="sd-row sd-out sd-done"><p class="sd-name">Walk with a friend</p><p class="sd-dose">30 min, 4x a week</p><p class="sd-short">That move answers feeling alone. The mornings that made you pick this quiz would feel exactly the same.</p></div>
-        <div class="sd-row sd-win sd-done"><p class="sd-tag">The one left standing</p><p class="sd-name">Take a short walk</p><p class="sd-dose">30 min, 4x a week</p><p class="sd-short">Built for feeling drained, in your words. The plan below guards your weak spot.</p></div>
+        <div class="sd-row sd-win sd-done"><p class="sd-tag">The one left standing</p><p class="sd-name">Take a short walk</p><p class="sd-dose">The pick from the card above</p><p class="sd-short">Built for feeling drained, in your words. The plan below guards your weak spot.</p></div>
         <p class="tac-note"><a href="/resolutions-you-should-not-keep" style="color:var(--accent);font-weight:700;display:inline-block;padding:12px 6px;min-height:44px">See the resolutions you should not keep</a></p>
       </div>
       <button class="ghost ex-toggle" id="ex-toggle" type="button" aria-expanded="false" aria-controls="ex-plan">See the full plan</button>
       <div id="ex-plan" hidden>
       <div class="card">
-        <p class="big">Take a short walk: 30 min, 4x a week.</p>
+        <p class="big">That same pick, as a full plan:</p>
         <p class="label">First move, week one</p>
         <p>Step 1: set a phone alarm. Step 2: Put your shoes by the front door. Walk 15 min right after a meal.</p>
         <p class="label">One if-then that works</p>
@@ -690,16 +690,13 @@ window.FLEET_CFG = {
         <p>Week one uses 60 of your 120 minutes a week. From week two, it uses all 120 minutes offered.</p>
       </div>
       </div>
-      <p>It ends with a note to future you. This one opens:</p>
-      <p class="ex-note">&ldquo;Dear future me, I felt drained a lot back then. My pick was Take a short walk.&rdquo;</p>
-      <button class="cta" id="btn-start-2">Pick my one resolution</button>
     </div>
     <div class="how">
       <h2>How it works</h2>
       <details>
         <summary>See how it works</summary>
         <ol>
-          <li><strong>Four questions.</strong> Your area, what felt hard, your time, what failed before.</li>
+          <li><strong>The questions.</strong> Your area, what felt hard, your time, what failed before.</li>
           <li><strong>Two optional lines.</strong> Name week one, and one thing you already love. Or skip both.</li>
           <li><strong>You get one plan.</strong> One move, sized to your time.</li>
         </ol>
@@ -722,7 +719,7 @@ window.FLEET_CFG = {
       <h2>Common questions</h2>
       <details>
         <summary>How long does it take?</summary>
-        <p>About one minute. Four questions, then two optional lines.</p>
+        <p>About one minute, then two optional lines.</p>
         <p>One line names week one.</p>
         <p>One names something you already love.</p>
       </details>
@@ -732,8 +729,7 @@ window.FLEET_CFG = {
       </details>
       <details>
         <summary>Is it free?</summary>
-        <p>Yes. It is free.</p>
-        <p>No ads. No accounts.</p>
+        <p>Yes. It is free for good.</p>
       </details>
       <details>
         <summary>What we don't do</summary>
@@ -878,7 +874,7 @@ window.FLEET_CFG = {
     <button class="ghost" id="btn-copy-checkin">Copy my weekly check-in</button>
     <p class="status" id="st-checkin"></p>
     <p class="label">Your lock-screen picture</p>
-    <p class="sub" style="font-size:14px">Your pick and your first move, as one picture. 52 dots, one for each week.</p>
+    <p class="sub" style="font-size:14px">Your pick and your first move, as one picture.</p>
     <button class="ghost" id="btn-yearcard">Get my lock-screen picture</button>
     <div id="yc-out"></div>
     <p class="status" id="st-yearcard"></p>
@@ -888,36 +884,16 @@ window.FLEET_CFG = {
     <button class="ghost" id="btn-again">Start over</button>
   </section>
 
-<!-- Works with your AI (fleet AI section, 2026-11-04) -->
+<!-- Works with your AI (fleet AI section, 2026-11-04; plain-words version, fleet text cut 2026-11-24: server address, command line, and config block no longer printed as page text - the address rides only on the Copy button) -->
 <section class="works-with-ai" aria-label="Works with your AI" style="max-width:44rem;margin:2.5rem auto;padding:1.25rem 1rem;border:1px solid rgba(127,127,127,.45);border-radius:14px;font-family:inherit;line-height:1.55">
 <h2 style="margin:.1rem 0 .5rem;font-size:1.35rem">Works with your AI</h2>
 <p style="margin:.4rem 0">Your AI can run this site's picker: one resolution, sized to be keepable, with a first step you can do this week.</p>
-<p style="margin:.4rem 0">Connect this site to Claude, Cursor, or any other MCP client (MCP, the standard way AI apps connect to outside tools). It is free, and it takes about a minute.</p>
-<p style="margin:.8rem 0 .3rem"><strong>1. Copy the server address</strong></p>
-<div style="display:flex;gap:.5rem;flex-wrap:wrap;align-items:stretch">
-<code id="wai-url" style="flex:1 1 16rem;display:flex;align-items:center;padding:.6rem .7rem;border:1px solid rgba(127,127,127,.45);border-radius:10px;word-break:break-all">https://mcp.pickmyresolution.com/mcp</code>
-<button type="button" class="wai-copy" data-copy-target="wai-url" style="min-height:44px;min-width:44px;padding:.6rem 1.1rem;border-radius:10px;border:1px solid rgba(127,127,127,.55);background:transparent;color:inherit;font:inherit;cursor:pointer">Copy</button>
-</div>
-<p style="margin:.9rem 0 .3rem"><strong>2. Add it to your AI</strong></p>
-<details>
-<summary style="min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:600">Claude Code: one command</summary>
-<pre style="overflow-x:auto;padding:.7rem;border:1px solid rgba(127,127,127,.35);border-radius:10px"><code>claude mcp add --transport http keep-one-resolution https://mcp.pickmyresolution.com/mcp</code></pre>
-</details>
-<details>
-<summary style="min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:600">Claude Desktop or Cursor: paste into the MCP settings</summary>
-<pre style="overflow-x:auto;padding:.7rem;border:1px solid rgba(127,127,127,.35);border-radius:10px"><code>{
-  "mcpServers": {
-    "keep-one-resolution": {
-      "url": "https://mcp.pickmyresolution.com/mcp"
-    }
-  }
-}</code></pre>
-</details>
-<p style="margin:.8rem 0 .2rem"><strong>3. Ask your AI:</strong> &ldquo;Pick one resolution I will actually keep, and give me the first step.&rdquo;</p>
-
+<p style="margin:.4rem 0">It connects through MCP, the standard way AI apps connect to outside tools. In Claude, Cursor, or any other MCP client, add a custom MCP server and paste this site's server address. It is free, and it takes about a minute.</p>
+<p style="margin:.8rem 0 .5rem"><button type="button" class="wai-copy" id="wai-copy" style="min-height:44px;min-width:44px;padding:.6rem 1.1rem;border-radius:10px;border:1px solid rgba(127,127,127,.55);background:transparent;color:inherit;font:inherit;cursor:pointer">Copy the server address</button></p>
+<p style="margin:.8rem 0 .2rem"><strong>Then ask your AI:</strong> &ldquo;Pick one resolution I will actually keep, and give me the first step.&rdquo;</p>
 </section>
 <script>
-(function(){var b=document.querySelector('.wai-copy');if(!b)return;b.addEventListener('click',function(){var el=document.getElementById(b.getAttribute('data-copy-target'));var t=el?el.textContent.trim():'';function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},2000);}function failed(){if(el){try{var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r);}catch(e){}}b.textContent='Select + copy manually';setTimeout(function(){b.textContent='Copy';},4000);}function fallback(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();var ok=false;try{ok=document.execCommand('copy');}catch(e){ok=false;}document.body.removeChild(ta);if(ok){done();}else{failed();}}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,fallback);}else{fallback();}});})();
+(function(){var b=document.getElementById('wai-copy');if(!b)return;var t='https://mcp.pickmyresolution.com/mcp';function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy the server address';},2000);}function failed(){b.textContent='Copy failed - add the MCP server for keeponeresolution.com in your AI app';setTimeout(function(){b.textContent='Copy the server address';},4000);}function fallback(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();var ok=false;try{ok=document.execCommand('copy');}catch(e){ok=false;}document.body.removeChild(ta);if(ok){done();}else{failed();}}b.addEventListener('click',function(){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,fallback);}else{fallback();}});})();
 </script>
 
   <footer>
@@ -3031,7 +3007,7 @@ body:has(#s-result.on) .askp-pill{display:none}
 <div class="askp-overlay" id="askp-overlay" hidden>
   <div class="askp-panel" role="dialog" aria-modal="true" aria-labelledby="askp-title" id="askp-panel">
     <div class="askp-head">
-      <h2 id="askp-title">Ask in your own words</h2>
+      <h2 id="askp-title">Say it your way</h2>
       <button type="button" class="askp-close" id="askp-close" aria-label="Close ask panel">&times;</button>
     </div>
     <p class="askp-promise">Say your year in a line or two. This is an AI helper. It picks only from this site's own resolutions, the same picks the picker makes. Your words go to this site's helper to make your pick. Nothing you type is saved.</p>
