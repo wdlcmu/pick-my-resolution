@@ -468,7 +468,7 @@ Browse by area: Money
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -560,7 +560,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -652,7 +652,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -744,7 +744,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -836,7 +836,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -928,7 +928,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -1144,7 +1144,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -1243,7 +1243,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -1354,7 +1354,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -1467,7 +1467,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -1589,7 +1589,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -1715,7 +1715,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -1839,7 +1839,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -1930,7 +1930,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -2090,7 +2090,7 @@ More family tools: Fill My Bracket, your March bracket
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -2192,7 +2192,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -2307,7 +2307,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -2429,7 +2429,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -2555,7 +2555,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -2664,7 +2664,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -2783,7 +2783,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -2883,7 +2883,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -2985,7 +2985,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -3093,7 +3093,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -3191,7 +3191,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -3286,7 +3286,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -3401,7 +3401,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -3512,7 +3512,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -3606,7 +3606,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -3695,7 +3695,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -3783,7 +3783,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -3872,7 +3872,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -3974,7 +3974,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -4066,7 +4066,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -4166,7 +4166,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -4258,7 +4258,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -4348,7 +4348,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -4438,7 +4438,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -4532,7 +4532,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -4627,7 +4627,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -4728,7 +4728,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -4828,7 +4828,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -4929,7 +4929,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -5030,7 +5030,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -5129,7 +5129,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -5218,7 +5218,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -5307,7 +5307,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -5414,7 +5414,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -5512,7 +5512,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -5610,7 +5610,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -5697,7 +5697,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -5793,7 +5793,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -5881,7 +5881,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -5986,7 +5986,7 @@ Browse by area: Body and health
 Ask in your own words
 Ask in your own words
 &times;
-Say your year in a line or two. Your words go to this site's helper to make your pick. Nothing you type is saved.
+Say your year in a line or two. Your words never leave this device. Nothing is sent or saved.
 Or tap an example:
 My body felt drained. 2 hours a week. I just forgot.
 Money piled up on me. 30 minutes a week. Life got busy.
@@ -6004,7 +6004,7 @@ Keep One Resolution
 Ask in your own words
 Skip the four questions. Say your year in a line or two.
 We run the same engine as the four questions
-, right on this page. Your words go to this site's helper to make your pick. Nothing you type is saved.
+, right on this page. Your words never leave this device. Nothing is sent or saved.
 Your year, in your words
 Pick my one resolution
 Or tap an example:
